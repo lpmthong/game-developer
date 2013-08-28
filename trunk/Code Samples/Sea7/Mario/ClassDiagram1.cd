@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FallingCross" Collapsed="true">
+    <Position X="30" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAAAEAAAAAABAAAAAAAEAAAAAACAACABAAAA=</HashCode>
+      <FileName>FallingCross.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GroundMushRoom" Collapsed="true">
+    <Position X="23.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GroundMushRoom.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GroundUnderMushroom" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GroundUnderMushroom.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RedTurleEnemy" Collapsed="true">
+    <Position X="41.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAIAAAgAAAAAAAAAEIAAAAAAAAIEAABAAAAIAAAA=</HashCode>
+      <FileName>RedTurleEnemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveGame" Collapsed="true">
+    <Position X="47" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAASAAFABCAAAIgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SaveGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartGameOptions" Collapsed="true">
+    <Position X="50.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAEAAAAAAAAAIAAAAAAIIAIAEQQACBAAAAAAAAA=</HashCode>
+      <FileName>StartGameOptions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DynamicObject" Collapsed="true">
+    <Position X="41.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQABAAAAQQAgAACAAABBAAAAQAgAAAEAIABAA=</HashCode>
+      <FileName>DynamicObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DynamicObjManager" Collapsed="true">
+    <Position X="47" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAIBACAAAAABAAAAEAAAACABhAAABAAQAA=</HashCode>
+      <FileName>DynamicObjManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BonusBrick" Collapsed="true">
+    <Position X="27.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACABAAAAEAAAARkAAAAAABBAAAAAQAA=</HashCode>
+      <FileName>BonusBrick.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Brick" Collapsed="true">
+    <Position X="30" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAACAQACAAAAABAAAAACEAAAAAAABCAAAAAAQ=</HashCode>
+      <FileName>Brick.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrickBreak" Collapsed="true">
+    <Position X="34.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAQAAAAAAAAQAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BrickBreak.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cross" Collapsed="true">
+    <Position X="32.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAAAAAAAAAAAAAAAAAAAAAAIAAAAQACAAAAAAAA=</HashCode>
+      <FileName>Cross.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HardBrick" Collapsed="true">
+    <Position X="31" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HardBrick.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="44.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ooQpA4AAQAAQAAAAMACQAACBABAQAIEAAICAQAAABAA=</HashCode>
+      <FileName>Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MushroomEnemy" Collapsed="true">
+    <Position X="48" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAQAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MushroomEnemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PirhanaPlant" Collapsed="true">
+    <Position X="54.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAAAARgAAAAAAAgAAAAAAAAAAAQBAAEAAAAwA=</HashCode>
+      <FileName>PirhanaPlant.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurleEnemy" Collapsed="true">
+    <Position X="41.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAhAYAgAAAQAAAAAAAUAAAAEBQAAAAAAAAAAAAIDAA=</HashCode>
+      <FileName>TurleEnemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BonusMushroom" Collapsed="true">
+    <Position X="43.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIIBAAAAAAAQAAAAAAEAAACAAAABAQAAABCAAACAEAA=</HashCode>
+      <FileName>BonusMushroom.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet" Collapsed="true">
+    <Position X="45.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAJAYAAAAAAAAAAEACAAACAABCAAAEEAAAAAAAQBAA=</HashCode>
+      <FileName>Bullet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoinPickUp" Collapsed="true">
+    <Position X="36.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAgAAAAAAQAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>CoinPickUp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Score" Collapsed="true">
+    <Position X="39" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAEAAAAAQAAgAAAAAAAAAgAAACQAAABAAAAAAAAA=</HashCode>
+      <FileName>Score.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Text" Collapsed="true">
+    <Position X="50.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUFkABAAIAAAAAAAAAMAAAABEABAAAAAJAACAAAAIA=</HashCode>
+      <FileName>Text.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="52.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wo1JkoII0IxQDHUiKAJwgCCgNhIiQAEAALByBxIABBQ=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuadNode" Collapsed="true">
+    <Position X="52.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAAAAgAACAAAAAIACAAAAAACAiBBAAABIAAAA=</HashCode>
+      <FileName>QuadNode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuadTree" Collapsed="true">
+    <Position X="45.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACQAiAQAAAABAgABAAgIAAAUAAAAACEBBAAEBCIAAA=</HashCode>
+      <FileName>QuadTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Debug" Collapsed="true">
+    <Position X="50.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAABIAAAAAAASIAgAAEAAAAAAAEAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Debug.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaticObject" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAgAAIAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StaticObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cloud" Collapsed="true">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cloud.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Fence" Collapsed="true">
+    <Position X="16.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fence.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Grass" Collapsed="true">
+    <Position X="21" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ground" Collapsed="true">
+    <Position X="23.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAAAAABAAAAAAECA=</HashCode>
+      <FileName>Ground.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HighTree" Collapsed="true">
+    <Position X="25.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABAA=</HashCode>
+      <FileName>HighTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LowTree" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LowTree.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mountain" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Mountain.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pipe" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Pipe.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coin" Collapsed="true">
+    <Position X="14.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Coin.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EndMap" Collapsed="true">
+    <Position X="18.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIAAAACEAAAAAABAAAAAAAACAAAABAAAAAAAAQ=</HashCode>
+      <FileName>EndMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="48.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAACAAAAJAABAAAwAQDqwIAABABIAIIAIAAA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GlobalHandler" Collapsed="true">
+    <Position X="50.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAAgAAAQACAYCAkAKAAEQAUCQEAMABAAAoQIAAQAA=</HashCode>
+      <FileName>GlobalHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Object" Collapsed="true">
+    <Position X="28.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAQAyAgAAQgQAAAAAACABEAEACAIBAAAAIAYAA=</HashCode>
+      <FileName>Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sprite" Collapsed="true">
+    <Position X="48.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EkAAAAAAAAAAFAQgRAEAEAQFEAAAQAAwABAAABABAAM=</HashCode>
+      <FileName>Sprite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirectX" Collapsed="true">
+    <Position X="52.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIIAgAAICyKAAgAgAAFAIAAAQAEQAAAhBAICQBCAAIA=</HashCode>
+      <FileName>DirectX.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSoundManager" Collapsed="true">
+    <Position X="47" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAQEQAAAAEAAAAAAAAEAgABAAAAACAAI=</HashCode>
+      <FileName>dsutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSound" Collapsed="true">
+    <Position X="24" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEyGAABAAAAIDAAAAACAAAAAAQAEAAAAoAAAgEAAAAA=</HashCode>
+      <FileName>dsutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CStreamingSound" Collapsed="true">
+    <Position X="24" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAABAAABgAgAAAEAAAAEAAAAAAAAAAAACE=</HashCode>
+      <FileName>dsutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CWaveFile" Collapsed="true">
+    <Position X="48.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EggAACAARAAAIAiAAAAEAAgwAgABAAgIAAAAAIGIAAA=</HashCode>
+      <FileName>dsutil.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DXSound" Collapsed="true">
+    <Position X="45.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAAEAAAAAAAAAAAAIAAAAACAAoAACAAAAAAA=</HashCode>
+      <FileName>DXSound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChangeMap" Collapsed="true">
+    <Position X="45.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAEAAAABIAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>ChangeMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu" Collapsed="true">
+    <Position X="48.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAABAAAAAAAAAAAAIIAIIAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Menu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Option" Collapsed="true">
+    <Position X="50.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAACAAAABIAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Option.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListSound" Collapsed="true">
+    <Position X="52.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAACIgAAAAABQAAAAAAAICAAgAAAkAACAAAQCAA=</HashCode>
+      <FileName>ListSound.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListTerrain" Collapsed="true">
+    <Position X="45.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAABKAAAAAABAAAABAAAABABAA=</HashCode>
+      <FileName>ListTerrain.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListTexture" Collapsed="true">
+    <Position X="47" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>Rjsuqqq47rSgub0P9v8NdmqtwEKsKzOOu7xv2hnnNfk=</HashCode>
+      <FileName>ListTexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
