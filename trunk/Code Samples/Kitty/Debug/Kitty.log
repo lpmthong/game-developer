@@ -1,0 +1,7 @@
+﻿  Kitty.cpp
+d:\project\kitty\kitty\kitty.cpp(6): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  game.cpp
+  Sprite.cpp
+  Kitty.vcxproj -> D:\Project\Kitty\Debug\Kitty.exe
