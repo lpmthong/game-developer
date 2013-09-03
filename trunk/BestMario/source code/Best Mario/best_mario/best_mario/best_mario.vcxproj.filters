@@ -13,27 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DirectXHandler">
+      <UniqueIdentifier>{36d0bec2-972c-457c-8de7-a952ab331268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Global">
+      <UniqueIdentifier>{fd79f703-5ef6-4490-a823-f5edd994bcfc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectX.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Global</Filter>
     </ClCompile>
     <ClCompile Include="DirectX.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>DirectXHandler</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalHandler.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Define.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX.h">
+      <Filter>DirectXHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalHandler.h">
+      <Filter>Global</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
