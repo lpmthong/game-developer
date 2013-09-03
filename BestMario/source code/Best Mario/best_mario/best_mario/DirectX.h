@@ -3,17 +3,15 @@
 
 class DirectX{
 	
-	public:
+	public:		
 		
-		HWND _hWnd;
 		LPDIRECT3D9 _d3d;
 		LPDIRECT3DDEVICE9 _d3ddv;
 		LPDIRECT3DSURFACE9	_backBuffer;
 		LPDIRECT3DSURFACE9	_backGround;
 		D3DFORMAT _backBufferFormat;
 		
-		DirectX(void);
-		DirectX(HWND hwnd);
-		void InitDirectX();
+		DirectX(void);		
+		void InitDirectX(HWND _hWnd);
 		~DirectX();
 };

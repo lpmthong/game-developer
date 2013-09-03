@@ -6,6 +6,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	mGame _mGame(hInstance, L"demo");
 
 	_mGame.Init();
+	_mGame.Run();
 
 	return 0;
 }

@@ -1,12 +1,13 @@
 #include "Game.h"
 
+DirectX *_directX = new DirectX();
+
 mGame::mGame(void){}
 
 mGame::mGame(HINSTANCE hInstance, LPWSTR Name){	
 
 	_hInstance = hInstance;
 	_name = Name;
-
 }
 
 void mGame::InitWindow(){
@@ -50,22 +51,36 @@ void mGame::InitWindow(){
 }
 
 void mGame::Init(){
-	this->InitWindow();
-	DirectX *_directX = new DirectX(this->_hWnd);
+	this->InitWindow();	
+	_directX->InitDirectX(_hWnd);
+}
+
+void mGame::Run(){
+	MSG msg;
+	
+	while(1){
+		if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)){
+			if(msg.message == WM_QUIT)
+				break;
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+	}
+	
 }
 
 LRESULT CALLBACK mGame::_WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
-	switch (message) 
-	{
-	case WM_DESTROY: 
-		PostQuitMessage(0);
-		break;
-	default: 
-		return DefWindowProc(hWnd, message, wParam,lParam);
+	switch (message){
+		case WM_DESTROY: 
+			PostQuitMessage(0);
+			break;
+		default: 
+			return DefWindowProc(hWnd, message, wParam,lParam);
 	}
 
 	return 0;
 }
 mGame::~mGame()
-{	
+{
+	//_directX->~DirectX();
 }
