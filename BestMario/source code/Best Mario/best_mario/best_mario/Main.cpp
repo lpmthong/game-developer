@@ -1,12 +1,20 @@
-#include <Windows.h>
 #include "Game.h"
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
-{
-	mGame _mGame(hInstance, L"demo");
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
 
-	_mGame.Init();
-	_mGame.Run();
+	Game *nGame = new Game(hInstance, nCmdShow);
+	nGame->Init();
 
-	return 0;
+	MSG msg;
+
+	while(1){
+		if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)){
+			if(msg.message == WM_QUIT)
+				break;
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+	}
+	delete nGame;
+	return (int) msg.wParam;
 }
