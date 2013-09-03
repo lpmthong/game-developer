@@ -13,16 +13,18 @@ private:
 	HWND _hWnd;
 		
 	LPWSTR _name;
+	
 
 	static LRESULT CALLBACK _WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	void InitWindow();
 
-public:
+public:	
+
 	mGame(void);
 	mGame(HINSTANCE hInstance, LPWSTR Name);
 	~mGame();		
 	void Init();
-	//void Run();
+	void Run();
 
 };
 
