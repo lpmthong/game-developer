@@ -14,6 +14,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
+
+		if (nGame->Run() == false)
+			break;
 	}
 	delete nGame;
 	return (int) msg.wParam;

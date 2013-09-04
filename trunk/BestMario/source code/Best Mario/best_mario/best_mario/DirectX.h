@@ -4,7 +4,6 @@
 #include <d3dx9.h>
 
 #include "Define.h"
-
 //////////////////////////////////////////////////////////////////////////
 ///Khai bao class theo thu tu cac ham trong class de truc quan hon
 //////////////////////////////////////////////////////////////////////////
@@ -38,6 +37,6 @@ private:
 
 public:
 	void Release();
-	void BeginScene();
-	void EndScene();
+	bool BeginScene();
+	bool EndScene();
 };

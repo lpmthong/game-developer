@@ -1,4 +1,5 @@
 #include "DirectX.h"
+#include "GlobalHandler.h"
 
 DirectX::DirectX(void){
 	ncmdShow	= NULL;
@@ -113,4 +114,23 @@ LRESULT CALLBACK DirectX::WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM
 void DirectX::Release(){
 	if (_d3ddv!=NULL) _d3ddv->Release();
 	if (_d3d!=NULL) _d3d->Release();
+}
+
+bool DirectX::BeginScene(){
+	if (GlobalHandler::backGroundColor == BLUE)
+		_d3ddv->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(100, 100, 255), 1.0f, 0);
+	else
+		_d3ddv->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0, 0, 0), 1.0f, 0);
+	if(FAILED(_d3ddv->BeginScene()))
+		return FALSE;
+
+	return TRUE;
+}
+
+bool DirectX::EndScene(){
+	if(FAILED(_d3ddv->EndScene()))
+		return FALSE;
+
+	_d3ddv->Present(NULL, NULL, NULL, NULL);
+	return TRUE;
 }

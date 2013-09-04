@@ -15,4 +15,5 @@ public:
 	
 public:
 	void Init();
+	bool Run();
 };

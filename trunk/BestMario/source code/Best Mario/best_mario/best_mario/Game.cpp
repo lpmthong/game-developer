@@ -13,3 +13,14 @@ Game::~Game(void){}
 void Game::Init(){
 	GlobalHandler::_directX->Init(_hInstance);
 }
+
+bool Game::Run(){
+	if (GlobalHandler::quitGame)
+		return false;
+	GlobalHandler::_directX->BeginScene();
+
+	GlobalHandler::_directX->EndScene();
+	GlobalHandler::_directX->_d3ddv->Present(NULL, NULL, NULL, NULL);
+
+	return true;
+}
