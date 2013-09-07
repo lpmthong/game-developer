@@ -27,16 +27,22 @@ public:
 	LPDIRECT3DSURFACE9	_backGround;
 	D3DFORMAT _backBufferFormat;
 
+	LPD3DXSPRITE _spriteHandler;
+
 public:
 	void Init(HINSTANCE hInstance);
 
 private:
 	void InitWindow();
 	void InitDirectX();
+	void InitSpriteHandler();
 	static LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 public:
 	void Release();
+
+public:
+	LPDIRECT3DTEXTURE9 LoadTextureFormFile(char* path, D3DCOLOR transkey);
 	bool BeginScene();
 	bool EndScene();
 };

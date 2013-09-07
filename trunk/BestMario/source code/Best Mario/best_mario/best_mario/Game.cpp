@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Sprite.h"
 
 Game::Game(void){}
 
@@ -15,10 +16,13 @@ void Game::Init(){
 }
 
 bool Game::Run(){
+	LPDIRECT3DTEXTURE9 tt = GlobalHandler::_directX->LoadTextureFormFile("Media\\brick.bmp",0);
+	Sprite *sprite = new Sprite(tt, 32, 32, 1, 1);
+
 	if (GlobalHandler::quitGame)
 		return false;
 	GlobalHandler::_directX->BeginScene();
-
+	sprite->Render(200, 200);
 	GlobalHandler::_directX->EndScene();
 	GlobalHandler::_directX->_d3ddv->Present(NULL, NULL, NULL, NULL);
 

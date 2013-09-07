@@ -32,6 +32,7 @@ void DirectX::Init(HINSTANCE hInstance){
 
 	InitWindow();
 	InitDirectX();
+	InitSpriteHandler();
 }
 
 void DirectX::InitWindow(){
@@ -45,7 +46,7 @@ void DirectX::InitWindow(){
 	wc.hIconSm = NULL;
 	wc.hInstance = _hInstance;
 	wc.lpfnWndProc = (WNDPROC)WinProc;
-	wc.lpszClassName = L"Mario Game";
+	wc.lpszClassName = "Mario Game";
 	wc.lpszMenuName = NULL;
 	wc.style = CS_HREDRAW | CS_VREDRAW;
 
@@ -95,6 +96,43 @@ void DirectX::InitDirectX(){
 			}
 			_d3ddv->GetBackBuffer(0,0,D3DBACKBUFFER_TYPE_MONO,&_backBuffer);
 
+}
+
+void DirectX::InitSpriteHandler(){
+	D3DXCreateSprite(_d3ddv, &_spriteHandler);
+	_d3ddv->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &_backBuffer);
+}
+
+LPDIRECT3DTEXTURE9 DirectX::LoadTextureFormFile(char* path, D3DCOLOR transkey){
+	HRESULT hResult = NULL;
+	LPDIRECT3DTEXTURE9 texture;
+	D3DXIMAGE_INFO info;
+
+	D3DXGetImageInfoFromFile(path, &info);
+	if (hResult != D3D_OK)
+		return NULL;
+
+	hResult = D3DXCreateTextureFromFileEx(
+		_d3ddv,
+		path,
+		info.Width,
+		info.Height,
+		1,
+		D3DUSAGE_DYNAMIC,
+		D3DFMT_UNKNOWN,
+		D3DPOOL_DEFAULT,
+		D3DX_DEFAULT,
+		D3DX_DEFAULT,
+		D3DCOLOR_XRGB(255,0,255),
+		&info,
+		NULL,
+		&texture
+	);
+
+	if (hResult != D3D_OK)
+		return NULL;
+
+	return texture;
 }
 
 LRESULT CALLBACK DirectX::WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
