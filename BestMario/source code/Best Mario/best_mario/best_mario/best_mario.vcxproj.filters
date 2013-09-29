@@ -19,6 +19,15 @@
     <Filter Include="Global">
       <UniqueIdentifier>{fd79f703-5ef6-4490-a823-f5edd994bcfc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StaticObject">
+      <UniqueIdentifier>{cf29199c-4fa0-45ad-8de0-19274fc86856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StaticObject\Sight">
+      <UniqueIdentifier>{3c18be63-38f4-472f-b9c5-3646379f4ca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{ee3b44eb-661e-438f-9905-7f51f0fd1d0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -36,6 +45,18 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Global</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticObject.cpp">
+      <Filter>StaticObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Cloud.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="ListTexture.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -52,6 +73,18 @@
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticObject.h">
+      <Filter>StaticObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Cloud.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="ListTexture.h">
+      <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

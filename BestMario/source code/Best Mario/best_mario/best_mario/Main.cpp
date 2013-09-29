@@ -6,8 +6,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	nGame->Init();
 
 	MSG msg;
-
-	while(1){
+	DWORD frame_start = GetTickCount();
+	int done = 0;
+	while(!done){
 		if(PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)){
 			if(msg.message == WM_QUIT)
 				break;
@@ -15,8 +16,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			DispatchMessage(&msg);
 		}
 
-		if (nGame->Run() == false)
-			break;
+		DWORD now = GetTickCount();
+		if (now - frame_start >= 100 / nGame->frameRate){
+			if (nGame->Run() == false)
+				done = 1;
+			frame_start = now;
+		}
 	}
 	delete nGame;
 	return (int) msg.wParam;

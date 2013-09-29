@@ -21,6 +21,10 @@ void Sprite::Next(){
 	_index = (_index + _count - 1) % _count;
 }
 
+void Sprite::Next(int start, int end){
+
+}
+
 void Sprite::Reset(){
 	_index = 0;
 }
@@ -57,6 +61,63 @@ void Sprite::Render(float x, float y){
 		&position,
 		D3DCOLOR_XRGB(255,255,255)
 	);
+
+	GlobalHandler::_directX->_spriteHandler->End();
+}
+
+void Sprite::Render(LPDIRECT3DSURFACE9 target, int x, int y)
+{
+	RECT rect;
+	rect = InitRenderRect();
+	GlobalHandler::_directX->_spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+
+	D3DXVECTOR3 position((float)x, (float)y, 0);
+
+	GlobalHandler::_directX->_spriteHandler->Draw(_texture,
+		&rect,
+		NULL,
+		&position,
+		D3DCOLOR_XRGB(255,255,255));
+
+	GlobalHandler::_directX->_spriteHandler->End();
+}
+
+
+void Sprite::Render( LPDIRECT3DSURFACE9 target, int x, int y, int top )
+{
+	RECT rect;
+	rect = InitRenderRect();
+	rect.bottom = rect.top + top;
+	GlobalHandler::_directX->_spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+
+	D3DXVECTOR3 position((float)x, (float)y, 0);
+
+	GlobalHandler::_directX->_spriteHandler->Draw(_texture,
+		&rect,
+		NULL,
+		&position,
+		D3DCOLOR_XRGB(255,255,255));
+
+	GlobalHandler::_directX->_spriteHandler->End();
+}
+
+void Sprite::Render( LPDIRECT3DSURFACE9 target, int x, int y, int srcLeft, int srcTop, int srcRight, int srcBottom )
+{
+	RECT rect;
+	rect.left = srcLeft;
+	rect.top = srcTop;
+	rect.right = srcRight;
+	rect.bottom = srcBottom;
+
+	GlobalHandler::_directX->_spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+
+	D3DXVECTOR3 position((float)x, (float)y, 0);
+
+	GlobalHandler::_directX->_spriteHandler->Draw(_texture,
+		&rect,
+		NULL,
+		&position,
+		D3DCOLOR_XRGB(255,255,255));
 
 	GlobalHandler::_directX->_spriteHandler->End();
 }

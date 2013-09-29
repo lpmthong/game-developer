@@ -77,18 +77,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GlobalHandler.cpp" />
+    <ClCompile Include="ListTexture.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StaticObject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cloud.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalHandler.h" />
+    <ClInclude Include="ListTexture.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StaticObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
