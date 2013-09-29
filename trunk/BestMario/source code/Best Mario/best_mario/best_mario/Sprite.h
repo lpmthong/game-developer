@@ -18,10 +18,16 @@ protected:
 
 public:
 	void Next();
+	void Next(int start, int end);
+
 	void Reset();
 	void setIndex(int i);
 	int	 getIndex();
 	void setDistanceFromTop(int d);
 	RECT InitRenderRect();
+
 	void Render(float x, float y);
+	void Render(LPDIRECT3DSURFACE9 target, int x, int y);
+	void Render(LPDIRECT3DSURFACE9 target, int x, int y, int top);
+	void Render(LPDIRECT3DSURFACE9 target, int x, int y, int srcLeft, int srcTop, int srcRight, int srcBottom);
 };
