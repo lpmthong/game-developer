@@ -103,7 +103,7 @@ void DirectX::InitSpriteHandler(){
 	_d3ddv->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &_backBuffer);
 }
 
-LPDIRECT3DTEXTURE9 DirectX::LoadTextureFormFile(char* path, D3DCOLOR transkey){
+LPDIRECT3DTEXTURE9 DirectX::LoadTextureFromFile(char* path, D3DCOLOR transkey){
 	HRESULT hResult = NULL;
 	LPDIRECT3DTEXTURE9 texture;
 	D3DXIMAGE_INFO info;

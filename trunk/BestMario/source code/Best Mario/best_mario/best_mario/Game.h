@@ -5,7 +5,7 @@
 
 //include test
 
-#include "Cloud.h"
+#include "Pipe.h"
 #include "ListTexture.h"
 
 #define FRAME_RATE	60
@@ -23,7 +23,7 @@ public:
 	int frameRate;
 
 	//Test
-	Cloud *cl;
+	Pipe *test;
 	//EndTest
 
 public:

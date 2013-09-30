@@ -79,11 +79,18 @@
   <ItemGroup>
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="DirectX.cpp" />
+    <ClCompile Include="Fence.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GlobalHandler.cpp" />
+    <ClCompile Include="Grass.cpp" />
+    <ClCompile Include="Ground.cpp" />
+    <ClCompile Include="HighTree.cpp" />
     <ClCompile Include="ListTexture.cpp" />
+    <ClCompile Include="LowTree.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mountain.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Pipe.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="StaticObject.cpp" />
   </ItemGroup>
@@ -91,10 +98,17 @@
     <ClInclude Include="Cloud.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="DirectX.h" />
+    <ClInclude Include="Fence.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalHandler.h" />
+    <ClInclude Include="Grass.h" />
+    <ClInclude Include="Ground.h" />
+    <ClInclude Include="HighTree.h" />
     <ClInclude Include="ListTexture.h" />
+    <ClInclude Include="LowTree.h" />
+    <ClInclude Include="Mountain.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Pipe.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="StaticObject.h" />
   </ItemGroup>
