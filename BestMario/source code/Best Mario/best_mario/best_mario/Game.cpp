@@ -21,16 +21,16 @@ void Game::Init(){
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
 
 	ListTexture::CreateAllTexture();
-	cl = new Cloud(50,50);
+	test = new Pipe(50,50, PIPE_CAP);
 }
 
 bool Game::Run(){
 	
-	cl->Update();
+	test->Update();
 	if (GlobalHandler::quitGame)
 		return false;
 	GlobalHandler::_directX->BeginScene();
-	cl->Render();	
+	test->Render();	
 	GlobalHandler::_directX->EndScene();
 	GlobalHandler::_directX->_d3ddv->Present(NULL, NULL, NULL, NULL);
 	

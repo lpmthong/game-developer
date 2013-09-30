@@ -42,7 +42,7 @@ public:
 	void Release();
 
 public:
-	LPDIRECT3DTEXTURE9 LoadTextureFormFile(char* path, D3DCOLOR transkey);
+	LPDIRECT3DTEXTURE9 LoadTextureFromFile(char* path, D3DCOLOR transkey);
 	bool BeginScene();
 	bool EndScene();
 };

@@ -57,6 +57,27 @@
     <ClCompile Include="ListTexture.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
+    <ClCompile Include="Fence.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="Grass.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="HighTree.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="LowTree.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="Mountain.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="Pipe.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -85,6 +106,27 @@
     </ClInclude>
     <ClInclude Include="ListTexture.h">
       <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Fence.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="Grass.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="HighTree.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="LowTree.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="Mountain.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="Pipe.h">
+      <Filter>StaticObject\Sight</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
