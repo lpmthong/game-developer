@@ -6,6 +6,15 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
 
+//Quad tree
+#define MAP_WIDTH 10000
+#define MIN_NODE_WIDTH 25
+#define NORMAL 0
+#define LT 1
+#define RT 2
+#define RB 3
+#define LB 4
+
 //Object
 #define BRICK 0
 #define CLOUD 2

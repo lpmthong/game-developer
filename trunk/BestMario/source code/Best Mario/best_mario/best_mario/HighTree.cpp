@@ -16,7 +16,7 @@ HighTree::HighTree( int left, int top )
 
 
 	UpdateRect(left, top, ListTexture::TT_HIGH_TREE_WIDTH, ListTexture::TT_HIGH_TREE_HEIGHT);
-	
+	map_level = 2;
 	isKind = HIGHTREE;
 	isSolid = false;
 }

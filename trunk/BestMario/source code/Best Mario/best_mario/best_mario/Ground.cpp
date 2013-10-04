@@ -12,7 +12,7 @@ Ground::Ground(int left, int top){
 	width = ListTexture::TT_GROUND_WIDTH;
 	height = ListTexture::TT_GROUND_HEIGHT;
 	UpdateRect(left, top, ListTexture::TT_GROUND_WIDTH, ListTexture::TT_GROUND_HEIGHT);
-
+	map_level = 2;
 	isKind = GROUND;
 	isSolid = true;
 }

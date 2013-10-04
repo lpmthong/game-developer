@@ -17,7 +17,7 @@ Mountain::Mountain( int left, int top )
 
 
 	UpdateRect(left, top, ListTexture::TT_MOUNTAIN_WIDTH, ListTexture::TT_MOUNTAIN_HEIGHT);
-	
+	map_level = 1;
 	isKind = MOUNTAIN;
 	isSolid = false;
 }

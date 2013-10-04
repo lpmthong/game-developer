@@ -9,7 +9,7 @@ Fence::Fence(int left, int top){
 						ListTexture::TT_FENCE_COUNT, ListTexture::TT_FENCE_SPRITEPERROW);
 
 	UpdateRect(left, top, ListTexture::TT_FENCE_WIDTH, ListTexture::TT_FENCE_HEIGHT);
-
+	map_level = 2;
 	isKind = FENCE;
 	isSolid = false;
 }
