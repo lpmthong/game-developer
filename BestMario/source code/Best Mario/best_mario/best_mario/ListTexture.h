@@ -68,6 +68,13 @@ public:
 	static int					TT_PIPE_BODY_COUNT;
 	static int					TT_PIPE_BODY_SPRITEPERROW;
 
+	static LPDIRECT3DTEXTURE9	TT_OUT_COIN;
+	static int					TT_OUT_COIN_WIDTH;
+	static int					TT_OUT_COIN_HEIGHT;
+	static int					TT_OUT_COIN_COUNT;
+	static int					TT_OUT_COIN_SPRITEPERROW;
+	static int					TT_OUT_COIN_ANIMATED_RATE;
+
 public:
 	static void CreateAllTexture();
 	ListTexture(void);

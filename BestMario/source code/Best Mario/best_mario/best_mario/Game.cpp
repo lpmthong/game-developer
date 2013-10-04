@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "Sprite.h"
+#include "Coin.h"
 
 Game::Game(void){}
 
@@ -21,16 +21,17 @@ void Game::Init(){
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
 
 	ListTexture::CreateAllTexture();
-	test = new Pipe(50,50, PIPE_CAP);
+	Coin* test = new Coin(50,50);
+	GlobalHandler::quadTree->AddNode(test);
 }
 
 bool Game::Run(){
 	
-	test->Update();
+	GlobalHandler::quadTree->UpdateScreen();
 	if (GlobalHandler::quitGame)
 		return false;
 	GlobalHandler::_directX->BeginScene();
-	test->Render();	
+	GlobalHandler::quadTree->RenderScreen();	
 	GlobalHandler::_directX->EndScene();
 	GlobalHandler::_directX->_d3ddv->Present(NULL, NULL, NULL, NULL);
 	

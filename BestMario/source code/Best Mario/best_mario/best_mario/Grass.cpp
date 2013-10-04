@@ -12,7 +12,7 @@ Grass::Grass(int left, int top){
 	UpdateRect(left, top, ListTexture::TT_GRASS_WIDTH, ListTexture::TT_GRASS_HEIGHT);
 	animatedRate = ListTexture::TT_GRASS_ANIMATED_RATE;
 	lastAnimate = GetTickCount();
-
+	map_level = 2;
 	isKind = GRASS;
 	isSolid = false;
 }

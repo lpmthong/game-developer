@@ -25,8 +25,9 @@ Pipe::Pipe( int left, int top, int type )
 
 	width = ListTexture::TT_PIPE_BODY_WIDTH;
 	height = ListTexture::TT_PIPE_BODY_HEIGHT;
-	UpdateRect(left, top, ListTexture::TT_PIPE_BODY_WIDTH, ListTexture::TT_PIPE_BODY_HEIGHT);
-	
+	UpdateRect(left, top, ListTexture::TT_PIPE_BODY_WIDTH, ListTexture::TT_PIPE_BODY_HEIGHT);	
+
+	map_level = 2;
 	isSolid = true;
 }
 

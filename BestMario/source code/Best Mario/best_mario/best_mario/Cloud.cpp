@@ -11,7 +11,7 @@ Cloud::Cloud(int left, int top){
 	UpdateRect(left, top, width, height);
 	isKind = CLOUD;
 	isSolid = false;
-
+	map_level = 2;
 	animatedRate = ListTexture::TT_CLOUD_ANIMATED_RATE;
 	lastAnimate = GetTickCount();
 }

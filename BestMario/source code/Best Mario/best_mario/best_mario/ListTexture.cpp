@@ -56,6 +56,13 @@ int					ListTexture::TT_PIPE_BODY_HEIGHT;
 int					ListTexture::TT_PIPE_BODY_COUNT;
 int					ListTexture::TT_PIPE_BODY_SPRITEPERROW;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_OUT_COIN;
+int					ListTexture::TT_OUT_COIN_WIDTH;
+int					ListTexture::TT_OUT_COIN_HEIGHT;
+int					ListTexture::TT_OUT_COIN_COUNT;
+int					ListTexture::TT_OUT_COIN_SPRITEPERROW;
+int					ListTexture::TT_OUT_COIN_ANIMATED_RATE;
+
 ListTexture::ListTexture(void){}
 
 ListTexture::~ListTexture(void){}
@@ -117,4 +124,11 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_PIPE_BODY_HEIGHT					= 32;
 	ListTexture::TT_PIPE_BODY_COUNT						= 1;
 	ListTexture::TT_PIPE_BODY_SPRITEPERROW				= 1;
+
+	ListTexture::TT_OUT_COIN							= GlobalHandler::_directX->LoadTextureFromFile("Media\\coin.bmp",0);
+	ListTexture::TT_OUT_COIN_WIDTH						= 19;
+	ListTexture::TT_OUT_COIN_HEIGHT						= 29;
+	ListTexture::TT_OUT_COIN_COUNT						= 2;
+	ListTexture::TT_OUT_COIN_SPRITEPERROW				= 2;
+	ListTexture::TT_OUT_COIN_ANIMATED_RATE				= 100;
 }

@@ -28,6 +28,12 @@
     <Filter Include="Resource">
       <UniqueIdentifier>{ee3b44eb-661e-438f-9905-7f51f0fd1d0a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StaticObject\CanCollide">
+      <UniqueIdentifier>{294ea39b-3d30-46b6-9f87-269cc0fc18a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="QuadTree">
+      <UniqueIdentifier>{393cede8-e376-48a7-b310-e6ad3be44ca3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -78,6 +84,15 @@
     <ClCompile Include="Pipe.cpp">
       <Filter>StaticObject\Sight</Filter>
     </ClCompile>
+    <ClCompile Include="Coin.cpp">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>QuadTree</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadNode.cpp">
+      <Filter>QuadTree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -127,6 +142,15 @@
     </ClInclude>
     <ClInclude Include="Pipe.h">
       <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="Coin.h">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadNode.h">
+      <Filter>QuadTree</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>QuadTree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,11 +2,11 @@
 
 #include "DirectX.h"
 #include "GlobalHandler.h"
+#include "ListTexture.h"
 
 //include test
-
-#include "Pipe.h"
-#include "ListTexture.h"
+#include "StaticObject.h"
+//
 
 #define FRAME_RATE	60
 
@@ -23,7 +23,6 @@ public:
 	int frameRate;
 
 	//Test
-	Pipe *test;
 	//EndTest
 
 public:

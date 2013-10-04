@@ -16,7 +16,7 @@ LowTree::LowTree( int left, int top )
 
 
 	UpdateRect(left, top, ListTexture::TT_LOW_TREE_WIDTH, ListTexture::TT_LOW_TREE_HEIGHT);
-	
+	map_level = 2;
 	isKind = LOWTREE;
 	isSolid = false;
 }
