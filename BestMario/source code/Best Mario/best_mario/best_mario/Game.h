@@ -28,4 +28,6 @@ public:
 public:
 	void Init();
 	bool Run();
+	void Update();
+	void Render();
 };

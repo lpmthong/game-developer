@@ -56,7 +56,7 @@ void DirectX::InitWindow(){
 	int screenX = GetSystemMetrics(SM_CYSCREEN);
 	int screenY = GetSystemMetrics(SM_CXSCREEN);
 
-	int xCtr = (screenX / 2 );
+	int xCtr = (screenX / 2);
 	int yCtr = (screenY / 2 ) - GAME_HIGHT;
 
 	_hWnd = CreateWindowA("Mario Game",
@@ -123,7 +123,7 @@ LPDIRECT3DTEXTURE9 DirectX::LoadTextureFromFile(char* path, D3DCOLOR transkey){
 		D3DPOOL_DEFAULT,
 		D3DX_DEFAULT,
 		D3DX_DEFAULT,
-		D3DCOLOR_XRGB(255,0,255),
+		D3DCOLOR_XRGB(255,0,255), //Loai bo mau nen di 255 0 255 la mau hong
 		&info,
 		NULL,
 		&texture

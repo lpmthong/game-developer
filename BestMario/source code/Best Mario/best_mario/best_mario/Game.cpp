@@ -14,26 +14,38 @@ Game::Game(HINSTANCE hInstance, UINT _nCmdShow){
 Game::~Game(void){}
 
 void Game::Init(){
+	cleartrace();
 	GlobalHandler::_directX->Init(_hInstance);
 	GlobalHandler::screen.left		= 0;
 	GlobalHandler::screen.top		= 0;
 	GlobalHandler::screen.right		= SCREEN_WIDTH;
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
-
 	ListTexture::CreateAllTexture();
-	Coin* test = new Coin(50,50);
-	GlobalHandler::quadTree->AddNode(test);
+	
+	GlobalHandler::RestartMap();
 }
 
 bool Game::Run(){
 	
-	GlobalHandler::quadTree->UpdateScreen();
+	Update();
+
 	if (GlobalHandler::quitGame)
 		return false;
 	GlobalHandler::_directX->BeginScene();
-	GlobalHandler::quadTree->RenderScreen();	
+	
+	Render();
+
 	GlobalHandler::_directX->EndScene();
 	GlobalHandler::_directX->_d3ddv->Present(NULL, NULL, NULL, NULL);
 	
+
 	return true;
+}
+
+void Game::Update(){
+	GlobalHandler::quadTree->UpdateScreen();
+}
+
+void Game::Render(){
+	GlobalHandler::quadTree->RenderScreen();
 }
