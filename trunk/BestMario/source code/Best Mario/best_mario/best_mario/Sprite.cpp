@@ -43,10 +43,10 @@ void Sprite::setDistanceFromTop(int d){
 
 RECT Sprite::InitRenderRect(){
 	RECT srect;
-	srect.left = (_index % _spritePerRow)* _width + 1;
+	srect.left = (_index % _spritePerRow)* _width;
 	srect.top = (_index / _spritePerRow)* _height + _distanceFromTop;
 	srect.right = srect.left + _width ;
-	srect.bottom = srect.top + _height +1;
+	srect.bottom = srect.top + _height;
 	return srect;
 }
 

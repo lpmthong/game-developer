@@ -34,6 +34,9 @@
     <Filter Include="QuadTree">
       <UniqueIdentifier>{393cede8-e376-48a7-b310-e6ad3be44ca3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{0cde186a-e928-4665-877b-e72a59db0250}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -93,6 +96,12 @@
     <ClCompile Include="QuadNode.cpp">
       <Filter>QuadTree</Filter>
     </ClCompile>
+    <ClCompile Include="trace.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="ListTerrain.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -151,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="QuadTree.h">
       <Filter>QuadTree</Filter>
+    </ClInclude>
+    <ClInclude Include="trace.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="ListTerrain.h">
+      <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
