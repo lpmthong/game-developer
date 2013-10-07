@@ -22,6 +22,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				done = 1;
 			frame_start = now;
 		}
+		nGame->ProcessKeyboard();
+		nGame->ProcessInput();
 	}
 	delete nGame;
 	return (int) msg.wParam;

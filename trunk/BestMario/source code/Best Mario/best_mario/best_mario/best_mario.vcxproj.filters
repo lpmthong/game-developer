@@ -37,6 +37,12 @@
     <Filter Include="Debug">
       <UniqueIdentifier>{0cde186a-e928-4665-877b-e72a59db0250}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DynamicObject">
+      <UniqueIdentifier>{52ece45e-0825-445f-9a04-86f743a8c960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DynamicObject\Player">
+      <UniqueIdentifier>{3b37879e-083b-47a7-95d6-7159dd4c7cf0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -102,6 +108,15 @@
     <ClCompile Include="ListTerrain.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
+    <ClCompile Include="DynamicObject.cpp">
+      <Filter>DynamicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicObjManager.cpp">
+      <Filter>DynamicObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>DynamicObject\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -166,6 +181,15 @@
     </ClInclude>
     <ClInclude Include="ListTerrain.h">
       <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObject.h">
+      <Filter>DynamicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObjManager.h">
+      <Filter>DynamicObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>DynamicObject\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

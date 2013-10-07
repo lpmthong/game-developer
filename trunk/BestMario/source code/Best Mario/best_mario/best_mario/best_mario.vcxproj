@@ -80,6 +80,8 @@
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="DirectX.cpp" />
+    <ClCompile Include="DynamicObject.cpp" />
+    <ClCompile Include="DynamicObjManager.cpp" />
     <ClCompile Include="Fence.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GlobalHandler.cpp" />
@@ -93,6 +95,7 @@
     <ClCompile Include="Mountain.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Pipe.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="QuadNode.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -104,6 +107,8 @@
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="DirectX.h" />
+    <ClInclude Include="DynamicObject.h" />
+    <ClInclude Include="DynamicObjManager.h" />
     <ClInclude Include="Fence.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalHandler.h" />
@@ -116,6 +121,7 @@
     <ClInclude Include="Mountain.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Pipe.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="QuadNode.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Sprite.h" />
