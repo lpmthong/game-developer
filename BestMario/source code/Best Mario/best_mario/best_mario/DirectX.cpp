@@ -33,6 +33,7 @@ void DirectX::Init(HINSTANCE hInstance){
 	InitWindow();
 	InitDirectX();
 	InitSpriteHandler();
+	InitKeyBoard();
 }
 
 void DirectX::InitWindow(){
@@ -103,6 +104,52 @@ void DirectX::InitSpriteHandler(){
 	_d3ddv->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &_backBuffer);
 }
 
+void DirectX::InitKeyBoard(){
+	HRESULT hResult;
+	hResult = DirectInput8Create(GetModuleHandle(NULL), DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&di, NULL);
+	if (hResult != DI_OK){
+		return;
+		trace(L"Can't create input(1)!");
+	}
+
+	hResult = di->CreateDevice(GUID_SysKeyboard, &keyboard, NULL);
+	if (hResult != DI_OK){
+		return;
+		trace(L"Can't create input(2)!");
+	}
+
+	hResult = keyboard->SetDataFormat(&c_dfDIKeyboard);
+	if (hResult != DI_OK){
+		return;
+		trace(L"Can't create input(3)!");
+	}
+
+	hResult = keyboard->SetCooperativeLevel(_hWnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
+	if (hResult != DI_OK){
+		return;
+		trace(L"Can't create input(4)!");
+	}
+
+	DIPROPDWORD		dipdw;
+	dipdw.diph.dwSize		=	sizeof(DIPROPDWORD);
+	dipdw.diph.dwHeaderSize =	sizeof(DIPROPHEADER);
+	dipdw.diph.dwHow		=	DIPH_DEVICE;
+	dipdw.diph.dwObj		=	0;
+	dipdw.dwData			=	KEYBOARD_BUFFER_SIZE;
+
+	hResult = keyboard->SetProperty(DIPROP_BUFFERSIZE, &dipdw.diph);
+	if (hResult != DI_OK){
+		return;
+		trace(L"Can't create input(5)!");
+	}
+
+	hResult = keyboard->Acquire();
+	if (hResult != DI_OK){
+		return;
+		trace(L"Can't create input(6)!");
+	}
+}
+
 LPDIRECT3DTEXTURE9 DirectX::LoadTextureFromFile(char* path, D3DCOLOR transkey){
 	HRESULT hResult = NULL;
 	LPDIRECT3DTEXTURE9 texture;
@@ -152,6 +199,22 @@ LRESULT CALLBACK DirectX::WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM
 void DirectX::Release(){
 	if (_d3ddv!=NULL) _d3ddv->Release();
 	if (_d3d!=NULL) _d3d->Release();
+}
+
+void DirectX::ProcessKeyBoard(){
+
+	keyboard->GetDeviceState(sizeof(keyStates), keyStates);
+	if (IsKeyDown(DIK_ESCAPE))
+	{		
+		PostMessage(_hWnd,WM_QUIT,0,0);
+	}
+	dwElements = KEYBOARD_BUFFER_SIZE;
+	keyboard->GetDeviceData(sizeof(DIDEVICEOBJECTDATA), keyEvents, &dwElements, 0);
+
+}
+
+int DirectX::IsKeyDown(int KeyCode){
+	return (keyStates[KeyCode] & 0x80) > 0;
 }
 
 bool DirectX::BeginScene(){

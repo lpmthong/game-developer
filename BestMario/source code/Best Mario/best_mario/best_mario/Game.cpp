@@ -22,6 +22,8 @@ void Game::Init(){
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
 	ListTexture::CreateAllTexture();
 	
+	GlobalHandler::player->Init(10, 0, 4);
+	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);
 	GlobalHandler::RestartMap();
 }
 
@@ -44,8 +46,50 @@ bool Game::Run(){
 
 void Game::Update(){
 	GlobalHandler::quadTree->UpdateScreen();
+	GlobalHandler::dynamicObjManager->Update();
 }
 
 void Game::Render(){
 	GlobalHandler::quadTree->RenderScreen();
+	GlobalHandler::dynamicObjManager->Render();
 }
+
+void Game::ProcessKeyboard(){
+	GlobalHandler::_directX->ProcessKeyBoard();
+	for( DWORD i = 0; i < GlobalHandler::_directX->dwElements; i++ )
+	{
+		int keyCode = GlobalHandler::_directX->keyEvents[i].dwOfs;
+		int keyState = GlobalHandler::_directX->keyEvents[i].dwData;
+		if ( (keyState & 0x80) > 0)
+		{
+			OnKeyDown(keyCode);			
+		}
+		else 
+		{
+			OnKeyUp(keyCode);
+		}
+	}
+}
+
+void Game::ProcessInput(){
+	GlobalHandler::player->ProcessInput();
+}
+
+void Game::OnKeyDown(int keyCode){
+	switch (GlobalHandler::gameState)
+	{
+	case GS_OPTION:
+		break;
+	case GS_MENU:
+		break;
+	case GS_CHANGEMAP:
+		break;
+	case GS_STARTGAMEOPTIONS:
+		break;
+	case GS_GAMEPLAY:
+		GlobalHandler::player->OnKeyDown(keyCode);
+		break;
+	}
+}
+
+void Game::OnKeyUp(int keyCode){}

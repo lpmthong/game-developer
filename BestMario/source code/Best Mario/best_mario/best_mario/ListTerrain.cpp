@@ -56,8 +56,7 @@ void ListTerrain::InitTerrain(int level){
 	
 	GlobalHandler::backGroundColor = arr_terrain[2];
 	for (int i = 3; i < arr_terrain_index ; i += 3)
-	{
-		trace(L"%d", arr_terrain[i]);
+	{		
 		if (arr_terrain[i] == CLOUD)
 		{
 			Cloud* cloud = new Cloud(arr_terrain[i+1], arr_terrain[i+2]);
@@ -78,7 +77,6 @@ void ListTerrain::InitTerrain(int level){
 			Ground* ground = new Ground(arr_terrain[i+1], arr_terrain[i+2]);
 			ground->setType(arr_terrain[i]);
 			GlobalHandler::quadTree->AddNode(ground);
-			trace(L"%d , %d", arr_terrain[i+1], arr_terrain[i+2]);
 		}
 		else if (arr_terrain[i] == PIPE_CAP || arr_terrain[i] == PIPE_BODY)
 		{
@@ -104,6 +102,12 @@ void ListTerrain::InitTerrain(int level){
 		{
 			LowTree* lowTree = new LowTree(arr_terrain[i+1], arr_terrain[i+2]);
 			GlobalHandler::quadTree->AddNode(lowTree);
+		}
+		else if (arr_terrain[i] == CHECKPOINT )
+		{
+			GlobalHandler::checkpoint[0][GlobalHandler::checkpoint_index] = arr_terrain[i+1];
+			GlobalHandler::checkpoint[1][GlobalHandler::checkpoint_index] = arr_terrain[i+2];
+			GlobalHandler::checkpoint_index++;
 		}
 	}
 

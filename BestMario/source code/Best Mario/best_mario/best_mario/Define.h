@@ -62,3 +62,17 @@
 #define FALLING_CROSS 44
 #define GROUNDUNDERMUSHROOM 45
 #define BRICK_BONUS_STAR 46
+
+//Game State.
+#define GS_MENU		0
+#define GS_GAMEPLAY	1
+#define GS_GAMEOVER 2
+#define GS_OPTION 3
+#define GS_CHANGEMAP 4
+#define GS_STARTGAMEOPTIONS 5
+
+//Death status
+#define ALIVE 0
+#define DYING 1
+#define INHELL 2
+#define DYING2 3

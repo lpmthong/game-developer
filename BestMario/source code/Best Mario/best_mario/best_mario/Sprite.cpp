@@ -22,15 +22,35 @@ void Sprite::Next(){
 }
 
 void Sprite::Next(int start, int end){
-
+	if (_index < start || _index > end)
+		_index = start;
+	else
+		_index += 1;
 }
 
 void Sprite::Reset(){
 	_index = 0;
 }
 
+void Sprite::Reset(LPDIRECT3DTEXTURE9 texture, int width, int height, int count, int spritePerRow){
+	_texture		 = texture;
+	_width			 = width;
+	_height			 = height;
+	_count			 = count;
+	_spritePerRow	 = spritePerRow;
+	_index			 = 0;
+	_distanceFromTop = 1;
+}
+
+
 void Sprite::setIndex(int i){
 	_index = i;
+}
+
+void Sprite::setIndex( int start, int end )
+{
+	if (_index < start || _index > end)
+		_index = start;
 }
 
 int Sprite::getIndex(){

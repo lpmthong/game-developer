@@ -3,11 +3,17 @@
 
 DirectX				*GlobalHandler::_directX			= new DirectX();
 QuadTree			*GlobalHandler::quadTree			= new QuadTree(MAP_WIDTH, MAP_WIDTH);
+DynamicObjManager	*GlobalHandler::dynamicObjManager	= new DynamicObjManager();
+Player				*GlobalHandler::player				= new Player();
 int		             GlobalHandler::backGroundColor		= BLUE;
 bool	             GlobalHandler::quitGame			= false;
 
 RECT	             GlobalHandler::screen;
-int					GlobalHandler::mapLevel				= 1;
+int					 GlobalHandler::mapLevel			= 1;
+int					 GlobalHandler::gameState			= GS_GAMEPLAY;
+
+int					 GlobalHandler::checkpoint[2][10];
+int					 GlobalHandler::checkpoint_index	= 0;
 
 GlobalHandler::GlobalHandler(void){}
 
@@ -34,6 +40,16 @@ bool GlobalHandler::CheckRectInRect( RECT mainRect, RECT checkRect )
 	return false;
 }
 
+void GlobalHandler::UpdateScreen(){
+
+	if (GlobalHandler::player->rectDraw.left > SCREEN_WIDTH / 2)
+	{
+		GlobalHandler::screen.left = GlobalHandler::player->rectDraw.left - SCREEN_WIDTH / 2;
+		GlobalHandler::screen.right = GlobalHandler::screen.left + SCREEN_WIDTH;
+	}
+
+}
+
 void GlobalHandler::RestartMap()
 {
 	GlobalHandler::screen.left		= 0;
@@ -46,3 +62,4 @@ void GlobalHandler::RestartMap()
 	
 	trace(L"void GlobalHandler::RestartMap()");
 }
+

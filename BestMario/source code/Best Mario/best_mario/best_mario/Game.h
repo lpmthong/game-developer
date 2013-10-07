@@ -30,4 +30,11 @@ public:
 	bool Run();
 	void Update();
 	void Render();
+
+	void ProcessKeyboard();
+	void ProcessInput();
+
+private:
+	void OnKeyDown(int keyCode);
+	void OnKeyUp(int keyCode);
 };

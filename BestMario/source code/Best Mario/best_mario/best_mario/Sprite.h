@@ -21,7 +21,9 @@ public:
 	void Next(int start, int end);
 
 	void Reset();
+	void Reset(LPDIRECT3DTEXTURE9 texture, int width, int height, int count, int spritePerRow);
 	void setIndex(int i);
+	void setIndex(int start, int end);
 	int	 getIndex();
 	void setDistanceFromTop(int d);
 	RECT InitRenderRect();

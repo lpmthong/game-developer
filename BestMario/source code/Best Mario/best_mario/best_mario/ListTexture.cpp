@@ -63,6 +63,23 @@ int					ListTexture::TT_OUT_COIN_COUNT;
 int					ListTexture::TT_OUT_COIN_SPRITEPERROW;
 int					ListTexture::TT_OUT_COIN_ANIMATED_RATE;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_MARIO_KID;
+int					ListTexture::TT_MARIO_KID_WIDTH;
+int					ListTexture::TT_MARIO_KID_HEIGHT;
+int					ListTexture::TT_MARIO_KID_COUNT;
+int					ListTexture::TT_MARIO_KID_SPRITEPERROW;
+int					ListTexture::TT_MARIO_KID_ANIMATED_RATE;
+int					ListTexture::TT_MARIO_KID_MOVING_LEFT_START;
+int					ListTexture::TT_MARIO_KID_MOVING_LEFT_END;
+int					ListTexture::TT_MARIO_KID_MOVING_RIGHT_START;
+int					ListTexture::TT_MARIO_KID_MOVING_RIGHT_END;
+int					ListTexture::TT_MARIO_KID_JUMPING_LEFT_START;
+int					ListTexture::TT_MARIO_KID_JUMPING_LEFT_END;
+int					ListTexture::TT_MARIO_KID_JUMPING_RIGHT_START;
+int					ListTexture::TT_MARIO_KID_JUMPING_RIGHT_END;
+int					ListTexture::TT_MARIO_KID_DEATH_START;
+int					ListTexture::TT_MARIO_KID_DEATH_END;
+
 ListTexture::ListTexture(void){}
 
 ListTexture::~ListTexture(void){}
@@ -131,4 +148,21 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_OUT_COIN_COUNT						= 2;
 	ListTexture::TT_OUT_COIN_SPRITEPERROW				= 2;
 	ListTexture::TT_OUT_COIN_ANIMATED_RATE				= 100;
+
+	ListTexture::TT_MARIO_KID							= GlobalHandler::_directX->LoadTextureFromFile("Media\\mario.bmp", 0);;
+	ListTexture::TT_MARIO_KID_WIDTH						= 32;
+	ListTexture::TT_MARIO_KID_HEIGHT					= 32;
+	ListTexture::TT_MARIO_KID_COUNT						= 7;
+	ListTexture::TT_MARIO_KID_SPRITEPERROW				= 2;
+	ListTexture::TT_MARIO_KID_ANIMATED_RATE				= 200;
+	ListTexture::TT_MARIO_KID_MOVING_LEFT_START			= 2;
+	ListTexture::TT_MARIO_KID_MOVING_LEFT_END			= 3;
+	ListTexture::TT_MARIO_KID_MOVING_RIGHT_START		= 0;
+	ListTexture::TT_MARIO_KID_MOVING_RIGHT_END			= 1;
+	ListTexture::TT_MARIO_KID_JUMPING_LEFT_START		= 5;
+	ListTexture::TT_MARIO_KID_JUMPING_LEFT_END			= 5;
+	ListTexture::TT_MARIO_KID_JUMPING_RIGHT_START		= 4;
+	ListTexture::TT_MARIO_KID_JUMPING_RIGHT_END			= 4;
+	ListTexture::TT_MARIO_KID_DEATH_START				= 6;
+	ListTexture::TT_MARIO_KID_DEATH_END					= 6;
 }

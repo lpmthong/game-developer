@@ -2,11 +2,14 @@
 
 #include <d3d9.h>
 #include <d3dx9.h>
+#include <dinput.h>
 
 #include "Define.h"
-//////////////////////////////////////////////////////////////////////////
-///Khai bao class theo thu tu cac ham trong class de truc quan hon
-//////////////////////////////////////////////////////////////////////////
+
+#define DIRECTINPUT_VERSION 0x0800
+//#define KEY_DOWN(code) ( IsKeyDown(code) )
+#define KEYBOARD_BUFFER_SIZE 1024
+
 class DirectX{
 
 public:
@@ -20,6 +23,9 @@ private:
 
 	LPDIRECT3D9 _d3d;
 
+	LPDIRECTINPUT8			di;
+	LPDIRECTINPUTDEVICE8		keyboard;
+
 public:
 	HWND _hWnd;
 	LPDIRECT3DDEVICE9 _d3ddv;
@@ -29,6 +35,9 @@ public:
 
 	LPD3DXSPRITE _spriteHandler;
 
+	BYTE keyStates[256];
+	DIDEVICEOBJECTDATA		keyEvents[ KEYBOARD_BUFFER_SIZE ];
+	DWORD					dwElements;
 public:
 	void Init(HINSTANCE hInstance);
 
@@ -36,10 +45,13 @@ private:
 	void InitWindow();
 	void InitDirectX();
 	void InitSpriteHandler();
+	void InitKeyBoard();
 	static LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 public:
 	void Release();
+	void ProcessKeyBoard();
+	int	 IsKeyDown(int KeyCode);
 
 public:
 	LPDIRECT3DTEXTURE9 LoadTextureFromFile(char* path, D3DCOLOR transkey);
