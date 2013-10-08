@@ -1,5 +1,4 @@
 #pragma once
-
 #include "DirectX.h"
 #include "QuadTree.h"
 #include "trace.h"

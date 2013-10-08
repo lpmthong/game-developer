@@ -20,6 +20,7 @@ void Player::Init(int mode,int LastCheckPoint, int Life){
 
 	onGround = false;
 	jumping = false;
+	oldDirect = true;
 	trace(L"Player::Init(int mode,int LastCheckPoint, int Life)");
 }
 
@@ -84,10 +85,12 @@ void Player::Update(){
 		y = 470;
 		Vy = 0;
 		jumping = false;
+		onGround = true;
 	}
 	UpdateRectReal(x, y);
+	UpdateSprite();
 	GlobalHandler::UpdateScreen();
-	trace(L"X: %d , Y: %d", x, y);
+	//trace(L"X: %d , Y: %d", x, y);
 }
 
 void Player::ProcessInput(){
@@ -96,12 +99,14 @@ void Player::ProcessInput(){
 	{
 		Vx = -30;
 		Vx_old = Vx;
+		oldDirect = false;
 		//trace(L"DIK_LEFT");
 	}
 	else if (GlobalHandler::_directX->IsKeyDown(DIK_RIGHT))
 	{
 		Vx = 30;
 		Vx_old = Vx;
+		oldDirect = true;
 		//trace(L"DIK_RIGHT");
 	} else {
 		Vx = 0;
@@ -116,11 +121,73 @@ void Player::OnKeyDown(int keyCode){
 			{
 				onGround = false;
 				jumping = true;
-				Vy -= 100;
+				Vy -= 90;
 			}			
 			break;
 	}
 }
 
-void Player::UpdateSprite(){}
+void Player::UpdateSprite()
+{	
+	DWORD now = GetTickCount();
+	//animatedRate = 10 - abs(Vx) / 2 + 5;
+	//bool update = (flag == true)?true:(now - lastAnimate > 1000 / animatedRate);
+
+	if (now - lastAnimate > 1000 / animatedRate)
+	{
+		lastAnimate = now;
+		if (onGround == false || jumping == true)
+		{
+			if (oldDirect == true)
+				sprite->Next(frame_jumping_right_start,frame_jumping_right_end);
+			else if (oldDirect == false)
+				sprite->Next(frame_jumping_left_start, frame_jumping_left_end);
+		} 
+		else 
+		{
+			if (Vx > 0)
+				sprite->Next(frame_moving_right_start, frame_moving_right_end);
+			else
+				if (Vx < 0)
+					sprite->Next(frame_moving_left_start, frame_moving_left_end);
+				else
+					if (oldDirect == true)
+						sprite->Next(frame_moving_right_start, frame_moving_right_start);
+					else
+						sprite->Next(frame_moving_left_start, frame_moving_left_start);
+		}
+	}
+}
+
+//void Player::UpdateSprite(bool flag){
+//
+//	DWORD now = GetTickCount();
+//	//animatedRate = 10 - abs(Vx) / 2 + 5;
+//
+//	bool update = (flag == true)?true:(now - lastAnimate > 1000 / animatedRate);
+//
+//	if (update)
+//	{
+//		lastAnimate = now;
+//		if (onGround == false || jumping == true)
+//		{
+//			if (oldDirect == true)
+//				sprite->Next(frame_jumping_right_start,frame_jumping_right_end);
+//			else if (oldDirect == false)
+//				sprite->Next(frame_jumping_left_start, frame_jumping_left_end);
+//		} 
+//		else 
+//		{
+//			if (Vx > 0)
+//				sprite->Next(frame_moving_right_start, frame_moving_right_start);
+//			else if (Vx < 0)
+//				sprite->Next(frame_moving_left_start, frame_moving_left_start);
+//				else if (oldDirect == true)
+//						sprite->Next(frame_moving_right_start, frame_moving_right_start);
+//					else
+//						sprite->Next(frame_moving_left_start, frame_moving_left_start);
+//		}
+//	}
+//
+//}
 
