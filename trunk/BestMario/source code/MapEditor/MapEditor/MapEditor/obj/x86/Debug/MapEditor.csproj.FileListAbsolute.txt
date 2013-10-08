@@ -1,0 +1,7 @@
+C:\Users\Thông\Desktop\C# Projects\MapEditor\MapEditor\bin\Debug\MapEditor.exe
+C:\Users\Thông\Desktop\C# Projects\MapEditor\MapEditor\bin\Debug\MapEditor.pdb
+C:\Users\Thông\Desktop\C# Projects\MapEditor\MapEditor\obj\x86\Debug\MapEditor.Properties.Resources.resources
+C:\Users\Thông\Desktop\C# Projects\MapEditor\MapEditor\obj\x86\Debug\MapEditor.csproj.GenerateResource.Cache
+C:\Users\Thông\Desktop\C# Projects\MapEditor\MapEditor\obj\x86\Debug\MapEditor.exe
+C:\Users\Thông\Desktop\C# Projects\MapEditor\MapEditor\obj\x86\Debug\MapEditor.pdb
+C:\Users\Thông\Desktop\C# Projects\MapEditor\MapEditor\obj\x86\Debug\MapEditor.frmMain.resources
