@@ -22,10 +22,12 @@ void Sprite::Next(){
 }
 
 void Sprite::Next(int start, int end){
+	
 	if (_index < start || _index > end)
 		_index = start;
 	else
-		_index += 1;
+		_index = (_index + (end - start + 1) + 1) % (end - start + 1) + start;
+	trace(L"Next(int s, int e) , index = %d", _index);
 }
 
 void Sprite::Reset(){

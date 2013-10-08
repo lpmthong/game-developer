@@ -154,7 +154,7 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_MARIO_KID_HEIGHT					= 32;
 	ListTexture::TT_MARIO_KID_COUNT						= 7;
 	ListTexture::TT_MARIO_KID_SPRITEPERROW				= 2;
-	ListTexture::TT_MARIO_KID_ANIMATED_RATE				= 200;
+	ListTexture::TT_MARIO_KID_ANIMATED_RATE				= 30; // 200
 	ListTexture::TT_MARIO_KID_MOVING_LEFT_START			= 2;
 	ListTexture::TT_MARIO_KID_MOVING_LEFT_END			= 3;
 	ListTexture::TT_MARIO_KID_MOVING_RIGHT_START		= 0;
