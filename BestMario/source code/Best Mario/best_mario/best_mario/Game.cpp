@@ -21,10 +21,11 @@ void Game::Init(){
 	GlobalHandler::screen.right		= SCREEN_WIDTH;
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
 	ListTexture::CreateAllTexture();
-	
+	GlobalHandler::RestartMap();
+
 	GlobalHandler::player->Init(10, 0, 4);
 	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);
-	GlobalHandler::RestartMap();
+	
 }
 
 bool Game::Run(){
