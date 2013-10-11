@@ -31,21 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnMap = new System.Windows.Forms.Panel();
-            this.pbMap = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.posX = new System.Windows.Forms.Label();
-            this.posY = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pbBonusStar = new System.Windows.Forms.PictureBox();
             this.pbDelete = new System.Windows.Forms.PictureBox();
             this.pbHiddenLife = new System.Windows.Forms.PictureBox();
@@ -57,6 +42,7 @@
             this.pbItem_GreenMusrom = new System.Windows.Forms.PictureBox();
             this.pbItem_Flower = new System.Windows.Forms.PictureBox();
             this.pbItem_Coin = new System.Windows.Forms.PictureBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pbFallingCross = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundUnder = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundRight = new System.Windows.Forms.PictureBox();
@@ -73,16 +59,30 @@
             this.pbGrassMid = new System.Windows.Forms.PictureBox();
             this.pbGrassRight = new System.Windows.Forms.PictureBox();
             this.pbDesert = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pbFence = new System.Windows.Forms.PictureBox();
             this.pbMountain = new System.Windows.Forms.PictureBox();
             this.pbGrass = new System.Windows.Forms.PictureBox();
             this.pbTree_Hight = new System.Windows.Forms.PictureBox();
             this.pbTree_Low = new System.Windows.Forms.PictureBox();
             this.pbCloud = new System.Windows.Forms.PictureBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pbRedTurle = new System.Windows.Forms.PictureBox();
             this.pbPirhanaPlant = new System.Windows.Forms.PictureBox();
             this.pbTurleEnemy = new System.Windows.Forms.PictureBox();
             this.pbMushRoomEnemy = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnMap = new System.Windows.Forms.Panel();
+            this.pbMap = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.posX = new System.Windows.Forms.Label();
+            this.posY = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbMapLevel2 = new System.Windows.Forms.TextBox();
             this.tbMapLevel1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -97,12 +97,6 @@
             this.btGenerate = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.pnMap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHiddenLife)).BeginInit();
@@ -114,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_GreenMusrom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFallingCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).BeginInit();
@@ -130,16 +125,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDesert)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMountain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTree_Hight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRedTurle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPirhanaPlant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTurleEnemy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomEnemy)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.pnMap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMap)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,180 +175,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Brick";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.pbFallingCross);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundUnder);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundRight);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundMiddle);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundLeft);
-            this.tabPage2.Controls.Add(this.pbEndmap);
-            this.tabPage2.Controls.Add(this.pbCheckPoint);
-            this.tabPage2.Controls.Add(this.pbPipeTop);
-            this.tabPage2.Controls.Add(this.pbCross);
-            this.tabPage2.Controls.Add(this.pbSoilRight);
-            this.tabPage2.Controls.Add(this.pbSoilLeft);
-            this.tabPage2.Controls.Add(this.pbPipeUnder);
-            this.tabPage2.Controls.Add(this.pbGrassLeft);
-            this.tabPage2.Controls.Add(this.pbGrassMid);
-            this.tabPage2.Controls.Add(this.pbGrassRight);
-            this.tabPage2.Controls.Add(this.pbDesert);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(317, 359);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Terrain";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.pbFence);
-            this.tabPage3.Controls.Add(this.pbMountain);
-            this.tabPage3.Controls.Add(this.pbGrass);
-            this.tabPage3.Controls.Add(this.pbTree_Hight);
-            this.tabPage3.Controls.Add(this.pbTree_Low);
-            this.tabPage3.Controls.Add(this.pbCloud);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(317, 359);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "View";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.pbRedTurle);
-            this.tabPage4.Controls.Add(this.pbPirhanaPlant);
-            this.tabPage4.Controls.Add(this.pbTurleEnemy);
-            this.tabPage4.Controls.Add(this.pbMushRoomEnemy);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(317, 359);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Enemy";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
-            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1029, 25);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openFileToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // openFileToolStripMenuItem
-            // 
-            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openFileToolStripMenuItem.Text = "New";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // pnMap
-            // 
-            this.pnMap.AutoScroll = true;
-            this.pnMap.BackColor = System.Drawing.Color.Transparent;
-            this.pnMap.Controls.Add(this.pbMap);
-            this.pnMap.Location = new System.Drawing.Point(345, 58);
-            this.pnMap.Name = "pnMap";
-            this.pnMap.Size = new System.Drawing.Size(672, 620);
-            this.pnMap.TabIndex = 2;
-            // 
-            // pbMap
-            // 
-            this.pbMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
-            this.pbMap.Location = new System.Drawing.Point(0, 0);
-            this.pbMap.Name = "pbMap";
-            this.pbMap.Size = new System.Drawing.Size(672, 600);
-            this.pbMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMap.TabIndex = 0;
-            this.pbMap.TabStop = false;
-            this.pbMap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbMap_MouseMove);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(342, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "X:";
-            // 
-            // posX
-            // 
-            this.posX.AutoSize = true;
-            this.posX.BackColor = System.Drawing.Color.Transparent;
-            this.posX.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.posX.ForeColor = System.Drawing.Color.Red;
-            this.posX.Location = new System.Drawing.Point(366, 40);
-            this.posX.Name = "posX";
-            this.posX.Size = new System.Drawing.Size(14, 15);
-            this.posX.TabIndex = 4;
-            this.posX.Text = "0";
-            // 
-            // posY
-            // 
-            this.posY.AutoSize = true;
-            this.posY.BackColor = System.Drawing.Color.Transparent;
-            this.posY.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.posY.ForeColor = System.Drawing.Color.Red;
-            this.posY.Location = new System.Drawing.Point(444, 40);
-            this.posY.Name = "posY";
-            this.posY.Size = new System.Drawing.Size(14, 15);
-            this.posY.TabIndex = 6;
-            this.posY.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(420, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Y:";
             // 
             // pbBonusStar
             // 
@@ -470,6 +296,32 @@
             this.pbItem_Coin.TabIndex = 7;
             this.pbItem_Coin.TabStop = false;
             this.pbItem_Coin.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.pbFallingCross);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundUnder);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundRight);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundMiddle);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundLeft);
+            this.tabPage2.Controls.Add(this.pbEndmap);
+            this.tabPage2.Controls.Add(this.pbCheckPoint);
+            this.tabPage2.Controls.Add(this.pbPipeTop);
+            this.tabPage2.Controls.Add(this.pbCross);
+            this.tabPage2.Controls.Add(this.pbSoilRight);
+            this.tabPage2.Controls.Add(this.pbSoilLeft);
+            this.tabPage2.Controls.Add(this.pbPipeUnder);
+            this.tabPage2.Controls.Add(this.pbGrassLeft);
+            this.tabPage2.Controls.Add(this.pbGrassMid);
+            this.tabPage2.Controls.Add(this.pbGrassRight);
+            this.tabPage2.Controls.Add(this.pbDesert);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(317, 359);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Terrain";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // pbFallingCross
             // 
@@ -647,6 +499,22 @@
             this.pbDesert.TabStop = false;
             this.pbDesert.Click += new System.EventHandler(this.pbBlock_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pbFence);
+            this.tabPage3.Controls.Add(this.pbMountain);
+            this.tabPage3.Controls.Add(this.pbGrass);
+            this.tabPage3.Controls.Add(this.pbTree_Hight);
+            this.tabPage3.Controls.Add(this.pbTree_Low);
+            this.tabPage3.Controls.Add(this.pbCloud);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(317, 359);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "View";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // pbFence
             // 
             this.pbFence.Image = ((System.Drawing.Image)(resources.GetObject("pbFence.Image")));
@@ -713,6 +581,20 @@
             this.pbCloud.TabStop = false;
             this.pbCloud.Click += new System.EventHandler(this.pbBlock_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.pbRedTurle);
+            this.tabPage4.Controls.Add(this.pbPirhanaPlant);
+            this.tabPage4.Controls.Add(this.pbTurleEnemy);
+            this.tabPage4.Controls.Add(this.pbMushRoomEnemy);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(317, 359);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Enemy";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // pbRedTurle
             // 
             this.pbRedTurle.Image = ((System.Drawing.Image)(resources.GetObject("pbRedTurle.Image")));
@@ -756,6 +638,126 @@
             this.pbMushRoomEnemy.TabIndex = 8;
             this.pbMushRoomEnemy.TabStop = false;
             this.pbMushRoomEnemy.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1029, 25);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 21);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // pnMap
+            // 
+            this.pnMap.AutoScroll = true;
+            this.pnMap.BackColor = System.Drawing.Color.Transparent;
+            this.pnMap.Controls.Add(this.pbMap);
+            this.pnMap.Location = new System.Drawing.Point(345, 58);
+            this.pnMap.Name = "pnMap";
+            this.pnMap.Size = new System.Drawing.Size(672, 620);
+            this.pnMap.TabIndex = 2;
+            // 
+            // pbMap
+            // 
+            this.pbMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.pbMap.Location = new System.Drawing.Point(0, 0);
+            this.pbMap.Name = "pbMap";
+            this.pbMap.Size = new System.Drawing.Size(672, 600);
+            this.pbMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMap.TabIndex = 0;
+            this.pbMap.TabStop = false;
+            this.pbMap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbMap_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(342, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "X:";
+            // 
+            // posX
+            // 
+            this.posX.AutoSize = true;
+            this.posX.BackColor = System.Drawing.Color.Transparent;
+            this.posX.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posX.ForeColor = System.Drawing.Color.Red;
+            this.posX.Location = new System.Drawing.Point(366, 40);
+            this.posX.Name = "posX";
+            this.posX.Size = new System.Drawing.Size(14, 15);
+            this.posX.TabIndex = 4;
+            this.posX.Text = "0";
+            // 
+            // posY
+            // 
+            this.posY.AutoSize = true;
+            this.posY.BackColor = System.Drawing.Color.Transparent;
+            this.posY.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.posY.ForeColor = System.Drawing.Color.Red;
+            this.posY.Location = new System.Drawing.Point(444, 40);
+            this.posY.Name = "posY";
+            this.posY.Size = new System.Drawing.Size(14, 15);
+            this.posY.TabIndex = 6;
+            this.posY.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(420, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Y:";
             // 
             // tbMapLevel2
             // 
@@ -871,6 +873,7 @@
             this.btDone.Text = "Done";
             this.btDone.UseVisualStyleBackColor = true;
             this.btDone.Visible = false;
+            this.btDone.Click += new System.EventHandler(this.btDone_Click);
             // 
             // btGenerate
             // 
@@ -880,6 +883,7 @@
             this.btGenerate.TabIndex = 20;
             this.btGenerate.Text = "Generate";
             this.btGenerate.UseVisualStyleBackColor = true;
+            this.btGenerate.Click += new System.EventHandler(this.btGenerate_Click);
             // 
             // frmMain
             // 
@@ -905,6 +909,7 @@
             this.Controls.Add(this.pnMap);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
@@ -914,16 +919,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.pnMap.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHiddenLife)).EndInit();
@@ -935,6 +930,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_GreenMusrom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFallingCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).EndInit();
@@ -951,16 +948,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDesert)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFence)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMountain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTree_Hight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRedTurle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPirhanaPlant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTurleEnemy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomEnemy)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.pnMap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -975,7 +980,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;

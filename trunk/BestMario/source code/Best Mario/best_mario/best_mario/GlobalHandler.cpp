@@ -2,7 +2,7 @@
 #include "ListTerrain.h"
 
 DirectX				*GlobalHandler::_directX			= new DirectX();
-QuadTree			*GlobalHandler::quadTree			= new QuadTree(MAP_WIDTH, MAP_WIDTH);
+QuadTree			*GlobalHandler::quadTree			;
 DynamicObjManager	*GlobalHandler::dynamicObjManager	= new DynamicObjManager();
 Player				*GlobalHandler::player				= new Player();
 int		             GlobalHandler::backGroundColor		= BLUE;
@@ -57,7 +57,8 @@ void GlobalHandler::RestartMap()
 	GlobalHandler::screen.right		= SCREEN_WIDTH;
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
 
-	GlobalHandler::quadTree->Reset();
+	//GlobalHandler::quadTree->Reset();
+	GlobalHandler::dynamicObjManager->Release();
 	ListTerrain::InitTerrain(GlobalHandler::mapLevel);
 	
 	trace(L"void GlobalHandler::RestartMap()");

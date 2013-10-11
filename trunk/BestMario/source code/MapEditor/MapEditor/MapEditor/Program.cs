@@ -14,10 +14,9 @@ namespace MapEditor
         [STAThread]
         static void Main()
         {
-            var t = Task.Factory.StartNew(() => Application.EnableVisualStyles());
-            var t1 = Task.Factory.StartNew(() => Application.SetCompatibleTextRenderingDefault(false));
-            var t2 = Task.Factory.StartNew(() => Application.Run(new frmMain()));
-            t2.Wait();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmMain());            
         }
     }
 }

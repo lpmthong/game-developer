@@ -50,12 +50,15 @@ void ListTerrain::LoadFile(int level){
 void ListTerrain::InitTerrain(int level){
 	
 	
+
 	ListTerrain::arr_terrain_index = 0;
 	
 	ListTerrain::LoadFile(level);
 	
-	GlobalHandler::backGroundColor = arr_terrain[2];
-	for (int i = 3; i < arr_terrain_index ; i += 3)
+	GlobalHandler::quadTree = new QuadTree(arr_terrain[0], arr_terrain[0]);
+
+	GlobalHandler::backGroundColor = arr_terrain[3];
+	for (int i = 4; i < arr_terrain_index ; i += 3)
 	{		
 		if (arr_terrain[i] == CLOUD)
 		{
