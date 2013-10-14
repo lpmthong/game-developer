@@ -104,6 +104,35 @@ void Sprite::Render(LPDIRECT3DSURFACE9 target, int x, int y)
 	GlobalHandler::_directX->_spriteHandler->End();
 }
 
+void Sprite::Render(LPDIRECT3DSURFACE9 target, int x, int y, int vpx, int vpy)
+{
+	RECT rect;
+	rect = InitRenderRect();
+	GlobalHandler::_directX->_spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+
+	D3DXVECTOR3 position((float)x, (float)y, 0);
+
+	D3DXMATRIX mt;
+	D3DXMatrixIdentity(&mt);
+	mt._22 = -1.0f;
+	mt._41 = -vpx;
+	mt._42 = vpy;
+
+	D3DXVECTOR4 vp_pos;
+	D3DXVec3Transform(&vp_pos, &position, &mt);
+
+	D3DXVECTOR3 p(vp_pos.x + ((float)_width/2), vp_pos.y + ((float)_height/2), 0);//Ve tu tam thi no se bi lech ot doan x 
+	D3DXVECTOR3 center((float)_width/2, (float)_height/2, 0);
+
+	GlobalHandler::_directX->_spriteHandler->Draw(_texture,
+		&rect,
+		&center,
+		&p,
+		D3DCOLOR_XRGB(255,255,255));
+
+	GlobalHandler::_directX->_spriteHandler->End();
+}
+
 
 void Sprite::Render( LPDIRECT3DSURFACE9 target, int x, int y, int top )
 {
