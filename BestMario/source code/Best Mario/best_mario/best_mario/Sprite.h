@@ -30,6 +30,7 @@ public:
 
 	void Render(float x, float y);
 	void Render(LPDIRECT3DSURFACE9 target, int x, int y);
+	void Render(LPDIRECT3DSURFACE9 target, int x, int y, int vpx, int vpy);
 	void Render(LPDIRECT3DSURFACE9 target, int x, int y, int top);
 	void Render(LPDIRECT3DSURFACE9 target, int x, int y, int srcLeft, int srcTop, int srcRight, int srcBottom);
 };

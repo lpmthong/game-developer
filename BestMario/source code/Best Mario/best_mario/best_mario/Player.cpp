@@ -65,7 +65,7 @@ void Player::setKid(){
 void Player::Render(){
 
 	RECT screen = GlobalHandler::screen;
-	sprite->Render(GlobalHandler::_directX->_backBuffer, rectDraw.left - screen.left, rectDraw.top - screen.top);
+	sprite->Render(GlobalHandler::_directX->_backBuffer, rectDraw.left, rectDraw.top, screen.left, screen.bottom);
 
 }
 
@@ -78,11 +78,11 @@ void Player::Update(){
 	int y = rectReal.top;
 	x += Vx * t / 100;
 	y += Vy * t / 100;	
-	if (y < 470)
+	if (y > 88)
 	{
-		Vy += 10;
+		Vy -= 10;
 	} else {
-		y = 470;
+		y = 88;
 		Vy = 0;
 		jumping = false;
 		onGround = true;
@@ -121,7 +121,7 @@ void Player::OnKeyDown(int keyCode){
 			{
 				onGround = false;
 				jumping = true;
-				Vy -= 90;
+				Vy += 90;
 			}			
 			break;
 	}

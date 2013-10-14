@@ -27,7 +27,7 @@ void Object::Render(int xScreen, int yScreen){
 
 void Object::Render(){
 	RECT screen = GlobalHandler::screen;
-	sprite->Render(backbuffer, rectDraw.left - screen.left, rectDraw.top - screen.top);
+	sprite->Render(backbuffer, rectDraw.left, rectDraw.top, screen.left , screen.bottom);
 }
 
 void Object::UpdateRect(int left, int top, int width, int height){

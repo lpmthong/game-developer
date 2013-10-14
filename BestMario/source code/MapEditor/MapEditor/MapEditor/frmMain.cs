@@ -318,7 +318,7 @@ namespace MapEditor
                 if (pb.Name != "pbMap")
                 {
                     x = pb.Location.X;
-                    y = pb.Location.Y;
+                    y =pb.Location.Y;
                 }
 
                 if (bSnap)
@@ -330,16 +330,17 @@ namespace MapEditor
                 {
                     x += e.X;
                     y += e.Y;
-                }               
+                }
 
+                int yTemp = 600 - y;
                 posX.Text = x.ToString();
-                posY.Text = y.ToString();
+                posY.Text = yTemp.ToString();
 
                 TempObj.pictureBox.Location = new Point(x, y);
                 pbMap.Controls.Add(TempObj.pictureBox);
                 TempObj.pictureBox.BringToFront();
                 TempObj.x = x;
-                TempObj.y = y;
+                TempObj.y = yTemp;
             }            
         }
 
@@ -390,7 +391,7 @@ namespace MapEditor
                 pb.MouseMove += new MouseEventHandler(pbMap_MouseMove); // Them event vao thi moi de hinh khac len duoc
                 pb.Image = TempObj.pictureBox.Image;
                 pb.SizeMode = PictureBoxSizeMode.AutoSize;
-                pb.Location = new Point(TempObj.x, TempObj.y);
+                pb.Location = new Point(TempObj.x, 600 - TempObj.y);
                 pb.BringToFront();
                 pbMap.Controls.Add(pb);
             }
@@ -523,7 +524,7 @@ namespace MapEditor
             PictureBox pb = new PictureBox();
             pb.MouseMove += new MouseEventHandler(pbMap_MouseMove);            
             pb.SizeMode = PictureBoxSizeMode.AutoSize;
-            pb.Location = new Point(x, y);
+            pb.Location = new Point(x, 600 - y);
             pb.BringToFront();
 
             switch (kind)

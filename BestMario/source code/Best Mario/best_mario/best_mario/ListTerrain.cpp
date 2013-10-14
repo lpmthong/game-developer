@@ -48,8 +48,7 @@ void ListTerrain::LoadFile(int level){
 }
 
 void ListTerrain::InitTerrain(int level){
-	
-	
+		
 
 	ListTerrain::arr_terrain_index = 0;
 	
