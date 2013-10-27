@@ -13,10 +13,13 @@ void Player::Init(int mode,int LastCheckPoint, int Life){
 	InitFromFile(mode, LastCheckPoint, Life);
 	Vx = 0;
 	Vy = 0;
+	acceleration = 0;
 
 	animatedRate = ListTexture::TT_MARIO_KID_ANIMATED_RATE;
 	lastAnimate = GetTickCount();
 	lastUpdate = GetTickCount();
+
+	maxSpeed = 30;
 
 	onGround = false;
 	jumping = false;
@@ -31,7 +34,7 @@ void Player::InitFromFile(int mode,int LastCheckPoint, int Life){
 	//cai nay de khi nao lam cai checkpoint da
 	//UpdateRect(GlobalHandler::checkpoint[0][lastCheckPoint], GlobalHandler::checkpoint[1][lastCheckPoint]);
 	UpdateRect(15, 470);
-	trace(L"Player::InitFromFile(int mode,int LastCheckPoint, int Life)");
+	//trace(L"Player::InitFromFile(int mode,int LastCheckPoint, int Life)");
 }
 
 void Player::setKid(){
@@ -58,8 +61,7 @@ void Player::setKid(){
 	frame_jumping_right_start	= ListTexture::TT_MARIO_KID_JUMPING_RIGHT_START;
 	frame_jumping_right_end		= ListTexture::TT_MARIO_KID_JUMPING_RIGHT_END;
 
-	UpdateSprite();
-	trace(L"setKid()");
+	UpdateSprite();	
 }
 
 void Player::Render(){
@@ -76,8 +78,16 @@ void Player::Update(){
 	lastUpdate = now;
 	int x = rectReal.left;
 	int y = rectReal.top;
-	x += Vx * t / 100;
-	y += Vy * t / 100;	
+
+	Vx = Vx_old + acceleration * t / 100;
+	Vx = (Vx < maxSpeed)?Vx:maxSpeed;
+	Vx = (Vx > -maxSpeed)?Vx:(-maxSpeed);
+
+	int k = Vx * t / 100;
+
+	x += k;
+	y += Vy * t / 100;
+
 	if (y > 88)
 	{
 		Vy -= 10;
@@ -87,29 +97,49 @@ void Player::Update(){
 		jumping = false;
 		onGround = true;
 	}
+
+	Vy_old = Vy;
+	Vx_old = Vx;
+
 	UpdateRectReal(x, y);
 	UpdateSprite();
 	GlobalHandler::UpdateScreen();
-	//trace(L"X: %d , Y: %d", x, y);
+	trace(L"X: %d , Y: %d, A: %d, VX: %d, K:%d", x, y, acceleration, Vx, k);
 }
 
 void Player::ProcessInput(){
 
 	if (GlobalHandler::_directX->IsKeyDown(DIK_LEFT))
 	{
-		Vx = -30;
-		Vx_old = Vx;
+		if (onGround == false)
+		{
+			Vx_old = -25; // Khong co cai nay nhay len la khong sang phai trai dc
+			acceleration = 0;
+		}
+		else{
+			acceleration = -3;
+		}
+		//Vx = -30;
+		//Vx_old = Vx;
 		oldDirect = false;
-		//trace(L"DIK_LEFT");
 	}
 	else if (GlobalHandler::_directX->IsKeyDown(DIK_RIGHT))
 	{
-		Vx = 30;
-		Vx_old = Vx;
+		if (onGround == false)
+		{
+			Vx_old = 25;
+			acceleration = 0;
+		}
+		else
+		{
+			acceleration = 3;
+		}
+		//Vx = 30;
+		//Vx_old = Vx;
 		oldDirect = true;
-		//trace(L"DIK_RIGHT");
 	} else {
-		Vx = 0;
+		acceleration = 0;
+		Vx = Vx_old = 0;
 	}
 
 }
@@ -121,7 +151,7 @@ void Player::OnKeyDown(int keyCode){
 			{
 				onGround = false;
 				jumping = true;
-				Vy += 90;
+				Vy = 90;
 			}			
 			break;
 	}
@@ -130,9 +160,7 @@ void Player::OnKeyDown(int keyCode){
 void Player::UpdateSprite()
 {	
 	DWORD now = GetTickCount();
-	//animatedRate = 10 - abs(Vx) / 2 + 5;
-	//bool update = (flag == true)?true:(now - lastAnimate > 1000 / animatedRate);
-
+	
 	if (now - lastAnimate > 1000 / animatedRate)
 	{
 		lastAnimate = now;
@@ -158,36 +186,4 @@ void Player::UpdateSprite()
 		}
 	}
 }
-
-//void Player::UpdateSprite(bool flag){
-//
-//	DWORD now = GetTickCount();
-//	//animatedRate = 10 - abs(Vx) / 2 + 5;
-//
-//	bool update = (flag == true)?true:(now - lastAnimate > 1000 / animatedRate);
-//
-//	if (update)
-//	{
-//		lastAnimate = now;
-//		if (onGround == false || jumping == true)
-//		{
-//			if (oldDirect == true)
-//				sprite->Next(frame_jumping_right_start,frame_jumping_right_end);
-//			else if (oldDirect == false)
-//				sprite->Next(frame_jumping_left_start, frame_jumping_left_end);
-//		} 
-//		else 
-//		{
-//			if (Vx > 0)
-//				sprite->Next(frame_moving_right_start, frame_moving_right_start);
-//			else if (Vx < 0)
-//				sprite->Next(frame_moving_left_start, frame_moving_left_start);
-//				else if (oldDirect == true)
-//						sprite->Next(frame_moving_right_start, frame_moving_right_start);
-//					else
-//						sprite->Next(frame_moving_left_start, frame_moving_left_start);
-//		}
-//	}
-//
-//}
 

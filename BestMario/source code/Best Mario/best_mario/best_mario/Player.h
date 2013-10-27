@@ -9,6 +9,8 @@ public:
 	bool onGround; //Dang nam tren mat dat hay cai gi do.
 	bool jumping; //Co dang nhay hay khong?
 
+	int maxSpeed;
+
 	bool oldDirect; //Truoc khi dung thi no dang o huong nao true thi phai, false thi trai
 
 	int lastCheckPoint; //Noi bat dau ve mario
