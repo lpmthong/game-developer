@@ -10,12 +10,12 @@ public:
 	float Vx_old;
 	float Vy_old;
 
-	//int a;
+	float acceleration;
 
 	int oldLeft;
 	int lodTop;
 	
-	float fSpeed;
+	float fSpeed; //toc do di chuyen cua object
 
 	DWORD lastAnimate;
 	int alive; //0: alive; 1: dying; 2:in hell.

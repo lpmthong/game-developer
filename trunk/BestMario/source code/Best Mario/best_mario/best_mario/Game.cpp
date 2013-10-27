@@ -79,17 +79,17 @@ void Game::ProcessInput(){
 void Game::OnKeyDown(int keyCode){
 	switch (GlobalHandler::gameState)
 	{
-	case GS_OPTION:
-		break;
-	case GS_MENU:
-		break;
-	case GS_CHANGEMAP:
-		break;
-	case GS_STARTGAMEOPTIONS:
-		break;
-	case GS_GAMEPLAY:
-		GlobalHandler::player->OnKeyDown(keyCode);
-		break;
+		case GS_OPTION:
+			break;
+		case GS_MENU:
+			break;
+		case GS_CHANGEMAP:
+			break;
+		case GS_STARTGAMEOPTIONS:
+			break;
+		case GS_GAMEPLAY:
+			GlobalHandler::player->OnKeyDown(keyCode);
+			break;
 	}
 }
 

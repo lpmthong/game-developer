@@ -27,7 +27,7 @@ void Sprite::Next(int start, int end){
 		_index = start;
 	else
 		_index = (_index + (end - start + 1) + 1) % (end - start + 1) + start;
-	trace(L"Next(int s, int e) , index = %d", _index);
+	//trace(L"Next(int s, int e) , index = %d", _index);
 }
 
 void Sprite::Reset(){
