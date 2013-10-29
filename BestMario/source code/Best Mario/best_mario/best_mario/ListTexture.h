@@ -94,6 +94,12 @@ public:
 	static int					TT_MARIO_KID_DEATH_START;
 	static int					TT_MARIO_KID_DEATH_END;
 
+	//hard Brick
+	static LPDIRECT3DTEXTURE9	TT_HARD_BRICK;
+	static int					TT_HARD_BRICK_WIDTH;
+	static int					TT_HARD_BRICK_HEIGHT;
+	static int					TT_HARD_BRICK_COUNT;
+	static int					TT_HARD_BRICK_SPRITEPERROW;
 public:
 	static void CreateAllTexture();
 	ListTexture(void);

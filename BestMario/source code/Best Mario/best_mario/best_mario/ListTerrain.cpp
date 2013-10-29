@@ -10,6 +10,7 @@
 #include "Mountain.h"
 #include "HighTree.h"
 #include "LowTree.h"
+#include "HardBrick.h"
 
 
 int ListTerrain::arr_terrain[10000];
@@ -110,6 +111,11 @@ void ListTerrain::InitTerrain(int level){
 			GlobalHandler::checkpoint[0][GlobalHandler::checkpoint_index] = arr_terrain[i+1];
 			GlobalHandler::checkpoint[1][GlobalHandler::checkpoint_index] = arr_terrain[i+2];
 			GlobalHandler::checkpoint_index++;
+		}
+		else if (arr_terrain[i] == HARDBRICK)
+		{
+			HardBrick *hardbrick = new HardBrick(arr_terrain[i+1], arr_terrain[i+2]);
+			GlobalHandler::quadTree->AddNode(hardbrick);
 		}
 	}
 

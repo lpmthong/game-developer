@@ -30,7 +30,7 @@ public:
 
 	virtual void Update();
 	virtual void Render();
-	virtual void Render(int xScreen, int yScreen);
+	
 
 	virtual bool CheckCollision(Object *obj); //Kiem tra va cham voi obj khac
 	virtual void ProcessCollision();
