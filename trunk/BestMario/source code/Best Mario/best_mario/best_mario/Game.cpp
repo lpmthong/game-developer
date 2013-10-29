@@ -24,8 +24,7 @@ void Game::Init(){
 	GlobalHandler::RestartMap();
 
 	GlobalHandler::player->Init(10, 0, 4);
-	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);
-	
+	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);	
 }
 
 bool Game::Run(){

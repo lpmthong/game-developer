@@ -80,6 +80,13 @@ int					ListTexture::TT_MARIO_KID_JUMPING_RIGHT_END;
 int					ListTexture::TT_MARIO_KID_DEATH_START;
 int					ListTexture::TT_MARIO_KID_DEATH_END;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_HARD_BRICK;
+int					ListTexture::TT_HARD_BRICK_WIDTH;
+int					ListTexture::TT_HARD_BRICK_HEIGHT;
+int					ListTexture::TT_HARD_BRICK_COUNT;
+int					ListTexture::TT_HARD_BRICK_SPRITEPERROW;
+
+
 ListTexture::ListTexture(void){}
 
 ListTexture::~ListTexture(void){}
@@ -165,4 +172,11 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_MARIO_KID_JUMPING_RIGHT_END			= 4;
 	ListTexture::TT_MARIO_KID_DEATH_START				= 6;
 	ListTexture::TT_MARIO_KID_DEATH_END					= 6;
+
+
+	ListTexture::TT_HARD_BRICK							= GlobalHandler::_directX->LoadTextureFromFile("Media\\hardbrick.bmp",0);
+	ListTexture::TT_HARD_BRICK_WIDTH					= 32;
+	ListTexture::TT_HARD_BRICK_HEIGHT					= 32;
+	ListTexture::TT_HARD_BRICK_COUNT					= 1;
+	ListTexture::TT_HARD_BRICK_SPRITEPERROW				= 1;
 }

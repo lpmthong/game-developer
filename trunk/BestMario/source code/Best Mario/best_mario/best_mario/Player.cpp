@@ -119,7 +119,7 @@ void Player::ProcessInput(){
 		else{
 			acceleration = -3;
 		}
-		//Vx = -30;
+		//Vx = -30;32
 		//Vx_old = Vx;
 		oldDirect = false;
 	}
