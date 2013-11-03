@@ -8,10 +8,14 @@ namespace MapEditor
 {
     class pbObject
     {
+        public int id;
         public PictureBox pictureBox;
         public int x;
         public int y;
         public int kind;
+        public int width;
+        public int height;
+        public bool st; //st = static
 
         public pbObject()
         {
