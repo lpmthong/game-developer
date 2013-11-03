@@ -43,7 +43,6 @@
             this.pbItem_Flower = new System.Windows.Forms.PictureBox();
             this.pbItem_Coin = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pbFallingCross = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundUnder = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundRight = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundMiddle = new System.Windows.Forms.PictureBox();
@@ -109,7 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFallingCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).BeginInit();
@@ -299,7 +297,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.pbFallingCross);
             this.tabPage2.Controls.Add(this.pbMushRoomGroundUnder);
             this.tabPage2.Controls.Add(this.pbMushRoomGroundRight);
             this.tabPage2.Controls.Add(this.pbMushRoomGroundMiddle);
@@ -322,17 +319,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Terrain";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pbFallingCross
-            // 
-            this.pbFallingCross.Image = ((System.Drawing.Image)(resources.GetObject("pbFallingCross.Image")));
-            this.pbFallingCross.Location = new System.Drawing.Point(21, 278);
-            this.pbFallingCross.Name = "pbFallingCross";
-            this.pbFallingCross.Size = new System.Drawing.Size(96, 25);
-            this.pbFallingCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbFallingCross.TabIndex = 29;
-            this.pbFallingCross.TabStop = false;
-            this.pbFallingCross.Click += new System.EventHandler(this.pbBlock_Click);
             // 
             // pbMushRoomGroundUnder
             // 
@@ -666,21 +652,21 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -815,7 +801,7 @@
             this.tbMapWidth.Name = "tbMapWidth";
             this.tbMapWidth.Size = new System.Drawing.Size(100, 20);
             this.tbMapWidth.TabIndex = 24;
-            this.tbMapWidth.Text = "800";
+            this.tbMapWidth.Text = "1000";
             this.tbMapWidth.TextChanged += new System.EventHandler(this.tbMapWidth_TextChanged);
             // 
             // label4
@@ -932,7 +918,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFallingCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).EndInit();
@@ -1003,7 +988,6 @@
         private System.Windows.Forms.PictureBox pbItem_GreenMusrom;
         private System.Windows.Forms.PictureBox pbItem_Flower;
         private System.Windows.Forms.PictureBox pbItem_Coin;
-        private System.Windows.Forms.PictureBox pbFallingCross;
         private System.Windows.Forms.PictureBox pbMushRoomGroundUnder;
         private System.Windows.Forms.PictureBox pbMushRoomGroundRight;
         private System.Windows.Forms.PictureBox pbMushRoomGroundMiddle;
