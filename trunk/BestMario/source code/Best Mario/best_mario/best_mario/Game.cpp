@@ -45,11 +45,23 @@ bool Game::Run(){
 }
 
 void Game::Update(){
+	/*list<StaticObject*>::iterator it;
+	for(it = GlobalHandler::listStaticObj.begin(); it != GlobalHandler::listStaticObj.end(); ++it )	
+	(*it)->Update();*/		
 	GlobalHandler::quadTree->UpdateScreen();
 	GlobalHandler::dynamicObjManager->Update();
 }
 
 void Game::Render(){
+
+	/*for (int i = 0; i < 3; i++)
+	{
+	list<StaticObject*>::iterator it;
+	for(it = GlobalHandler::listStaticObj.begin(); it != GlobalHandler::listStaticObj.end(); ++it ){
+	if ((*it)->map_level == i)
+	(*it)->Render();
+	}
+	}	*/
 	GlobalHandler::quadTree->RenderScreen();
 	GlobalHandler::dynamicObjManager->Render();
 }

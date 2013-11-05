@@ -8,6 +8,8 @@ Player				*GlobalHandler::player				= new Player();
 int		             GlobalHandler::backGroundColor		= BLUE;
 bool	             GlobalHandler::quitGame			= false;
 
+list<StaticObject*>	 GlobalHandler::listStaticObj		;
+
 RECT	             GlobalHandler::screen;
 int					 GlobalHandler::mapLevel			= 1;
 int					 GlobalHandler::gameState			= GS_GAMEPLAY;
@@ -60,7 +62,18 @@ void GlobalHandler::RestartMap()
 	//GlobalHandler::quadTree->Reset();
 	GlobalHandler::dynamicObjManager->Release();
 	ListTerrain::InitTerrain(GlobalHandler::mapLevel);
-	
+
+	GlobalHandler::quadTree->ReadQuadTreeFormFile(GlobalHandler::mapLevel);
+	GlobalHandler::quadTree->Deserialize();
+
 	trace(L"void GlobalHandler::RestartMap()");
+}
+
+LPWSTR GlobalHandler::ConvertChar(char c[200]){
+	wchar_t wtext[200];
+	mbstowcs(wtext, c, strlen(c)+1);//Plus null
+	LPWSTR ptr = wtext;
+	
+	return ptr;
 }
 

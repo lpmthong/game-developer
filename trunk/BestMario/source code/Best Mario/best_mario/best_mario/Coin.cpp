@@ -6,14 +6,14 @@ Coin::Coin(void)
 {
 }
 
-Coin::Coin( int left, int top )
+Coin::Coin( int left, int top, int iid )
 {
 	sprite = new Sprite(ListTexture::TT_OUT_COIN,				
 		ListTexture::TT_OUT_COIN_WIDTH,			
 		ListTexture::TT_OUT_COIN_HEIGHT,		
 		ListTexture::TT_OUT_COIN_COUNT,			
 		ListTexture::TT_OUT_COIN_SPRITEPERROW);
-
+	id = iid;
 	animatedRate = ListTexture::TT_OUT_COIN_ANIMATED_RATE;
 
 	lastAnimate = GetTickCount();

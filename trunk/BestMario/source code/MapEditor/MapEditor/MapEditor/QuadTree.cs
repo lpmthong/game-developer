@@ -56,7 +56,7 @@ namespace MapEditor
             if (iroot.RT.listTreeObj.Count > 0)
                 Build(iroot.RT);
             if (iroot.RB.listTreeObj.Count > 0)
-            Build(iroot.RB);
+                Build(iroot.RB);
         }
 
         public void Clip(CTreeObject o, QuadNode iroot)
@@ -67,124 +67,20 @@ namespace MapEditor
                 return;
             }
 
-            bool[] t = new bool[4];
-            int count = 0;
-
-            if (CheckPointInRect(o.left, o.top, iroot.rect))
+            Rectangle RectCtreeObj = new Rectangle(o.left, o.top, o.right - o.left, o.bottom - o.top);
+            Rectangle result = new Rectangle();
+            result = Rectangle.Intersect(iroot.rect, RectCtreeObj);
+            if (!result.IsEmpty)
             {
-                t[0] = true; // diem lt
-                count++;
-            }
-            else
-                t[0] = false;
-            if (CheckPointInRect(o.left, o.bottom, iroot.rect))
-            {
-                t[1] = true;//diem lb
-                count++;
-            }
-            else
-                t[1] = false;
-            if (CheckPointInRect(o.right, o.top, iroot.rect))
-            {
-                t[2] = true;//diem rt
-                count++;
-            }
-            else
-                t[2] = false;
-            if (CheckPointInRect(o.right, o.bottom, iroot.rect))
-            {
-                t[3] = true;//diem rb
-                count++;
-            }
-            else
-                t[3] = false;
+                CTreeObject temp = new CTreeObject();
+                temp.target = o.target;
+                temp.left = result.Left;
+                temp.top = result.Top;
+                temp.bottom = result.Bottom;
+                temp.right = result.Right;
 
-            switch (count)
-            {
-                case 1:
-                    CTreeObject temp = new CTreeObject();
-                    temp.target = o.target;
-
-                    if (t[0] == true)
-                    {
-                        temp.left = o.left;
-                        temp.bottom = iroot.rect.Bottom;
-                        temp.top = o.top;
-                        temp.right = iroot.rect.Right;
-                        iroot.listTreeObj.Add(temp);  
-                        //MessageBox.Show("LT id = " + iroot.id);
-                    }
-                    if (t[1] == true)
-                    {
-                        temp.left = o.left;
-                        temp.bottom = o.bottom;
-                        temp.top = iroot.rect.Top;
-                        temp.right = iroot.rect.Right;
-                        iroot.listTreeObj.Add(temp);
-                        //MessageBox.Show("LB id = " + iroot.id);
-                    }
-                    if (t[2] == true)
-                    {
-                        temp.left = iroot.rect.Left;
-                        temp.bottom = iroot.rect.Bottom;
-                        temp.top = o.top;
-                        temp.right = o.right;
-                        iroot.listTreeObj.Add(temp);  
-                        //MessageBox.Show("RT id = " + iroot.id);
-                    }
-                    if (t[3] == true)
-                    {
-                        temp.left = iroot.rect.Left;
-                        temp.bottom = o.bottom;
-                        temp.top = iroot.rect.Top;
-                        temp.right = o.right;
-                        iroot.listTreeObj.Add(temp);  
-                        //MessageBox.Show("RB id = " + iroot.id);
-                    }
-                    break;
-                case 2:
-                    CTreeObject temp1 = new CTreeObject();
-                    temp1.target = o.target;                 
-
-                    if (t[0] == true && t[1] == true)
-                    {
-                        temp1.left = o.left;
-                        temp1.bottom = o.bottom;
-                        temp1.top = o.top;
-                        temp1.right = iroot.rect.Right;
-                        iroot.listTreeObj.Add(temp1);                       
-                    }
-                    if (t[0] == true && t[2] == true)
-                    {
-                        temp1.left = o.left;
-                        temp1.bottom = iroot.rect.Bottom;
-                        temp1.top = o.top;
-                        temp1.right = o.right;
-                        iroot.listTreeObj.Add(temp1);                        
-                    }
-                    if (t[2] == true && t[3] == true)
-                    {
-                        temp1.left = iroot.rect.Left;
-                        temp1.bottom = o.bottom;
-                        temp1.top = o.top;
-                        temp1.right = o.right;
-                        iroot.listTreeObj.Add(temp1);  
-                        //MessageBox.Show("rt, rb in id = " + iroot.id);
-                    }
-                    if (t[1] == true && t[3] == true)
-                    {
-                        temp1.left = o.left;
-                        temp1.bottom = o.bottom;
-                        temp1.top = iroot.rect.Top;
-                        temp1.right = o.right;
-                        iroot.listTreeObj.Add(temp1);  
-                        //MessageBox.Show("lb, rb in id = " + iroot.id);
-                    }
-                    break;
-                default:
-                    break;
-            }
-
+                iroot.listTreeObj.Add(temp);
+            }            
         }
 
         public bool CheckPointInRect(int x, int y, Rectangle rect)

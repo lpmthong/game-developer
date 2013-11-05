@@ -4,12 +4,12 @@
 
 Fence::Fence(void){}
 
-Fence::Fence(int left, int top){
+Fence::Fence(int left, int top, int iid){
 	sprite = new Sprite(ListTexture::TT_FENCE, ListTexture::TT_FENCE_WIDTH, ListTexture::TT_FENCE_HEIGHT,
 						ListTexture::TT_FENCE_COUNT, ListTexture::TT_FENCE_SPRITEPERROW);
 	width = ListTexture::TT_FENCE_WIDTH;
 	height = ListTexture::TT_FENCE_HEIGHT;
-
+	id = iid;
 	UpdateRect(left, top, ListTexture::TT_FENCE_WIDTH, ListTexture::TT_FENCE_HEIGHT);
 	map_level = 2;
 	isKind = FENCE;

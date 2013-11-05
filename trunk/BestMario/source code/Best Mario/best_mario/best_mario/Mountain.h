@@ -5,6 +5,6 @@ class Mountain : public StaticObject
 {
 public:
 	Mountain(void);
-	Mountain(int left, int top);
+	Mountain(int left, int top, int iid);
 	~Mountain(void);
 };

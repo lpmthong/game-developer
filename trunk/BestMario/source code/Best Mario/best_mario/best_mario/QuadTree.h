@@ -2,16 +2,25 @@
 #include "QuadNode.h"
 #include "Define.h"
 #include "GlobalHandler.h"
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <sstream>
+#include <string>
+#include <map>
+#include <stdio.h>
+#include <algorithm>
 
 class QuadTree {
 
-public:
-	QuadNode *root;
+public:	
 	int mapwidth;
 	int mapheight;
 	int count;
-
-public:
+	map<string, string> qTreeMap;	
+	string list_id;
+	RECT rNode;
+	QuadNode *root;
 
 	QuadTree(void);
 	QuadTree(int _mapwidth, int _mapheight);
@@ -20,14 +29,12 @@ public:
 	void Release();
 	void Release(QuadNode *root);
 	void Reset();
-	
-	bool CheckPointInRect(int x, int y, RECT rect);
-	bool CheckRectInRect(RECT mainRect, RECT checkRect);	
 
-	int  FindPlaceToAdd(RECT rectRoot, StaticObject* obj); //Tim vi tri de add node vao cay LT LB RT RB
-	void AddNode(StaticObject *obj);
-	void AddNode(QuadNode *root, StaticObject* obj); //Them node vao cay
-	
+	void ReadQuadTreeFormFile(int level);
+	void Deserialize();
+	void SaveNode(QuadNode *iroot);
+	void GetNodeInfo(string info);
+
 	bool RemoveObj(StaticObject* obj);
 	bool RemoveObj(QuadNode* root, StaticObject* obj);	
 
@@ -36,5 +43,4 @@ public:
 
 	void UpdateScreen();
 	void UpdateScreen(QuadNode* root);
-
 };
