@@ -7,7 +7,7 @@ QuadTree::QuadTree(void){
 QuadTree::QuadTree(int _mapwidth, int _mapheight){
 	mapwidth = _mapwidth;
 	mapheight = _mapheight;
-	root = new QuadNode(0, 0, mapwidth, mapheight);
+	root = new QuadNode(0, 0, mapwidth, mapheight, "");
 	count = 0;
 }
 
@@ -35,102 +35,132 @@ void QuadTree::Release(QuadNode *root){
 void QuadTree::Reset(){
 
 	Release(root);
-	root = new QuadNode(0, 0, MAP_WIDTH, MAP_WIDTH);
+	root = new QuadNode(0, 0, MAP_WIDTH, MAP_WIDTH, "");
 	count = 0;
 }
 
-bool QuadTree::CheckPointInRect(int x, int y, RECT rect){
+void QuadTree::ReadQuadTreeFormFile(int level)
+{
+	char filePath[50];
+	sprintf_s(filePath,"Map\\QuadTree\\Map%dQuadTree.txt",level);
 
-	if(x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom)
-		return true;
-	return false;
+	string str;
+	ifstream file;
 
-}
+	file.open(filePath);
+	
+	if(!file.is_open()){
+		trace(L"Khong doc duoc file QuadTree cua Map%d", level);
+		exit(EXIT_FAILURE);
+	}
 
-bool QuadTree::CheckRectInRect(RECT mainRect, RECT checkRect){
-
-	if (CheckPointInRect(checkRect.left, checkRect.top, mainRect) ||
-		CheckPointInRect(checkRect.right - 1, checkRect.top, mainRect) ||
-		CheckPointInRect(checkRect.left, checkRect.bottom - 1, mainRect) ||
-		CheckPointInRect(checkRect.right - 1, checkRect.bottom - 1, mainRect) ||
-		(mainRect.top>=checkRect.top&&mainRect.bottom<=checkRect.bottom&&checkRect.left<=mainRect.left&&checkRect.right>=mainRect.right))
-		return true;
-	return false;
-
-}
-
-int QuadTree::FindPlaceToAdd(RECT rectRoot, StaticObject* obj){
-
-	int x = (rectRoot.right + rectRoot.left ) / 2;
-	int y = (rectRoot.bottom + rectRoot.top ) / 2;
-
-	if ((obj->rectReal.left<=x && obj->rectReal.right>x) || (obj->rectReal.top <= y && obj->rectReal.bottom > y))
-		return NORMAL;
-	else
-		if(obj->rectReal.left < x)
-			if (obj->rectReal.bottom < y)
-				return LT;
-			else
-				return LB;
-		else
-			if (obj->rectReal.bottom < y)
-				return RT;
-			else
-				return RB;
-	return 0;
-}
-
-void QuadTree::AddNode(StaticObject *obj){
-	AddNode(root, obj);
-}
-
-void QuadTree::AddNode(QuadNode *root, StaticObject* obj){
-	if (root != NULL)
+	while(getline(file, str))
 	{
-		int addPosition = FindPlaceToAdd(root->rect, obj);
+		istringstream ss(str);
 
-		if (addPosition == NORMAL)
-		{
-			root->listObject.push_back(obj);
-			count++;
+		string id;
+		string qNode;
+		ss >> id;		
+		while(ss.good()){
+			string text;
+			ss >> text;
+			qNode += text + " ";
 		}
-		else
-		{
-			int rootWidth = root->rect.right - root->rect.left;
+		
+		qNode.erase(0, qNode.find_first_not_of(' '));
+		qNode.erase(qNode.find_last_not_of(' ')+1);    
 
-			if (rootWidth / 2 > MIN_NODE_WIDTH)
-			{
-				switch(addPosition)
-				{
-					case LT:
-						if (root->LTNode == NULL)
-							root->LTNode = new QuadNode(root->rect.left, root->rect.top, rootWidth/2, rootWidth/2);
-						AddNode(root->LTNode, obj);
-						break;
-					case LB:
-						if(root->LBNode == NULL)
-							root->LBNode = new QuadNode(root->rect.left, root->rect.top + rootWidth/2, rootWidth/2, rootWidth/2);
-						AddNode(root->LBNode, obj);
-						break;
-					case RT:
-						if (root->RTNode == NULL)
-							root->RTNode = new QuadNode(root->rect.left + rootWidth/2, root->rect.top, rootWidth/2, rootWidth/2);
-						AddNode(root->RTNode, obj);
-						break;
-					case RB:
-						if (root->RBNode == NULL)
-							root->RBNode = new QuadNode(root->rect.left + rootWidth / 2, root->rect.top + rootWidth / 2, rootWidth / 2, rootWidth / 2);
-						AddNode(root->RBNode, obj);
-						break;
-				}
-			}
-			else
-			{
-				root->listObject.push_back(obj);
-				count ++;
-			}
+		qTreeMap[id] = qNode;
+
+	}	
+	/*for (map<string, string>::iterator ii = qTreeMap.begin(); ii != qTreeMap.end(); ++ii)
+	{
+		const char *c = ii->first.c_str();
+		wchar_t wtext[200];
+		mbstowcs(wtext, c, strlen(c)+1);
+		LPWSTR ptr = wtext;
+
+		const char *c1 = ii->second.c_str();
+		wchar_t wtext1[200];
+		mbstowcs(wtext1, c1, strlen(c1)+1);
+		LPWSTR ptr1 = wtext1;
+		trace(L"%s %s", ptr, ptr1);
+	}*/
+}
+
+void QuadTree::Deserialize()
+{
+	SaveNode(root);
+}
+
+void QuadTree::SaveNode(QuadNode *iroot){
+
+	string id_LT = iroot->id + "00";
+	string id_LB = iroot->id + "01";
+	string id_RT = iroot->id + "10";
+	string id_RB = iroot->id + "11";
+	
+	for (map<string, string>::iterator ii = qTreeMap.begin(); ii != qTreeMap.end(); ++ii)
+	{
+		if (id_LT.compare(ii->first) == 0)
+		{
+			GetNodeInfo(ii->second);	
+			iroot->LTNode = new QuadNode(rNode.left, rNode.top, rNode.right, rNode.bottom, id_LT);
+			iroot->LTNode->GetListObj(list_id);
+			list_id = "";
+			SaveNode(iroot->LTNode);
+		}
+		if (id_LB.compare(ii->first) == 0)
+		{
+			GetNodeInfo(ii->second);
+			iroot->LBNode = new QuadNode(rNode.left, rNode.top, rNode.right, rNode.bottom, id_LB);
+			iroot->LBNode->GetListObj(list_id);
+			list_id = "";
+			SaveNode(iroot->LBNode);
+		}
+		if (id_RT.compare(ii->first) == 0)
+		{
+			GetNodeInfo(ii->second);
+			iroot->RTNode = new QuadNode(rNode.left, rNode.top, rNode.right, rNode.bottom, id_RT);
+			iroot->RTNode->GetListObj(list_id);
+			list_id = "";
+			SaveNode(iroot->RTNode);
+		}
+		if (id_RB.compare(ii->first) == 0)
+		{
+			GetNodeInfo(ii->second);
+			iroot->RBNode = new QuadNode(rNode.left, rNode.top, rNode.right, rNode.bottom, id_RB);
+			iroot->RBNode->GetListObj(list_id);
+			list_id = "";
+			SaveNode(iroot->RBNode);
 		}
 	}
+}
+
+void QuadTree::GetNodeInfo(string info){
+	
+	istringstream ss(info);
+	int l,t,r,b;
+	ss >> l >> t >> r >> b; 
+	rNode.left = l;
+	rNode.top = t;
+	rNode.right = r;
+	rNode.bottom = b;
+	while(ss.good()){
+		string temp;
+		ss >> temp;
+		list_id += temp + " ";
+	}
+
+	list_id.erase(0, list_id.find_first_not_of(' '));
+	list_id.erase(list_id.find_last_not_of(' ')+1);
+
+	/*const char *c =list_id.c_str();
+	wchar_t wtext[200];
+	mbstowcs(wtext, c, strlen(c)+1);
+	LPWSTR ptr = wtext;*/
+	ss.str().clear();
+	//trace(L"%d %d %d %d",rNode.left,rNode.top,rNode.right,rNode.bottom);
 }
 
 bool QuadTree::RemoveObj(StaticObject* obj){
@@ -173,13 +203,13 @@ void QuadTree::RenderScreen(){
 void QuadTree::RenderScreen(QuadNode *root, int map_level){
 	root->Render(map_level);
 
-	if ((root->LTNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->LTNode->rect)))
+	if ((root->LTNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->LTNode->rect)))
 		RenderScreen(root->LTNode, map_level);
-	if ((root->RTNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->RTNode->rect)))
+	if ((root->RTNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->RTNode->rect)))
 		RenderScreen(root->RTNode, map_level);
-	if ((root->LBNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->LBNode->rect)))
+	if ((root->LBNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->LBNode->rect)))
 		RenderScreen(root->LBNode, map_level);
-	if ((root->RBNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->RBNode->rect)))
+	if ((root->RBNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->RBNode->rect)))
 		RenderScreen(root->RBNode, map_level);
 }
 
@@ -192,13 +222,13 @@ void QuadTree::UpdateScreen( QuadNode* root )
 {
 	root->Update();
 
-	if ((root->LTNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->LTNode->rect)))
+	if ((root->LTNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->LTNode->rect)))
 		UpdateScreen(root->LTNode);
-	if ((root->RTNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->RTNode->rect)))
+	if ((root->RTNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->RTNode->rect)))
 		UpdateScreen(root->RTNode);
-	if ((root->LBNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->LBNode->rect)))
+	if ((root->LBNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->LBNode->rect)))
 		UpdateScreen(root->LBNode);
-	if ((root->RBNode != NULL) && (CheckRectInRect(GlobalHandler::screen, root->RBNode->rect)))
+	if ((root->RBNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->RBNode->rect)))
 		UpdateScreen(root->RBNode);
 
 }

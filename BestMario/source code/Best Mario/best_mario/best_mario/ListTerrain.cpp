@@ -34,6 +34,7 @@ void ListTerrain::LoadFile(int level){
 	file.open(filePath);
 
 	if(!file.is_open()){
+		trace(L"Khong doc duoc file Map");
 		exit(EXIT_FAILURE);
 	}
 
@@ -55,67 +56,69 @@ void ListTerrain::InitTerrain(int level){
 	
 	ListTerrain::LoadFile(level);
 	
-	GlobalHandler::quadTree = new QuadTree(arr_terrain[0], arr_terrain[0]);
+	GlobalHandler::quadTree = new QuadTree(arr_terrain[0], arr_terrain[0]);		
 
 	GlobalHandler::backGroundColor = arr_terrain[3];
-	for (int i = 4; i < arr_terrain_index ; i += 3)
+	for (int i = 4; i < arr_terrain_index ; i += 4)
 	{		
-		if (arr_terrain[i] == CLOUD)
+		if (arr_terrain[i+1] == CLOUD)
 		{
-			Cloud* cloud = new Cloud(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(cloud);
+			Cloud* cloud = new Cloud(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(cloud);
 		}
-		else if (arr_terrain[i] == GRASS)
+		else if (arr_terrain[i+1] == GRASS)
 		{
-			Grass* grass = new Grass(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(grass);
+			Grass* grass = new Grass(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(grass);
 		}
-		else if (arr_terrain[i] == FENCE)
+		else if (arr_terrain[i+1] == FENCE)
 		{
-			Fence* fence = new Fence(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(fence);
+			Fence* fence = new Fence(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(fence);
 		}
-		else if (arr_terrain[i] == GROUND_LEFT || arr_terrain[i] == GROUND_MIDDLE || arr_terrain[i] == GROUND_RIGHT || arr_terrain[i] == GROUND_SOIL || arr_terrain[i] == GROUND_SOIL_LEFT || arr_terrain[i] == GROUND_SOIL_RIGHT || arr_terrain[i] == GROUND_DARK_SOIL)
+		else if (arr_terrain[i+1] == GROUND_LEFT || arr_terrain[i+1] == GROUND_MIDDLE || arr_terrain[i+1] == GROUND_RIGHT || 
+					arr_terrain[i+1] == GROUND_SOIL || arr_terrain[i+1] == GROUND_SOIL_LEFT || arr_terrain[i+1] == GROUND_SOIL_RIGHT ||
+						arr_terrain[i+1] == GROUND_DARK_SOIL)
 		{
-			Ground* ground = new Ground(arr_terrain[i+1], arr_terrain[i+2]);
-			ground->setType(arr_terrain[i]);
-			GlobalHandler::quadTree->AddNode(ground);
+			Ground* ground = new Ground(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			ground->setType(arr_terrain[i+1]);
+			GlobalHandler::listStaticObj.push_back(ground);
 		}
-		else if (arr_terrain[i] == PIPE_CAP || arr_terrain[i] == PIPE_BODY)
+		else if (arr_terrain[i+1] == PIPE_CAP || arr_terrain[i+1] == PIPE_BODY)
 		{
-			Pipe* pipe = new Pipe(arr_terrain[i+1], arr_terrain[i+2], arr_terrain[i]);
-			GlobalHandler::quadTree->AddNode(pipe);
+			Pipe* pipe = new Pipe(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(pipe);
 		}
-		else if (arr_terrain[i] == OUTCOIN)
+		else if (arr_terrain[i+1] == OUTCOIN)
 		{
-			Coin* coin = new Coin(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(coin);
+			Coin* coin = new Coin(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(coin);
 		}		
-		else if (arr_terrain[i] == MOUNTAIN)
+		else if (arr_terrain[i+1] == MOUNTAIN)
 		{
-			Mountain* mountain = new Mountain(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(mountain);
+			Mountain* mountain = new Mountain(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(mountain);
 		}
-		else if (arr_terrain[i] == HIGHTREE)
+		else if (arr_terrain[i+1] == HIGHTREE)
 		{
-			HighTree* highTree = new HighTree(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(highTree);
+			HighTree* highTree = new HighTree(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(highTree);
 		}
-		else if (arr_terrain[i] == LOWTREE)
+		else if (arr_terrain[i+1] == LOWTREE)
 		{
-			LowTree* lowTree = new LowTree(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(lowTree);
+			LowTree* lowTree = new LowTree(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(lowTree);
 		}
-		else if (arr_terrain[i] == CHECKPOINT )
+		else if (arr_terrain[i+1] == CHECKPOINT )
 		{
-			GlobalHandler::checkpoint[0][GlobalHandler::checkpoint_index] = arr_terrain[i+1];
-			GlobalHandler::checkpoint[1][GlobalHandler::checkpoint_index] = arr_terrain[i+2];
+			GlobalHandler::checkpoint[0][GlobalHandler::checkpoint_index] = arr_terrain[i+2];
+			GlobalHandler::checkpoint[1][GlobalHandler::checkpoint_index] = arr_terrain[i+3];
 			GlobalHandler::checkpoint_index++;
 		}
-		else if (arr_terrain[i] == HARDBRICK)
+		else if (arr_terrain[i+1] == HARDBRICK)
 		{
-			HardBrick *hardbrick = new HardBrick(arr_terrain[i+1], arr_terrain[i+2]);
-			GlobalHandler::quadTree->AddNode(hardbrick);
+			HardBrick *hardbrick = new HardBrick(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(hardbrick);
 		}
 	}
 

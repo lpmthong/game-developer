@@ -4,11 +4,11 @@
 
 Ground::Ground(void){}
 
-Ground::Ground(int left, int top){
+Ground::Ground(int left, int top, int iid){
 
 	sprite = new Sprite(ListTexture::TT_GROUND, ListTexture::TT_GROUND_WIDTH, ListTexture::TT_GROUND_HEIGHT,
 						ListTexture::TT_GROUND_COUNT, ListTexture::TT_GROUND_SPRITEPERROW);
-
+	id = iid;
 	width = ListTexture::TT_GROUND_WIDTH;
 	height = ListTexture::TT_GROUND_HEIGHT;
 	UpdateRect(left, top, ListTexture::TT_GROUND_WIDTH, ListTexture::TT_GROUND_HEIGHT);

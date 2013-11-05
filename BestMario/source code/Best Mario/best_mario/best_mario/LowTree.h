@@ -5,6 +5,6 @@ class LowTree : public StaticObject
 {
 public:
 	LowTree(void);
-	LowTree(int left, int top);
+	LowTree(int left, int top, int iid);
 	~LowTree(void);
 };

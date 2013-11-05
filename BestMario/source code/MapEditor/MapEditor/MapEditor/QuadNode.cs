@@ -25,19 +25,28 @@ namespace MapEditor
         {
             if (id.Equals(""))
                 return "";
-            string str = id + " " + rect.Left.ToString() + "," + rect.Top.ToString() + " "
-                            + rect.Right.ToString() + "," + rect.Bottom.ToString() + " ";            
+            string str = id + " " + rect.Left.ToString() + " " + rect.Top.ToString() + " "
+                            + rect.Right.ToString() + " " + rect.Bottom.ToString() + " ";            
             if (listTreeObj != null)
             {
                 int i = listTreeObj.Count;
+                if (i == 0)
+                {
+                    str += "0";
+                    return str;
+                }
                 foreach (CTreeObject obj in listTreeObj)
                 {
                     str += obj.target.id;
                     if (i > 1)
-                    str += ",";
+                    str += " ";
                     i--;
                 }
             }
+            else
+            {
+                str += "0";
+            }         
             
             return str;
         }

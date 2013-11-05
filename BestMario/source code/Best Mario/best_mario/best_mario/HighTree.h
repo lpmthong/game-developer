@@ -5,7 +5,7 @@ class HighTree : public StaticObject{
 
 public:
 	HighTree(void);
-	HighTree(int left, int top);
+	HighTree(int left, int top, int iid);
 	~HighTree(void);
 
 };

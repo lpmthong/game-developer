@@ -88,11 +88,11 @@ void Player::Update(){
 	x += k;
 	y += Vy * t / 100;
 
-	if (y > 88)
+	if (y > 152)
 	{
 		Vy -= 10;
 	} else {
-		y = 88;
+		y = 152;
 		Vy = 0;
 		jumping = false;
 		onGround = true;
