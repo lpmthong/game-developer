@@ -3,6 +3,7 @@
 #include "Sprite.h"
 
 class Object{
+
 public:
 	LPD3DXSPRITE spriteHandler;
 	LPDIRECT3DSURFACE9 backbuffer;

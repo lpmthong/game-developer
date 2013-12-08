@@ -1,6 +1,7 @@
 #pragma once
 #include "Define.h"
 #include "DynamicObject.h"
+#include "ListTexture.h"
 
 class Player : public DynamicObject{
 
@@ -9,7 +10,7 @@ public:
 	bool onGround; //Dang nam tren mat dat hay cai gi do.
 	bool jumping; //Co dang nhay hay khong?
 
-	int maxSpeed;
+	float maxSpeed;
 
 	bool oldDirect; //Truoc khi dung thi no dang o huong nao true thi phai, false thi trai
 
@@ -41,4 +42,8 @@ public:
 
 	void ProcessInput();
 	void OnKeyDown(int keyCode);
+
+	//Cac ham xet va cham
+	void CollideWithStaticObj(float vx, float vy);
+
 };

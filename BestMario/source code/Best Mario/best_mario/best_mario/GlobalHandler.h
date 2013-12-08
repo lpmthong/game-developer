@@ -6,6 +6,8 @@
 #include "Player.h"
 #include "DynamicObjManager.h"
 #include "StaticObject.h"
+#include <stdint.h>
+#include "Collision.h"
 using namespace std;
 
 class GlobalHandler{
@@ -23,6 +25,8 @@ public:
 	static Player				*player;
 
 	static list<StaticObject*>  listStaticObj;
+	static list<StaticObject*>	listStaticObjRender; // cai list nay lay ra de for xet va cham
+	static Collision			*Physic;
 
 	//Check point
 	static int					checkpoint[2][10];

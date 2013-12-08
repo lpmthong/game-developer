@@ -1,7 +1,6 @@
 #pragma once
 #include <list>
 #include "StaticObject.h"
-#include "DirectX.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -11,7 +10,7 @@
 #include <string>
 #include <stdio.h>
 #include <algorithm>
-#include "GlobalHandler.h"
+
 using namespace std;
 
 class QuadNode{

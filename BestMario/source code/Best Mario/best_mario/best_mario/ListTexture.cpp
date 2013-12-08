@@ -1,4 +1,5 @@
 #include "ListTexture.h"
+#include "GlobalHandler.h"
 
 LPDIRECT3DTEXTURE9	ListTexture::TT_CLOUD = NULL;
 int					ListTexture::TT_CLOUD_WIDTH;
@@ -161,7 +162,7 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_MARIO_KID_HEIGHT					= 32;
 	ListTexture::TT_MARIO_KID_COUNT						= 7;
 	ListTexture::TT_MARIO_KID_SPRITEPERROW				= 2;
-	ListTexture::TT_MARIO_KID_ANIMATED_RATE				= 30; // 200
+	ListTexture::TT_MARIO_KID_ANIMATED_RATE				= 25; // 200
 	ListTexture::TT_MARIO_KID_MOVING_LEFT_START			= 2;
 	ListTexture::TT_MARIO_KID_MOVING_LEFT_END			= 3;
 	ListTexture::TT_MARIO_KID_MOVING_RIGHT_START		= 0;

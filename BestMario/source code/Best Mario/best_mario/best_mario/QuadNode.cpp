@@ -1,5 +1,5 @@
 #include "QuadNode.h"
-#include "trace.h"
+#include "GlobalHandler.h"
 
 QuadNode::QuadNode(void){
 	LTNode = LBNode = RTNode = RBNode = NULL;
@@ -78,7 +78,7 @@ void QuadNode::Render(int map_level){
 	list<StaticObject*>::iterator it;
 	for(it = listObject.begin(); it != listObject.end(); ++it ){
 		if ((*it)->map_level == map_level)
-			(*it)->Render();
+			(*it)->Render();						
 	}
 
 }
@@ -88,5 +88,8 @@ void QuadNode::Update(){
 	list<StaticObject*>::iterator it;
 	for(it = listObject.begin(); it != listObject.end(); ++it ){
 		(*it)->Update();
-	}	
+		if ((*it)->isSolid == true)		
+			GlobalHandler::listStaticObjRender.push_back((*it));
+	}
+
 }

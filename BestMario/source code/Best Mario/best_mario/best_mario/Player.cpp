@@ -1,7 +1,7 @@
-#include "GlobalHandler.h"
 #include "Player.h"
-#include "ListTexture.h"
-#include "Define.h"
+#include "GlobalHandler.h"
+#include "Box.h"
+#include "Collision.h"
 
 Player::Player(void){}
 
@@ -11,15 +11,15 @@ void Player::Init(int mode,int LastCheckPoint, int Life){
 
 	sprite = new Sprite();
 	InitFromFile(mode, LastCheckPoint, Life);
-	Vx = 0;
-	Vy = 0;
+	Vx = Vx_old = 0;
+	Vy = Vy_old = 0;
 	acceleration = 0;
 
 	animatedRate = ListTexture::TT_MARIO_KID_ANIMATED_RATE;
 	lastAnimate = GetTickCount();
 	lastUpdate = GetTickCount();
 
-	maxSpeed = 30;
+	maxSpeed = 0.25f;
 
 	onGround = false;
 	jumping = false;
@@ -79,19 +79,19 @@ void Player::Update(){
 	int x = rectReal.left;
 	int y = rectReal.top;
 
-	Vx = Vx_old + acceleration * t / 100;
+	Vx = Vx_old + acceleration * t;
+	Vy = Vy_old - 0.15f;
+
 	Vx = (Vx < maxSpeed)?Vx:maxSpeed;
-	Vx = (Vx > -maxSpeed)?Vx:(-maxSpeed);
+	Vx = (Vx > -maxSpeed)?Vx:(-maxSpeed);	
+	
+	CollideWithStaticObj(Vx / t, Vy / t);	
 
-	int k = Vx * t / 100;
+	x += Vx * t;
+	y += Vy * t;
 
-	x += k;
-	y += Vy * t / 100;
-
-	if (y > 152)
-	{
-		Vy -= 10;
-	} else {
+	if (y <= 152)
+	{	
 		y = 152;
 		Vy = 0;
 		jumping = false;
@@ -104,7 +104,7 @@ void Player::Update(){
 	UpdateRectReal(x, y);
 	UpdateSprite();
 	GlobalHandler::UpdateScreen();
-	trace(L"X: %d , Y: %d, A: %d, VX: %d, K:%d", x, y, acceleration, Vx, k);
+	//trace(L"X: %d , Y: %d, A: %d, VX: %d, K:%d", x, y, acceleration, Vx, k);
 }
 
 void Player::ProcessInput(){
@@ -113,26 +113,24 @@ void Player::ProcessInput(){
 	{
 		if (onGround == false)
 		{
-			Vx_old = -25; // Khong co cai nay nhay len la khong sang phai trai dc
+			Vx_old = -0.20f; // Khong co cai nay nhay len la khong sang phai trai dc
 			acceleration = 0;
 		}
 		else{
-			acceleration = -3;
-		}
-		//Vx = -30;32
-		//Vx_old = Vx;
+			acceleration = -0.003f;
+		}		
 		oldDirect = false;
 	}
 	else if (GlobalHandler::_directX->IsKeyDown(DIK_RIGHT))
 	{
 		if (onGround == false)
 		{
-			Vx_old = 25;
+			Vx_old = 0.20f;
 			acceleration = 0;
 		}
 		else
 		{
-			acceleration = 3;
+			acceleration = 0.003f;
 		}
 		//Vx = 30;
 		//Vx_old = Vx;
@@ -151,7 +149,7 @@ void Player::OnKeyDown(int keyCode){
 			{
 				onGround = false;
 				jumping = true;
-				Vy = 90;
+				Vy_old = 1.2f;
 			}			
 			break;
 	}
@@ -173,10 +171,10 @@ void Player::UpdateSprite()
 		} 
 		else 
 		{
-			if (Vx > 0)
+			if (Vx > 0.0f)
 				sprite->Next(frame_moving_right_start, frame_moving_right_end);
 			else
-				if (Vx < 0)
+				if (Vx < 0.0f)
 					sprite->Next(frame_moving_left_start, frame_moving_left_end);
 				else
 					if (oldDirect == true)
@@ -187,3 +185,21 @@ void Player::UpdateSprite()
 	}
 }
 
+void Player::CollideWithStaticObj(float vx, float vy){
+
+	float normalx, normaly;
+	Box marioBox((float)rectReal.left, (float)rectReal.top, (float)width, (float)height, vx, vy);
+	trace(L"x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", (float)rectReal.left, (float)rectReal.top, (float)width, (float)height, vx, vy);
+	Box broadphasebox = GlobalHandler::Physic->GetSweptBroadphaseBox(marioBox);
+	return;
+
+	list<StaticObject*>::iterator it;
+	for (it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it)
+	{
+		Box staticBox((float)(*it)->rectReal.left, (float)(*it)->rectReal.top, (float)(*it)->width, (float)(*it)->height, 0.0f, 0.0f);
+
+
+		//trace(L"ID: %d, Type: %d", (*it)->id, (*it)->isKind);
+	}
+	trace(L"HET VONG LAP");
+}

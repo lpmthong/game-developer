@@ -1,7 +1,6 @@
 #pragma once
 #include "QuadNode.h"
-#include "Define.h"
-#include "GlobalHandler.h"
+//#include "Define.h"
 #include <iostream>
 #include <fstream>
 #include <cstdlib>

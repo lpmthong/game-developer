@@ -1,4 +1,5 @@
 #include "QuadTree.h"
+#include "GlobalHandler.h"
 
 QuadTree::QuadTree(void){
 	count = 0;

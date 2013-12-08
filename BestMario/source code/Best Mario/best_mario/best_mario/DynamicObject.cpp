@@ -1,5 +1,5 @@
 #include "DynamicObject.h"
-#include "Define.h"
+
 
 DynamicObject::DynamicObject(void){
 	alive = ALIVE;

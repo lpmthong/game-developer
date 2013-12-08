@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "Coin.h"
+#include "GlobalHandler.h"
 
 Game::Game(void){}
 
