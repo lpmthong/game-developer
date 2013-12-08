@@ -77,8 +77,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Box.cpp" />
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="DynamicObjManager.cpp" />
@@ -104,8 +106,10 @@
     <ClCompile Include="trace.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Box.h" />
     <ClInclude Include="Cloud.h" />
     <ClInclude Include="Coin.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="DynamicObject.h" />

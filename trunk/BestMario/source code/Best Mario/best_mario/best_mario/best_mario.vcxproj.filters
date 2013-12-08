@@ -43,6 +43,9 @@
     <Filter Include="DynamicObject\Player">
       <UniqueIdentifier>{3b37879e-083b-47a7-95d6-7159dd4c7cf0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{9d2d1a13-9daf-40f4-9935-e5ed6fc89e25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -113,6 +116,12 @@
     </ClCompile>
     <ClCompile Include="HardBrick.cpp">
       <Filter>StaticObject\CanCollide</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Collision</Filter>
     </ClCompile>
     <ClCompile Include="QuadNode.cpp">
       <Filter>QuadTree</Filter>
@@ -190,6 +199,12 @@
     </ClInclude>
     <ClInclude Include="HardBrick.h">
       <Filter>StaticObject\CanCollide</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Collision</Filter>
     </ClInclude>
     <ClInclude Include="QuadNode.h">
       <Filter>QuadTree</Filter>

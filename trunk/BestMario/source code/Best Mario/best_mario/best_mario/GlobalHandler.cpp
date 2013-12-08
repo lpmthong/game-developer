@@ -9,6 +9,8 @@ int		             GlobalHandler::backGroundColor		= BLUE;
 bool	             GlobalHandler::quitGame			= false;
 
 list<StaticObject*>	 GlobalHandler::listStaticObj		;
+list<StaticObject*>	 GlobalHandler::listStaticObjRender ;
+Collision			*GlobalHandler::Physic				;
 
 RECT	             GlobalHandler::screen;
 int					 GlobalHandler::mapLevel			= 1;

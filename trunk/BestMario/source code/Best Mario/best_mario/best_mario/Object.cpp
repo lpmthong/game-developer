@@ -1,6 +1,7 @@
 #include "Object.h"
 #include "GlobalHandler.h"
 
+
 Object::Object(void){}
 
 Object::~Object(void){}

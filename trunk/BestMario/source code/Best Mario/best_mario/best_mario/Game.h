@@ -1,7 +1,6 @@
 #pragma once
 
 #include "DirectX.h"
-#include "GlobalHandler.h"
 #include "ListTexture.h"
 
 //include test
