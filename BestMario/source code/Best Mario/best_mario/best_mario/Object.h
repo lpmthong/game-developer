@@ -9,7 +9,6 @@ public:
 	LPDIRECT3DSURFACE9 backbuffer;
 
 	RECT rectDraw; //Rect ve len
-	RECT rectReal; //Rect thuc su dung de xet va cham
 	int width;
 	int height;
 
@@ -37,7 +36,6 @@ public:
 	virtual void ProcessCollision();
 	virtual void UpdateRect(int left, int top, int width, int height);
 	void UpdateRect(int left, int top);
-	void UpdateRectReal(int left, int top);
 	virtual void GetTick();
 	virtual void Start();	
 

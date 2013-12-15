@@ -29,7 +29,7 @@ void DynamicObjManager::Update(){
 
 	list<DynamicObject*>::iterator it;
 	for (it = listDynamicObj.begin(); it != listDynamicObj.end(); it++){
-		if (GlobalHandler::CheckRectInRect((*it)->rectReal, GlobalHandler::screen) == true)
+		if (GlobalHandler::CheckRectInRect((*it)->rectDraw, GlobalHandler::screen) == true)
 		{
 			if ((*it)->start == false)
 			{

@@ -7,4 +7,3 @@ void trace(const LPWSTR format, ...);
 void cleartrace();
 
 #endif
-

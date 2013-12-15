@@ -49,7 +49,6 @@ void QuadNode::GetListObj(string ilist){
 
 	iss.str(string());
 	iss.clear();
-	trace(L"Clear ma khong biet duoc khong");
 }
 
 void QuadNode::Release(){
@@ -83,8 +82,7 @@ void QuadNode::Render(int map_level){
 
 }
 
-void QuadNode::Update(){
-
+void QuadNode::Update(){	
 	list<StaticObject*>::iterator it;
 	for(it = listObject.begin(); it != listObject.end(); ++it ){
 		(*it)->Update();
