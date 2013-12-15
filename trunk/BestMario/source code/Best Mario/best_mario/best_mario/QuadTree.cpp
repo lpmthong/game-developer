@@ -216,6 +216,7 @@ void QuadTree::RenderScreen(QuadNode *root, int map_level){
 
 void QuadTree::UpdateScreen()
 {
+	GlobalHandler::listStaticObjRender.clear();
 	UpdateScreen(root);
 }
 

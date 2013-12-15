@@ -13,19 +13,19 @@ Box Collision::GetSweptBroadphaseBox(Box b){
 	newBox.y = b.vy > 0 ? b.y + b.vy : b.y; // b.y : b.y + b.vy  
 	newBox.w = b.vx > 0 ? b.w + b.vx : b.w - b.vx;
 	newBox.h = b.vy > 0 ? b.h + b.vy : b.h - b.vy;
-	
+
 	return newBox;
 }
 
 bool Collision::AABBCheck(Box box1, Box box2){
 
 	return !(box1.x + box1.w < box2.x || box1.x > box2.x + box2.w || box1.y - box1.h > box2.y || box1.y < box2.y - box2.h);
-	
+
 }
 
 //box1 la doi tuong di chuyen, box2 la doi tuong dung yen
 float Collision::SweptAABB(Box box1, Box box2, float& normalx, float& normaly){
-
+	
 	float xInvEntry, yInvEntry;
 	float xInvExit, yInvExit;
 
@@ -75,9 +75,9 @@ float Collision::SweptAABB(Box box1, Box box2, float& normalx, float& normaly){
 		yEntry = yInvEntry / box1.vy;
 		yExit = yInvExit / box1.vy;
 	}
-	
+
 	float entryTime = std::max(xEntry, yEntry);
-	float exitTime = std::min(xExit, yExit);
+	float exitTime = std::min(xExit, yExit);	
 
 	if (entryTime > exitTime || xEntry < 0.0f && yEntry < 0.0f || xEntry > 1.0f || yEntry > 1.0f)
 	{
@@ -105,12 +105,12 @@ float Collision::SweptAABB(Box box1, Box box2, float& normalx, float& normaly){
 			if (yInvEntry < 0.0f)
 			{
 				normalx = 0.0f;
-				normaly = -1.0f;
+				normaly = 1.0f;
 			}
 			else
 			{
 				normalx = 0.0f;
-				normaly = 1.0f;
+				normaly = -1.0f;
 			}
 		}
 

@@ -32,19 +32,10 @@ void Object::UpdateRect(int left, int top, int width, int height){
 	rectDraw.right = left + width;
 	rectDraw.top = top;
 	rectDraw.bottom = top + height;
-
-	rectReal.left = rectDraw.left + 3;
-	rectReal.top = rectDraw.top + 2;
-	rectReal.right = rectDraw.right - 3;
-	rectReal.bottom = rectDraw.bottom - 2;
 }
 
 void Object::UpdateRect(int left, int top){
 	UpdateRect(left, top, width, height);
-}
-
-void Object::UpdateRectReal(int left, int top){
-	UpdateRect(left - 3, top - 2);
 }
 
 void Object::GetTick(){
