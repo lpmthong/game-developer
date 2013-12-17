@@ -121,6 +121,9 @@
     <Content Include="Resources\MushRoomGroundLeft.png" />
     <Content Include="Resources\MushRoomGroundMiddle.png" />
     <Content Include="Resources\MushRoomGroundRight.png" />
+    <Content Include="Resources\pipe1.png" />
+    <Content Include="Resources\pipe2.png" />
+    <Content Include="Resources\pipe3.png" />
     <Content Include="Resources\pipe_body.bmp" />
     <Content Include="Resources\pipe_cap.bmp" />
     <Content Include="Resources\pirhana_plant.png" />
