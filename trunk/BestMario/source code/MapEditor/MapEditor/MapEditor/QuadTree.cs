@@ -63,7 +63,7 @@ namespace MapEditor
         {
             if (CheckPointInRect(o.left, o.top, iroot.rect) && CheckPointInRect(o.right, o.bottom, iroot.rect))
             {                
-                iroot.listTreeObj.Add(o);               
+                iroot.listTreeObj.Add(o);              
                 return;
             }
 

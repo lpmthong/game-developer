@@ -43,6 +43,7 @@
             this.pbItem_Flower = new System.Windows.Forms.PictureBox();
             this.pbItem_Coin = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pbPipe1 = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundUnder = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundRight = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundMiddle = new System.Windows.Forms.PictureBox();
@@ -94,6 +95,8 @@
             this.rdBlack = new System.Windows.Forms.RadioButton();
             this.btDone = new System.Windows.Forms.Button();
             this.btGenerate = new System.Windows.Forms.Button();
+            this.pbPipe2 = new System.Windows.Forms.PictureBox();
+            this.pbPipe3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).BeginInit();
@@ -108,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).BeginInit();
@@ -139,6 +143,8 @@
             this.pnMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -297,6 +303,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pbPipe3);
+            this.tabPage2.Controls.Add(this.pbPipe2);
+            this.tabPage2.Controls.Add(this.pbPipe1);
             this.tabPage2.Controls.Add(this.pbMushRoomGroundUnder);
             this.tabPage2.Controls.Add(this.pbMushRoomGroundRight);
             this.tabPage2.Controls.Add(this.pbMushRoomGroundMiddle);
@@ -319,6 +328,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Terrain";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pbPipe1
+            // 
+            this.pbPipe1.Image = global::MapEditor.Properties.Resources.pipe1;
+            this.pbPipe1.Location = new System.Drawing.Point(227, 142);
+            this.pbPipe1.Name = "pbPipe1";
+            this.pbPipe1.Size = new System.Drawing.Size(75, 50);
+            this.pbPipe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe1.TabIndex = 29;
+            this.pbPipe1.TabStop = false;
+            this.pbPipe1.Click += new System.EventHandler(this.pbBlock_Click);
             // 
             // pbMushRoomGroundUnder
             // 
@@ -871,6 +891,28 @@
             this.btGenerate.UseVisualStyleBackColor = true;
             this.btGenerate.Click += new System.EventHandler(this.btGenerate_Click);
             // 
+            // pbPipe2
+            // 
+            this.pbPipe2.Image = global::MapEditor.Properties.Resources.pipe2;
+            this.pbPipe2.Location = new System.Drawing.Point(227, 218);
+            this.pbPipe2.Name = "pbPipe2";
+            this.pbPipe2.Size = new System.Drawing.Size(75, 100);
+            this.pbPipe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe2.TabIndex = 30;
+            this.pbPipe2.TabStop = false;
+            this.pbPipe2.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbPipe3
+            // 
+            this.pbPipe3.Image = global::MapEditor.Properties.Resources.pipe3;
+            this.pbPipe3.Location = new System.Drawing.Point(146, 142);
+            this.pbPipe3.Name = "pbPipe3";
+            this.pbPipe3.Size = new System.Drawing.Size(75, 200);
+            this.pbPipe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe3.TabIndex = 31;
+            this.pbPipe3.TabStop = false;
+            this.pbPipe3.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -918,6 +960,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).EndInit();
@@ -953,6 +996,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,6 +1070,9 @@
         private System.Windows.Forms.RadioButton rdBlack;
         private System.Windows.Forms.Button btDone;
         private System.Windows.Forms.Button btGenerate;
+        private System.Windows.Forms.PictureBox pbPipe1;
+        private System.Windows.Forms.PictureBox pbPipe2;
+        private System.Windows.Forms.PictureBox pbPipe3;
     }
 }
 

@@ -55,7 +55,10 @@ namespace MapEditor
             GROUND_MUSHROOM_MIDDLE = 42,
             GROUND_MUSHROOM_LEFT = 43,
             GROUNDUNDERMUSHROOM = 45,
-            BRICK_BONUS_STAR = 46            
+            BRICK_BONUS_STAR = 46,
+            PIPE_1 = 47,
+            PIPE_2 = 48,
+            PIPE_3 = 49
         }
 
         private pbObject TempObj = new pbObject();
@@ -193,6 +196,30 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.PIPE_BODY;
                 TempObj.width = 64;
                 TempObj.height = 32;
+                TempObj.st = true;
+            }
+            else if (pb.Name == pbPipe1.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.pipe1;
+                TempObj.kind = (int)BlockKind.PIPE_1;
+                TempObj.width = 75;
+                TempObj.height = 50;
+                TempObj.st = true;
+            }
+            else if (pb.Name == pbPipe2.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.pipe2;
+                TempObj.kind = (int)BlockKind.PIPE_2;
+                TempObj.width = 75;
+                TempObj.height = 100;
+                TempObj.st = true;
+            }
+            else if (pb.Name == pbPipe3.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.pipe3;
+                TempObj.kind = (int)BlockKind.PIPE_3;
+                TempObj.width = 75;
+                TempObj.height = 200;
                 TempObj.st = true;
             }
             else if (pb.Name == pbCloud.Name)
