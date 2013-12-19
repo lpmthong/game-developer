@@ -32,6 +32,9 @@ public:
 	static int					checkpoint[2][10];
 	static int					checkpoint_index;
 
+	static int					playerScore;
+	static int					playerCoin;
+
 	GlobalHandler(void);
 	~GlobalHandler(void);
 

@@ -28,9 +28,7 @@ namespace MapEditor
             MUSHROOM_ENEMY = 5,
             GROUND_LEFT = 7,
             GROUND_MIDDLE = 8,
-            GROUND_RIGHT = 9,
-            PIPE_CAP = 14,
-            PIPE_BODY = 15,
+            GROUND_RIGHT = 9,           
             BRICK_BONUS_MUSHROOM = 16,
             TURLE = 20,
             BRICK_BONUS_GUN = 22,
@@ -181,23 +179,7 @@ namespace MapEditor
                 TempObj.width = 32;
                 TempObj.height = 32;
                 TempObj.st = true;
-            }
-            else if (pb.Name == pbPipeTop.Name)
-            {
-                TempObj.pictureBox.Image = Properties.Resources.pipe_cap;
-                TempObj.kind = (int)BlockKind.PIPE_CAP;
-                TempObj.width = 64;
-                TempObj.height = 32;
-                TempObj.st = true;
-            }
-            else if (pb.Name == pbPipeUnder.Name)
-            {
-                TempObj.pictureBox.Image = Properties.Resources.pipe_body;
-                TempObj.kind = (int)BlockKind.PIPE_BODY;
-                TempObj.width = 64;
-                TempObj.height = 32;
-                TempObj.st = true;
-            }
+            }            
             else if (pb.Name == pbPipe1.Name)
             {
                 TempObj.pictureBox.Image = Properties.Resources.pipe1;
@@ -588,6 +570,8 @@ namespace MapEditor
                 else
                     sw.Write("1");
 
+                sw.WriteLine();
+
                 listctreeobj = new List<CTreeObject>();
                 foreach (pbObject obj in listPbObject)
                 {
@@ -610,6 +594,7 @@ namespace MapEditor
                     sw.Write(obj.x);
                     sw.Write(" ");
                     sw.Write(600 - obj.y);
+                    sw.WriteLine();
                 }
 
                 sw.Write(" 10 0 4 0 0 300 1");// Cac thong so cua mario
@@ -655,6 +640,7 @@ namespace MapEditor
                 for (int i = 4; i < listObj.Length - 7; i += 4)
                 {
                     int id = int.Parse(listObj[i]);
+                    GetObjId(id);
                     int kind = int.Parse(listObj[i+1]);
                     int x = int.Parse(listObj[i+2]);
                     int y = int.Parse(listObj[i+3]);
@@ -727,16 +713,22 @@ namespace MapEditor
                     temp.height = 32;
                     temp.st = true;
                     break;
-                case (int)BlockKind.PIPE_CAP: 
-                    pb.Image = Properties.Resources.pipe_cap; 
-                    temp.width = 64;
-                    temp.height = 32;
+                case (int)BlockKind.PIPE_1:
+                    pb.Image = Properties.Resources.pipe1; 
+                    temp.width = 75;
+                    temp.height = 50;
                     temp.st = true;
                     break;
-                case (int)BlockKind.PIPE_BODY: 
-                    pb.Image = Properties.Resources.pipe_body;
-                    temp.width = 64;
-                    temp.height = 32;
+                case (int)BlockKind.PIPE_2: 
+                    pb.Image = Properties.Resources.pipe2;
+                    temp.width = 75;
+                    temp.height = 100;
+                    temp.st = true;
+                    break;
+                case (int)BlockKind.PIPE_3:
+                    pb.Image = Properties.Resources.pipe3;
+                    temp.width = 75;
+                    temp.height = 200;
                     temp.st = true;
                     break;
                 case (int)BlockKind.BRICK_BONUS_MUSHROOM: 
@@ -914,6 +906,14 @@ namespace MapEditor
             qTree = new QuadTree(mapwidth, mapwidth, listCT);            
             qTree.Build();
             qTree.Save(filename);
+        }
+
+        private void GetObjId(int id)
+        {
+            if (id >= obj_id)
+            {
+                obj_id = id + 1;
+            }
         }
         #endregion
         

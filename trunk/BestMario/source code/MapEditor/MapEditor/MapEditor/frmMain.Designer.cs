@@ -43,6 +43,8 @@
             this.pbItem_Flower = new System.Windows.Forms.PictureBox();
             this.pbItem_Coin = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pbPipe3 = new System.Windows.Forms.PictureBox();
+            this.pbPipe2 = new System.Windows.Forms.PictureBox();
             this.pbPipe1 = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundUnder = new System.Windows.Forms.PictureBox();
             this.pbMushRoomGroundRight = new System.Windows.Forms.PictureBox();
@@ -50,11 +52,9 @@
             this.pbMushRoomGroundLeft = new System.Windows.Forms.PictureBox();
             this.pbEndmap = new System.Windows.Forms.PictureBox();
             this.pbCheckPoint = new System.Windows.Forms.PictureBox();
-            this.pbPipeTop = new System.Windows.Forms.PictureBox();
             this.pbCross = new System.Windows.Forms.PictureBox();
             this.pbSoilRight = new System.Windows.Forms.PictureBox();
             this.pbSoilLeft = new System.Windows.Forms.PictureBox();
-            this.pbPipeUnder = new System.Windows.Forms.PictureBox();
             this.pbGrassLeft = new System.Windows.Forms.PictureBox();
             this.pbGrassMid = new System.Windows.Forms.PictureBox();
             this.pbGrassRight = new System.Windows.Forms.PictureBox();
@@ -95,8 +95,6 @@
             this.rdBlack = new System.Windows.Forms.RadioButton();
             this.btDone = new System.Windows.Forms.Button();
             this.btGenerate = new System.Windows.Forms.Button();
-            this.pbPipe2 = new System.Windows.Forms.PictureBox();
-            this.pbPipe3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).BeginInit();
@@ -111,6 +109,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).BeginInit();
@@ -118,11 +118,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEndmap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCheckPoint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSoilRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSoilLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipeUnder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).BeginInit();
@@ -143,8 +141,6 @@
             this.pnMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -312,11 +308,9 @@
             this.tabPage2.Controls.Add(this.pbMushRoomGroundLeft);
             this.tabPage2.Controls.Add(this.pbEndmap);
             this.tabPage2.Controls.Add(this.pbCheckPoint);
-            this.tabPage2.Controls.Add(this.pbPipeTop);
             this.tabPage2.Controls.Add(this.pbCross);
             this.tabPage2.Controls.Add(this.pbSoilRight);
             this.tabPage2.Controls.Add(this.pbSoilLeft);
-            this.tabPage2.Controls.Add(this.pbPipeUnder);
             this.tabPage2.Controls.Add(this.pbGrassLeft);
             this.tabPage2.Controls.Add(this.pbGrassMid);
             this.tabPage2.Controls.Add(this.pbGrassRight);
@@ -329,10 +323,32 @@
             this.tabPage2.Text = "Terrain";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // pbPipe3
+            // 
+            this.pbPipe3.Image = global::MapEditor.Properties.Resources.pipe3;
+            this.pbPipe3.Location = new System.Drawing.Point(227, 75);
+            this.pbPipe3.Name = "pbPipe3";
+            this.pbPipe3.Size = new System.Drawing.Size(75, 200);
+            this.pbPipe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe3.TabIndex = 31;
+            this.pbPipe3.TabStop = false;
+            this.pbPipe3.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbPipe2
+            // 
+            this.pbPipe2.Image = global::MapEditor.Properties.Resources.pipe2;
+            this.pbPipe2.Location = new System.Drawing.Point(146, 175);
+            this.pbPipe2.Name = "pbPipe2";
+            this.pbPipe2.Size = new System.Drawing.Size(75, 100);
+            this.pbPipe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe2.TabIndex = 30;
+            this.pbPipe2.TabStop = false;
+            this.pbPipe2.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
             // pbPipe1
             // 
             this.pbPipe1.Image = global::MapEditor.Properties.Resources.pipe1;
-            this.pbPipe1.Location = new System.Drawing.Point(227, 142);
+            this.pbPipe1.Location = new System.Drawing.Point(146, 75);
             this.pbPipe1.Name = "pbPipe1";
             this.pbPipe1.Size = new System.Drawing.Size(75, 50);
             this.pbPipe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -406,17 +422,6 @@
             this.pbCheckPoint.TabStop = false;
             this.pbCheckPoint.Click += new System.EventHandler(this.pbBlock_Click);
             // 
-            // pbPipeTop
-            // 
-            this.pbPipeTop.Image = ((System.Drawing.Image)(resources.GetObject("pbPipeTop.Image")));
-            this.pbPipeTop.Location = new System.Drawing.Point(135, 61);
-            this.pbPipeTop.Name = "pbPipeTop";
-            this.pbPipeTop.Size = new System.Drawing.Size(64, 32);
-            this.pbPipeTop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipeTop.TabIndex = 19;
-            this.pbPipeTop.TabStop = false;
-            this.pbPipeTop.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
             // pbCross
             // 
             this.pbCross.Image = ((System.Drawing.Image)(resources.GetObject("pbCross.Image")));
@@ -449,17 +454,6 @@
             this.pbSoilLeft.TabIndex = 20;
             this.pbSoilLeft.TabStop = false;
             this.pbSoilLeft.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbPipeUnder
-            // 
-            this.pbPipeUnder.Image = ((System.Drawing.Image)(resources.GetObject("pbPipeUnder.Image")));
-            this.pbPipeUnder.Location = new System.Drawing.Point(135, 99);
-            this.pbPipeUnder.Name = "pbPipeUnder";
-            this.pbPipeUnder.Size = new System.Drawing.Size(64, 32);
-            this.pbPipeUnder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipeUnder.TabIndex = 14;
-            this.pbPipeUnder.TabStop = false;
-            this.pbPipeUnder.Click += new System.EventHandler(this.pbBlock_Click);
             // 
             // pbGrassLeft
             // 
@@ -891,28 +885,6 @@
             this.btGenerate.UseVisualStyleBackColor = true;
             this.btGenerate.Click += new System.EventHandler(this.btGenerate_Click);
             // 
-            // pbPipe2
-            // 
-            this.pbPipe2.Image = global::MapEditor.Properties.Resources.pipe2;
-            this.pbPipe2.Location = new System.Drawing.Point(227, 218);
-            this.pbPipe2.Name = "pbPipe2";
-            this.pbPipe2.Size = new System.Drawing.Size(75, 100);
-            this.pbPipe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipe2.TabIndex = 30;
-            this.pbPipe2.TabStop = false;
-            this.pbPipe2.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbPipe3
-            // 
-            this.pbPipe3.Image = global::MapEditor.Properties.Resources.pipe3;
-            this.pbPipe3.Location = new System.Drawing.Point(146, 142);
-            this.pbPipe3.Name = "pbPipe3";
-            this.pbPipe3.Size = new System.Drawing.Size(75, 200);
-            this.pbPipe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipe3.TabIndex = 31;
-            this.pbPipe3.TabStop = false;
-            this.pbPipe3.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -960,6 +932,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).EndInit();
@@ -967,11 +941,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEndmap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCheckPoint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipeTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSoilRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSoilLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipeUnder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).EndInit();
@@ -996,8 +968,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1039,11 +1009,9 @@
         private System.Windows.Forms.PictureBox pbMushRoomGroundLeft;
         private System.Windows.Forms.PictureBox pbEndmap;
         private System.Windows.Forms.PictureBox pbCheckPoint;
-        private System.Windows.Forms.PictureBox pbPipeTop;
         private System.Windows.Forms.PictureBox pbCross;
         private System.Windows.Forms.PictureBox pbSoilRight;
         private System.Windows.Forms.PictureBox pbSoilLeft;
-        private System.Windows.Forms.PictureBox pbPipeUnder;
         private System.Windows.Forms.PictureBox pbGrassLeft;
         private System.Windows.Forms.PictureBox pbGrassMid;
         private System.Windows.Forms.PictureBox pbGrassRight;

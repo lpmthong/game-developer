@@ -8,7 +8,9 @@
 class Player : public DynamicObject{
 
 public:
-	int life; // Cai nay bo vo truoc tu tu tinh sau
+	int life;
+	bool alive;
+
 	bool onGround; //Dang nam tren mat dat hay cai gi do.
 	bool jumping; //Co dang nhay hay khong?
 
@@ -55,6 +57,8 @@ public:
 	void CollideWithStaticObj();
 	void CollideWithGround(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithPiPe(float normalx, float normaly, float collisiontime,  StaticObject *obj);
+	void CollideWithHardBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
+	void CollideWithCoin(StaticObject *obj);
 
 	void UpdateMarioBox(float ix, float iy, float iw, float ih, float ivx, float ivy);
 

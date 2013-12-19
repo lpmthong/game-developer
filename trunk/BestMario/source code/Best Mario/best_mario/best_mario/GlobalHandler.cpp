@@ -19,6 +19,9 @@ int					 GlobalHandler::gameState			= GS_GAMEPLAY;
 int					 GlobalHandler::checkpoint[2][10];
 int					 GlobalHandler::checkpoint_index	= 0;
 
+int					 GlobalHandler::playerScore			= 0;
+int					 GlobalHandler::playerCoin			= 0;
+
 GlobalHandler::GlobalHandler(void){}
 
 GlobalHandler::~GlobalHandler(void){}
