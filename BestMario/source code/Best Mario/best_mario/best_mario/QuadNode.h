@@ -31,6 +31,6 @@ public:
 	void Render();
 	void Render(int map_level);
 	void Update();
-
+	bool CheckExitsStaticObj(StaticObject *obj);
 	//void SaveFile();
 };

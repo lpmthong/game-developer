@@ -84,7 +84,7 @@ void ListTerrain::InitTerrain(int level){
 			ground->setType(arr_terrain[i+1]);
 			GlobalHandler::listStaticObj.push_back(ground);
 		}
-		else if (arr_terrain[i+1] == PIPE_CAP || arr_terrain[i+1] == PIPE_BODY)
+		else if (arr_terrain[i+1] == PIPE_1 || arr_terrain[i+1] == PIPE_2 || arr_terrain[i+1] == PIPE_3)
 		{
 			Pipe* pipe = new Pipe(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i]);
 			GlobalHandler::listStaticObj.push_back(pipe);

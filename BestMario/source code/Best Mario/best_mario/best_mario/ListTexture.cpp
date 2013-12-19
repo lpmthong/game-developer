@@ -57,6 +57,24 @@ int					ListTexture::TT_PIPE_BODY_HEIGHT;
 int					ListTexture::TT_PIPE_BODY_COUNT;
 int					ListTexture::TT_PIPE_BODY_SPRITEPERROW;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_PIPE_1;
+int					ListTexture::TT_PIPE_1_WIDTH;
+int					ListTexture::TT_PIPE_1_HEIGHT;
+int					ListTexture::TT_PIPE_1_COUNT;
+int					ListTexture::TT_PIPE_1_SPRITEPERROW;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_PIPE_2;
+int					ListTexture::TT_PIPE_2_WIDTH;
+int					ListTexture::TT_PIPE_2_HEIGHT;
+int					ListTexture::TT_PIPE_2_COUNT;
+int					ListTexture::TT_PIPE_2_SPRITEPERROW;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_PIPE_3;
+int					ListTexture::TT_PIPE_3_WIDTH;
+int					ListTexture::TT_PIPE_3_HEIGHT;
+int					ListTexture::TT_PIPE_3_COUNT;
+int					ListTexture::TT_PIPE_3_SPRITEPERROW;
+
 LPDIRECT3DTEXTURE9	ListTexture::TT_OUT_COIN;
 int					ListTexture::TT_OUT_COIN_WIDTH;
 int					ListTexture::TT_OUT_COIN_HEIGHT;
@@ -150,6 +168,24 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_PIPE_BODY_COUNT						= 1;
 	ListTexture::TT_PIPE_BODY_SPRITEPERROW				= 1;
 
+	ListTexture::TT_PIPE_1								= GlobalHandler::_directX->LoadTextureFromFile("Media\\pipe1.png", 0);
+	ListTexture::TT_PIPE_1_WIDTH						= 75;
+	ListTexture::TT_PIPE_1_HEIGHT						= 50;
+	ListTexture::TT_PIPE_1_COUNT						= 1;
+	ListTexture::TT_PIPE_1_SPRITEPERROW					= 1;
+
+	ListTexture::TT_PIPE_2								= GlobalHandler::_directX->LoadTextureFromFile("Media\\pipe2.png", 0);
+	ListTexture::TT_PIPE_2_WIDTH						= 75;
+	ListTexture::TT_PIPE_2_HEIGHT						= 100;
+	ListTexture::TT_PIPE_2_COUNT						= 1;
+	ListTexture::TT_PIPE_2_SPRITEPERROW					= 1;
+
+	ListTexture::TT_PIPE_3								= GlobalHandler::_directX->LoadTextureFromFile("Media\\pipe3.png", 0);
+	ListTexture::TT_PIPE_3_WIDTH						= 75;
+	ListTexture::TT_PIPE_3_HEIGHT						= 200;
+	ListTexture::TT_PIPE_3_COUNT						= 1;
+	ListTexture::TT_PIPE_3_SPRITEPERROW					= 1;
+
 	ListTexture::TT_OUT_COIN							= GlobalHandler::_directX->LoadTextureFromFile("Media\\coin.bmp",0);
 	ListTexture::TT_OUT_COIN_WIDTH						= 19;
 	ListTexture::TT_OUT_COIN_HEIGHT						= 29;
@@ -158,8 +194,8 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_OUT_COIN_ANIMATED_RATE				= 100;
 
 	ListTexture::TT_MARIO_KID							= GlobalHandler::_directX->LoadTextureFromFile("Media\\mario.bmp", 0);;
-	ListTexture::TT_MARIO_KID_WIDTH						= 32;
-	ListTexture::TT_MARIO_KID_HEIGHT					= 32;
+	ListTexture::TT_MARIO_KID_WIDTH						= 31;
+	ListTexture::TT_MARIO_KID_HEIGHT					= 31;
 	ListTexture::TT_MARIO_KID_COUNT						= 7;
 	ListTexture::TT_MARIO_KID_SPRITEPERROW				= 2;
 	ListTexture::TT_MARIO_KID_ANIMATED_RATE				= 25; // 200

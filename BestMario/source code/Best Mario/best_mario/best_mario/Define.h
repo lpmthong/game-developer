@@ -62,6 +62,10 @@
 #define FALLING_CROSS 44
 #define GROUNDUNDERMUSHROOM 45
 #define BRICK_BONUS_STAR 46
+#define PIPE_1 47
+#define PIPE_2 48
+#define PIPE_3 49
+
 
 //Game State.
 #define GS_MENU		0

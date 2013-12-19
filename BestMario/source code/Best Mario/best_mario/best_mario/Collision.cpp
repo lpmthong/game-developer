@@ -95,9 +95,14 @@ float Collision::SweptAABB(Box box1, Box box2, float& normalx, float& normaly){
 				normaly = 0.0f;
 			}
 			else
-			{
+			{				
 				normalx = -1.0f;
 				normaly = 0.0f;
+				if (xInvEntry == 0.0f && box1.vx < 0.0f)
+				{
+					normalx = 1.0f;
+					normaly = 0.0f;
+				}
 			}
 		}
 		else
@@ -108,9 +113,14 @@ float Collision::SweptAABB(Box box1, Box box2, float& normalx, float& normaly){
 				normaly = 1.0f;
 			}
 			else
-			{
+			{				
 				normalx = 0.0f;
 				normaly = -1.0f;
+				if (yInvEntry == 0 && box1.vy < 0.0f )
+				{
+					normalx = 0.0f;
+					normaly = 1.0f;
+				}
 			}
 		}
 

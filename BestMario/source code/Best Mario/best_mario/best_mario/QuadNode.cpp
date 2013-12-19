@@ -86,8 +86,23 @@ void QuadNode::Update(){
 	list<StaticObject*>::iterator it;
 	for(it = listObject.begin(); it != listObject.end(); ++it ){
 		(*it)->Update();
-		if ((*it)->isSolid == true)		
-			GlobalHandler::listStaticObjRender.push_back((*it));
+		if ((*it)->isSolid == true)
+		{
+			if (CheckExitsStaticObj((*it)))
+				GlobalHandler::listStaticObjRender.push_back((*it));
+		}	
+			
 	}
 
+}
+
+bool QuadNode::CheckExitsStaticObj(StaticObject *obj)
+{
+	list<StaticObject*>::iterator it;
+	for(it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it )
+	{
+		if ((*it)->id == obj->id)
+			return false;		
+	}
+	return true;
 }

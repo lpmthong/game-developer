@@ -54,14 +54,11 @@ void Game::Update(){
 
 void Game::Render(){
 
-	/*for (int i = 0; i < 3; i++)
-	{
-	list<StaticObject*>::iterator it;
-	for(it = GlobalHandler::listStaticObj.begin(); it != GlobalHandler::listStaticObj.end(); ++it ){
-	if ((*it)->map_level == i)
-	(*it)->Render();
-	}
-	}	*/
+	/*list<StaticObject*>::iterator it;
+	for(it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it ){
+	trace(L"Id: %d", (*it)->id);
+	}*/
+	
 	GlobalHandler::quadTree->RenderScreen();
 	GlobalHandler::dynamicObjManager->Render();
 }
