@@ -80,3 +80,16 @@
 #define DYING 1
 #define INHELL 2
 #define DYING2 3
+
+//Brick break type
+#define BB_LEFT_TOP 0
+#define BB_LEFT_BOTTOM 1
+#define BB_RIGHT_TOP 2
+#define BB_RIGHT_BOTTOM 3
+
+//Bonus type
+#define GROWUP 0
+#define LIFE 1
+#define GUN 2
+#define COIN 3
+#define STAR 4

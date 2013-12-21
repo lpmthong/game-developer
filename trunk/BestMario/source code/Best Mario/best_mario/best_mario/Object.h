@@ -33,7 +33,7 @@ public:
 	
 
 	virtual bool CheckCollision(Object *obj); //Kiem tra va cham voi obj khac
-	virtual void ProcessCollision();
+	virtual void ProcessCollision(int iKind);
 	virtual void UpdateRect(int left, int top, int width, int height);
 	void UpdateRect(int left, int top);
 	virtual void GetTick();

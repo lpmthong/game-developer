@@ -99,11 +99,47 @@ int					ListTexture::TT_MARIO_KID_JUMPING_RIGHT_END;
 int					ListTexture::TT_MARIO_KID_DEATH_START;
 int					ListTexture::TT_MARIO_KID_DEATH_END;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_MARIO_ADULT;
+int					ListTexture::TT_MARIO_ADULT_WIDTH;
+int					ListTexture::TT_MARIO_ADULT_HEIGHT;
+int					ListTexture::TT_MARIO_ADULT_COUNT;
+int					ListTexture::TT_MARIO_ADULT_SPRITEPERROW;
+int					ListTexture::TT_MARIO_ADULT_ANIMATED_RATE;
+int					ListTexture::TT_MARIO_ADULT_MOVING_LEFT_START;
+int					ListTexture::TT_MARIO_ADULT_MOVING_LEFT_END;
+int					ListTexture::TT_MARIO_ADULT_MOVING_RIGHT_START;
+int					ListTexture::TT_MARIO_ADULT_MOVING_RIGHT_END;
+int					ListTexture::TT_MARIO_ADULT_JUMPING_LEFT_START;
+int					ListTexture::TT_MARIO_ADULT_JUMPING_LEFT_END;
+int					ListTexture::TT_MARIO_ADULT_JUMPING_RIGHT_START;
+int					ListTexture::TT_MARIO_ADULT_JUMPING_RIGHT_END;
+int					ListTexture::TT_MARIO_GUN_MOVING_LEFT_START;
+int					ListTexture::TT_MARIO_GUN_MOVING_LEFT_END;
+int					ListTexture::TT_MARIO_GUN_MOVING_RIGHT_START;
+int					ListTexture::TT_MARIO_GUN_MOVING_RIGHT_END;
+int					ListTexture::TT_MARIO_GUN_JUMPING_LEFT_START;
+int					ListTexture::TT_MARIO_GUN_JUMPING_LEFT_END;
+int					ListTexture::TT_MARIO_GUN_JUMPING_RIGHT_START;
+int					ListTexture::TT_MARIO_GUN_JUMPING_RIGHT_END;
+
 LPDIRECT3DTEXTURE9	ListTexture::TT_HARD_BRICK;
 int					ListTexture::TT_HARD_BRICK_WIDTH;
 int					ListTexture::TT_HARD_BRICK_HEIGHT;
 int					ListTexture::TT_HARD_BRICK_COUNT;
 int					ListTexture::TT_HARD_BRICK_SPRITEPERROW;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_BRICK;
+int					ListTexture::TT_BRICK_WIDTH;
+int					ListTexture::TT_BRICK_HEIGHT;
+int					ListTexture::TT_BRICK_COUNT;
+int					ListTexture::TT_BRICK_SPRITEPERROW;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_BRICK_BREAK_LEFT;
+int					ListTexture::TT_BRICK_BREAK_LEFT_WIDTH;
+int					ListTexture::TT_BRICK_BREAK_LEFT_HEIGHT;
+int					ListTexture::TT_BRICK_BREAK_LEFT_COUNT;
+int					ListTexture::TT_BRICK_BREAK_LEFT_SPRITEPERROW;
+int					ListTexture::TT_BRICK_BREAK_LEFT_ANIMATED_RATE;
 
 
 ListTexture::ListTexture(void){}
@@ -210,10 +246,46 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_MARIO_KID_DEATH_START				= 6;
 	ListTexture::TT_MARIO_KID_DEATH_END					= 6;
 
+	ListTexture::TT_MARIO_ADULT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\mario_growup.bmp", 0);
+	ListTexture::TT_MARIO_ADULT_WIDTH					= 31;
+	ListTexture::TT_MARIO_ADULT_HEIGHT					= 60;
+	ListTexture::TT_MARIO_ADULT_COUNT					= 16;
+	ListTexture::TT_MARIO_ADULT_SPRITEPERROW			= 3;
+	ListTexture::TT_MARIO_ADULT_ANIMATED_RATE			= 25; //200
+	ListTexture::TT_MARIO_ADULT_MOVING_LEFT_START		= 3;
+	ListTexture::TT_MARIO_ADULT_MOVING_LEFT_END			= 5;
+	ListTexture::TT_MARIO_ADULT_MOVING_RIGHT_START		= 0;
+	ListTexture::TT_MARIO_ADULT_MOVING_RIGHT_END		= 2;
+	ListTexture::TT_MARIO_ADULT_JUMPING_LEFT_START		= 13;
+	ListTexture::TT_MARIO_ADULT_JUMPING_LEFT_END		= 13;
+	ListTexture::TT_MARIO_ADULT_JUMPING_RIGHT_START		= 12;
+	ListTexture::TT_MARIO_ADULT_JUMPING_RIGHT_END		= 12;
+	ListTexture::TT_MARIO_GUN_MOVING_LEFT_START			= 9;
+	ListTexture::TT_MARIO_GUN_MOVING_LEFT_END			= 11;
+	ListTexture::TT_MARIO_GUN_MOVING_RIGHT_START		= 6;
+	ListTexture::TT_MARIO_GUN_MOVING_RIGHT_END			= 8;
+	ListTexture::TT_MARIO_GUN_JUMPING_LEFT_START		= 15;
+	ListTexture::TT_MARIO_GUN_JUMPING_LEFT_END			= 15;
+	ListTexture::TT_MARIO_GUN_JUMPING_RIGHT_START		= 14;
+	ListTexture::TT_MARIO_GUN_JUMPING_RIGHT_END			= 14;
+
 
 	ListTexture::TT_HARD_BRICK							= GlobalHandler::_directX->LoadTextureFromFile("Media\\hardbrick.bmp",0);
 	ListTexture::TT_HARD_BRICK_WIDTH					= 32;
 	ListTexture::TT_HARD_BRICK_HEIGHT					= 32;
 	ListTexture::TT_HARD_BRICK_COUNT					= 1;
 	ListTexture::TT_HARD_BRICK_SPRITEPERROW				= 1;
+
+	ListTexture::TT_BRICK								= GlobalHandler::_directX->LoadTextureFromFile("Media\\brick.bmp",0);
+	ListTexture::TT_BRICK_WIDTH							= 32;
+	ListTexture::TT_BRICK_HEIGHT						= 32;
+	ListTexture::TT_BRICK_COUNT							= 1;
+	ListTexture::TT_BRICK_SPRITEPERROW					= 1;
+
+	ListTexture::TT_BRICK_BREAK_LEFT					= GlobalHandler::_directX->LoadTextureFromFile("Media\\brick_broke_left.bmp", 0);
+	ListTexture::TT_BRICK_BREAK_LEFT_WIDTH				= 16;
+	ListTexture::TT_BRICK_BREAK_LEFT_HEIGHT				= 16;
+	ListTexture::TT_BRICK_BREAK_LEFT_COUNT				= 4;
+	ListTexture::TT_BRICK_BREAK_LEFT_SPRITEPERROW		= 4;
+	ListTexture::TT_BRICK_BREAK_LEFT_ANIMATED_RATE		= 70;
 }

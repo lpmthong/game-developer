@@ -46,6 +46,9 @@
     <Filter Include="Collision">
       <UniqueIdentifier>{9d2d1a13-9daf-40f4-9935-e5ed6fc89e25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DynamicObject\Brick">
+      <UniqueIdentifier>{a7aa4dcf-5ef7-431a-8999-46db0119e69d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -129,6 +132,21 @@
     <ClCompile Include="Collision.cpp">
       <Filter>Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Brick.cpp">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClCompile>
+    <ClCompile Include="BrickBreak.cpp">
+      <Filter>DynamicObject\Brick</Filter>
+    </ClCompile>
+    <ClCompile Include="dsutil.cpp">
+      <Filter>DirectXHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="DXSound.cpp">
+      <Filter>DirectXHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="ListSound.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -211,6 +229,21 @@
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Brick.h">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClInclude>
+    <ClInclude Include="BrickBreak.h">
+      <Filter>DynamicObject\Brick</Filter>
+    </ClInclude>
+    <ClInclude Include="dsutil.h">
+      <Filter>DirectXHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="DXSound.h">
+      <Filter>DirectXHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="ListSound.h">
+      <Filter>Resource</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

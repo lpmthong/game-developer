@@ -11,7 +11,7 @@
 #include "HighTree.h"
 #include "LowTree.h"
 #include "HardBrick.h"
-
+#include "Brick.h"
 
 int ListTerrain::arr_terrain[10000];
 int ListTerrain::arr_terrain_index = 0;
@@ -119,6 +119,11 @@ void ListTerrain::InitTerrain(int level){
 		{
 			HardBrick *hardbrick = new HardBrick(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
 			GlobalHandler::listStaticObj.push_back(hardbrick);
+		} 
+		else if (arr_terrain[i+1] == BRICK)
+		{
+			Brick *brick = new Brick(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(brick);
 		}
 	}
 

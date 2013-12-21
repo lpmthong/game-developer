@@ -56,7 +56,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;dxguid.lib;dsound.lib;winmm.lib;dxerr.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -78,10 +78,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="Brick.cpp" />
+    <ClCompile Include="BrickBreak.cpp" />
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="DirectX.cpp" />
+    <ClCompile Include="dsutil.cpp" />
+    <ClCompile Include="DXSound.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="DynamicObjManager.cpp" />
     <ClCompile Include="Fence.cpp" />
@@ -91,6 +95,7 @@
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="HardBrick.cpp" />
     <ClCompile Include="HighTree.cpp" />
+    <ClCompile Include="ListSound.cpp" />
     <ClCompile Include="ListTerrain.cpp" />
     <ClCompile Include="ListTexture.cpp" />
     <ClCompile Include="LowTree.cpp" />
@@ -107,11 +112,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="Brick.h" />
+    <ClInclude Include="BrickBreak.h" />
     <ClInclude Include="Cloud.h" />
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="DirectX.h" />
+    <ClInclude Include="dsutil.h" />
+    <ClInclude Include="DXSound.h" />
     <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="DynamicObjManager.h" />
     <ClInclude Include="Fence.h" />
@@ -121,6 +130,7 @@
     <ClInclude Include="Ground.h" />
     <ClInclude Include="HardBrick.h" />
     <ClInclude Include="HighTree.h" />
+    <ClInclude Include="ListSound.h" />
     <ClInclude Include="ListTerrain.h" />
     <ClInclude Include="ListTexture.h" />
     <ClInclude Include="LowTree.h" />

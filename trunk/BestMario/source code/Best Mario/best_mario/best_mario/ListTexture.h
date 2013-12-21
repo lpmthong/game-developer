@@ -96,7 +96,7 @@ public:
 	static int					TT_OUT_COIN_SPRITEPERROW;
 	static int					TT_OUT_COIN_ANIMATED_RATE;
 
-	//Mario nho
+	//Mario
 	static LPDIRECT3DTEXTURE9	TT_MARIO_KID;
 	static int					TT_MARIO_KID_WIDTH;
 	static int					TT_MARIO_KID_HEIGHT;
@@ -114,12 +114,51 @@ public:
 	static int					TT_MARIO_KID_DEATH_START;
 	static int					TT_MARIO_KID_DEATH_END;
 
+	static LPDIRECT3DTEXTURE9	TT_MARIO_ADULT;
+	static int					TT_MARIO_ADULT_WIDTH;
+	static int					TT_MARIO_ADULT_HEIGHT;
+	static int					TT_MARIO_ADULT_COUNT;
+	static int					TT_MARIO_ADULT_SPRITEPERROW;
+	static int					TT_MARIO_ADULT_ANIMATED_RATE;
+	static int					TT_MARIO_ADULT_MOVING_LEFT_START;
+	static int					TT_MARIO_ADULT_MOVING_LEFT_END;
+	static int					TT_MARIO_ADULT_MOVING_RIGHT_START;
+	static int					TT_MARIO_ADULT_MOVING_RIGHT_END;
+	static int					TT_MARIO_ADULT_JUMPING_LEFT_START;
+	static int					TT_MARIO_ADULT_JUMPING_LEFT_END;
+	static int					TT_MARIO_ADULT_JUMPING_RIGHT_START;
+	static int					TT_MARIO_ADULT_JUMPING_RIGHT_END;
+	static int					TT_MARIO_GUN_MOVING_LEFT_START;
+	static int					TT_MARIO_GUN_MOVING_LEFT_END;
+	static int					TT_MARIO_GUN_MOVING_RIGHT_START;
+	static int					TT_MARIO_GUN_MOVING_RIGHT_END;
+	static int					TT_MARIO_GUN_JUMPING_LEFT_START;
+	static int					TT_MARIO_GUN_JUMPING_LEFT_END;
+	static int					TT_MARIO_GUN_JUMPING_RIGHT_START;
+	static int					TT_MARIO_GUN_JUMPING_RIGHT_END;
+
 	//hard Brick
 	static LPDIRECT3DTEXTURE9	TT_HARD_BRICK;
 	static int					TT_HARD_BRICK_WIDTH;
 	static int					TT_HARD_BRICK_HEIGHT;
 	static int					TT_HARD_BRICK_COUNT;
 	static int					TT_HARD_BRICK_SPRITEPERROW;
+
+	//Brick
+	static LPDIRECT3DTEXTURE9	TT_BRICK;
+	static int					TT_BRICK_WIDTH;
+	static int					TT_BRICK_HEIGHT;
+	static int					TT_BRICK_COUNT;
+	static int					TT_BRICK_SPRITEPERROW;
+
+	//Brick Break
+	static LPDIRECT3DTEXTURE9	TT_BRICK_BREAK_LEFT;
+	static int					TT_BRICK_BREAK_LEFT_WIDTH;
+	static int					TT_BRICK_BREAK_LEFT_HEIGHT;
+	static int					TT_BRICK_BREAK_LEFT_COUNT;
+	static int					TT_BRICK_BREAK_LEFT_SPRITEPERROW;
+	static int					TT_BRICK_BREAK_LEFT_ANIMATED_RATE;
+
 public:
 	static void CreateAllTexture();
 	ListTexture(void);

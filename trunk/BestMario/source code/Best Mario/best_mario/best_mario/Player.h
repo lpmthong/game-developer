@@ -25,6 +25,8 @@ public:
 	float VxF, VyF;
 
 	bool ConUpdate; //Cai nay de xem coi khong co va cham thi tiep tuc  
+
+	bool hasGun; //Co vu khi khong
 private:
 	int frame_moving_left_start;
 	int frame_moving_left_end;
@@ -43,6 +45,8 @@ public:
 	void InitFromFile(int mode,int LastCheckPoint, int Life);
 
 	void setKid();
+	void setAdult();
+	void setGun();
 
 	void Update();
 	void Render();
@@ -59,6 +63,7 @@ public:
 	void CollideWithPiPe(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithHardBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithCoin(StaticObject *obj);
+	void CollideWithBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 
 	void UpdateMarioBox(float ix, float iy, float iw, float ih, float ivx, float ivy);
 

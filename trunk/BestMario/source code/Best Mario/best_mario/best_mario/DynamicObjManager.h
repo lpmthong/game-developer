@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 #include "DynamicObject.h"
+#include "StaticObject.h"
 using namespace std;
 
 class DynamicObjManager{
@@ -16,6 +17,8 @@ public:
 	void GetTick();
 	void Release();
 	//void Reset();
+
+	void ProcessBrickBreak(StaticObject* brick);
 
 	~DynamicObjManager(void);
 		
