@@ -8,13 +8,16 @@
 #include "StaticObject.h"
 #include <stdint.h>
 #include "Collision.h"
+#include "DXSound.h"
 using namespace std;
 
 class GlobalHandler{
 
 public:
 	static QuadTree				*quadTree;
-	static DirectX				*_directX;	
+	static DirectX				*_directX;
+	static DXSound				*sound;
+
 	static int					backGroundColor;
 	static bool					quitGame;		
 	static RECT					screen;

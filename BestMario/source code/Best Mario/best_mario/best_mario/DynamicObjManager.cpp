@@ -1,5 +1,7 @@
 #include "DynamicObjManager.h"
 #include "GlobalHandler.h"
+#include "BrickBreak.h"
+#include "ListSound.h"
 
 DynamicObjManager::DynamicObjManager(void){}
 
@@ -14,7 +16,7 @@ void DynamicObjManager::Add(DynamicObject *obj){
 void DynamicObjManager::Remove(DynamicObject *obj){
 
 	listDynamicObj.remove(obj);
-
+	trace(L"Remove");
 }
 
 void DynamicObjManager::Render(){
@@ -22,10 +24,11 @@ void DynamicObjManager::Render(){
 	list<DynamicObject*>::iterator it;
 	for (it = listDynamicObj.begin(); it != listDynamicObj.end(); it++)
 		(*it)->Render();
-
 }
 
 void DynamicObjManager::Update(){
+
+	list<DynamicObject*> listBrickBreak;
 
 	list<DynamicObject*>::iterator it;
 	for (it = listDynamicObj.begin(); it != listDynamicObj.end(); it++){
@@ -39,10 +42,17 @@ void DynamicObjManager::Update(){
 
 		if ((*it)->start == true)
 		{
-			(*it)->Update();			
+			(*it)->Update();
+			if ((*it)->isKind == BRICK_BREAK_DISAPPEAR)
+				listBrickBreak.push_back((*it));
 		}
 	}
 
+	//Loai bo danh sach Brick Break
+	list<DynamicObject*>::iterator it_bb;
+	for (it_bb = listBrickBreak.begin(); it_bb != listBrickBreak.end(); it_bb++){
+		Remove((*it_bb));
+	}
 }
 
 void DynamicObjManager::Release()
@@ -66,4 +76,26 @@ void DynamicObjManager::GetTick(){
 	{
 		(*it)->GetTick();
 	}
+}
+
+void DynamicObjManager::ProcessBrickBreak(StaticObject* brick)
+{
+	BrickBreak* brickBreakLT = new BrickBreak(brick->rectDraw.left, brick->rectDraw.top);
+	brickBreakLT->setType(BB_LEFT_TOP);
+	Add(brickBreakLT);
+
+	BrickBreak* brickBreakRT = new BrickBreak(brick->rectDraw.left + 16, brick->rectDraw.top);
+	brickBreakLT->setType(BB_RIGHT_TOP);
+	Add(brickBreakRT);
+
+	BrickBreak* brickBreakLB = new BrickBreak(brick->rectDraw.left, brick->rectDraw.top + 16);
+	brickBreakLB->setType(BB_LEFT_BOTTOM);
+	Add(brickBreakLB);
+
+	BrickBreak* brickBreakRB = new BrickBreak(brick->rectDraw.left + 16, brick->rectDraw.top + 16);
+	brickBreakRB->setType(BB_RIGHT_BOTTOM);
+	Add(brickBreakRB);
+
+	GlobalHandler::quadTree->RemoveObj(brick);
+	GlobalHandler::sound->Play(ListSound::SOUND_BRICKBREAKED, false);
 }

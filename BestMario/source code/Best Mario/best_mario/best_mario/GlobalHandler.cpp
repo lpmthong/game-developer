@@ -1,8 +1,11 @@
 #include "GlobalHandler.h"
 #include "ListTerrain.h"
+#include "ListSound.h"
 
 DirectX				*GlobalHandler::_directX			= new DirectX();
 QuadTree			*GlobalHandler::quadTree			;
+DXSound				*GlobalHandler::sound				= new DXSound();
+
 DynamicObjManager	*GlobalHandler::dynamicObjManager	= new DynamicObjManager();
 Player				*GlobalHandler::player				= new Player();
 int		             GlobalHandler::backGroundColor		= BLUE;
@@ -70,6 +73,8 @@ void GlobalHandler::RestartMap()
 
 	GlobalHandler::quadTree->ReadQuadTreeFormFile(GlobalHandler::mapLevel);
 	GlobalHandler::quadTree->Deserialize();
+
+	GlobalHandler::sound->Play(ListSound::SOUND_BACKGROUND, true);
 
 	trace(L"void GlobalHandler::RestartMap()");
 }

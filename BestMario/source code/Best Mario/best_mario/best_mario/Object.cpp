@@ -10,7 +10,7 @@ bool Object::CheckCollision(Object *obj){
 	return false;
 }
 
-void Object::ProcessCollision(){
+void Object::ProcessCollision(int iKind){
 
 }
 

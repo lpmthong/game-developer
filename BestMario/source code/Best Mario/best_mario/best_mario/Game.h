@@ -2,7 +2,7 @@
 
 #include "DirectX.h"
 #include "ListTexture.h"
-
+#include "ListSound.h"
 //include test
 #include "StaticObject.h"
 //

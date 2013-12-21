@@ -16,14 +16,19 @@ Game::~Game(void){}
 void Game::Init(){
 	cleartrace();
 	GlobalHandler::_directX->Init(_hInstance);
+	GlobalHandler::sound->Init(GlobalHandler::_directX->_hWnd);
+
 	GlobalHandler::screen.left		= 0;
 	GlobalHandler::screen.top		= 0;
 	GlobalHandler::screen.right		= SCREEN_WIDTH;
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
+
 	ListTexture::CreateAllTexture();
+	ListSound::CreateAllSound();
+	
 	GlobalHandler::RestartMap();
 
-	GlobalHandler::player->Init(10, 0, 4);
+	GlobalHandler::player->Init(11, 0, 4);
 	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);	
 }
 
