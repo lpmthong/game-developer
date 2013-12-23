@@ -90,8 +90,7 @@ void QuadNode::Update(){
 		{
 			if (CheckExitsStaticObj((*it)))
 				GlobalHandler::listStaticObjRender.push_back((*it));
-		}	
-			
+		}			
 	}
 
 }

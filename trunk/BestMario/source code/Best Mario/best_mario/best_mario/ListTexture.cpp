@@ -141,6 +141,41 @@ int					ListTexture::TT_BRICK_BREAK_LEFT_COUNT;
 int					ListTexture::TT_BRICK_BREAK_LEFT_SPRITEPERROW;
 int					ListTexture::TT_BRICK_BREAK_LEFT_ANIMATED_RATE;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_BRICK_BONUS;
+int					ListTexture::TT_BRICK_BONUS_WIDTH;
+int					ListTexture::TT_BRICK_BONUS_HEIGHT;
+int					ListTexture::TT_BRICK_BONUS_COUNT;
+int					ListTexture::TT_BRICK_BONUS_SPRITEPERROW;
+int					ListTexture::TT_BRICK_BONUS_ANIMATED_RATE;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_BONUS_MUSHROOM;
+int					ListTexture::TT_BONUS_MUSHROOM_WIDTH;
+int					ListTexture::TT_BONUS_MUSHROOM_HEIGHT;
+int					ListTexture::TT_BONUS_MUSHROOM_COUNT;
+int					ListTexture::TT_BONUS_MUSHROOM_SPRITEPERROW;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_EMPTY_BRICK;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_FLOWER;
+int					ListTexture::TT_FLOWER_WIDTH;
+int					ListTexture::TT_FLOWER_HEIGHT;
+int					ListTexture::TT_FLOWER_COUNT;
+int					ListTexture::TT_FLOWER_SPRITEPERROW;
+int					ListTexture::TT_FLOWER_ANIMATED_RATE;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_STAR;
+int					ListTexture::TT_STAR_WIDTH;
+int					ListTexture::TT_STAR_HEIGHT;
+int					ListTexture::TT_STAR_COUNT;
+int					ListTexture::TT_STAR_SPRITEPERROW;
+int					ListTexture::TT_STARR_ANIMATED_RATE;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_COIN_PICK;
+int					ListTexture::TT_COIN_PICK_WIDTH;
+int					ListTexture::TT_COIN_PICK_HEIGHT;
+int					ListTexture::TT_COIN_PICK_COUNT;
+int					ListTexture::TT_COIN_PICK_SPRITEPERROW;
+int					ListTexture::TT_COIN_PICK_ANIMATED_RATE;
 
 ListTexture::ListTexture(void){}
 
@@ -288,4 +323,41 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_BRICK_BREAK_LEFT_COUNT				= 4;
 	ListTexture::TT_BRICK_BREAK_LEFT_SPRITEPERROW		= 4;
 	ListTexture::TT_BRICK_BREAK_LEFT_ANIMATED_RATE		= 70;
+
+	ListTexture::TT_BRICK_BONUS							= GlobalHandler::_directX->LoadTextureFromFile("Media\\brick_bonus.png", 0);
+	ListTexture::TT_BRICK_BONUS_WIDTH					= 32;
+	ListTexture::TT_BRICK_BONUS_HEIGHT					= 32;
+	ListTexture::TT_BRICK_BONUS_COUNT					= 3;
+	ListTexture::TT_BRICK_BONUS_SPRITEPERROW			= 3;
+	ListTexture::TT_BRICK_BONUS_ANIMATED_RATE			= 130;
+
+	ListTexture::TT_BONUS_MUSHROOM						= GlobalHandler::_directX->LoadTextureFromFile("Media\\bonus_mushroom.bmp", 0);
+	ListTexture::TT_BONUS_MUSHROOM_WIDTH				= 32;
+	ListTexture::TT_BONUS_MUSHROOM_HEIGHT				= 32;
+	ListTexture::TT_BONUS_MUSHROOM_COUNT				= 2;
+	ListTexture::TT_BONUS_MUSHROOM_SPRITEPERROW			= 2;
+
+	ListTexture::TT_EMPTY_BRICK							= GlobalHandler::_directX->LoadTextureFromFile("Media\\empty_brick.bmp", 0);
+
+	ListTexture::TT_FLOWER								= GlobalHandler::_directX->LoadTextureFromFile("Media\\sprite_flower.bmp", 0);
+	ListTexture::TT_FLOWER_WIDTH						= 32;
+	ListTexture::TT_FLOWER_HEIGHT						= 32;
+	ListTexture::TT_FLOWER_COUNT						= 4;
+	ListTexture::TT_FLOWER_SPRITEPERROW					= 4;
+	ListTexture::TT_FLOWER_ANIMATED_RATE				= 200;
+
+	ListTexture::TT_STAR								= GlobalHandler::_directX->LoadTextureFromFile("Media\\bonus_star.png", 0);
+	ListTexture::TT_STAR_WIDTH							= 32;
+	ListTexture::TT_STAR_HEIGHT							= 32;
+	ListTexture::TT_STAR_COUNT							= 4;
+	ListTexture::TT_STAR_SPRITEPERROW					= 4;
+	ListTexture::TT_STARR_ANIMATED_RATE					= 80;
+
+	ListTexture::TT_COIN_PICK							= GlobalHandler::_directX->LoadTextureFromFile("Media\\coin_pickup.bmp",0);
+	ListTexture::TT_COIN_PICK_WIDTH						= 32;
+	ListTexture::TT_COIN_PICK_HEIGHT					= 32;
+	ListTexture::TT_COIN_PICK_COUNT						= 4;
+	ListTexture::TT_COIN_PICK_SPRITEPERROW				= 4;
+	ListTexture::TT_COIN_PICK_ANIMATED_RATE				= 100;
+
 }

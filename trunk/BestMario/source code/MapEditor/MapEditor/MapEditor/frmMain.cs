@@ -250,7 +250,7 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.BRICK_BONUS_COIN;
                 TempObj.width = 32;
                 TempObj.height = 32;
-                TempObj.st = false;
+                TempObj.st = true;
             }
             else if (pb.Name == pbItem_Flower.Name)
             {
@@ -258,7 +258,7 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.BRICK_BONUS_GUN;
                 TempObj.width = 32;
                 TempObj.height = 32;
-                TempObj.st = false;
+                TempObj.st = true;
             }
             else if (pb.Name == pbItem_RedMusrom.Name)
             {
@@ -266,7 +266,7 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.BRICK_BONUS_MUSHROOM;
                 TempObj.width = 32;
                 TempObj.height = 32;
-                TempObj.st = false;
+                TempObj.st = true;
             }
             else if (pb.Name == pbItem_GreenMusrom.Name)
             {
@@ -274,7 +274,7 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.BRICK_BONUS_LIFE;
                 TempObj.width = 32;
                 TempObj.height = 32;
-                TempObj.st = false;
+                TempObj.st = true;
             }
             else if (pb.Name == pbDarkSoil.Name)
             {
@@ -338,7 +338,7 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.BRICK_BONUS_LIFE_HIDDEN;
                 TempObj.width = 32;
                 TempObj.height = 32;
-                TempObj.st = false;
+                TempObj.st = true;
             }
             else if (pb.Name == pbCheckPoint.Name)
             {
@@ -402,7 +402,7 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.BRICK_BONUS_STAR;
                 TempObj.width = 32;
                 TempObj.height = 32;
-                TempObj.st = false;
+                TempObj.st = true;
             }
             else if (pb.Name == pbRedTurle.Name)
             {
@@ -594,11 +594,17 @@ namespace MapEditor
                     sw.Write(obj.x);
                     sw.Write(" ");
                     sw.Write(600 - obj.y);
+                    if (obj.kind == (int)BlockKind.BRICK_BONUS_MUSHROOM || obj.kind == (int)BlockKind.BRICK_BONUS_GUN
+                        || obj.kind == (int)BlockKind.BRICK_BONUS_LIFE || obj.kind == (int)BlockKind.BRICK_BONUS_COIN
+                        || obj.kind == (int)BlockKind.BRICK_BONUS_STAR || obj.kind == (int)BlockKind.BRICK_BONUS_LIFE_HIDDEN)
+                    {
+                        sw.Write(" ");
+                        sw.Write(1);                        
+                    }
                     sw.WriteLine();
                 }
 
                 sw.Write(" 10 0 4 0 0 300 1");// Cac thong so cua mario
-
                 
                 sw.Flush();
                 sw.Close();
@@ -645,6 +651,10 @@ namespace MapEditor
                     int x = int.Parse(listObj[i+2]);
                     int y = int.Parse(listObj[i+3]);
                     DrawObj(id, kind, x, y);
+                    if (kind == (int)BlockKind.BRICK_BONUS_MUSHROOM || kind == (int)BlockKind.BRICK_BONUS_GUN
+                        || kind == (int)BlockKind.BRICK_BONUS_LIFE || kind == (int)BlockKind.BRICK_BONUS_COIN
+                        || kind == (int)BlockKind.BRICK_BONUS_STAR || kind == (int)BlockKind.BRICK_BONUS_LIFE_HIDDEN)
+                        i += 1;
                 }
             }
         }
@@ -735,7 +745,7 @@ namespace MapEditor
                     pb.Image = Properties.Resources.Item_RedMusrom; 
                     temp.width = 32;
                     temp.height = 32;
-                    temp.st = false;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.TURLE: pb.Image = Properties.Resources.enemy_turle;
                     temp.width = 32;
@@ -746,19 +756,19 @@ namespace MapEditor
                     pb.Image = Properties.Resources.Item_Flower;
                     temp.width = 32;
                     temp.height = 32;
-                    temp.st = false;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.BRICK_BONUS_LIFE: 
                     pb.Image = Properties.Resources.Item_GreenMusrom;
                     temp.width = 32;
                     temp.height = 32;
-                    temp.st = false;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.BRICK_BONUS_COIN: 
                     pb.Image = Properties.Resources.Item_Coin;
                     temp.width = 32;
                     temp.height = 32;
-                    temp.st = false;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.OUTCOIN: 
                     pb.Image = Properties.Resources.coin_empty;
@@ -842,7 +852,7 @@ namespace MapEditor
                     pb.Image = Properties.Resources.life; 
                     temp.width = 32;
                     temp.height = 32;
-                    temp.st = false;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.GROUND_MUSHROOM_RIGHT: 
                     pb.Image = Properties.Resources.MushRoomGroundRight;
@@ -872,7 +882,7 @@ namespace MapEditor
                     pb.Image = Properties.Resources.BrickBonusStar;
                     temp.width = 32;
                     temp.height = 32;
-                    temp.st = false;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.RED_TURLE: 
                     pb.Image = Properties.Resources.red_enemy_turle;

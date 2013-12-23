@@ -55,21 +55,17 @@ void Brick::Update()
 {
 	if (hasCollide)
 	{
-		DWORD now = GetTickCount();
-
-		//if (alive == DYING) // neu ma no bi vo
-		//{
-		//	if (now - lastCollide > 20)
-		//		GlobalHandler::dynamicObjManager->ProcessBrickBreak(this);	
-		//	return;
-		//}
+		DWORD now = GetTickCount();		
 
 		if (now - lastCollide > 150) // tranh truong hop dung lien tiep
 		{
 			UpdateRect(rectDraw.left, rectDraw.top - distancemoveup);
 			hasCollide = false;
+			BonusAppear();
 		}
 	}
+
+	UpdateSprite();
 }
 
 void Brick::UpdateSprite()
@@ -82,6 +78,8 @@ void Brick::UpdateSprite()
 }
 
 //Hai ham nay de danh khi ke thua
-void Brick::BonusAppear(){}
+void Brick::BonusAppear(){
+	SetEmpty();
+}
 
 void Brick::SetEmpty(){}

@@ -147,35 +147,28 @@ void Player::Update(){
 
 	DWORD now = GetTickCount();
 	DWORD t = now - lastUpdate;	
-	lastUpdate = now;
-	/*int x = rectDraw.left;
-	int y = rectDraw.top;*/
+	lastUpdate = now;	
 
 	Vx = Vx_old + acceleration * t;
-	Vy = Vy_old - 0.15f;
+	Vy = Vy_old - 0.05f;
 
 	Vx = (Vx < maxSpeed)?Vx:maxSpeed;
-	Vx = (Vx > -maxSpeed)?Vx:(-maxSpeed);	
-	
-	/*x += Vx * t;
-	y += Vy * t;*/	
+	Vx = (Vx > -maxSpeed)?Vx:(-maxSpeed);		
 	
 	VxF = Vx * t;
 	VyF = Vy * t;
 	
 	Vy_old = Vy;
-	Vx_old = Vx;
-	//UpdateRect(x, y);
+	Vx_old = Vx;	
 
 	CollideWithStaticObj();
 
 	if (ConUpdate == false)
-	{				
-		//onGround = false;
+	{						
 		marioBox.x += VxF;
 		marioBox.y += VyF;
-		UpdateRect((int)marioBox.x, (int)marioBox.y);		
-		trace(L"Update X: %d, Y: %d", (int)marioBox.x, (int)marioBox.y);
+		UpdateRect((int)marioBox.x, (int)marioBox.y);
+		//trace(L"Update X: %d, Y: %d", (int)marioBox.x, (int)marioBox.y);
 	}
 
 	UpdateSprite();
@@ -189,7 +182,7 @@ void Player::ProcessInput(){
 	{
 		if (onGround == false)
 		{
-			Vx_old = -0.40f; // Khong co cai nay nhay len la khong sang phai trai dc
+			Vx_old = -0.30f; // Khong co cai nay nhay len la khong sang phai trai dc
 			acceleration = 0;
 		}
 		else{
@@ -201,7 +194,7 @@ void Player::ProcessInput(){
 	{
 		if (onGround == false)
 		{
-			Vx_old = 0.40f;
+			Vx_old = 0.30f;
 			acceleration = 0;
 		}
 		else
@@ -225,7 +218,7 @@ void Player::OnKeyDown(int keyCode){
 			{
 				onGround = false;
 				jumping = true;
-				Vy_old = 1.35f;
+				Vy_old = 0.75f;
 				GlobalHandler::sound->Play(ListSound::SOUND_JUMP, FALSE);
 			}			
 			break;
@@ -266,7 +259,7 @@ void Player::CollideWithStaticObj(){
 
 	UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);
 	
-	trace(L"BFF x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", (float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);		
+	//trace(L"BFF x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", (float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);		
 	
 	list<StaticObject*>::iterator it;
 	for (it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it)
@@ -280,7 +273,7 @@ void Player::CollideWithStaticObj(){
 			float normalx, normaly, collisiontime;
 			collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
 			//trace(L"Broadphasebox: X: %f, Y: %f, W: %f, H: %f", broadphasebox.x, broadphasebox.y, broadphasebox.w, broadphasebox.h);
-			trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, marioBox.vx, marioBox.vy, collisiontime, normalx, normaly,(*it)->id);
+			//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, marioBox.vx, marioBox.vy, collisiontime, normalx, normaly,(*it)->id);
 			if (collisiontime < 1.0f && collisiontime >= 0.0f)
 			{				
 				if ((*it)->isKind == GROUND)				
@@ -291,9 +284,11 @@ void Player::CollideWithStaticObj(){
 					CollideWithHardBrick(normalx, normaly, collisiontime, (*it));
 				if ((*it)->isKind == OUTCOIN)				
 					CollideWithCoin((*it));
-				if ((*it)->isKind == BRICK)				
+				if ((*it)->isKind == BRICK || (*it)->isKind == BRICK_BONUS_COIN || (*it)->isKind == BRICK_BONUS_GUN || 
+						(*it)->isKind == BRICK_BONUS_LIFE || (*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
+							(*it)->isKind == BRICK_BONUS_STAR)				
 					CollideWithBrick(normalx, normaly, collisiontime, (*it));
-				trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)marioBox.x, (int)marioBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
+				//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)marioBox.x, (int)marioBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
 			}
 			if (collisiontime == 1.0f)
 			{
@@ -317,7 +312,7 @@ void Player::CollideWithGround(float normalx, float normaly, float collisiontime
 			return;
 		}
 		Vy = 0;
-		Vy_old = 0.15f;		
+		Vy_old = 0.05f;		
 
 		onGround = true;
 		jumping =false;
@@ -334,15 +329,15 @@ void Player::CollideWithGround(float normalx, float normaly, float collisiontime
 		VyF = 0;
 		ConUpdate = false;
 
-		trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-		trace(L"::CollideWithGround Up");
+		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
+		//trace(L"::CollideWithGround Up");
 	}
 	else
 	{
 		if (normaly == -1.0f)
 		{
 			Vy = 0;
-			Vy_old = 0.15f;			
+			Vy_old = 0.05f;			
 
 			marioBox.y += VyF * collisiontime;
 			UpdateRect((int)marioBox.x, (int)marioBox.y);
@@ -354,8 +349,8 @@ void Player::CollideWithGround(float normalx, float normaly, float collisiontime
 			VyF = 0;
 			ConUpdate = false;
 
-			trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-			trace(L"::CollideWithGround Down");
+			//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
+			//trace(L"::CollideWithGround Down");
 		}
 		else
 		{			
@@ -376,7 +371,7 @@ void Player::CollideWithGround(float normalx, float normaly, float collisiontime
 			UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
 
 			ConUpdate = false;			
-			trace(L"::CollideWithGround Left or Right");			
+			//trace(L"::CollideWithGround Left or Right");			
 		}
 	}
 }
@@ -392,7 +387,7 @@ void Player::CollideWithPiPe(float normalx, float normaly, float collisiontime, 
 			return;
 		}
 		Vy = 0;
-		Vy_old = 0.15f;		
+		Vy_old = 0.05f;		
 
 		onGround = true;
 		jumping =false;
@@ -408,8 +403,8 @@ void Player::CollideWithPiPe(float normalx, float normaly, float collisiontime, 
 		VyF = 0;
 		ConUpdate = false;
 		
-		trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-		trace(L"::CollideWithPipe Up");
+		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
+		//trace(L"::CollideWithPipe Up");
 	}
 	else
 	{
@@ -438,7 +433,7 @@ void Player::CollideWithPiPe(float normalx, float normaly, float collisiontime, 
 			UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
 						
 			ConUpdate = false;
-			trace(L"::CollideWithPiPe Left or Right");		
+			//trace(L"::CollideWithPiPe Left or Right");		
 		}
 	}
 }
@@ -453,7 +448,7 @@ void Player::CollideWithHardBrick(float normalx, float normaly, float collisiont
 			return;
 		}
 		Vy = 0;
-		Vy_old = 0.15f;		
+		Vy_old = 0.05f;		
 
 		onGround = true;
 		jumping =false;
@@ -469,8 +464,8 @@ void Player::CollideWithHardBrick(float normalx, float normaly, float collisiont
 		VyF = 0;
 		ConUpdate = false;
 
-		trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-		trace(L"::CollideWithHardBrick Up");
+		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
+		//trace(L"::CollideWithHardBrick Up");
 	}
 	else
 	{
@@ -482,7 +477,7 @@ void Player::CollideWithHardBrick(float normalx, float normaly, float collisiont
 				return;
 			}
 			Vy = 0;
-			Vy_old = 0.15f;			
+			Vy_old = 0.05f;			
 
 			marioBox.y += VyF * collisiontime;
 			UpdateRect((int)marioBox.x, (int)marioBox.y);
@@ -494,8 +489,8 @@ void Player::CollideWithHardBrick(float normalx, float normaly, float collisiont
 			VyF = 0;
 			ConUpdate = false;
 
-			trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-			trace(L"::CollideWithHardBrick Down");
+			//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
+			//trace(L"::CollideWithHardBrick Down");
 		}
 		else
 		{
@@ -518,13 +513,21 @@ void Player::CollideWithHardBrick(float normalx, float normaly, float collisiont
 			UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
 
 			ConUpdate = false;
-			trace(L"::CollideWithHardBrickLeft or Right");		
+			//trace(L"::CollideWithHardBrickLeft or Right");		
 		}
 	}
 }
 
 void Player::CollideWithCoin(StaticObject *obj)
 {
+	CollectCoin();
+	GlobalHandler::quadTree->RemoveObj(obj);
+	GlobalHandler::sound->Play(ListSound::SOUND_COIN, false);
+	ConUpdate = false;
+	//trace(L"::CollideWithCoin");
+}
+
+void Player::CollectCoin(){
 	GlobalHandler::playerCoin ++;
 	if (GlobalHandler::playerCoin == 100)
 	{
@@ -532,9 +535,6 @@ void Player::CollideWithCoin(StaticObject *obj)
 		life++;
 		GlobalHandler::sound->Play(ListSound::SOUND_LIFE, false);
 	}
-	GlobalHandler::quadTree->RemoveObj(obj);
-	ConUpdate = false;
-	trace(L"::CollideWithCoin");
 }
 
 void Player::CollideWithBrick(float normalx, float normaly, float collisiontime, StaticObject *obj)
@@ -547,7 +547,7 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 			return;
 		}
 		Vy = 0;
-		Vy_old = 0.15f;		
+		Vy_old = 0.05f;		
 
 		onGround = true;
 		jumping =false;
@@ -563,8 +563,8 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 		VyF = 0;
 		ConUpdate = false;
 
-		trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-		trace(L"::CollideWithBrick Up");
+		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
+		//trace(L"::CollideWithBrick Up");
 	}
 	else
 	{
@@ -575,11 +575,10 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 				ConUpdate = false;				
 				return;
 			}
-			obj->ProcessCollision(isKind);
+			obj->ProcessCollision(isKind);			
 			
-			GlobalHandler::quadTree->RemoveObj(obj);
 			Vy = 0;
-			Vy_old = 0.15f;			
+			Vy_old = 0.05f;			
 
 			marioBox.y += VyF * collisiontime;
 			UpdateRect((int)marioBox.x, (int)marioBox.y);
@@ -591,8 +590,8 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 			VyF = 0;
 			ConUpdate = false;
 
-			trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-			trace(L"::CollideWithBrick Down");
+			//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
+			//trace(L"::CollideWithBrick Down");
 		}
 		else
 		{
@@ -613,7 +612,7 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 			UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
 
 			ConUpdate = false;
-			trace(L"::CollideWithBrickLeft or Right");		
+			//trace(L"::CollideWithBrickLeft or Right");		
 		}
 	}
 }

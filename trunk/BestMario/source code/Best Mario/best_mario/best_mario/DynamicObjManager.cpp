@@ -16,7 +16,7 @@ void DynamicObjManager::Add(DynamicObject *obj){
 void DynamicObjManager::Remove(DynamicObject *obj){
 
 	listDynamicObj.remove(obj);
-	trace(L"Remove");
+	//trace(L"Remove");
 }
 
 void DynamicObjManager::Render(){
@@ -29,6 +29,7 @@ void DynamicObjManager::Render(){
 void DynamicObjManager::Update(){
 
 	list<DynamicObject*> listBrickBreak;
+	list<DynamicObject*> listInHell;
 
 	list<DynamicObject*>::iterator it;
 	for (it = listDynamicObj.begin(); it != listDynamicObj.end(); it++){
@@ -45,6 +46,8 @@ void DynamicObjManager::Update(){
 			(*it)->Update();
 			if ((*it)->isKind == BRICK_BREAK_DISAPPEAR)
 				listBrickBreak.push_back((*it));
+			if ((*it)->alive == INHELL)
+				listInHell.push_back((*it));
 		}
 	}
 
@@ -52,6 +55,12 @@ void DynamicObjManager::Update(){
 	list<DynamicObject*>::iterator it_bb;
 	for (it_bb = listBrickBreak.begin(); it_bb != listBrickBreak.end(); it_bb++){
 		Remove((*it_bb));
+	}
+
+	//loai bo danh sach inhell
+	list<DynamicObject*>::iterator it_ih;
+	for (it_ih = listInHell.begin(); it_ih != listInHell.end(); it_ih++){
+		Remove((*it_ih));
 	}
 }
 
