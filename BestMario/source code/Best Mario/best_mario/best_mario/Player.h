@@ -66,5 +66,5 @@ public:
 	void CollideWithBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 
 	void UpdateMarioBox(float ix, float iy, float iw, float ih, float ivx, float ivy);
-
+	void CollectCoin();
 };

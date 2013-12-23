@@ -49,6 +49,9 @@
     <Filter Include="DynamicObject\Brick">
       <UniqueIdentifier>{a7aa4dcf-5ef7-431a-8999-46db0119e69d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DynamicObject\Enemy">
+      <UniqueIdentifier>{2aa84241-d020-4851-91aa-124c806d823c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -147,6 +150,18 @@
     <ClCompile Include="ListSound.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
+    <ClCompile Include="BonusBrick.cpp">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="BonusMushroom.cpp">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="CoinPickUp.cpp">
+      <Filter>DynamicObject\Brick</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -244,6 +259,18 @@
     </ClInclude>
     <ClInclude Include="ListSound.h">
       <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="BonusBrick.h">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BonusMushroom.h">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="CoinPickUp.h">
+      <Filter>DynamicObject\Brick</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

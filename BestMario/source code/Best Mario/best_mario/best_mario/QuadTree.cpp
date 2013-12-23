@@ -73,20 +73,7 @@ void QuadTree::ReadQuadTreeFormFile(int level)
 
 		qTreeMap[id] = qNode;
 
-	}	
-	/*for (map<string, string>::iterator ii = qTreeMap.begin(); ii != qTreeMap.end(); ++ii)
-	{
-		const char *c = ii->first.c_str();
-		wchar_t wtext[200];
-		mbstowcs(wtext, c, strlen(c)+1);
-		LPWSTR ptr = wtext;
-
-		const char *c1 = ii->second.c_str();
-		wchar_t wtext1[200];
-		mbstowcs(wtext1, c1, strlen(c1)+1);
-		LPWSTR ptr1 = wtext1;
-		trace(L"%s %s", ptr, ptr1);
-	}*/
+	}		
 }
 
 void QuadTree::Deserialize()
@@ -155,11 +142,7 @@ void QuadTree::GetNodeInfo(string info){
 
 	list_id.erase(0, list_id.find_first_not_of(' '));
 	list_id.erase(list_id.find_last_not_of(' ')+1);
-
-	/*const char *c =list_id.c_str();
-	wchar_t wtext[200];
-	mbstowcs(wtext, c, strlen(c)+1);
-	LPWSTR ptr = wtext;*/
+	
 	ss.str().clear();
 	//trace(L"%d %d %d %d",rNode.left,rNode.top,rNode.right,rNode.bottom);
 }

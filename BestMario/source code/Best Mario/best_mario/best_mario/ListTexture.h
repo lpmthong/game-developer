@@ -137,7 +137,7 @@ public:
 	static int					TT_MARIO_GUN_JUMPING_RIGHT_START;
 	static int					TT_MARIO_GUN_JUMPING_RIGHT_END;
 
-	//hard Brick
+	//Hard Brick
 	static LPDIRECT3DTEXTURE9	TT_HARD_BRICK;
 	static int					TT_HARD_BRICK_WIDTH;
 	static int					TT_HARD_BRICK_HEIGHT;
@@ -158,6 +158,43 @@ public:
 	static int					TT_BRICK_BREAK_LEFT_COUNT;
 	static int					TT_BRICK_BREAK_LEFT_SPRITEPERROW;
 	static int					TT_BRICK_BREAK_LEFT_ANIMATED_RATE;
+
+	//Bonus Brick
+	static LPDIRECT3DTEXTURE9	TT_BRICK_BONUS;
+	static int					TT_BRICK_BONUS_WIDTH;
+	static int					TT_BRICK_BONUS_HEIGHT;
+	static int					TT_BRICK_BONUS_COUNT;
+	static int					TT_BRICK_BONUS_SPRITEPERROW;
+	static int					TT_BRICK_BONUS_ANIMATED_RATE;
+
+	static LPDIRECT3DTEXTURE9	TT_BONUS_MUSHROOM;			
+	static int					TT_BONUS_MUSHROOM_WIDTH;		
+	static int					TT_BONUS_MUSHROOM_HEIGHT;		
+	static int					TT_BONUS_MUSHROOM_COUNT;		
+	static int					TT_BONUS_MUSHROOM_SPRITEPERROW;	
+
+	static LPDIRECT3DTEXTURE9	TT_EMPTY_BRICK;
+
+	static LPDIRECT3DTEXTURE9	TT_FLOWER;
+	static int					TT_FLOWER_WIDTH;
+	static int					TT_FLOWER_HEIGHT;
+	static int					TT_FLOWER_COUNT;
+	static int					TT_FLOWER_SPRITEPERROW;
+	static int					TT_FLOWER_ANIMATED_RATE;
+
+	static LPDIRECT3DTEXTURE9	TT_STAR;
+	static int					TT_STAR_WIDTH;
+	static int					TT_STAR_HEIGHT;
+	static int					TT_STAR_COUNT;
+	static int					TT_STAR_SPRITEPERROW;
+	static int					TT_STARR_ANIMATED_RATE;
+
+	static LPDIRECT3DTEXTURE9	TT_COIN_PICK;
+	static int					TT_COIN_PICK_WIDTH;
+	static int					TT_COIN_PICK_HEIGHT;
+	static int					TT_COIN_PICK_COUNT;
+	static int					TT_COIN_PICK_SPRITEPERROW;
+	static int					TT_COIN_PICK_ANIMATED_RATE;
 
 public:
 	static void CreateAllTexture();

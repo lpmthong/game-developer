@@ -12,6 +12,7 @@
 #include "LowTree.h"
 #include "HardBrick.h"
 #include "Brick.h"
+#include "BonusBrick.h"
 
 int ListTerrain::arr_terrain[10000];
 int ListTerrain::arr_terrain_index = 0;
@@ -124,6 +125,15 @@ void ListTerrain::InitTerrain(int level){
 		{
 			Brick *brick = new Brick(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
 			GlobalHandler::listStaticObj.push_back(brick);
+		}
+		else if (arr_terrain[i+1] == BRICK_BONUS_MUSHROOM || arr_terrain[i+1] == BRICK_BONUS_GUN || 
+					arr_terrain[i+1] == BRICK_BONUS_LIFE || arr_terrain[i+1] == BRICK_BONUS_COIN || 
+						arr_terrain[i+1] == BRICK_BONUS_LIFE_HIDDEN || arr_terrain[i+1] == BRICK_BONUS_STAR)
+		{
+			BonusBrick *bonusBrick = new BonusBrick(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+4], arr_terrain[i]);	
+			bonusBrick->setType(arr_terrain[i+1]);
+			GlobalHandler::listStaticObj.push_back(bonusBrick);
+			i += 1;
 		}
 	}
 

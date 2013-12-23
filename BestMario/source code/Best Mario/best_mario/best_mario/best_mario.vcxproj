@@ -77,17 +77,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BonusBrick.cpp" />
+    <ClCompile Include="BonusMushroom.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="BrickBreak.cpp" />
     <ClCompile Include="Cloud.cpp" />
     <ClCompile Include="Coin.cpp" />
+    <ClCompile Include="CoinPickUp.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="dsutil.cpp" />
     <ClCompile Include="DXSound.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="DynamicObjManager.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Fence.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GlobalHandler.cpp" />
@@ -111,11 +115,14 @@
     <ClCompile Include="trace.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BonusBrick.h" />
+    <ClInclude Include="BonusMushroom.h" />
     <ClInclude Include="Box.h" />
     <ClInclude Include="Brick.h" />
     <ClInclude Include="BrickBreak.h" />
     <ClInclude Include="Cloud.h" />
     <ClInclude Include="Coin.h" />
+    <ClInclude Include="CoinPickUp.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="DirectX.h" />
@@ -123,6 +130,7 @@
     <ClInclude Include="DXSound.h" />
     <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="DynamicObjManager.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Fence.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GlobalHandler.h" />
