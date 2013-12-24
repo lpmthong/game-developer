@@ -34,20 +34,19 @@ Score::~Score(void)
 void Score::setScore( int score )
 {
 	//Update score in player.
-	if (moving == true)
+/*	if (moving == true)
 	{
 		GlobalHandler::playerScore += score;
 //		trace(L"new score %d", GlobalHandler::player->score);
 	}
-
+	*/
 	arrScoreIndex = 0;
-
+	
 	if (score <= 0)
 	{
 		arrScore[arrScoreIndex++] = 0;
 		return;
 	}
-
 	while (score != 0)
 	{
 		arrScore[arrScoreIndex++] = score % 10;

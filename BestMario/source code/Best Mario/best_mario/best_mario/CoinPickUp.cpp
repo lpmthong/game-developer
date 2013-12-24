@@ -27,9 +27,9 @@ CoinPickUp::CoinPickUp(int left, int top){
 	GlobalHandler::player->CollectCoin();
 
 	//Add score for player.
-	/*Score* score = new Score(recDrawArea.left, recDrawArea.top);
+	Score* score = new Score(rectDraw.left, rectDraw.top);
 	score->setScore(200);
-	GlobalHandler::dynamicObjManager->Add(score);*/
+	GlobalHandler::dynamicObjManager->Add(score);
 	
 	start = false;
 }

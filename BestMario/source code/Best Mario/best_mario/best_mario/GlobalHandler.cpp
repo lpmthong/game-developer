@@ -25,7 +25,11 @@ int					 GlobalHandler::checkpoint_index	= 0;
 int					 GlobalHandler::playerScore			= 0;
 int					 GlobalHandler::playerCoin			= 0;
 
-GlobalHandler::GlobalHandler(void){}
+Text				*GlobalHandler::text				= NULL;
+int					 GlobalHandler::time				=300;
+DWORD				 GlobalHandler::lastUpdateTime		=GetTickCount();
+
+	GlobalHandler::GlobalHandler(void){}
 
 GlobalHandler::~GlobalHandler(void){}
 
@@ -60,6 +64,26 @@ void GlobalHandler::UpdateScreen(){
 
 }
 
+
+bool GlobalHandler::UpdateTime()
+{
+	DWORD now = GetTickCount();
+	if(now-lastUpdateTime>1000)
+	{
+		lastUpdateTime= now;
+		time--;
+		if (time<0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+void GlobalHandler::InitText()
+{
+	text = new Text();
+}
+
 void GlobalHandler::RestartMap()
 {
 	GlobalHandler::screen.left		= 0;
@@ -73,9 +97,11 @@ void GlobalHandler::RestartMap()
 
 	GlobalHandler::quadTree->ReadQuadTreeFormFile(GlobalHandler::mapLevel);
 	GlobalHandler::quadTree->Deserialize();
+	
+	GlobalHandler::InitText();
 
 	GlobalHandler::sound->Play(ListSound::SOUND_BACKGROUND, true);
-
+	
 	trace(L"void GlobalHandler::RestartMap()");
 }
 

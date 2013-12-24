@@ -55,6 +55,10 @@ void Game::Update(){
 	(*it)->Update();*/		
 	GlobalHandler::quadTree->UpdateScreen();
 	GlobalHandler::dynamicObjManager->Update();
+	if(GlobalHandler::UpdateTime()==false)
+	{
+		
+	}
 }
 
 void Game::Render(){
@@ -64,8 +68,10 @@ void Game::Render(){
 	trace(L"Id: %d", (*it)->id);
 	}*/
 	
+	GlobalHandler::text->Render();
 	GlobalHandler::quadTree->RenderScreen();
 	GlobalHandler::dynamicObjManager->Render();
+	
 }
 
 void Game::ProcessKeyboard(){

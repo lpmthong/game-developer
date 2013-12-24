@@ -7,7 +7,7 @@
 #include <windows.h>
 #include "trace.h"
 
-char *__trace_file = "C:\\temp\\trace.log";
+char *__trace_file = "C:\\Users\\Thanh\\Desktop\\game-developer\\Code Samples\\Sea7\\Mario\\temp\\trace.log";
 int __trace = 1;
 
 void trace(const LPWSTR format, ...)
