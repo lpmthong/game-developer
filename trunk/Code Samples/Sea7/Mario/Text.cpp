@@ -33,7 +33,7 @@ Text::~Text(void)
 {
 	delete time;
 	delete sprite;
-	delete score;
+	//delete score;
 	delete life;
 	delete coinCount;
 	delete mapLV;
@@ -48,7 +48,7 @@ void Text::Render()
 	RenderCoinCount();
 	RenderScore();
 	
-//	debugPlayer();
+	debugPlayer();
 
 	if (gameOver)
 		RenderGameOver();

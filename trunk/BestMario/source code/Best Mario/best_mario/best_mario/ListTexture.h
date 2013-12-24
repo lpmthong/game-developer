@@ -196,6 +196,29 @@ public:
 	static int					TT_COIN_PICK_SPRITEPERROW;
 	static int					TT_COIN_PICK_ANIMATED_RATE;
 
+	//text
+	static LPDIRECT3DTEXTURE9	TT_MARIO_TEXT;
+	static int					TT_MARIO_TEXT_WIDTH;
+	static int					TT_MARIO_TEXT_HEIGHT;
+
+	static LPDIRECT3DTEXTURE9	TT_NUMBER_TEXT;
+	static int					TT_NUMBER_TEXT_WIDTH;
+	static int					TT_NUMBER_TEXT_HEIGHT;
+	static int					TT_NUMBER_TEXT_COUNT;
+	static int					TT_NUMBER_TEXT_SPRITEPERROW;
+
+	static LPDIRECT3DTEXTURE9	TT_COIN_TEXT;
+	static int					TT_COIN_TEXT_WIDTH;
+	static int					TT_COIN_TEXT_HEIGHT;
+
+	static LPDIRECT3DTEXTURE9	TT_WORLD_TEXT;
+	static int					TT_WORLD_TEXT_WIDTH;
+	static int					TT_WORLD_TEXT_HEIGHT;
+	
+	static LPDIRECT3DTEXTURE9	TT_TIME_TEXT;
+	static int					TT_TIME_TEXT_WIDTH;
+	static int					TT_TIME_TEXT_HEIGHT;
+
 public:
 	static void CreateAllTexture();
 	ListTexture(void);

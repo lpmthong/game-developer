@@ -52,6 +52,12 @@
     <Filter Include="DynamicObject\Enemy">
       <UniqueIdentifier>{2aa84241-d020-4851-91aa-124c806d823c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DynamicObject\Score">
+      <UniqueIdentifier>{a2b15269-20b5-4de2-b35a-af9265caf014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DynamicObject\Text">
+      <UniqueIdentifier>{02aec9b0-fa32-4145-a5dd-8de37896cbab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -162,6 +168,12 @@
     <ClCompile Include="CoinPickUp.cpp">
       <Filter>DynamicObject\Brick</Filter>
     </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>DynamicObject\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>DynamicObject\Score</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -271,6 +283,12 @@
     </ClInclude>
     <ClInclude Include="CoinPickUp.h">
       <Filter>DynamicObject\Brick</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>DynamicObject\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>DynamicObject\Score</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

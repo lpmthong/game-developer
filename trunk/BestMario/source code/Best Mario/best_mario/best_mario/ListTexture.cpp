@@ -177,6 +177,30 @@ int					ListTexture::TT_COIN_PICK_COUNT;
 int					ListTexture::TT_COIN_PICK_SPRITEPERROW;
 int					ListTexture::TT_COIN_PICK_ANIMATED_RATE;
 
+
+//text
+LPDIRECT3DTEXTURE9	ListTexture::TT_MARIO_TEXT;
+int					ListTexture::TT_MARIO_TEXT_WIDTH;
+int					ListTexture::TT_MARIO_TEXT_HEIGHT;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_COIN_TEXT;
+int					ListTexture::TT_COIN_TEXT_WIDTH;
+int					ListTexture::TT_COIN_TEXT_HEIGHT;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_WORLD_TEXT;
+int					ListTexture::TT_WORLD_TEXT_WIDTH;
+int					ListTexture::TT_WORLD_TEXT_HEIGHT;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_TIME_TEXT;
+int					ListTexture::TT_TIME_TEXT_WIDTH;
+int					ListTexture::TT_TIME_TEXT_HEIGHT;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_NUMBER_TEXT;
+int					ListTexture::TT_NUMBER_TEXT_WIDTH;
+int					ListTexture::TT_NUMBER_TEXT_HEIGHT;
+int					ListTexture::TT_NUMBER_TEXT_COUNT;
+int					ListTexture::TT_NUMBER_TEXT_SPRITEPERROW;
+
 ListTexture::ListTexture(void){}
 
 ListTexture::~ListTexture(void){}
@@ -360,4 +384,28 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_COIN_PICK_SPRITEPERROW				= 4;
 	ListTexture::TT_COIN_PICK_ANIMATED_RATE				= 100;
 
+
+	//text
+	ListTexture::TT_MARIO_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_mario.png",0);
+	ListTexture::TT_MARIO_TEXT_WIDTH					= 95;
+	ListTexture::TT_MARIO_TEXT_HEIGHT					= 16;
+
+
+	ListTexture::TT_COIN_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\coin_count.png",0);
+	ListTexture::TT_COIN_TEXT_WIDTH						= 27;
+	ListTexture::TT_COIN_TEXT_HEIGHT					= 16;
+
+	ListTexture::TT_WORLD_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_world.bmp",0);
+	ListTexture::TT_WORLD_TEXT_WIDTH					= 79;
+	ListTexture::TT_WORLD_TEXT_HEIGHT					= 16;
+	
+	ListTexture::TT_TIME_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_time.bmp",0);
+	ListTexture::TT_TIME_TEXT_WIDTH						= 64;
+	ListTexture::TT_TIME_TEXT_HEIGHT					= 16;
+
+	ListTexture::TT_NUMBER_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\number.png",0);
+	ListTexture::TT_NUMBER_TEXT_WIDTH					= 15;
+	ListTexture::TT_NUMBER_TEXT_HEIGHT					= 16;
+	ListTexture::TT_NUMBER_TEXT_COUNT					= 11;
+	ListTexture::TT_NUMBER_TEXT_SPRITEPERROW			= 11;
 }
