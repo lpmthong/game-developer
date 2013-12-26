@@ -63,6 +63,11 @@ void Sprite::setDistanceFromTop(int d){
 	_distanceFromTop = d;
 }
 
+void Sprite::setWidthHeight(int w, int h){
+	_width = w;
+	_height = h;
+}
+
 RECT Sprite::InitRenderRect(){
 	RECT srect;
 	srect.left = (_index % _spritePerRow)* _width;

@@ -32,5 +32,8 @@ public:
 	void Render(int map_level);
 	void Update();
 	bool CheckExitsStaticObj(StaticObject *obj);
-	//void SaveFile();
+	
+	bool CheckExitsObjCanCollide(StaticObject *obj);
+	void GetListObjCanCollide();
+	//void SaveFile();	
 };

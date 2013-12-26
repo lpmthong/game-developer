@@ -177,29 +177,59 @@ int					ListTexture::TT_COIN_PICK_COUNT;
 int					ListTexture::TT_COIN_PICK_SPRITEPERROW;
 int					ListTexture::TT_COIN_PICK_ANIMATED_RATE;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_MUSHROOM_ENEMY = NULL;
+int					ListTexture::TT_MUSHROOM_ENEMY_WIDTH;
+int					ListTexture::TT_MUSHROOM_ENEMY_HEIGHT;
+int					ListTexture::TT_MUSHROOM_ENEMY_COUNT;
+int					ListTexture::TT_MUSHROOM_ENEMY_SPRITEPERROW;
+int					ListTexture::TT_MUSHROOM_ENEMY_ANIMATED_RATE;
 
-//text
-LPDIRECT3DTEXTURE9	ListTexture::TT_MARIO_TEXT;
-int					ListTexture::TT_MARIO_TEXT_WIDTH;
-int					ListTexture::TT_MARIO_TEXT_HEIGHT;
+LPDIRECT3DTEXTURE9	ListTexture::TT_TURTLE_ENEMY;
+int					ListTexture::TT_TURTLE_ENEMY_WIDTH;					
+int					ListTexture::TT_TURTLE_ENEMY_HEIGHT;					
+int					ListTexture::TT_TURTLE_ENEMY_COUNT;					
+int					ListTexture::TT_TURTLE_ENEMY_SPRITEPERROW;			
+int					ListTexture::TT_TURTLE_ENEMY_ANIMATED_RATE;
 
-LPDIRECT3DTEXTURE9	ListTexture::TT_COIN_TEXT;
-int					ListTexture::TT_COIN_TEXT_WIDTH;
-int					ListTexture::TT_COIN_TEXT_HEIGHT;
+LPDIRECT3DTEXTURE9	ListTexture::TT_TURTLE_DEATH;
+int					ListTexture::TT_TURTLE_DEATH_WIDTH;					
+int					ListTexture::TT_TURTLE_DEATH_HEIGHT;					
+int					ListTexture::TT_TURTLE_DEATH_COUNT;					
+int					ListTexture::TT_TURTLE_DEATH_SPRITEPERROW;			
+int					ListTexture::TT_TURTLE_DEATH_ANIMATED_RATE;
 
-LPDIRECT3DTEXTURE9	ListTexture::TT_WORLD_TEXT;
-int					ListTexture::TT_WORLD_TEXT_WIDTH;
-int					ListTexture::TT_WORLD_TEXT_HEIGHT;
+LPDIRECT3DTEXTURE9	ListTexture::TT_RED_TURTLE_ENEMY;
+int					ListTexture::TT_RED_TURTLE_ENEMY_WIDTH;					
+int					ListTexture::TT_RED_TURTLE_ENEMY_HEIGHT;					
+int					ListTexture::TT_RED_TURTLE_ENEMY_COUNT;					
+int					ListTexture::TT_RED_TURTLE_ENEMY_SPRITEPERROW;			
+int					ListTexture::TT_RED_TURTLE_ENEMY_ANIMATED_RATE;
 
-LPDIRECT3DTEXTURE9	ListTexture::TT_TIME_TEXT;
-int					ListTexture::TT_TIME_TEXT_WIDTH;
-int					ListTexture::TT_TIME_TEXT_HEIGHT;
+LPDIRECT3DTEXTURE9	ListTexture::TT_RED_TURTLE_DEATH;
+int					ListTexture::TT_RED_TURTLE_DEATH_WIDTH;					
+int					ListTexture::TT_RED_TURTLE_DEATH_HEIGHT;					
+int					ListTexture::TT_RED_TURTLE_DEATH_COUNT;					
+int					ListTexture::TT_RED_TURTLE_DEATH_SPRITEPERROW;			
+int					ListTexture::TT_RED_TURTLE_DEATH_ANIMATED_RATE;
 
-LPDIRECT3DTEXTURE9	ListTexture::TT_NUMBER_TEXT;
-int					ListTexture::TT_NUMBER_TEXT_WIDTH;
-int					ListTexture::TT_NUMBER_TEXT_HEIGHT;
-int					ListTexture::TT_NUMBER_TEXT_COUNT;
-int					ListTexture::TT_NUMBER_TEXT_SPRITEPERROW;
+LPDIRECT3DTEXTURE9	ListTexture::TT_PIRHANA_PLANT;
+int					ListTexture::TT_PIRHANA_PLANT_WIDTH;
+int					ListTexture::TT_PIRHANA_PLANT_HEIGHT;
+int					ListTexture::TT_PIRHANA_PLANT_COUNT;
+int					ListTexture::TT_PIRHANA_PLANT_SPRITEPERROW;
+int					ListTexture::TT_PIRHANA_PLANT_ANIMATED_RATE;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_BULLET;
+int					ListTexture::TT_BULLET_WIDTH;
+int					ListTexture::TT_BULLET_HEIGHT;
+int					ListTexture::TT_BULLET_COUNT;
+int					ListTexture::TT_BULLET_SPRITEPERROW;
+int					ListTexture::TT_BULLET_ANIMATED_RATE;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_CROSS;
+int					ListTexture::TT_CROSS_WIDTH;
+int					ListTexture::TT_CROSS_HEIGHT;
+LPDIRECT3DTEXTURE9	ListTexture::TT_FALLING_CROSS;
 
 ListTexture::ListTexture(void){}
 
@@ -289,8 +319,8 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_OUT_COIN_ANIMATED_RATE				= 100;
 
 	ListTexture::TT_MARIO_KID							= GlobalHandler::_directX->LoadTextureFromFile("Media\\mario.bmp", 0);;
-	ListTexture::TT_MARIO_KID_WIDTH						= 31;
-	ListTexture::TT_MARIO_KID_HEIGHT					= 31;
+	ListTexture::TT_MARIO_KID_WIDTH						= 32;
+	ListTexture::TT_MARIO_KID_HEIGHT					= 32;
 	ListTexture::TT_MARIO_KID_COUNT						= 7;
 	ListTexture::TT_MARIO_KID_SPRITEPERROW				= 2;
 	ListTexture::TT_MARIO_KID_ANIMATED_RATE				= 25; // 200
@@ -306,7 +336,7 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_MARIO_KID_DEATH_END					= 6;
 
 	ListTexture::TT_MARIO_ADULT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\mario_growup.bmp", 0);
-	ListTexture::TT_MARIO_ADULT_WIDTH					= 31;
+	ListTexture::TT_MARIO_ADULT_WIDTH					= 32;
 	ListTexture::TT_MARIO_ADULT_HEIGHT					= 60;
 	ListTexture::TT_MARIO_ADULT_COUNT					= 16;
 	ListTexture::TT_MARIO_ADULT_SPRITEPERROW			= 3;
@@ -384,28 +414,57 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_COIN_PICK_SPRITEPERROW				= 4;
 	ListTexture::TT_COIN_PICK_ANIMATED_RATE				= 100;
 
-
-	//text
-	ListTexture::TT_MARIO_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_mario.png",0);
-	ListTexture::TT_MARIO_TEXT_WIDTH					= 95;
-	ListTexture::TT_MARIO_TEXT_HEIGHT					= 16;
-
-
-	ListTexture::TT_COIN_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\coin_count.png",0);
-	ListTexture::TT_COIN_TEXT_WIDTH						= 27;
-	ListTexture::TT_COIN_TEXT_HEIGHT					= 16;
-
-	ListTexture::TT_WORLD_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_world.bmp",0);
-	ListTexture::TT_WORLD_TEXT_WIDTH					= 79;
-	ListTexture::TT_WORLD_TEXT_HEIGHT					= 16;
+	ListTexture::TT_MUSHROOM_ENEMY						= GlobalHandler::_directX->LoadTextureFromFile("Media\\enemy_musroom.bmp", 0);
+	ListTexture::TT_MUSHROOM_ENEMY_WIDTH				= 32;
+	ListTexture::TT_MUSHROOM_ENEMY_HEIGHT				= 32;
+	ListTexture::TT_MUSHROOM_ENEMY_COUNT				= 4;
+	ListTexture::TT_MUSHROOM_ENEMY_SPRITEPERROW			= 2;
+	ListTexture::TT_MUSHROOM_ENEMY_ANIMATED_RATE		= 150;
 	
-	ListTexture::TT_TIME_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_time.bmp",0);
-	ListTexture::TT_TIME_TEXT_WIDTH						= 64;
-	ListTexture::TT_TIME_TEXT_HEIGHT					= 16;
+	ListTexture::TT_TURTLE_ENEMY						= GlobalHandler::_directX->LoadTextureFromFile("Media\\enemy_turtle.bmp", 0);
+	ListTexture::TT_TURTLE_ENEMY_WIDTH					= 32;
+	ListTexture::TT_TURTLE_ENEMY_HEIGHT					= 47;
+	ListTexture::TT_TURTLE_ENEMY_COUNT					= 4;
+	ListTexture::TT_TURTLE_ENEMY_SPRITEPERROW			= 2;
+	ListTexture::TT_TURTLE_ENEMY_ANIMATED_RATE			= 150;
 
-	ListTexture::TT_NUMBER_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\number.png",0);
-	ListTexture::TT_NUMBER_TEXT_WIDTH					= 15;
-	ListTexture::TT_NUMBER_TEXT_HEIGHT					= 16;
-	ListTexture::TT_NUMBER_TEXT_COUNT					= 11;
-	ListTexture::TT_NUMBER_TEXT_SPRITEPERROW			= 11;
+	ListTexture::TT_TURTLE_DEATH						= GlobalHandler::_directX->LoadTextureFromFile("Media\\turtle_death.png", 0);
+	ListTexture::TT_TURTLE_DEATH_WIDTH					= 33;
+	ListTexture::TT_TURTLE_DEATH_HEIGHT					= 32;
+	ListTexture::TT_TURTLE_DEATH_COUNT					= 4;
+	ListTexture::TT_TURTLE_DEATH_SPRITEPERROW			= 4;
+	ListTexture::TT_TURTLE_DEATH_ANIMATED_RATE			= 150;
+
+	ListTexture::TT_RED_TURTLE_ENEMY					= GlobalHandler::_directX->LoadTextureFromFile("Media\\red_enemy_turtle.png", 0);
+	ListTexture::TT_RED_TURTLE_ENEMY_WIDTH				= 32;
+	ListTexture::TT_RED_TURTLE_ENEMY_HEIGHT				= 47;
+	ListTexture::TT_RED_TURTLE_ENEMY_COUNT				= 4;
+	ListTexture::TT_RED_TURTLE_ENEMY_SPRITEPERROW		= 2;
+	ListTexture::TT_RED_TURTLE_ENEMY_ANIMATED_RATE		= 150;
+
+	ListTexture::TT_RED_TURTLE_DEATH					= GlobalHandler::_directX->LoadTextureFromFile("Media\\red_turtle_death.png", 0);
+	ListTexture::TT_RED_TURTLE_DEATH_WIDTH				= 33;
+	ListTexture::TT_RED_TURTLE_DEATH_HEIGHT				= 32;
+	ListTexture::TT_RED_TURTLE_DEATH_COUNT				= 4;
+	ListTexture::TT_RED_TURTLE_DEATH_SPRITEPERROW		= 4;
+	ListTexture::TT_RED_TURTLE_DEATH_ANIMATED_RATE		= 150;
+
+	ListTexture::TT_PIRHANA_PLANT						= GlobalHandler::_directX->LoadTextureFromFile("Media\\pirhana_plant.png",0);
+	ListTexture::TT_PIRHANA_PLANT_WIDTH					= 28;
+	ListTexture::TT_PIRHANA_PLANT_HEIGHT				= 35;
+	ListTexture::TT_PIRHANA_PLANT_COUNT					= 2;
+	ListTexture::TT_PIRHANA_PLANT_SPRITEPERROW			= 2;
+	ListTexture::TT_PIRHANA_PLANT_ANIMATED_RATE			= 200;
+
+	ListTexture::TT_BULLET								= GlobalHandler::_directX->LoadTextureFromFile("Media\\bullet.png", 0);
+	ListTexture::TT_BULLET_WIDTH						= 17;
+	ListTexture::TT_BULLET_HEIGHT						= 17;
+	ListTexture::TT_BULLET_COUNT						= 4;
+	ListTexture::TT_BULLET_SPRITEPERROW					= 4;
+	ListTexture::TT_BULLET_ANIMATED_RATE				= 200;
+
+	ListTexture::TT_CROSS								= GlobalHandler::_directX->LoadTextureFromFile("Media\\cross.png",0);
+	ListTexture::TT_CROSS_WIDTH							= 96;
+	ListTexture::TT_CROSS_HEIGHT						= 18;
+	ListTexture::TT_FALLING_CROSS						= GlobalHandler::_directX->LoadTextureFromFile("Media\\FallingCross.png",0);
 }

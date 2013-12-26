@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "GlobalHandler.h"
+#include "Brick.h"
 
 Enemy::Enemy(void){
 
@@ -23,15 +24,28 @@ void Enemy::Update(){
 		PrepareToMove(t);
 	}
 	else
-	{
-		Vy = Vy_old - 0.1f;
+	{		
+		if (alive == DYING || alive == INHELL)
+		{
+			if (now - beginDeath > deathTime)
+				alive = INHELL;
+			UpdateSpriteDying();
+			return;
+		}
+		
+		Vy = Vy_old - 0.05f;
 		VxF = Vx * t;
 		VyF = Vy * t;
-		CollideWithStaticObj();
-		CollideWithDynamicObj();
+
+		if (alive != DYING2)
+		{
+			CollideWithStaticObj();
+			CollideWithDynamicObj(t);
+		}		
+
 		if (ConUpdate == true)
 		{
-			NormalMove(t);		
+			NormalMove(t);			
 		}		
 	}
 
@@ -60,13 +74,24 @@ void Enemy::UpdateSpriteDying(){
 
 void Enemy::CollideWithStaticObj(){
 
-	UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);
+	list<StaticObject*> listStatic;
+	UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);	
+	
 
-	trace(L"BFF x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", (float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);
+	if (isKind == TURTLE || isKind == TURTLEDEATH)
+	{		
+		GlobalHandler::quadTree->GetListObjCanCollide(rectDraw);
+		listStatic = GlobalHandler::listStaticObjCanCollide;
+	}
+	else
+	{
+		listStatic = GlobalHandler::listStaticObjRender;
+	}
+	
 
 	list<StaticObject*>::iterator it;
-	for (it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it)
-	{
+	for (it = listStatic.begin(); it != listStatic.end(); ++it)
+	{		
 		Box broadphasebox = GlobalHandler::Physic->GetSweptBroadphaseBox(ObjBox);
 		Box staticBox((float)(*it)->rectDraw.left, (float)(*it)->rectDraw.top, (float)(*it)->width, (float)(*it)->height, 0.0f, 0.0f);
 
@@ -75,27 +100,25 @@ void Enemy::CollideWithStaticObj(){
 			ConUpdate = false;
 			float normalx, normaly, collisiontime;
 			collisiontime = GlobalHandler::Physic->SweptAABB(ObjBox, staticBox,  normalx, normaly);			
-			trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, ObjBox.vx, ObjBox.vy, collisiontime, normalx, normaly,(*it)->id);
+			//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, ObjBox.vx, ObjBox.vy, collisiontime, normalx, normaly,(*it)->id);
 			if (collisiontime < 1.0f && collisiontime >= 0.0f)
 			{				
-				if ((*it)->isKind == GROUND)				
-					CollideWithGround(normalx, normaly, collisiontime, (*it));		
+				if ((*it)->isKind == GROUND || (*it)->isKind == HARDBRICK || (*it)->isKind == BRICK_BONUS_COIN || 
+						(*it)->isKind == BRICK_BONUS_GUN || (*it)->isKind == BRICK_BONUS_LIFE || 
+							(*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
+								(*it)->isKind == BRICK_BONUS_STAR)				
+					CollideWithGround(normalx, normaly, collisiontime, (*it));				
 				if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3)
 					CollideWithPiPe(normalx, normaly, collisiontime, (*it));
-				if ((*it)->isKind == HARDBRICK)				
-					ConUpdate = true;//CollideWithHardBrick(normalx, normaly, collisiontime, (*it));
 				if ((*it)->isKind == OUTCOIN)				
 					ConUpdate = true;
-				if ((*it)->isKind == BRICK || (*it)->isKind == BRICK_BONUS_COIN || (*it)->isKind == BRICK_BONUS_GUN || 
-					(*it)->isKind == BRICK_BONUS_LIFE || (*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
-					(*it)->isKind == BRICK_BONUS_STAR)				
-					ConUpdate = true;
-				//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)marioBox.x, (int)marioBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
+				if ((*it)->isKind == BRICK)				
+					CollideWithBrick(normalx, normaly, collisiontime, (*it));
+				//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)ObjBox.x, (int)ObjBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
 			}
 			if (collisiontime == 1.0f)
 			{
-				ConUpdate = true;
-				//trace(L"Flag = false, CollisionTime: %f", collisiontime);
+				ConUpdate = true;				
 			}
 		}
 	}
@@ -103,12 +126,99 @@ void Enemy::CollideWithStaticObj(){
 
 }
 
-void Enemy::CollideWithDynamicObj(){
+void Enemy::CollideWithDynamicObj(int t){
+	list<DynamicObject*> result;
+	list<DynamicObject*>::iterator it;
+	for (it = GlobalHandler::dynamicObjManager->listDynamicObj.begin(); it != GlobalHandler::dynamicObjManager->listDynamicObj.end(); ++it)
+	{
+		if ((this) != (*it))		
+			if ((*it)->isSolid == true)
+			{
+				float Obj_VxF = (*it)->Vx * t;
+				float Obj_VyF = (*it)->Vy * t;
+				float VxFN = VxF - Obj_VxF;
+				float VyFN = VyF - Obj_VyF;
+				UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxFN, VyFN);
+				Box broadphasebox = GlobalHandler::Physic->GetSweptBroadphaseBox(ObjBox);
+				Box staticBox((float)(*it)->rectDraw.left, (float)(*it)->rectDraw.top, (float)(*it)->width, (float)(*it)->height, 0.0f, 0.0f);
+				if (GlobalHandler::Physic->AABBCheck(broadphasebox, staticBox))
+				{
+					ConUpdate = true;
+					float normalx, normaly, collisiontime;
+					collisiontime = GlobalHandler::Physic->SweptAABB(ObjBox, staticBox,  normalx, normaly);
+					if (collisiontime < 1.0f && collisiontime >= 0.0f)
+					{
+						if ((*it)->isKind == BONUS_MUSHROOM)
+							ConUpdate = true;
+						if ((*it)->isKind == MUSHROOM_ENEMY)
+							CollideWithMushRoomEnemy((*it));
+						if ((*it)->isKind == TURTLE)
+							CollideWithTurtleEnemy((*it));
+						if ((*it)->isKind == TURTLEDEATH)
+							CollideWithTurtleDeath((*it));
+						if ((*it)->isKind == PIRHANAPLANT)
+							CollideWithPirhanaPlant((*it));
+					}
+					if (collisiontime == 1.0f)
+						ConUpdate = true;
 
+				}
+				//trace(L"VxF: %f, VyF: %f, OBJ_VxF: %f, OBJ_VyF: %f, VxFN: %f, VyFN: %f", VxF, VyF, Obj_VxF, Obj_VyF, VxFN, VyFN);
+			}		
+	}
 }
 
 void Enemy::CollideWithGround(float normalx, float normaly, float collisiontime, StaticObject *obj){
+	if (normaly == 1.0f)
+	{		
+		if (rectDraw.right < obj->rectDraw.left + 1)
+		{
+			ConUpdate = true;			
+			return;
+		}
+		Vy = 0;
+		Vy_old = 0.05f;
 
+		onGround = true;
+
+		ObjBox.y += VyF * collisiontime;
+		UpdateRect((int)ObjBox.x, (int)ObjBox.y);
+
+		UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, 0);
+
+		VyF = 0;
+		ConUpdate = true;		
+	}
+	else
+	{
+		if (normaly == -1.0f)
+		{
+
+		}
+		else
+		{	
+			//Cai if nay de laoi may truong hop ma no va cham chi ngay cai mep
+			if (rectDraw.top < obj->rectDraw.top + 30 && rectDraw.top > obj->rectDraw.top - 32)
+			{
+				if (normalx == -1.0f)
+				{
+					ObjBox.x = obj->rectDraw.left - rectDraw.right + rectDraw.left;
+					UpdateRect((int)ObjBox.x, (int)ObjBox.y);
+				}
+				else
+				{
+					ObjBox.x = obj->rectDraw.right + 1;
+					UpdateRect((int)ObjBox.x, (int)ObjBox.y);
+				}
+
+				Vx = - Vx;			
+				VxF = 0;			
+
+				UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
+			}
+			ConUpdate = true;				
+		}
+	}
 }
 
 void Enemy::CollideWithPiPe(float normalx, float normaly, float collisiontime, StaticObject *obj){
@@ -125,7 +235,7 @@ void Enemy::CollideWithPiPe(float normalx, float normaly, float collisiontime, S
 		onGround = true;
 
 		ObjBox.y += VyF * collisiontime;
-		UpdateRect((int)ObjBox.x, (int)ObjBox.y + 1);
+		UpdateRect((int)ObjBox.x, (int)ObjBox.y);
 
 		UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, 0);
 
@@ -133,7 +243,7 @@ void Enemy::CollideWithPiPe(float normalx, float normaly, float collisiontime, S
 		ConUpdate = true;
 
 		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-		trace(L"::CollideWithPIpe Up");
+		//trace(L"::CollideWithPIpe Up");
 	}
 	else
 	{
@@ -165,13 +275,87 @@ void Enemy::CollideWithPiPe(float normalx, float normaly, float collisiontime, S
 	}
 }
 
-void Enemy::CollideWithHardBrick(float normalx, float normaly, float collisiontime, StaticObject *obj){
+void Enemy::CollideWithBrick(float normalx, float normaly, float collisiontime, StaticObject *obj){
+	if (normaly == 1.0f)
+	{		
+		if (rectDraw.right < obj->rectDraw.left + 1)
+		{
+			ConUpdate = true;			
+			return;
+		}
+		
+		Vy = 0;
+		Vy_old = 0.05f;
 
+		onGround = true;
+
+		ObjBox.y += VyF * collisiontime;
+		UpdateRect((int)ObjBox.x, (int)ObjBox.y);
+
+		UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, 0);
+
+		VyF = 0;
+		ConUpdate = true;
+		
+	}
+	else
+	{
+		if (normaly == -1.0f)
+		{
+		}
+		else
+		{	
+			//Cai if nay de laoi may truong hop ma no va cham chi ngay cai mep
+			if (rectDraw.top < obj->rectDraw.top + 30 && rectDraw.top > obj->rectDraw.top - 32)
+			{				
+				if (normalx == -1.0f)
+				{
+					ObjBox.x = obj->rectDraw.left - rectDraw.right + rectDraw.left;
+					UpdateRect((int)ObjBox.x, (int)ObjBox.y);
+				}
+				else
+				{
+					ObjBox.x = obj->rectDraw.right + 1;
+					UpdateRect((int)ObjBox.x, (int)ObjBox.y);
+				}
+
+				Vx = - Vx;			
+				VxF = 0;			
+
+				UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
+			}
+			ConUpdate = true;				
+		}
+	}
+}
+
+void Enemy::CollideWithMushRoomEnemy(DynamicObject* obj){
+	ConUpdate = true;
+}
+
+void Enemy::CollideWithTurtleEnemy(DynamicObject* obj){
+	ConUpdate = true;
+}
+
+void Enemy::CollideWithTurtleDeath(DynamicObject* obj){
+	
+	if (obj->Vx != 0.0f)
+	{
+		MoveToHell();
+	}
+	else
+		ConUpdate = true;
+
+}
+
+void Enemy::CollideWithPirhanaPlant(DynamicObject* obj){
+	ConUpdate = true;
 }
 
 void Enemy::ProcessDying(){
 	isSolid = false;
 	alive = DYING;
+	beginDeath = GetTickCount();	
 }
 
 void Enemy::PrepareToMove(int t){
@@ -199,7 +383,7 @@ void Enemy::MoveToHell(){
 }
 
 void Enemy::CheckOutScreen(){
-	if (rectDraw.top < 32 || rectDraw.left < -32)
+	if (rectDraw.top < 32 || rectDraw.left < 0)
 	{
 		alive = INHELL;
 	}

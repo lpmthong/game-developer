@@ -35,8 +35,8 @@
 #define BONUS_MUSHROOM 17
 #define PLAYER_ADULT_GUN 18
 #define BULLET 19
-#define TURLE 20
-#define TURLEDEATH 21
+#define TURTLE 20
+#define TURTLEDEATH 21
 #define BRICK_BONUS_GUN 22
 #define BRICK_BONUS_LIFE 23
 #define BRICK_BONUS_COIN 24
@@ -54,8 +54,8 @@
 #define GROUND_DARK_SOIL 36
 #define CROSS 37
 #define BRICK_BONUS_LIFE_HIDDEN 38
-#define RED_TURLE 39
-#define RED_TURLE_DEATH 40
+#define RED_TURTLE 39
+#define RED_TURTLE_DEATH 40
 #define GROUND_MUSHROOM_RIGHT 41
 #define GROUND_MUSHROOM_MIDDLE 42
 #define GROUND_MUSHROOM_LEFT 43
@@ -93,3 +93,14 @@
 #define GUN 2
 #define COIN 3
 #define STAR 4
+
+//Collide direct
+#define TOPLEFT		0
+#define TOP			1
+#define TOPRIGHT	2
+#define RIGHT		3
+#define BOTTOMRIGHT	4
+#define BOTTOM		5
+#define BOTTOMLEFT	6
+#define LEFT		7
+#define NONE		8

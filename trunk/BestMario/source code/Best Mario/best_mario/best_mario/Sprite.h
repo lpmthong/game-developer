@@ -26,6 +26,7 @@ public:
 	void setIndex(int start, int end);
 	int	 getIndex();
 	void setDistanceFromTop(int d);
+	void setWidthHeight(int w, int h);
 	RECT InitRenderRect();
 
 	void Render(float x, float y);

@@ -13,6 +13,10 @@
 #include "HardBrick.h"
 #include "Brick.h"
 #include "BonusBrick.h"
+#include "MushroomEnemy.h"
+#include "TurtleEnemy.h"
+#include "PirhanaPlant.h"
+#include "Cross.h"
 
 int ListTerrain::arr_terrain[10000];
 int ListTerrain::arr_terrain_index = 0;
@@ -135,6 +139,26 @@ void ListTerrain::InitTerrain(int level){
 			GlobalHandler::listStaticObj.push_back(bonusBrick);
 			i += 1;
 		}
+		else if(arr_terrain[i+1] == MUSHROOM_ENEMY)
+		{
+			MushroomEnemy *mushroomEnemy = new MushroomEnemy(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::dynamicObjManager->Add(mushroomEnemy);
+		}
+		else if(arr_terrain[i+1] == TURTLE)
+		{
+			TurtleEnemy *turtleEnemy = new TurtleEnemy(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::dynamicObjManager->Add(turtleEnemy);
+		}
+		else if(arr_terrain[i+1] == PIRHANAPLANT)
+		{
+			PirhanaPlant *pirhanaPlant = new PirhanaPlant(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::dynamicObjManager->Add(pirhanaPlant);
+		}
+		else if(arr_terrain[i+1] == CROSS)
+		{
+			Cross *cross = new Cross(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::dynamicObjManager->Add(cross);
+		} 
 	}
 
 }

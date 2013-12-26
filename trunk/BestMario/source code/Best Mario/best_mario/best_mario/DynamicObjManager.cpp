@@ -16,7 +16,7 @@ void DynamicObjManager::Add(DynamicObject *obj){
 void DynamicObjManager::Remove(DynamicObject *obj){
 
 	listDynamicObj.remove(obj);
-	//trace(L"Remove");
+	trace(L"Remove isKind: %d", obj->isKind);
 }
 
 void DynamicObjManager::Render(){
@@ -38,7 +38,13 @@ void DynamicObjManager::Update(){
 			if ((*it)->start == false)
 			{
 				(*it)->Start(); // Ong nao ma nguoi choi thay thi moi bat dau chay.
-			}
+			}				
+		}
+		else //dua nao ra ngoai man roi thi dung co update no nua stop no di @@
+		{
+			if ((*it)->start == true && (*it)->isKind != PLAYER_KID && (*it)->isKind != PLAYER_ADULT && 
+				(*it)->isKind != PLAYER_ADULT_GUN && (*it)->isKind == MUSHROOM_ENEMY)
+				(*it)->start = false;
 		}
 
 		if ((*it)->start == true)
@@ -61,6 +67,12 @@ void DynamicObjManager::Update(){
 	list<DynamicObject*>::iterator it_ih;
 	for (it_ih = listInHell.begin(); it_ih != listInHell.end(); it_ih++){
 		Remove((*it_ih));
+	}
+
+	//Xoa cac obj trong cai danh sach remove ra di
+	list<DynamicObject*>::iterator it_rm;
+	for (it_rm = GlobalHandler::listRemove.begin(); it_rm != GlobalHandler::listRemove.end(); it_rm++){
+		Remove((*it_rm));
 	}
 }
 

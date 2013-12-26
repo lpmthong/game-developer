@@ -5,6 +5,8 @@
 class DynamicObject : public Object{
 
 public:
+	int id;
+
 	float Vx;
 	float Vy;
 
@@ -21,9 +23,10 @@ public:
 	DWORD lastAnimate;
 	int alive; //0: alive; 1: dying; 2:in hell.
 	int iAnimatedRate;
+	
 public:
 	DynamicObject(void);
 	~DynamicObject(void);
 
-	void ProcessDying();
+	virtual void ProcessDying();
 };

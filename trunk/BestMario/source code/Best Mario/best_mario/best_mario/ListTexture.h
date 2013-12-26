@@ -196,28 +196,65 @@ public:
 	static int					TT_COIN_PICK_SPRITEPERROW;
 	static int					TT_COIN_PICK_ANIMATED_RATE;
 
-	//text
-	static LPDIRECT3DTEXTURE9	TT_MARIO_TEXT;
-	static int					TT_MARIO_TEXT_WIDTH;
-	static int					TT_MARIO_TEXT_HEIGHT;
+	//Mushroom Enemy
+	static LPDIRECT3DTEXTURE9	TT_MUSHROOM_ENEMY;
+	static int					TT_MUSHROOM_ENEMY_WIDTH;
+	static int					TT_MUSHROOM_ENEMY_HEIGHT;
+	static int					TT_MUSHROOM_ENEMY_COUNT;
+	static int					TT_MUSHROOM_ENEMY_SPRITEPERROW;
+	static int					TT_MUSHROOM_ENEMY_ANIMATED_RATE;
 
-	static LPDIRECT3DTEXTURE9	TT_NUMBER_TEXT;
-	static int					TT_NUMBER_TEXT_WIDTH;
-	static int					TT_NUMBER_TEXT_HEIGHT;
-	static int					TT_NUMBER_TEXT_COUNT;
-	static int					TT_NUMBER_TEXT_SPRITEPERROW;
+	//Turtle Enemy
+	static LPDIRECT3DTEXTURE9	TT_TURTLE_ENEMY;
+	static int					TT_TURTLE_ENEMY_WIDTH;					
+	static int					TT_TURTLE_ENEMY_HEIGHT;					
+	static int					TT_TURTLE_ENEMY_COUNT;					
+	static int					TT_TURTLE_ENEMY_SPRITEPERROW;			
+	static int					TT_TURTLE_ENEMY_ANIMATED_RATE;			
 
-	static LPDIRECT3DTEXTURE9	TT_COIN_TEXT;
-	static int					TT_COIN_TEXT_WIDTH;
-	static int					TT_COIN_TEXT_HEIGHT;
+	static LPDIRECT3DTEXTURE9	TT_TURTLE_DEATH;
+	static int					TT_TURTLE_DEATH_WIDTH;					
+	static int					TT_TURTLE_DEATH_HEIGHT;					
+	static int					TT_TURTLE_DEATH_COUNT;					
+	static int					TT_TURTLE_DEATH_SPRITEPERROW;			
+	static int					TT_TURTLE_DEATH_ANIMATED_RATE;
 
-	static LPDIRECT3DTEXTURE9	TT_WORLD_TEXT;
-	static int					TT_WORLD_TEXT_WIDTH;
-	static int					TT_WORLD_TEXT_HEIGHT;
+	static LPDIRECT3DTEXTURE9	TT_RED_TURTLE_ENEMY;
+	static int					TT_RED_TURTLE_ENEMY_WIDTH;					
+	static int					TT_RED_TURTLE_ENEMY_HEIGHT;					
+	static int					TT_RED_TURTLE_ENEMY_COUNT;					
+	static int					TT_RED_TURTLE_ENEMY_SPRITEPERROW;			
+	static int					TT_RED_TURTLE_ENEMY_ANIMATED_RATE;			
+
+	static LPDIRECT3DTEXTURE9	TT_RED_TURTLE_DEATH;
+	static int					TT_RED_TURTLE_DEATH_WIDTH;					
+	static int					TT_RED_TURTLE_DEATH_HEIGHT;					
+	static int					TT_RED_TURTLE_DEATH_COUNT;					
+	static int					TT_RED_TURTLE_DEATH_SPRITEPERROW;			
+	static int					TT_RED_TURTLE_DEATH_ANIMATED_RATE;
+
+	//pirhana plant
+	static LPDIRECT3DTEXTURE9	TT_PIRHANA_PLANT;
+	static int					TT_PIRHANA_PLANT_WIDTH;
+	static int					TT_PIRHANA_PLANT_HEIGHT;
+	static int					TT_PIRHANA_PLANT_COUNT;
+	static int					TT_PIRHANA_PLANT_SPRITEPERROW;
+	static int					TT_PIRHANA_PLANT_ANIMATED_RATE;
+
+	//Bullet
+	static LPDIRECT3DTEXTURE9	TT_BULLET;
+	static int					TT_BULLET_WIDTH;
+	static int					TT_BULLET_HEIGHT;
+	static int					TT_BULLET_COUNT;
+	static int					TT_BULLET_SPRITEPERROW;
+	static int					TT_BULLET_ANIMATED_RATE;
 	
-	static LPDIRECT3DTEXTURE9	TT_TIME_TEXT;
-	static int					TT_TIME_TEXT_WIDTH;
-	static int					TT_TIME_TEXT_HEIGHT;
+	//Falling Cross
+	static LPDIRECT3DTEXTURE9	TT_CROSS;
+	static int					TT_CROSS_WIDTH;
+	static int					TT_CROSS_HEIGHT;
+	static LPDIRECT3DTEXTURE9	TT_FALLING_CROSS;
+
 
 public:
 	static void CreateAllTexture();

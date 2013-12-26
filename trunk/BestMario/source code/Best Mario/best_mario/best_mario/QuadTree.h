@@ -42,4 +42,9 @@ public:
 
 	void UpdateScreen();
 	void UpdateScreen(QuadNode* root);
+	
+
+	void GetListObjCanCollide(RECT rectObj);
+	void GetListObjCanCollide(RECT rectObj, QuadNode *root);
+
 };

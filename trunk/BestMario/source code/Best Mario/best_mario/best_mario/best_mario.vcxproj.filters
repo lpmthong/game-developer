@@ -52,11 +52,8 @@
     <Filter Include="DynamicObject\Enemy">
       <UniqueIdentifier>{2aa84241-d020-4851-91aa-124c806d823c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="DynamicObject\Score">
-      <UniqueIdentifier>{a2b15269-20b5-4de2-b35a-af9265caf014}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DynamicObject\Text">
-      <UniqueIdentifier>{02aec9b0-fa32-4145-a5dd-8de37896cbab}</UniqueIdentifier>
+    <Filter Include="DynamicObject\Cross">
+      <UniqueIdentifier>{edad8a29-1df8-4dee-baf7-fbc74b789e8f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -168,11 +165,20 @@
     <ClCompile Include="CoinPickUp.cpp">
       <Filter>DynamicObject\Brick</Filter>
     </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>DynamicObject\Text</Filter>
+    <ClCompile Include="MushroomEnemy.cpp">
+      <Filter>DynamicObject\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Score.cpp">
-      <Filter>DynamicObject\Score</Filter>
+    <ClCompile Include="TurtleEnemy.cpp">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="PirhanaPlant.cpp">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Cross.cpp">
+      <Filter>DynamicObject\Cross</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -284,11 +290,20 @@
     <ClInclude Include="CoinPickUp.h">
       <Filter>DynamicObject\Brick</Filter>
     </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>DynamicObject\Text</Filter>
+    <ClInclude Include="MushroomEnemy.h">
+      <Filter>DynamicObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Score.h">
-      <Filter>DynamicObject\Score</Filter>
+    <ClInclude Include="TurtleEnemy.h">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="PirhanaPlant.h">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Cross.h">
+      <Filter>DynamicObject\Cross</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
