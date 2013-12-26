@@ -43,7 +43,7 @@ void QuadTree::Reset(){
 void QuadTree::ReadQuadTreeFormFile(int level)
 {
 	char filePath[50];
-	sprintf_s(filePath,"Map\\QuadTree\\Map%dQuadTree.txt",level);
+	sprintf_s(filePath,"Map\\Map%dQuadTree.txt",level);
 
 	string str;
 	ifstream file;
@@ -216,4 +216,22 @@ void QuadTree::UpdateScreen( QuadNode* root )
 	if ((root->RBNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->RBNode->rect)))
 		UpdateScreen(root->RBNode);
 
+}
+
+void QuadTree::GetListObjCanCollide(RECT rectObj){
+	GlobalHandler::listStaticObjCanCollide.clear();
+	GetListObjCanCollide(rectObj, root);
+}
+
+void QuadTree::GetListObjCanCollide(RECT rectObj, QuadNode *root){
+	root->GetListObjCanCollide();
+
+	if ((root->LTNode != NULL) && (GlobalHandler::CheckRectInRect(root->LTNode->rect, rectObj)))
+		GetListObjCanCollide(rectObj, root->LTNode);
+	if ((root->RTNode != NULL) && (GlobalHandler::CheckRectInRect(root->RTNode->rect, rectObj)))
+		GetListObjCanCollide(rectObj, root->RTNode);
+	if ((root->LBNode != NULL) && (GlobalHandler::CheckRectInRect(root->LBNode->rect, rectObj)))
+		GetListObjCanCollide(rectObj, root->LBNode);
+	if ((root->RBNode != NULL) && (GlobalHandler::CheckRectInRect(root->RBNode->rect, rectObj)))
+		GetListObjCanCollide(rectObj, root->RBNode);
 }

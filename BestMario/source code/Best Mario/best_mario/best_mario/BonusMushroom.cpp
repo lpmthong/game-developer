@@ -24,7 +24,7 @@ BonusMushroom::BonusMushroom(int left, int top){
 	isSolid = true;
 	isKind = BONUS_MUSHROOM;
 
-	speed = 0.2f;
+	speed = 0.1f;
 
 	Vx = speed;
 	Vy = 0;
@@ -133,7 +133,7 @@ void BonusMushroom::CollideWithGround(float normalx, float normaly, float collis
 			return;
 		}
 		Vy = 0;
-		Vy_old = 0.05f;		
+		Vy_old = 0.05f;
 
 		onGround = true;
 		
@@ -146,7 +146,7 @@ void BonusMushroom::CollideWithGround(float normalx, float normaly, float collis
 		ConUpdate = true;
 
 		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.x, marioBox.h, marioBox.vx, marioBox.vy);
-		trace(L"::CollideWithGround Up");
+		//trace(L"::CollideWithGround Up");
 	}
 	else
 	{
@@ -176,7 +176,7 @@ void BonusMushroom::CollideWithGround(float normalx, float normaly, float collis
 				UpdateObjBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
 			}
 			ConUpdate = true;		
-			trace(L"::CollideWithGround Left or Right ID: %d", obj->id);			
+			//trace(L"::CollideWithGround Left or Right ID: %d", obj->id);			
 		}
 	}
 }

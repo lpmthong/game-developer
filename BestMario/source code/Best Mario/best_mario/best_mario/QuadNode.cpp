@@ -105,3 +105,25 @@ bool QuadNode::CheckExitsStaticObj(StaticObject *obj)
 	}
 	return true;
 }
+
+bool QuadNode::CheckExitsObjCanCollide(StaticObject *obj)
+{
+	list<StaticObject*>::iterator it;
+	for(it = GlobalHandler::listStaticObjCanCollide.begin(); it != GlobalHandler::listStaticObjCanCollide.end(); ++it )
+	{
+		if ((*it)->id == obj->id)
+			return false;		
+	}
+	return true;
+}
+
+void QuadNode::GetListObjCanCollide(){
+	list<StaticObject*>::iterator it;
+	for(it = listObject.begin(); it != listObject.end(); ++it ){		
+		if ((*it)->isSolid == true)
+		{
+			if (CheckExitsObjCanCollide((*it)))
+				GlobalHandler::listStaticObjCanCollide.push_back((*it));
+		}			
+	}
+}

@@ -27,6 +27,28 @@ public:
 	bool ConUpdate; //Cai nay de xem coi khong co va cham thi tiep tuc  
 
 	bool hasGun; //Co vu khi khong
+
+	bool loop;
+	DWORD beginLoop;	//bat dau lap
+	DWORD timeInLoop;	//thoi gian trong vong lap
+	int kindLoop;		//loai lap
+	int endMode;		//lap xong thi mario o loai nao
+	int startMode;		//luc bat dau lap thi mario o loai nao
+	DWORD rateLoop;		//animated rate to loop.
+	DWORD lastLoop;		//time between two times change mode in loop.
+
+	//Co star khong
+	bool hasStar;
+
+	//Bat tu nhung luc ma bi teo nho
+	bool immortal;
+	int immortalRender; // Cai bien nay lam cho no cho mario chop chop 0,1 thi render 2,3 thi khong render
+	DWORD beginImmortal;
+	DWORD timeInImmortal;
+
+	DWORD delayShot;	//khoang cach giua 2 lan ban
+	DWORD lastShot;		
+	int numOfBullet;	//so luon dan co the ban ra;
 private:
 	int frame_moving_left_start;
 	int frame_moving_left_end;
@@ -59,11 +81,33 @@ public:
 
 	//Cac ham xet va cham
 	void CollideWithStaticObj();
+	void CollideWithDynamicObj(int t);
+
 	void CollideWithGround(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithPiPe(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithHardBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithCoin(StaticObject *obj);
 	void CollideWithBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
+
+	void CollideWithBonusMushRoom(DynamicObject *obj);	
+	void CollideWithTurtleEnemy(float normaly, DynamicObject *obj);
+	void CollideWithTurtleDeath(float normaly, DynamicObject *obj);
+	void CollideWithMushRoomEnemy(float normaly, DynamicObject *obj);
+	void CollideWithPirhanaPlant(DynamicObject *obj);
+	void CollideWithCross(float normalx, float normaly, float collisiontime, DynamicObject *obj);
+
+	//Cac ham thay doi luc an nam
+	void ChangeModeLoop();
+	void ChangeMode(int mode);
+
+	//Xu li chet
+	bool KillEnemy(DynamicObject *enemy, float normaly);
+	void Die();
+	void DieRightAway();
+	void ProcessDying();
+
+	void CheckImmortal();
+	void UpdateCheckPoint();
 
 	void UpdateMarioBox(float ix, float iy, float iw, float ih, float ivx, float ivy);
 	void CollectCoin();

@@ -31,7 +31,7 @@ void Object::UpdateRect(int left, int top, int width, int height){
 	rectDraw.left = left;
 	rectDraw.right = left + width;
 	rectDraw.top = top;
-	rectDraw.bottom = top + height;
+	rectDraw.bottom = top - height;
 }
 
 void Object::UpdateRect(int left, int top){

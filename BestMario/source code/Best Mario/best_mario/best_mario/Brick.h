@@ -2,6 +2,7 @@
 #include "StaticObject.h"
 #include "ListTexture.h"
 
+
 class Brick : public StaticObject {
 
 protected:
@@ -27,6 +28,7 @@ public:
 
 	virtual void Update();
 	void UpdateSprite();
+	void CheckEnemyDie();
 
 	~Brick(void);
 

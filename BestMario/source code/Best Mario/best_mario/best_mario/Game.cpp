@@ -28,7 +28,7 @@ void Game::Init(){
 	
 	GlobalHandler::RestartMap();
 
-	GlobalHandler::player->Init(10, 0, 4);
+	GlobalHandler::player->Init(18, 0, 4);
 	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);	
 }
 
@@ -55,10 +55,6 @@ void Game::Update(){
 	(*it)->Update();*/		
 	GlobalHandler::quadTree->UpdateScreen();
 	GlobalHandler::dynamicObjManager->Update();
-	if(GlobalHandler::UpdateTime()==false)
-	{
-		
-	}
 }
 
 void Game::Render(){
@@ -68,10 +64,8 @@ void Game::Render(){
 	trace(L"Id: %d", (*it)->id);
 	}*/
 	
-	GlobalHandler::text->Render();
 	GlobalHandler::quadTree->RenderScreen();
 	GlobalHandler::dynamicObjManager->Render();
-	
 }
 
 void Game::ProcessKeyboard(){
