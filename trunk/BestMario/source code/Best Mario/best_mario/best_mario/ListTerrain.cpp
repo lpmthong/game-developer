@@ -17,6 +17,8 @@
 #include "TurtleEnemy.h"
 #include "PirhanaPlant.h"
 #include "Cross.h"
+#include "GroundMushRoom.h"
+#include "GroundUnderMushRoom.h"
 
 int ListTerrain::arr_terrain[10000];
 int ListTerrain::arr_terrain_index = 0;
@@ -158,7 +160,18 @@ void ListTerrain::InitTerrain(int level){
 		{
 			Cross *cross = new Cross(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
 			GlobalHandler::dynamicObjManager->Add(cross);
-		} 
+		}
+		else if(arr_terrain[i+1] == GROUND_MUSHROOM_LEFT || arr_terrain[i+1] == GROUND_MUSHROOM_MIDDLE || arr_terrain[i+1] == GROUND_MUSHROOM_RIGHT)
+		{
+			GroundMushRoom *groundMushRoom = new GroundMushRoom(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			groundMushRoom->setType(arr_terrain[i+1]);
+			GlobalHandler::listStaticObj.push_back(groundMushRoom);
+		}
+		else if(arr_terrain[i+1] == GROUNDUNDERMUSHROOM)
+		{
+			GroundUnderMushroom *groundUnderMushRoom = new GroundUnderMushroom(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);			
+			GlobalHandler::listStaticObj.push_back(groundUnderMushRoom);
+		}
 	}
 
 }

@@ -36,16 +36,19 @@ void Cross::Update(){
 
 	int y = rectDraw.top;
 
-	Vy = Vy_old + 0.1f;
+	Vy = Vy_old - 0.05f;
 	y += Vy * t;
 
 	//Vy_old = Vy;
-
-	if (y > 550)
-	{
-		y = 50;
-		Vy = 0;
-	}
-
 	UpdateRect(rectDraw.left, y);
+	CheckOutScreen();
+}
+
+void Cross::CheckOutScreen(){
+
+	if (rectDraw.top < 0)
+	{		
+		UpdateRect(rectDraw.left, 610);
+		return;
+	}	
 }

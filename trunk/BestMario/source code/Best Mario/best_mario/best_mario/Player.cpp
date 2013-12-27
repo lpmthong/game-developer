@@ -408,6 +408,8 @@ void Player::CollideWithDynamicObj(int t){
 					ConUpdate = true;
 					float normalx, normaly, collisiontime;
 					collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
+					trace(L"VxF: %f, VyF: %f, OBJ_VxF: %f, OBJ_VyF: %f, VxFN: %f, VyFN: %f", VxF, VyF, Obj_VxF, Obj_VyF, VxFN, VyFN);
+					trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Time: %f, Normalx: %f, Normaly: %f", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, collisiontime, normalx, normaly);
 					if (collisiontime < 1.0f && collisiontime >= 0.0f)
 					{
 						if ((*it)->isKind == BONUS_MUSHROOM)
@@ -883,8 +885,8 @@ void Player::CollideWithCross(float normalx, float normaly, float collisiontime,
 	if (normaly == 1.0f)
 	{
 		
-		Vy = 0;
-		Vy_old = 0.05f;		
+		Vy = 0.0f;
+		Vy_old = 0.0f;		
 
 		onGround = true;
 		jumping = false;
@@ -897,36 +899,11 @@ void Player::CollideWithCross(float normalx, float normaly, float collisiontime,
 		VyF = 0;
 		ConUpdate = false;
 
-		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.w, marioBox.h, marioBox.vx, marioBox.vy);
+		trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.w, marioBox.h, marioBox.vx, marioBox.vy);
 		//trace(L"::CollideWithGround Up");
 	}
 	else
-	{
-		if (normaly == -1.0f)					
-			ConUpdate = false;		
-		else
-		{		
-			if (rectDraw.top < obj->rectDraw.top + 30 && rectDraw.top > obj->rectDraw.top - 32)
-			{
-				if (normalx == -1.0f)
-				{
-					marioBox.x = obj->rectDraw.left - rectDraw.right + rectDraw.left;
-					UpdateRect((int)marioBox.x, (int)marioBox.y);
-				}
-				else
-				{
-					marioBox.x = obj->rectDraw.right + 1;
-					UpdateRect((int)marioBox.x, (int)marioBox.y);
-				}
-
-				Vx = Vx_old = acceleration = 0;			
-				VxF = 0;			
-
-				UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
-			}
-			ConUpdate = false;			
-		}
-	}
+		ConUpdate = false;
 }
 
 void Player::ChangeMode(int mode){

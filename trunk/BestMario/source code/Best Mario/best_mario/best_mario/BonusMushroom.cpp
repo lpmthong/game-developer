@@ -102,7 +102,7 @@ void BonusMushroom::PrepareToMove(int t){
 	UpdateRect(rectDraw.left, rectDraw.top + 1);
 	if (appear >= ListTexture::TT_BONUS_MUSHROOM_HEIGHT)
 	{
-		Vy_old = 0.5f;
+		Vy_old = 0.05f;
 		preparing = false;
 	}
 }

@@ -99,6 +99,8 @@
     <ClCompile Include="GlobalHandler.cpp" />
     <ClCompile Include="Grass.cpp" />
     <ClCompile Include="Ground.cpp" />
+    <ClCompile Include="GroundMushRoom.cpp" />
+    <ClCompile Include="GroundUnderMushRoom.cpp" />
     <ClCompile Include="HardBrick.cpp" />
     <ClCompile Include="HighTree.cpp" />
     <ClCompile Include="ListSound.cpp" />
@@ -143,6 +145,8 @@
     <ClInclude Include="GlobalHandler.h" />
     <ClInclude Include="Grass.h" />
     <ClInclude Include="Ground.h" />
+    <ClInclude Include="GroundMushRoom.h" />
+    <ClInclude Include="GroundUnderMushRoom.h" />
     <ClInclude Include="HardBrick.h" />
     <ClInclude Include="HighTree.h" />
     <ClInclude Include="ListSound.h" />

@@ -231,6 +231,18 @@ int					ListTexture::TT_CROSS_WIDTH;
 int					ListTexture::TT_CROSS_HEIGHT;
 LPDIRECT3DTEXTURE9	ListTexture::TT_FALLING_CROSS;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_GROUND_MUSHROOM;
+int					ListTexture::TT_GROUND_MUSHROOM_WIDTH;
+int					ListTexture::TT_GROUND_MUSHROOM_HEIGHT;
+int					ListTexture::TT_GROUND_MUSHROOM_COUNT;
+int					ListTexture::TT_GROUND_MUSHROOM_SPRITEPERROW;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_GROUND_UNDER_MUSHROOM;
+int					ListTexture::TT_GROUND_UNDER_MUSHROOM_WIDTH;
+int					ListTexture::TT_GROUND_UNDER_MUSHROOM_HEIGHT;
+int					ListTexture::TT_GROUND_UNDER_MUSHROOM_COUNT;
+int					ListTexture::TT_GROUND_UNDER_MUSHROOM_SPRITEPERROW;
+
 ListTexture::ListTexture(void){}
 
 ListTexture::~ListTexture(void){}
@@ -467,4 +479,16 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_CROSS_WIDTH							= 96;
 	ListTexture::TT_CROSS_HEIGHT						= 18;
 	ListTexture::TT_FALLING_CROSS						= GlobalHandler::_directX->LoadTextureFromFile("Media\\FallingCross.png",0);
+
+	ListTexture::TT_GROUND_MUSHROOM						= GlobalHandler::_directX->LoadTextureFromFile("Media\\MushRoomGround.png", 0);
+	ListTexture::TT_GROUND_MUSHROOM_WIDTH				= 32;
+	ListTexture::TT_GROUND_MUSHROOM_HEIGHT				= 31;
+	ListTexture::TT_GROUND_MUSHROOM_COUNT				= 3;
+	ListTexture::TT_GROUND_MUSHROOM_SPRITEPERROW		= 3;
+
+	ListTexture::TT_GROUND_UNDER_MUSHROOM				= GlobalHandler::_directX->LoadTextureFromFile("Media\\GroundUnderMushRoom.jpg", 0);
+	ListTexture::TT_GROUND_UNDER_MUSHROOM_WIDTH			= 32;
+	ListTexture::TT_GROUND_UNDER_MUSHROOM_HEIGHT		= 32;
+	ListTexture::TT_GROUND_UNDER_MUSHROOM_COUNT			= 3;
+	ListTexture::TT_GROUND_UNDER_MUSHROOM_SPRITEPERROW	= 3;
 }
