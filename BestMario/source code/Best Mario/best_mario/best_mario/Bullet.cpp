@@ -208,12 +208,20 @@ void Bullet::MoveToHell(){
 
 }
 
-void Bullet::CheckOutScreen(){
-	if (GlobalHandler::CheckRectInRect(rectDraw, GlobalHandler::screen) == false)
+void Bullet::CheckOutScreen(){	
+
+	if (rectDraw.left < GlobalHandler::screen.left || rectDraw.left > GlobalHandler::screen.right || rectDraw.top < 0 || rectDraw.top > 600)
 	{
 		GlobalHandler::player->numOfBullet--;
 		alive = INHELL;
 	}
+
+
+	/*if (GlobalHandler::CheckRectInRectReal(rectDraw, sc) == false)
+	{
+	GlobalHandler::player->numOfBullet--;
+	alive = INHELL;
+	}*/
 }
 
 void Bullet::setDirect(int dir){

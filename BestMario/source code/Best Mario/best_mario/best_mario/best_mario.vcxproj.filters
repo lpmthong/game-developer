@@ -180,6 +180,12 @@
     <ClCompile Include="Cross.cpp">
       <Filter>DynamicObject\Cross</Filter>
     </ClCompile>
+    <ClCompile Include="GroundMushRoom.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundUnderMushRoom.cpp">
+      <Filter>StaticObject\Sight</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -304,6 +310,12 @@
     </ClInclude>
     <ClInclude Include="Cross.h">
       <Filter>DynamicObject\Cross</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundMushRoom.h">
+      <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundUnderMushRoom.h">
+      <Filter>StaticObject\Sight</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

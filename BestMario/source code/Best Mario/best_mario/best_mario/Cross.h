@@ -9,4 +9,5 @@ public:
 	~Cross(void);
 
 	void Update();
+	virtual void CheckOutScreen();
 };

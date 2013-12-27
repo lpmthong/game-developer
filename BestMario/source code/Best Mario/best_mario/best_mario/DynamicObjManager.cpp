@@ -16,7 +16,7 @@ void DynamicObjManager::Add(DynamicObject *obj){
 void DynamicObjManager::Remove(DynamicObject *obj){
 
 	listDynamicObj.remove(obj);
-	trace(L"Remove isKind: %d", obj->isKind);
+	//trace(L"Remove isKind: %d", obj->isKind);
 }
 
 void DynamicObjManager::Render(){
