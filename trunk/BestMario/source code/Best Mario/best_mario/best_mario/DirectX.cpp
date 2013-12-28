@@ -204,10 +204,10 @@ void DirectX::Release(){
 void DirectX::ProcessKeyBoard(){
 
 	keyboard->GetDeviceState(sizeof(keyStates), keyStates);
-	if (IsKeyDown(DIK_ESCAPE))
+	/*if (IsKeyDown(DIK_ESCAPE))
 	{		
 		PostMessage(_hWnd,WM_QUIT,0,0);
-	}
+	}*/
 	dwElements = KEYBOARD_BUFFER_SIZE;
 	keyboard->GetDeviceData(sizeof(DIDEVICEOBJECTDATA), keyEvents, &dwElements, 0);
 

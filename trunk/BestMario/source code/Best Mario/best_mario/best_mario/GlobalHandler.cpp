@@ -12,6 +12,8 @@ list<DynamicObject*> GlobalHandler::listRemove			;
 Player				*GlobalHandler::player				= new Player();
 int		             GlobalHandler::backGroundColor		= BLUE;
 bool	             GlobalHandler::quitGame			= false;
+bool				 GlobalHandler::isStarted			= false;
+
 
 list<StaticObject*>	 GlobalHandler::listStaticObj		;
 list<StaticObject*>	 GlobalHandler::listStaticObjRender ;
@@ -19,8 +21,13 @@ list<StaticObject*>	 GlobalHandler::listStaticObjCanCollide;
 Collision			*GlobalHandler::Physic				;
 
 RECT	             GlobalHandler::screen;
+int					 GlobalHandler::mapLevel1			= 0;
+int					 GlobalHandler::mapLevel2			= 0;
 int					 GlobalHandler::mapLevel			= 1;
-int					 GlobalHandler::gameState			= GS_GAMEPLAY;
+int					 GlobalHandler::gameState			= GS_MENU;
+Text				*GlobalHandler::text				;
+int					 GlobalHandler::time				= 300;
+DWORD				 GlobalHandler::lastTime			= GetTickCount();
 
 int					 GlobalHandler::checkpoint[2][10];
 int					 GlobalHandler::checkpoint_index	= 0;
@@ -74,6 +81,24 @@ bool GlobalHandler::CheckRectInRectReal( RECT mainRect, RECT checkRect )
 	return false;
 }
 
+void GlobalHandler::InitText()
+{
+	text = new Text();
+}
+
+bool GlobalHandler::UpdateTime()
+{
+	DWORD now = GetTickCount();
+	if(now-lastTime>1000)
+	{
+		lastTime = now;
+		time--;
+		if(lastTime<=0)
+			return false;
+	}
+	return true;
+}
+
 void GlobalHandler::UpdateScreen(){
 
 	if (GlobalHandler::player->rectDraw.left > SCREEN_WIDTH / 2)
@@ -102,8 +127,11 @@ void GlobalHandler::RestartMap()
 	GlobalHandler::quadTree->ReadQuadTreeFormFile(GlobalHandler::mapLevel);
 	GlobalHandler::quadTree->Deserialize();
 
+	GlobalHandler::player->Init(18, 0, 4);
+	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);	
+	GlobalHandler::isStarted = true;
 	GlobalHandler::sound->Play(ListSound::SOUND_BACKGROUND, true);
-
+	GlobalHandler::InitText();
 	trace(L"void GlobalHandler::RestartMap()");
 }
 

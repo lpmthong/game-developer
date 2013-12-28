@@ -266,6 +266,38 @@ public:
 	static int					TT_GROUND_UNDER_MUSHROOM_HEIGHT;
 	static int					TT_GROUND_UNDER_MUSHROOM_COUNT;
 	static int					TT_GROUND_UNDER_MUSHROOM_SPRITEPERROW;
+
+	//Text
+	static LPDIRECT3DTEXTURE9	TT_MARIO_TEXT;
+	static int					TT_MARIO_TEXT_WIDTH;
+	static int					TT_MARIO_TEXT_HEIGHT;
+
+	static LPDIRECT3DTEXTURE9	TT_TEXT_TIME;
+	static int					TT_TEXT_TIME_WIDTH;
+	static int					TT_TEXT_TIME_HEIGHT;
+	
+	static LPDIRECT3DTEXTURE9	TT_TEXT_WORLD;
+	static int					TT_TEXT_WORLD_WIDTH;
+	static int					TT_TEXT_WORLD_HEIGHT;
+
+	static LPDIRECT3DTEXTURE9	TT_TEXT_COIN;
+	static int					TT_TEXT_COIN_WIDTH;
+	static int					TT_TEXT_COIN_HEIGHT;
+
+	static LPDIRECT3DTEXTURE9	TT_TEXT_NUMBER;
+	static int					TT_TEXT_NUMBER_WIDTH;
+	static int					TT_TEXT_NUMBER_HEIGHT;
+	static int					TT_TEXT_NUMBER_COUNT;
+	static int					TT_TEXT_NUMBER_PRITEPERROW;
+
+	//Menu
+	static LPDIRECT3DTEXTURE9	TT_MENU_BACKGROUND;
+	static LPDIRECT3DTEXTURE9	TT_MENU_OPTION;
+
+	//Option
+	static LPDIRECT3DTEXTURE9	TT_OPTION;
+	static LPDIRECT3DTEXTURE9   TT_GAMEOPTION;
+
 public:
 	static void CreateAllTexture();
 	ListTexture(void);

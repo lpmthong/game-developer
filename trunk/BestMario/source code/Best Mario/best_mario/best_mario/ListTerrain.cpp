@@ -62,9 +62,12 @@ void ListTerrain::InitTerrain(int level){
 	ListTerrain::arr_terrain_index = 0;
 	
 	ListTerrain::LoadFile(level);
-	
-	GlobalHandler::quadTree = new QuadTree(arr_terrain[0], arr_terrain[0]);		
 
+	
+
+	GlobalHandler::quadTree = new QuadTree(arr_terrain[0], arr_terrain[0]);		
+	GlobalHandler::mapLevel1 = arr_terrain[1];
+	GlobalHandler::mapLevel2 = arr_terrain[2];
 	GlobalHandler::backGroundColor = arr_terrain[3];
 	for (int i = 4; i < arr_terrain_index ; i += 4)
 	{		
@@ -172,6 +175,7 @@ void ListTerrain::InitTerrain(int level){
 			GroundUnderMushroom *groundUnderMushRoom = new GroundUnderMushroom(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);			
 			GlobalHandler::listStaticObj.push_back(groundUnderMushRoom);
 		}
+		
 	}
 
 }

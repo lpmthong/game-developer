@@ -68,12 +68,24 @@
 
 
 //Game State.
-#define GS_MENU		0
-#define GS_GAMEPLAY	1
-#define GS_GAMEOVER 2
-#define GS_OPTION 3
-#define GS_CHANGEMAP 4
-#define GS_STARTGAMEOPTIONS 5
+#define GS_MENU			0
+#define GS_GAMEPLAY		1
+#define GS_GAMEOVER		2
+#define GS_OPTION		3
+#define GS_CHANGEMAP	4
+#define GS_GAMEOPTION	5	
+
+
+//Menu
+#define MENU_START		0
+#define MENU_OPTION		1
+#define MENU_EXIT		2
+
+//GameOption
+#define OPTION_NEWGAME	0
+#define OPTION_SAVEGAME 1
+#define OPTION_LOADGAME 2
+#define OPTION_BACKMENU 3
 
 //Death status
 #define ALIVE 0
@@ -104,3 +116,4 @@
 #define BOTTOMLEFT	6
 #define LEFT		7
 #define NONE		8
+

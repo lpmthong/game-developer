@@ -9,6 +9,7 @@
 #include <stdint.h>
 #include "Collision.h"
 #include "DXSound.h"
+#include "Text.h"
 using namespace std;
 
 class GlobalHandler{
@@ -22,6 +23,12 @@ public:
 	static bool					quitGame;		
 	static RECT					screen;
 	static int					gameState;
+	static Text					*text;
+	static int					time;
+	static DWORD				lastTime;
+	static int					mapLevel1;
+	static int					mapLevel2;
+	static bool					isStarted;
 
 	static DynamicObjManager	*dynamicObjManager;
 	static list<DynamicObject*>	listRemove;
@@ -33,6 +40,8 @@ public:
 	static list<StaticObject*>	listStaticObjRender; // cai list nay lay ra de for xet va cham	
 	static list<StaticObject*>	listStaticObjCanCollide; // cai nay dung de xet va cham cua may thang dynamic
 	static Collision			*Physic;
+
+	
 
 	//Check point
 	static int					checkpoint[2][10];
@@ -50,6 +59,8 @@ public:
 	static bool CheckPointInRectReal(int x, int y, RECT rect);
 	static bool CheckRectInRectReal(RECT mainRect, RECT checkRect);
 	
+	static void InitText();
+	static bool UpdateTime();
 	static void UpdateScreen();
 	static void RestartMap();	
 	

@@ -380,6 +380,10 @@ void Enemy::NormalMove(int t){
 void Enemy::MoveToHell(){
 	isSolid = false;
 	alive = DYING2;
+
+	Score* score = new Score(rectDraw.left, rectDraw.top);
+	score->setScore(200);
+	GlobalHandler::dynamicObjManager->Add(score);
 }
 
 void Enemy::CheckOutScreen(){

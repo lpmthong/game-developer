@@ -55,6 +55,15 @@
     <Filter Include="DynamicObject\Cross">
       <UniqueIdentifier>{edad8a29-1df8-4dee-baf7-fbc74b789e8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DynamicObject\Text">
+      <UniqueIdentifier>{d0a14cb7-1c50-49c4-8e1b-6e5603b1b846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DynamicObject\Score">
+      <UniqueIdentifier>{ffb5eb7f-3b45-427f-97ef-e558334fd225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameState">
+      <UniqueIdentifier>{99fd7597-bd43-493c-ab70-c4d604cd2db9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -186,6 +195,24 @@
     <ClCompile Include="GroundUnderMushRoom.cpp">
       <Filter>StaticObject\Sight</Filter>
     </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>DynamicObject\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>DynamicObject\Score</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="Option.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeMap.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOption.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -316,6 +343,24 @@
     </ClInclude>
     <ClInclude Include="GroundUnderMushRoom.h">
       <Filter>StaticObject\Sight</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>DynamicObject\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>DynamicObject\Score</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="Option.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeMap.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOption.h">
+      <Filter>GameState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

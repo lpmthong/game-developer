@@ -26,10 +26,15 @@ void Game::Init(){
 	ListTexture::CreateAllTexture();
 	ListSound::CreateAllSound();
 	
-	GlobalHandler::RestartMap();
+	GlobalHandler::InitText();
 
-	GlobalHandler::player->Init(18, 0, 4);
-	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);	
+	menu		= new Menu();
+	option		= new Option();
+	gameOption  = new GameOption();
+	changeMap	= new ChangeMap();
+	//GlobalHandler::RestartMap();
+
+	
 }
 
 bool Game::Run(){
@@ -52,9 +57,25 @@ bool Game::Run(){
 void Game::Update(){
 	/*list<StaticObject*>::iterator it;
 	for(it = GlobalHandler::listStaticObj.begin(); it != GlobalHandler::listStaticObj.end(); ++it )	
-	(*it)->Update();*/		
-	GlobalHandler::quadTree->UpdateScreen();
-	GlobalHandler::dynamicObjManager->Update();
+	(*it)->Update();*/
+	switch (GlobalHandler::gameState)
+	{
+		case GS_MENU:
+			break;
+		case GS_OPTION:
+			break;
+		case GS_GAMEPLAY:
+			GlobalHandler::quadTree->UpdateScreen();
+			GlobalHandler::dynamicObjManager->Update();
+			if(!GlobalHandler::UpdateTime())
+			{
+
+				return;
+
+			}
+		break;
+	}
+	
 }
 
 void Game::Render(){
@@ -64,8 +85,30 @@ void Game::Render(){
 	trace(L"Id: %d", (*it)->id);
 	}*/
 	
-	GlobalHandler::quadTree->RenderScreen();
-	GlobalHandler::dynamicObjManager->Render();
+	switch(GlobalHandler::gameState)
+	{
+	case GS_MENU:
+		menu->Render();
+		break;
+	case GS_OPTION:
+		option->Render();
+		break;
+	case GS_GAMEOPTION:
+		gameOption->Render();
+		break;
+	case GS_CHANGEMAP:
+		changeMap->Render();
+		break;
+	case GS_GAMEPLAY:
+		GlobalHandler::quadTree->RenderScreen();
+		GlobalHandler::dynamicObjManager->Render();
+		GlobalHandler::text->Render();
+		break;
+	
+	}
+	
+
+
 }
 
 void Game::ProcessKeyboard(){
@@ -92,13 +135,17 @@ void Game::ProcessInput(){
 void Game::OnKeyDown(int keyCode){
 	switch (GlobalHandler::gameState)
 	{
-		case GS_OPTION:
-			break;
 		case GS_MENU:
+			menu->OnKeyDown(keyCode);
+			break;
+		case GS_OPTION:			
+			option->OnKeyDown(keyCode);
 			break;
 		case GS_CHANGEMAP:
+			changeMap->OnKeyDown(keyCode);
 			break;
-		case GS_STARTGAMEOPTIONS:
+		case GS_GAMEOPTION:
+			gameOption->OnKeyDown(keyCode);
 			break;
 		case GS_GAMEPLAY:
 			GlobalHandler::player->OnKeyDown(keyCode);
