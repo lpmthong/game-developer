@@ -243,6 +243,40 @@ int					ListTexture::TT_GROUND_UNDER_MUSHROOM_HEIGHT;
 int					ListTexture::TT_GROUND_UNDER_MUSHROOM_COUNT;
 int					ListTexture::TT_GROUND_UNDER_MUSHROOM_SPRITEPERROW;
 
+//text
+LPDIRECT3DTEXTURE9 ListTexture::TT_MARIO_TEXT;
+int				   ListTexture::TT_MARIO_TEXT_WIDTH;
+int				   ListTexture::TT_MARIO_TEXT_HEIGHT;
+
+LPDIRECT3DTEXTURE9 ListTexture::TT_TEXT_TIME;
+int				   ListTexture::TT_TEXT_TIME_WIDTH;
+int				   ListTexture::TT_TEXT_TIME_HEIGHT;
+
+LPDIRECT3DTEXTURE9 ListTexture::TT_TEXT_WORLD;
+int				   ListTexture::TT_TEXT_WORLD_WIDTH;
+int				   ListTexture::TT_TEXT_WORLD_HEIGHT;
+
+
+LPDIRECT3DTEXTURE9 ListTexture::TT_TEXT_COIN;
+int				   ListTexture::TT_TEXT_COIN_WIDTH;
+int				   ListTexture::TT_TEXT_COIN_HEIGHT;
+
+LPDIRECT3DTEXTURE9 ListTexture::TT_TEXT_NUMBER;
+int				   ListTexture::TT_TEXT_NUMBER_WIDTH;
+int				   ListTexture::TT_TEXT_NUMBER_HEIGHT;
+int				   ListTexture::TT_TEXT_NUMBER_COUNT;
+int				   ListTexture::TT_TEXT_NUMBER_PRITEPERROW;
+
+//Menu
+LPDIRECT3DTEXTURE9  ListTexture::TT_MENU_BACKGROUND;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_MENU_OPTION;
+
+//Option
+LPDIRECT3DTEXTURE9  ListTexture::TT_OPTION;
+LPDIRECT3DTEXTURE9  ListTexture::TT_GAMEOPTION;
+
+
 ListTexture::ListTexture(void){}
 
 ListTexture::~ListTexture(void){}
@@ -491,4 +525,34 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_GROUND_UNDER_MUSHROOM_HEIGHT		= 32;
 	ListTexture::TT_GROUND_UNDER_MUSHROOM_COUNT			= 3;
 	ListTexture::TT_GROUND_UNDER_MUSHROOM_SPRITEPERROW	= 3;
+
+	//text
+	ListTexture::TT_MARIO_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_mario.png",0);
+	ListTexture::TT_MARIO_TEXT_WIDTH					= 95;
+	ListTexture::TT_MARIO_TEXT_HEIGHT					= 16;
+
+	ListTexture::TT_TEXT_TIME                           = GlobalHandler::_directX->LoadTextureFromFile("Media\\text_time.bmp",0);
+	ListTexture::TT_TEXT_TIME_WIDTH						= 64;
+	ListTexture::TT_TEXT_TIME_HEIGHT					= 16;
+
+	ListTexture::TT_TEXT_WORLD                          = GlobalHandler::_directX->LoadTextureFromFile("Media\\text_world.bmp",0);
+	ListTexture::TT_TEXT_WORLD_WIDTH					= 79;
+	ListTexture::TT_TEXT_WORLD_HEIGHT					= 16;
+
+	ListTexture::TT_TEXT_COIN							= GlobalHandler::_directX->LoadTextureFromFile("Media\\coin_count.png",0);
+	ListTexture::TT_TEXT_COIN_WIDTH						= 27;
+	ListTexture::TT_TEXT_COIN_HEIGHT					= 16;
+
+	ListTexture::TT_TEXT_NUMBER							= GlobalHandler::_directX->LoadTextureFromFile("Media\\number.png",0);
+	ListTexture::TT_TEXT_NUMBER_WIDTH					= 15;
+	ListTexture::TT_TEXT_NUMBER_HEIGHT					= 16;
+	ListTexture::TT_TEXT_NUMBER_COUNT					= 11;
+	ListTexture::TT_TEXT_NUMBER_PRITEPERROW				= 11;
+
+	//Menu
+	ListTexture::TT_MENU_BACKGROUND						= GlobalHandler::_directX->LoadTextureFromFile("Media\\menu_background.jpg",0);
+	ListTexture::TT_MENU_OPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\options.png",0);
+	//Option
+	ListTexture::TT_OPTION								= GlobalHandler::_directX->LoadTextureFromFile("Media\\Option.jpg",0);
+	ListTexture::TT_GAMEOPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\startGameOptions.jpg",0);
 }

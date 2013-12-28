@@ -1,8 +1,134 @@
-﻿Build started 1/14/2013 11:55:53 PM.
-     1>Project "E:\My Files\GameTraining\SaveDemo\Mario Forever_Nhom 13\Mario_v1.1\Mario_v1.1.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.Platform.targets(42,5): error MSB8020: The builds tools for Visual Studio 2010 (Platform Toolset = 'v100') cannot be found. To build using the v100 build tools, either click the Project menu or right-click the solution, and then select "Update VC++ Projects...". Install Visual Studio 2010 to build using the Visual Studio 2010 build tools.
-     1>Done Building Project "E:\My Files\GameTraining\SaveDemo\Mario Forever_Nhom 13\Mario_v1.1\Mario_v1.1.vcxproj" (Build target(s)) -- FAILED.
+﻿Build started 12/28/2013 3:01:28 AM.
+     1>Project "C:\Users\Thanh\Desktop\game-developer\Code Samples\Mario Forever_Nhom 13\Mario_v1.1\Mario_v1.1.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Mario_v1.1.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IDxErr.lib /Id3dx9.lib /Id3dx.lib /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Bonuses.cpp Bullet.cpp dsutil.cpp dxutil.cpp Enemies.cpp GameManager.cpp Main.cpp Mario.cpp MyArrayList.cpp QuadTree.cpp Sight.cpp sound.cpp Sprites.cpp Squares.cpp
+         Squares.cpp
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\squares.cpp(182): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\squares.cpp(182): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\squares.cpp(186): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\squares.cpp(186): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\squares.cpp(193): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\squares.cpp(193): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+         Sprites.cpp
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\sprites.cpp(30): warning C4018: '<=' : signed/unsigned mismatch
+         sound.cpp
+         Sight.cpp
+         QuadTree.cpp
+         MyArrayList.cpp
+         Mario.cpp
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\mario.cpp(272): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\mario.cpp(273): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\mario.cpp(310): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+         Main.cpp
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\mapmanager.h(275): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\mapmanager.h(284): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+         GameManager.cpp
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\mapmanager.h(275): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\mapmanager.h(284): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\gamemanager.cpp(240): warning C4566: character represented by universal-character-name '\u1EA5' cannot be represented in the current code page (1252)
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\gamemanager.cpp(240): warning C4566: character represented by universal-character-name '\u1EA3' cannot be represented in the current code page (1252)
+         Enemies.cpp
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         dxutil.cpp
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(60): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(110) : see declaration of 'strcat'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(112): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tchar.h(1516) : see declaration of '_tcsncpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(136): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tchar.h(1516) : see declaration of '_tcsncpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(160): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tchar.h(1516) : see declaration of '_tcsncpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(580): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : see declaration of 'strncpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(630): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(188) : see declaration of 'strncpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(712): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : see declaration of '_snprintf'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(730): warning C4996: '_tcsncpy': This function or variable may be unsafe. Consider using _tcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tchar.h(1516) : see declaration of '_tcsncpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(745): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(760): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(769): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(781): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(842): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : see declaration of '_vsnprintf'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(868): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\dxutil.cpp(905): warning C4996: '_snprintf': This function or variable may be unsafe. Consider using _snprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(363) : see declaration of '_snprintf'
+         dsutil.cpp
+         Bullet.cpp
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         Bonuses.cpp
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(43): warning C4244: 'argument' : conversion from 'int' to 'FLOAT', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\thanh\desktop\game-developer\code samples\mario forever_nhom 13\mario_v1.1\infomation.h(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Mario_v1.1.exe.embed.manifest.res" Debug\Mario_v1.1_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Thanh\Desktop\game-developer\Code Samples\Mario Forever_Nhom 13\Debug\Mario_v1.1.exe" /INCREMENTAL /NOLOGO d3d9.lib d3dx9.lib dinput8.lib dxguid.lib dsound.lib DxErr.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Mario_v1.1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Thanh\Desktop\game-developer\Code Samples\Mario Forever_Nhom 13\Debug\Mario_v1.1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"C:\Users\Thanh\Desktop\game-developer\Code Samples\Mario Forever_Nhom 13\Debug\Mario_v1.1.lib" /MACHINE:X86 Debug\Mario_v1.1.exe.embed.manifest.res
+         Debug\Bonuses.obj
+         Debug\Bullet.obj
+         Debug\dsutil.obj
+         Debug\dxutil.obj
+         Debug\Enemies.obj
+         Debug\GameManager.obj
+         Debug\Main.obj
+         Debug\Mario.obj
+         Debug\MyArrayList.obj
+         Debug\QuadTree.obj
+         Debug\Sight.obj
+         Debug\sound.obj
+         Debug\Sprites.obj
+         Debug\Squares.obj
+         LINK : C:\Users\Thanh\Desktop\game-developer\Code Samples\Mario Forever_Nhom 13\Debug\Mario_v1.1.exe not found or not built by the last incremental link; performing full link
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Mario_v1.1.exe.embed.manifest" /manifest Debug\Mario_v1.1.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         Mario_v1.1.vcxproj -> C:\Users\Thanh\Desktop\game-developer\Code Samples\Mario Forever_Nhom 13\Debug\Mario_v1.1.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\Mario_v1.1.unsuccessfulbuild".
+         Touching "Debug\Mario_v1.1.lastbuildstate".
+     1>Done Building Project "C:\Users\Thanh\Desktop\game-developer\Code Samples\Mario Forever_Nhom 13\Mario_v1.1\Mario_v1.1.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.20
+Time Elapsed 00:00:13.48

@@ -268,6 +268,11 @@ void Player::OnKeyDown(int keyCode){
 		return;
 
 	switch(keyCode){
+		case DIK_ESCAPE:
+			
+				GlobalHandler::gameState = GS_GAMEOPTION;
+				break;
+			
 		case DIK_UP:
 			if (jumping == false)
 			{
@@ -812,9 +817,9 @@ void Player::CollideWithTurtleEnemy(float normaly,DynamicObject *obj){
 		}
 		else
 		{
-			/*Score* score = new Score(recRealArea.left, recRealArea.top);
+			Score* score = new Score(rectDraw.left, rectDraw.top);
 			score->setScore(200);
-			GlobalHandler::dynamicObjManager->Add(score);*/
+			GlobalHandler::dynamicObjManager->Add(score);
 
 			GlobalHandler::sound->Play(ListSound::SOUND_MIP, false);
 		}
@@ -860,9 +865,9 @@ void Player::CollideWithMushRoomEnemy(float normaly,DynamicObject *obj)
 		}
 		else
 		{
-			/*Score* score = new Score(recRealArea.left, recRealArea.top);
+			Score* score = new Score(rectDraw.left, rectDraw.top);
 			score->setScore(200);
-			GlobalHandler::dynamicObjManager->Add(score);*/
+			GlobalHandler::dynamicObjManager->Add(score);
 
 			GlobalHandler::sound->Play(ListSound::SOUND_MIP, false);
 		}
