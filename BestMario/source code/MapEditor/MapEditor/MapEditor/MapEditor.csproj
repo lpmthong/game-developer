@@ -116,6 +116,9 @@
     <Content Include="Resources\Item_RedMusrom.png" />
     <Content Include="Resources\life.png" />
     <Content Include="Resources\mapbg.jpg" />
+    <Content Include="Resources\mario-adult.png" />
+    <Content Include="Resources\mario-gun.png" />
+    <Content Include="Resources\mario_kid.png" />
     <Content Include="Resources\menumain.png" />
     <Content Include="Resources\mountain.bmp" />
     <Content Include="Resources\MushRoomGroundLeft.png" />

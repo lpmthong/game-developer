@@ -39,6 +39,8 @@ public:
 
 	void RenderScreen();
 	void RenderScreen(QuadNode *root, int map_level);
+	void RenderObj(int map_level);
+	void RenderObj();
 
 	void UpdateScreen();
 	void UpdateScreen(QuadNode* root);

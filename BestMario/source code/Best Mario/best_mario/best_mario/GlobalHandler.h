@@ -34,7 +34,9 @@ public:
 	static list<DynamicObject*>	listRemove;
 
 	static int					mapLevel;
+	static int					nextMap;
 	static Player				*player;
+	static bool					endMap;
 
 	static list<StaticObject*>  listStaticObj;
 	static list<StaticObject*>	listStaticObjRender; // cai list nay lay ra de for xet va cham	

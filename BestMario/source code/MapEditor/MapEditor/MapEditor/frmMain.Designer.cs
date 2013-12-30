@@ -29,48 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pbBonusStar = new System.Windows.Forms.PictureBox();
-            this.pbDelete = new System.Windows.Forms.PictureBox();
-            this.pbHiddenLife = new System.Windows.Forms.PictureBox();
-            this.pbBlock = new System.Windows.Forms.PictureBox();
-            this.pbRock = new System.Windows.Forms.PictureBox();
-            this.pbCoin = new System.Windows.Forms.PictureBox();
-            this.pbItem_RedMusrom = new System.Windows.Forms.PictureBox();
-            this.pbDarkSoil = new System.Windows.Forms.PictureBox();
-            this.pbItem_GreenMusrom = new System.Windows.Forms.PictureBox();
-            this.pbItem_Flower = new System.Windows.Forms.PictureBox();
-            this.pbItem_Coin = new System.Windows.Forms.PictureBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pbPipe3 = new System.Windows.Forms.PictureBox();
-            this.pbPipe2 = new System.Windows.Forms.PictureBox();
-            this.pbPipe1 = new System.Windows.Forms.PictureBox();
-            this.pbMushRoomGroundUnder = new System.Windows.Forms.PictureBox();
-            this.pbMushRoomGroundRight = new System.Windows.Forms.PictureBox();
-            this.pbMushRoomGroundMiddle = new System.Windows.Forms.PictureBox();
-            this.pbMushRoomGroundLeft = new System.Windows.Forms.PictureBox();
-            this.pbEndmap = new System.Windows.Forms.PictureBox();
-            this.pbCheckPoint = new System.Windows.Forms.PictureBox();
-            this.pbCross = new System.Windows.Forms.PictureBox();
-            this.pbSoilRight = new System.Windows.Forms.PictureBox();
-            this.pbSoilLeft = new System.Windows.Forms.PictureBox();
-            this.pbGrassLeft = new System.Windows.Forms.PictureBox();
-            this.pbGrassMid = new System.Windows.Forms.PictureBox();
-            this.pbGrassRight = new System.Windows.Forms.PictureBox();
-            this.pbDesert = new System.Windows.Forms.PictureBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pbFence = new System.Windows.Forms.PictureBox();
-            this.pbMountain = new System.Windows.Forms.PictureBox();
-            this.pbGrass = new System.Windows.Forms.PictureBox();
-            this.pbTree_Hight = new System.Windows.Forms.PictureBox();
-            this.pbTree_Low = new System.Windows.Forms.PictureBox();
-            this.pbCloud = new System.Windows.Forms.PictureBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.pbRedTurle = new System.Windows.Forms.PictureBox();
-            this.pbPirhanaPlant = new System.Windows.Forms.PictureBox();
-            this.pbTurleEnemy = new System.Windows.Forms.PictureBox();
-            this.pbMushRoomEnemy = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,549 +53,103 @@
             this.rdBlack = new System.Windows.Forms.RadioButton();
             this.btDone = new System.Windows.Forms.Button();
             this.btGenerate = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHiddenLife)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBlock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_RedMusrom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDarkSoil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_GreenMusrom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEndmap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckPoint)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCross)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSoilRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSoilLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrassLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDesert)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFence)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMountain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrass)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Hight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRedTurle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPirhanaPlant)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTurleEnemy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomEnemy)).BeginInit();
+            this.txtNextMap = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pbMushRoomEnemy = new System.Windows.Forms.PictureBox();
+            this.pbTurleEnemy = new System.Windows.Forms.PictureBox();
+            this.pbPirhanaPlant = new System.Windows.Forms.PictureBox();
+            this.pbRedTurle = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pbCloud = new System.Windows.Forms.PictureBox();
+            this.pbTree_Low = new System.Windows.Forms.PictureBox();
+            this.pbTree_Hight = new System.Windows.Forms.PictureBox();
+            this.pbGrass = new System.Windows.Forms.PictureBox();
+            this.pbMountain = new System.Windows.Forms.PictureBox();
+            this.pbFence = new System.Windows.Forms.PictureBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pbDesert = new System.Windows.Forms.PictureBox();
+            this.pbGrassRight = new System.Windows.Forms.PictureBox();
+            this.pbGrassMid = new System.Windows.Forms.PictureBox();
+            this.pbGrassLeft = new System.Windows.Forms.PictureBox();
+            this.pbSoilLeft = new System.Windows.Forms.PictureBox();
+            this.pbSoilRight = new System.Windows.Forms.PictureBox();
+            this.pbCross = new System.Windows.Forms.PictureBox();
+            this.pbCheckPoint = new System.Windows.Forms.PictureBox();
+            this.pbEndmap = new System.Windows.Forms.PictureBox();
+            this.pbMushRoomGroundLeft = new System.Windows.Forms.PictureBox();
+            this.pbMushRoomGroundMiddle = new System.Windows.Forms.PictureBox();
+            this.pbMushRoomGroundRight = new System.Windows.Forms.PictureBox();
+            this.pbMushRoomGroundUnder = new System.Windows.Forms.PictureBox();
+            this.pbPipe1 = new System.Windows.Forms.PictureBox();
+            this.pbPipe2 = new System.Windows.Forms.PictureBox();
+            this.pbPipe3 = new System.Windows.Forms.PictureBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pbItem_Coin = new System.Windows.Forms.PictureBox();
+            this.pbItem_Flower = new System.Windows.Forms.PictureBox();
+            this.pbItem_GreenMusrom = new System.Windows.Forms.PictureBox();
+            this.pbDarkSoil = new System.Windows.Forms.PictureBox();
+            this.pbItem_RedMusrom = new System.Windows.Forms.PictureBox();
+            this.pbCoin = new System.Windows.Forms.PictureBox();
+            this.pbRock = new System.Windows.Forms.PictureBox();
+            this.pbBlock = new System.Windows.Forms.PictureBox();
+            this.pbHiddenLife = new System.Windows.Forms.PictureBox();
+            this.pbDelete = new System.Windows.Forms.PictureBox();
+            this.pbBonusStar = new System.Windows.Forms.PictureBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pbMarioKid = new System.Windows.Forms.PictureBox();
+            this.pbMarioAdult = new System.Windows.Forms.PictureBox();
+            this.pbMarioAdultGun = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.pnMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomEnemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTurleEnemy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPirhanaPlant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRedTurle)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Hight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMountain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFence)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDesert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrassLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoilLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoilRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCross)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckPoint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEndmap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_GreenMusrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDarkSoil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_RedMusrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBlock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHiddenLife)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarioKid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarioAdult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarioAdultGun)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(12, 37);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(325, 385);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.pbBonusStar);
-            this.tabPage1.Controls.Add(this.pbDelete);
-            this.tabPage1.Controls.Add(this.pbHiddenLife);
-            this.tabPage1.Controls.Add(this.pbBlock);
-            this.tabPage1.Controls.Add(this.pbRock);
-            this.tabPage1.Controls.Add(this.pbCoin);
-            this.tabPage1.Controls.Add(this.pbItem_RedMusrom);
-            this.tabPage1.Controls.Add(this.pbDarkSoil);
-            this.tabPage1.Controls.Add(this.pbItem_GreenMusrom);
-            this.tabPage1.Controls.Add(this.pbItem_Flower);
-            this.tabPage1.Controls.Add(this.pbItem_Coin);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(317, 359);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Brick";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // pbBonusStar
-            // 
-            this.pbBonusStar.Image = ((System.Drawing.Image)(resources.GetObject("pbBonusStar.Image")));
-            this.pbBonusStar.Location = new System.Drawing.Point(263, 81);
-            this.pbBonusStar.Name = "pbBonusStar";
-            this.pbBonusStar.Size = new System.Drawing.Size(32, 64);
-            this.pbBonusStar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbBonusStar.TabIndex = 16;
-            this.pbBonusStar.TabStop = false;
-            this.pbBonusStar.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbDelete
-            // 
-            this.pbDelete.Image = ((System.Drawing.Image)(resources.GetObject("pbDelete.Image")));
-            this.pbDelete.Location = new System.Drawing.Point(263, 175);
-            this.pbDelete.Name = "pbDelete";
-            this.pbDelete.Size = new System.Drawing.Size(32, 32);
-            this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbDelete.TabIndex = 15;
-            this.pbDelete.TabStop = false;
-            this.pbDelete.Click += new System.EventHandler(this.pbDelete_Click);
-            // 
-            // pbHiddenLife
-            // 
-            this.pbHiddenLife.Image = ((System.Drawing.Image)(resources.GetObject("pbHiddenLife.Image")));
-            this.pbHiddenLife.Location = new System.Drawing.Point(201, 25);
-            this.pbHiddenLife.Name = "pbHiddenLife";
-            this.pbHiddenLife.Size = new System.Drawing.Size(32, 32);
-            this.pbHiddenLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbHiddenLife.TabIndex = 13;
-            this.pbHiddenLife.TabStop = false;
-            this.pbHiddenLife.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbBlock
-            // 
-            this.pbBlock.Image = ((System.Drawing.Image)(resources.GetObject("pbBlock.Image")));
-            this.pbBlock.Location = new System.Drawing.Point(12, 25);
-            this.pbBlock.Name = "pbBlock";
-            this.pbBlock.Size = new System.Drawing.Size(32, 32);
-            this.pbBlock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbBlock.TabIndex = 12;
-            this.pbBlock.TabStop = false;
-            this.pbBlock.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbRock
-            // 
-            this.pbRock.Image = ((System.Drawing.Image)(resources.GetObject("pbRock.Image")));
-            this.pbRock.Location = new System.Drawing.Point(76, 25);
-            this.pbRock.Name = "pbRock";
-            this.pbRock.Size = new System.Drawing.Size(32, 32);
-            this.pbRock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbRock.TabIndex = 10;
-            this.pbRock.TabStop = false;
-            this.pbRock.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbCoin
-            // 
-            this.pbCoin.Image = ((System.Drawing.Image)(resources.GetObject("pbCoin.Image")));
-            this.pbCoin.Location = new System.Drawing.Point(137, 25);
-            this.pbCoin.Name = "pbCoin";
-            this.pbCoin.Size = new System.Drawing.Size(32, 32);
-            this.pbCoin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbCoin.TabIndex = 11;
-            this.pbCoin.TabStop = false;
-            this.pbCoin.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbItem_RedMusrom
-            // 
-            this.pbItem_RedMusrom.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_RedMusrom.Image")));
-            this.pbItem_RedMusrom.Location = new System.Drawing.Point(201, 81);
-            this.pbItem_RedMusrom.Name = "pbItem_RedMusrom";
-            this.pbItem_RedMusrom.Size = new System.Drawing.Size(32, 64);
-            this.pbItem_RedMusrom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbItem_RedMusrom.TabIndex = 6;
-            this.pbItem_RedMusrom.TabStop = false;
-            this.pbItem_RedMusrom.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbDarkSoil
-            // 
-            this.pbDarkSoil.Image = ((System.Drawing.Image)(resources.GetObject("pbDarkSoil.Image")));
-            this.pbDarkSoil.Location = new System.Drawing.Point(263, 25);
-            this.pbDarkSoil.Name = "pbDarkSoil";
-            this.pbDarkSoil.Size = new System.Drawing.Size(32, 32);
-            this.pbDarkSoil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbDarkSoil.TabIndex = 14;
-            this.pbDarkSoil.TabStop = false;
-            this.pbDarkSoil.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbItem_GreenMusrom
-            // 
-            this.pbItem_GreenMusrom.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_GreenMusrom.Image")));
-            this.pbItem_GreenMusrom.Location = new System.Drawing.Point(137, 81);
-            this.pbItem_GreenMusrom.Name = "pbItem_GreenMusrom";
-            this.pbItem_GreenMusrom.Size = new System.Drawing.Size(32, 64);
-            this.pbItem_GreenMusrom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbItem_GreenMusrom.TabIndex = 9;
-            this.pbItem_GreenMusrom.TabStop = false;
-            this.pbItem_GreenMusrom.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbItem_Flower
-            // 
-            this.pbItem_Flower.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_Flower.Image")));
-            this.pbItem_Flower.Location = new System.Drawing.Point(76, 81);
-            this.pbItem_Flower.Name = "pbItem_Flower";
-            this.pbItem_Flower.Size = new System.Drawing.Size(32, 64);
-            this.pbItem_Flower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbItem_Flower.TabIndex = 8;
-            this.pbItem_Flower.TabStop = false;
-            this.pbItem_Flower.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbItem_Coin
-            // 
-            this.pbItem_Coin.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_Coin.Image")));
-            this.pbItem_Coin.Location = new System.Drawing.Point(12, 81);
-            this.pbItem_Coin.Name = "pbItem_Coin";
-            this.pbItem_Coin.Size = new System.Drawing.Size(32, 64);
-            this.pbItem_Coin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbItem_Coin.TabIndex = 7;
-            this.pbItem_Coin.TabStop = false;
-            this.pbItem_Coin.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.pbPipe3);
-            this.tabPage2.Controls.Add(this.pbPipe2);
-            this.tabPage2.Controls.Add(this.pbPipe1);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundUnder);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundRight);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundMiddle);
-            this.tabPage2.Controls.Add(this.pbMushRoomGroundLeft);
-            this.tabPage2.Controls.Add(this.pbEndmap);
-            this.tabPage2.Controls.Add(this.pbCheckPoint);
-            this.tabPage2.Controls.Add(this.pbCross);
-            this.tabPage2.Controls.Add(this.pbSoilRight);
-            this.tabPage2.Controls.Add(this.pbSoilLeft);
-            this.tabPage2.Controls.Add(this.pbGrassLeft);
-            this.tabPage2.Controls.Add(this.pbGrassMid);
-            this.tabPage2.Controls.Add(this.pbGrassRight);
-            this.tabPage2.Controls.Add(this.pbDesert);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(317, 359);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Terrain";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pbPipe3
-            // 
-            this.pbPipe3.Image = global::MapEditor.Properties.Resources.pipe3;
-            this.pbPipe3.Location = new System.Drawing.Point(227, 75);
-            this.pbPipe3.Name = "pbPipe3";
-            this.pbPipe3.Size = new System.Drawing.Size(75, 200);
-            this.pbPipe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipe3.TabIndex = 31;
-            this.pbPipe3.TabStop = false;
-            this.pbPipe3.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbPipe2
-            // 
-            this.pbPipe2.Image = global::MapEditor.Properties.Resources.pipe2;
-            this.pbPipe2.Location = new System.Drawing.Point(146, 175);
-            this.pbPipe2.Name = "pbPipe2";
-            this.pbPipe2.Size = new System.Drawing.Size(75, 100);
-            this.pbPipe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipe2.TabIndex = 30;
-            this.pbPipe2.TabStop = false;
-            this.pbPipe2.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbPipe1
-            // 
-            this.pbPipe1.Image = global::MapEditor.Properties.Resources.pipe1;
-            this.pbPipe1.Location = new System.Drawing.Point(146, 75);
-            this.pbPipe1.Name = "pbPipe1";
-            this.pbPipe1.Size = new System.Drawing.Size(75, 50);
-            this.pbPipe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipe1.TabIndex = 29;
-            this.pbPipe1.TabStop = false;
-            this.pbPipe1.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbMushRoomGroundUnder
-            // 
-            this.pbMushRoomGroundUnder.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundUnder.Image")));
-            this.pbMushRoomGroundUnder.Location = new System.Drawing.Point(59, 218);
-            this.pbMushRoomGroundUnder.Name = "pbMushRoomGroundUnder";
-            this.pbMushRoomGroundUnder.Size = new System.Drawing.Size(32, 32);
-            this.pbMushRoomGroundUnder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbMushRoomGroundUnder.TabIndex = 28;
-            this.pbMushRoomGroundUnder.TabStop = false;
-            this.pbMushRoomGroundUnder.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbMushRoomGroundRight
-            // 
-            this.pbMushRoomGroundRight.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundRight.Image")));
-            this.pbMushRoomGroundRight.Location = new System.Drawing.Point(97, 181);
-            this.pbMushRoomGroundRight.Name = "pbMushRoomGroundRight";
-            this.pbMushRoomGroundRight.Size = new System.Drawing.Size(32, 31);
-            this.pbMushRoomGroundRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbMushRoomGroundRight.TabIndex = 27;
-            this.pbMushRoomGroundRight.TabStop = false;
-            this.pbMushRoomGroundRight.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbMushRoomGroundMiddle
-            // 
-            this.pbMushRoomGroundMiddle.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundMiddle.Image")));
-            this.pbMushRoomGroundMiddle.Location = new System.Drawing.Point(59, 181);
-            this.pbMushRoomGroundMiddle.Name = "pbMushRoomGroundMiddle";
-            this.pbMushRoomGroundMiddle.Size = new System.Drawing.Size(32, 31);
-            this.pbMushRoomGroundMiddle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbMushRoomGroundMiddle.TabIndex = 26;
-            this.pbMushRoomGroundMiddle.TabStop = false;
-            this.pbMushRoomGroundMiddle.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbMushRoomGroundLeft
-            // 
-            this.pbMushRoomGroundLeft.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundLeft.Image")));
-            this.pbMushRoomGroundLeft.Location = new System.Drawing.Point(21, 181);
-            this.pbMushRoomGroundLeft.Name = "pbMushRoomGroundLeft";
-            this.pbMushRoomGroundLeft.Size = new System.Drawing.Size(32, 31);
-            this.pbMushRoomGroundLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbMushRoomGroundLeft.TabIndex = 25;
-            this.pbMushRoomGroundLeft.TabStop = false;
-            this.pbMushRoomGroundLeft.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbEndmap
-            // 
-            this.pbEndmap.Image = ((System.Drawing.Image)(resources.GetObject("pbEndmap.Image")));
-            this.pbEndmap.Location = new System.Drawing.Point(21, 142);
-            this.pbEndmap.Name = "pbEndmap";
-            this.pbEndmap.Size = new System.Drawing.Size(31, 33);
-            this.pbEndmap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbEndmap.TabIndex = 24;
-            this.pbEndmap.TabStop = false;
-            this.pbEndmap.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbCheckPoint
-            // 
-            this.pbCheckPoint.Image = ((System.Drawing.Image)(resources.GetObject("pbCheckPoint.Image")));
-            this.pbCheckPoint.Location = new System.Drawing.Point(20, 112);
-            this.pbCheckPoint.Name = "pbCheckPoint";
-            this.pbCheckPoint.Size = new System.Drawing.Size(57, 14);
-            this.pbCheckPoint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbCheckPoint.TabIndex = 23;
-            this.pbCheckPoint.TabStop = false;
-            this.pbCheckPoint.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbCross
-            // 
-            this.pbCross.Image = ((System.Drawing.Image)(resources.GetObject("pbCross.Image")));
-            this.pbCross.Location = new System.Drawing.Point(21, 75);
-            this.pbCross.Name = "pbCross";
-            this.pbCross.Size = new System.Drawing.Size(96, 18);
-            this.pbCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbCross.TabIndex = 22;
-            this.pbCross.TabStop = false;
-            this.pbCross.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbSoilRight
-            // 
-            this.pbSoilRight.Image = ((System.Drawing.Image)(resources.GetObject("pbSoilRight.Image")));
-            this.pbSoilRight.Location = new System.Drawing.Point(211, 18);
-            this.pbSoilRight.Name = "pbSoilRight";
-            this.pbSoilRight.Size = new System.Drawing.Size(32, 32);
-            this.pbSoilRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbSoilRight.TabIndex = 21;
-            this.pbSoilRight.TabStop = false;
-            this.pbSoilRight.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbSoilLeft
-            // 
-            this.pbSoilLeft.Image = ((System.Drawing.Image)(resources.GetObject("pbSoilLeft.Image")));
-            this.pbSoilLeft.Location = new System.Drawing.Point(173, 18);
-            this.pbSoilLeft.Name = "pbSoilLeft";
-            this.pbSoilLeft.Size = new System.Drawing.Size(32, 32);
-            this.pbSoilLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbSoilLeft.TabIndex = 20;
-            this.pbSoilLeft.TabStop = false;
-            this.pbSoilLeft.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbGrassLeft
-            // 
-            this.pbGrassLeft.Image = ((System.Drawing.Image)(resources.GetObject("pbGrassLeft.Image")));
-            this.pbGrassLeft.Location = new System.Drawing.Point(21, 18);
-            this.pbGrassLeft.Name = "pbGrassLeft";
-            this.pbGrassLeft.Size = new System.Drawing.Size(32, 32);
-            this.pbGrassLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbGrassLeft.TabIndex = 16;
-            this.pbGrassLeft.TabStop = false;
-            this.pbGrassLeft.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbGrassMid
-            // 
-            this.pbGrassMid.Image = ((System.Drawing.Image)(resources.GetObject("pbGrassMid.Image")));
-            this.pbGrassMid.Location = new System.Drawing.Point(59, 18);
-            this.pbGrassMid.Name = "pbGrassMid";
-            this.pbGrassMid.Size = new System.Drawing.Size(32, 32);
-            this.pbGrassMid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbGrassMid.TabIndex = 18;
-            this.pbGrassMid.TabStop = false;
-            this.pbGrassMid.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbGrassRight
-            // 
-            this.pbGrassRight.Image = ((System.Drawing.Image)(resources.GetObject("pbGrassRight.Image")));
-            this.pbGrassRight.Location = new System.Drawing.Point(97, 18);
-            this.pbGrassRight.Name = "pbGrassRight";
-            this.pbGrassRight.Size = new System.Drawing.Size(32, 32);
-            this.pbGrassRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbGrassRight.TabIndex = 17;
-            this.pbGrassRight.TabStop = false;
-            this.pbGrassRight.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbDesert
-            // 
-            this.pbDesert.Image = ((System.Drawing.Image)(resources.GetObject("pbDesert.Image")));
-            this.pbDesert.Location = new System.Drawing.Point(135, 18);
-            this.pbDesert.Name = "pbDesert";
-            this.pbDesert.Size = new System.Drawing.Size(32, 32);
-            this.pbDesert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbDesert.TabIndex = 15;
-            this.pbDesert.TabStop = false;
-            this.pbDesert.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.pbFence);
-            this.tabPage3.Controls.Add(this.pbMountain);
-            this.tabPage3.Controls.Add(this.pbGrass);
-            this.tabPage3.Controls.Add(this.pbTree_Hight);
-            this.tabPage3.Controls.Add(this.pbTree_Low);
-            this.tabPage3.Controls.Add(this.pbCloud);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(317, 359);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "View";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // pbFence
-            // 
-            this.pbFence.Image = ((System.Drawing.Image)(resources.GetObject("pbFence.Image")));
-            this.pbFence.Location = new System.Drawing.Point(3, 314);
-            this.pbFence.Name = "pbFence";
-            this.pbFence.Size = new System.Drawing.Size(140, 32);
-            this.pbFence.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbFence.TabIndex = 9;
-            this.pbFence.TabStop = false;
-            this.pbFence.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbMountain
-            // 
-            this.pbMountain.Image = ((System.Drawing.Image)(resources.GetObject("pbMountain.Image")));
-            this.pbMountain.Location = new System.Drawing.Point(3, 180);
-            this.pbMountain.Name = "pbMountain";
-            this.pbMountain.Size = new System.Drawing.Size(310, 128);
-            this.pbMountain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbMountain.TabIndex = 8;
-            this.pbMountain.TabStop = false;
-            this.pbMountain.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbGrass
-            // 
-            this.pbGrass.Image = ((System.Drawing.Image)(resources.GetObject("pbGrass.Image")));
-            this.pbGrass.Location = new System.Drawing.Point(3, 121);
-            this.pbGrass.Name = "pbGrass";
-            this.pbGrass.Size = new System.Drawing.Size(128, 32);
-            this.pbGrass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbGrass.TabIndex = 7;
-            this.pbGrass.TabStop = false;
-            this.pbGrass.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbTree_Hight
-            // 
-            this.pbTree_Hight.Image = ((System.Drawing.Image)(resources.GetObject("pbTree_Hight.Image")));
-            this.pbTree_Hight.Location = new System.Drawing.Point(212, 78);
-            this.pbTree_Hight.Name = "pbTree_Hight";
-            this.pbTree_Hight.Size = new System.Drawing.Size(32, 96);
-            this.pbTree_Hight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbTree_Hight.TabIndex = 4;
-            this.pbTree_Hight.TabStop = false;
-            this.pbTree_Hight.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbTree_Low
-            // 
-            this.pbTree_Low.Image = ((System.Drawing.Image)(resources.GetObject("pbTree_Low.Image")));
-            this.pbTree_Low.Location = new System.Drawing.Point(174, 110);
-            this.pbTree_Low.Name = "pbTree_Low";
-            this.pbTree_Low.Size = new System.Drawing.Size(32, 64);
-            this.pbTree_Low.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbTree_Low.TabIndex = 5;
-            this.pbTree_Low.TabStop = false;
-            this.pbTree_Low.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbCloud
-            // 
-            this.pbCloud.Image = ((System.Drawing.Image)(resources.GetObject("pbCloud.Image")));
-            this.pbCloud.Location = new System.Drawing.Point(79, 13);
-            this.pbCloud.Name = "pbCloud";
-            this.pbCloud.Size = new System.Drawing.Size(128, 45);
-            this.pbCloud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbCloud.TabIndex = 6;
-            this.pbCloud.TabStop = false;
-            this.pbCloud.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.pbRedTurle);
-            this.tabPage4.Controls.Add(this.pbPirhanaPlant);
-            this.tabPage4.Controls.Add(this.pbTurleEnemy);
-            this.tabPage4.Controls.Add(this.pbMushRoomEnemy);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(317, 359);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Enemy";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // pbRedTurle
-            // 
-            this.pbRedTurle.Image = ((System.Drawing.Image)(resources.GetObject("pbRedTurle.Image")));
-            this.pbRedTurle.Location = new System.Drawing.Point(192, 20);
-            this.pbRedTurle.Name = "pbRedTurle";
-            this.pbRedTurle.Size = new System.Drawing.Size(32, 47);
-            this.pbRedTurle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbRedTurle.TabIndex = 11;
-            this.pbRedTurle.TabStop = false;
-            this.pbRedTurle.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbPirhanaPlant
-            // 
-            this.pbPirhanaPlant.Image = ((System.Drawing.Image)(resources.GetObject("pbPirhanaPlant.Image")));
-            this.pbPirhanaPlant.Location = new System.Drawing.Point(139, 32);
-            this.pbPirhanaPlant.Name = "pbPirhanaPlant";
-            this.pbPirhanaPlant.Size = new System.Drawing.Size(25, 35);
-            this.pbPirhanaPlant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPirhanaPlant.TabIndex = 10;
-            this.pbPirhanaPlant.TabStop = false;
-            this.pbPirhanaPlant.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbTurleEnemy
-            // 
-            this.pbTurleEnemy.Image = ((System.Drawing.Image)(resources.GetObject("pbTurleEnemy.Image")));
-            this.pbTurleEnemy.Location = new System.Drawing.Point(77, 17);
-            this.pbTurleEnemy.Name = "pbTurleEnemy";
-            this.pbTurleEnemy.Size = new System.Drawing.Size(32, 47);
-            this.pbTurleEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbTurleEnemy.TabIndex = 9;
-            this.pbTurleEnemy.TabStop = false;
-            this.pbTurleEnemy.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbMushRoomEnemy
-            // 
-            this.pbMushRoomEnemy.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomEnemy.Image")));
-            this.pbMushRoomEnemy.Location = new System.Drawing.Point(25, 32);
-            this.pbMushRoomEnemy.Name = "pbMushRoomEnemy";
-            this.pbMushRoomEnemy.Size = new System.Drawing.Size(32, 32);
-            this.pbMushRoomEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbMushRoomEnemy.TabIndex = 8;
-            this.pbMushRoomEnemy.TabStop = false;
-            this.pbMushRoomEnemy.Click += new System.EventHandler(this.pbBlock_Click);
             // 
             // menuStrip1
             // 
@@ -791,7 +303,7 @@
             this.cbSnap.BackColor = System.Drawing.Color.Transparent;
             this.cbSnap.Checked = true;
             this.cbSnap.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbSnap.Location = new System.Drawing.Point(21, 570);
+            this.cbSnap.Location = new System.Drawing.Point(22, 598);
             this.cbSnap.Name = "cbSnap";
             this.cbSnap.Size = new System.Drawing.Size(71, 17);
             this.cbSnap.TabIndex = 26;
@@ -866,7 +378,7 @@
             // 
             // btDone
             // 
-            this.btDone.Location = new System.Drawing.Point(17, 605);
+            this.btDone.Location = new System.Drawing.Point(22, 629);
             this.btDone.Name = "btDone";
             this.btDone.Size = new System.Drawing.Size(75, 23);
             this.btDone.TabIndex = 21;
@@ -877,13 +389,563 @@
             // 
             // btGenerate
             // 
-            this.btGenerate.Location = new System.Drawing.Point(98, 605);
+            this.btGenerate.Location = new System.Drawing.Point(105, 629);
             this.btGenerate.Name = "btGenerate";
             this.btGenerate.Size = new System.Drawing.Size(75, 23);
             this.btGenerate.TabIndex = 20;
             this.btGenerate.Text = "Generate";
             this.btGenerate.UseVisualStyleBackColor = true;
             this.btGenerate.Click += new System.EventHandler(this.btGenerate_Click);
+            // 
+            // txtNextMap
+            // 
+            this.txtNextMap.Location = new System.Drawing.Point(88, 568);
+            this.txtNextMap.Name = "txtNextMap";
+            this.txtNextMap.Size = new System.Drawing.Size(42, 20);
+            this.txtNextMap.TabIndex = 31;
+            this.txtNextMap.Text = "1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(19, 571);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Next Map";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.pbRedTurle);
+            this.tabPage4.Controls.Add(this.pbPirhanaPlant);
+            this.tabPage4.Controls.Add(this.pbTurleEnemy);
+            this.tabPage4.Controls.Add(this.pbMushRoomEnemy);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(317, 359);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Enemy";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pbMushRoomEnemy
+            // 
+            this.pbMushRoomEnemy.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomEnemy.Image")));
+            this.pbMushRoomEnemy.Location = new System.Drawing.Point(25, 32);
+            this.pbMushRoomEnemy.Name = "pbMushRoomEnemy";
+            this.pbMushRoomEnemy.Size = new System.Drawing.Size(32, 32);
+            this.pbMushRoomEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMushRoomEnemy.TabIndex = 8;
+            this.pbMushRoomEnemy.TabStop = false;
+            this.pbMushRoomEnemy.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbTurleEnemy
+            // 
+            this.pbTurleEnemy.Image = ((System.Drawing.Image)(resources.GetObject("pbTurleEnemy.Image")));
+            this.pbTurleEnemy.Location = new System.Drawing.Point(77, 17);
+            this.pbTurleEnemy.Name = "pbTurleEnemy";
+            this.pbTurleEnemy.Size = new System.Drawing.Size(32, 47);
+            this.pbTurleEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbTurleEnemy.TabIndex = 9;
+            this.pbTurleEnemy.TabStop = false;
+            this.pbTurleEnemy.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbPirhanaPlant
+            // 
+            this.pbPirhanaPlant.Image = ((System.Drawing.Image)(resources.GetObject("pbPirhanaPlant.Image")));
+            this.pbPirhanaPlant.Location = new System.Drawing.Point(139, 32);
+            this.pbPirhanaPlant.Name = "pbPirhanaPlant";
+            this.pbPirhanaPlant.Size = new System.Drawing.Size(25, 35);
+            this.pbPirhanaPlant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPirhanaPlant.TabIndex = 10;
+            this.pbPirhanaPlant.TabStop = false;
+            this.pbPirhanaPlant.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbRedTurle
+            // 
+            this.pbRedTurle.Image = ((System.Drawing.Image)(resources.GetObject("pbRedTurle.Image")));
+            this.pbRedTurle.Location = new System.Drawing.Point(192, 20);
+            this.pbRedTurle.Name = "pbRedTurle";
+            this.pbRedTurle.Size = new System.Drawing.Size(32, 47);
+            this.pbRedTurle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbRedTurle.TabIndex = 11;
+            this.pbRedTurle.TabStop = false;
+            this.pbRedTurle.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.pbFence);
+            this.tabPage3.Controls.Add(this.pbMountain);
+            this.tabPage3.Controls.Add(this.pbGrass);
+            this.tabPage3.Controls.Add(this.pbTree_Hight);
+            this.tabPage3.Controls.Add(this.pbTree_Low);
+            this.tabPage3.Controls.Add(this.pbCloud);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(317, 359);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "View";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pbCloud
+            // 
+            this.pbCloud.Image = ((System.Drawing.Image)(resources.GetObject("pbCloud.Image")));
+            this.pbCloud.Location = new System.Drawing.Point(79, 13);
+            this.pbCloud.Name = "pbCloud";
+            this.pbCloud.Size = new System.Drawing.Size(128, 45);
+            this.pbCloud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbCloud.TabIndex = 6;
+            this.pbCloud.TabStop = false;
+            this.pbCloud.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbTree_Low
+            // 
+            this.pbTree_Low.Image = ((System.Drawing.Image)(resources.GetObject("pbTree_Low.Image")));
+            this.pbTree_Low.Location = new System.Drawing.Point(174, 110);
+            this.pbTree_Low.Name = "pbTree_Low";
+            this.pbTree_Low.Size = new System.Drawing.Size(32, 64);
+            this.pbTree_Low.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbTree_Low.TabIndex = 5;
+            this.pbTree_Low.TabStop = false;
+            this.pbTree_Low.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbTree_Hight
+            // 
+            this.pbTree_Hight.Image = ((System.Drawing.Image)(resources.GetObject("pbTree_Hight.Image")));
+            this.pbTree_Hight.Location = new System.Drawing.Point(212, 78);
+            this.pbTree_Hight.Name = "pbTree_Hight";
+            this.pbTree_Hight.Size = new System.Drawing.Size(32, 96);
+            this.pbTree_Hight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbTree_Hight.TabIndex = 4;
+            this.pbTree_Hight.TabStop = false;
+            this.pbTree_Hight.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbGrass
+            // 
+            this.pbGrass.Image = ((System.Drawing.Image)(resources.GetObject("pbGrass.Image")));
+            this.pbGrass.Location = new System.Drawing.Point(3, 121);
+            this.pbGrass.Name = "pbGrass";
+            this.pbGrass.Size = new System.Drawing.Size(128, 32);
+            this.pbGrass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbGrass.TabIndex = 7;
+            this.pbGrass.TabStop = false;
+            this.pbGrass.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbMountain
+            // 
+            this.pbMountain.Image = ((System.Drawing.Image)(resources.GetObject("pbMountain.Image")));
+            this.pbMountain.Location = new System.Drawing.Point(3, 180);
+            this.pbMountain.Name = "pbMountain";
+            this.pbMountain.Size = new System.Drawing.Size(310, 128);
+            this.pbMountain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMountain.TabIndex = 8;
+            this.pbMountain.TabStop = false;
+            this.pbMountain.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbFence
+            // 
+            this.pbFence.Image = ((System.Drawing.Image)(resources.GetObject("pbFence.Image")));
+            this.pbFence.Location = new System.Drawing.Point(3, 314);
+            this.pbFence.Name = "pbFence";
+            this.pbFence.Size = new System.Drawing.Size(140, 32);
+            this.pbFence.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbFence.TabIndex = 9;
+            this.pbFence.TabStop = false;
+            this.pbFence.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.pbPipe3);
+            this.tabPage2.Controls.Add(this.pbPipe2);
+            this.tabPage2.Controls.Add(this.pbPipe1);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundUnder);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundRight);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundMiddle);
+            this.tabPage2.Controls.Add(this.pbMushRoomGroundLeft);
+            this.tabPage2.Controls.Add(this.pbEndmap);
+            this.tabPage2.Controls.Add(this.pbCheckPoint);
+            this.tabPage2.Controls.Add(this.pbCross);
+            this.tabPage2.Controls.Add(this.pbSoilRight);
+            this.tabPage2.Controls.Add(this.pbSoilLeft);
+            this.tabPage2.Controls.Add(this.pbGrassLeft);
+            this.tabPage2.Controls.Add(this.pbGrassMid);
+            this.tabPage2.Controls.Add(this.pbGrassRight);
+            this.tabPage2.Controls.Add(this.pbDesert);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(317, 359);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Terrain";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pbDesert
+            // 
+            this.pbDesert.Image = ((System.Drawing.Image)(resources.GetObject("pbDesert.Image")));
+            this.pbDesert.Location = new System.Drawing.Point(135, 18);
+            this.pbDesert.Name = "pbDesert";
+            this.pbDesert.Size = new System.Drawing.Size(32, 32);
+            this.pbDesert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbDesert.TabIndex = 15;
+            this.pbDesert.TabStop = false;
+            this.pbDesert.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbGrassRight
+            // 
+            this.pbGrassRight.Image = ((System.Drawing.Image)(resources.GetObject("pbGrassRight.Image")));
+            this.pbGrassRight.Location = new System.Drawing.Point(97, 18);
+            this.pbGrassRight.Name = "pbGrassRight";
+            this.pbGrassRight.Size = new System.Drawing.Size(32, 32);
+            this.pbGrassRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbGrassRight.TabIndex = 17;
+            this.pbGrassRight.TabStop = false;
+            this.pbGrassRight.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbGrassMid
+            // 
+            this.pbGrassMid.Image = ((System.Drawing.Image)(resources.GetObject("pbGrassMid.Image")));
+            this.pbGrassMid.Location = new System.Drawing.Point(59, 18);
+            this.pbGrassMid.Name = "pbGrassMid";
+            this.pbGrassMid.Size = new System.Drawing.Size(32, 32);
+            this.pbGrassMid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbGrassMid.TabIndex = 18;
+            this.pbGrassMid.TabStop = false;
+            this.pbGrassMid.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbGrassLeft
+            // 
+            this.pbGrassLeft.Image = ((System.Drawing.Image)(resources.GetObject("pbGrassLeft.Image")));
+            this.pbGrassLeft.Location = new System.Drawing.Point(21, 18);
+            this.pbGrassLeft.Name = "pbGrassLeft";
+            this.pbGrassLeft.Size = new System.Drawing.Size(32, 32);
+            this.pbGrassLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbGrassLeft.TabIndex = 16;
+            this.pbGrassLeft.TabStop = false;
+            this.pbGrassLeft.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbSoilLeft
+            // 
+            this.pbSoilLeft.Image = ((System.Drawing.Image)(resources.GetObject("pbSoilLeft.Image")));
+            this.pbSoilLeft.Location = new System.Drawing.Point(173, 18);
+            this.pbSoilLeft.Name = "pbSoilLeft";
+            this.pbSoilLeft.Size = new System.Drawing.Size(32, 32);
+            this.pbSoilLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbSoilLeft.TabIndex = 20;
+            this.pbSoilLeft.TabStop = false;
+            this.pbSoilLeft.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbSoilRight
+            // 
+            this.pbSoilRight.Image = ((System.Drawing.Image)(resources.GetObject("pbSoilRight.Image")));
+            this.pbSoilRight.Location = new System.Drawing.Point(211, 18);
+            this.pbSoilRight.Name = "pbSoilRight";
+            this.pbSoilRight.Size = new System.Drawing.Size(32, 32);
+            this.pbSoilRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbSoilRight.TabIndex = 21;
+            this.pbSoilRight.TabStop = false;
+            this.pbSoilRight.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbCross
+            // 
+            this.pbCross.Image = ((System.Drawing.Image)(resources.GetObject("pbCross.Image")));
+            this.pbCross.Location = new System.Drawing.Point(21, 75);
+            this.pbCross.Name = "pbCross";
+            this.pbCross.Size = new System.Drawing.Size(96, 18);
+            this.pbCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbCross.TabIndex = 22;
+            this.pbCross.TabStop = false;
+            this.pbCross.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbCheckPoint
+            // 
+            this.pbCheckPoint.Image = ((System.Drawing.Image)(resources.GetObject("pbCheckPoint.Image")));
+            this.pbCheckPoint.Location = new System.Drawing.Point(20, 112);
+            this.pbCheckPoint.Name = "pbCheckPoint";
+            this.pbCheckPoint.Size = new System.Drawing.Size(57, 14);
+            this.pbCheckPoint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbCheckPoint.TabIndex = 23;
+            this.pbCheckPoint.TabStop = false;
+            this.pbCheckPoint.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbEndmap
+            // 
+            this.pbEndmap.Image = ((System.Drawing.Image)(resources.GetObject("pbEndmap.Image")));
+            this.pbEndmap.Location = new System.Drawing.Point(21, 142);
+            this.pbEndmap.Name = "pbEndmap";
+            this.pbEndmap.Size = new System.Drawing.Size(31, 33);
+            this.pbEndmap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbEndmap.TabIndex = 24;
+            this.pbEndmap.TabStop = false;
+            this.pbEndmap.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbMushRoomGroundLeft
+            // 
+            this.pbMushRoomGroundLeft.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundLeft.Image")));
+            this.pbMushRoomGroundLeft.Location = new System.Drawing.Point(21, 181);
+            this.pbMushRoomGroundLeft.Name = "pbMushRoomGroundLeft";
+            this.pbMushRoomGroundLeft.Size = new System.Drawing.Size(32, 31);
+            this.pbMushRoomGroundLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMushRoomGroundLeft.TabIndex = 25;
+            this.pbMushRoomGroundLeft.TabStop = false;
+            this.pbMushRoomGroundLeft.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbMushRoomGroundMiddle
+            // 
+            this.pbMushRoomGroundMiddle.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundMiddle.Image")));
+            this.pbMushRoomGroundMiddle.Location = new System.Drawing.Point(59, 181);
+            this.pbMushRoomGroundMiddle.Name = "pbMushRoomGroundMiddle";
+            this.pbMushRoomGroundMiddle.Size = new System.Drawing.Size(32, 31);
+            this.pbMushRoomGroundMiddle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMushRoomGroundMiddle.TabIndex = 26;
+            this.pbMushRoomGroundMiddle.TabStop = false;
+            this.pbMushRoomGroundMiddle.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbMushRoomGroundRight
+            // 
+            this.pbMushRoomGroundRight.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundRight.Image")));
+            this.pbMushRoomGroundRight.Location = new System.Drawing.Point(97, 181);
+            this.pbMushRoomGroundRight.Name = "pbMushRoomGroundRight";
+            this.pbMushRoomGroundRight.Size = new System.Drawing.Size(32, 31);
+            this.pbMushRoomGroundRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMushRoomGroundRight.TabIndex = 27;
+            this.pbMushRoomGroundRight.TabStop = false;
+            this.pbMushRoomGroundRight.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbMushRoomGroundUnder
+            // 
+            this.pbMushRoomGroundUnder.Image = ((System.Drawing.Image)(resources.GetObject("pbMushRoomGroundUnder.Image")));
+            this.pbMushRoomGroundUnder.Location = new System.Drawing.Point(59, 218);
+            this.pbMushRoomGroundUnder.Name = "pbMushRoomGroundUnder";
+            this.pbMushRoomGroundUnder.Size = new System.Drawing.Size(32, 32);
+            this.pbMushRoomGroundUnder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMushRoomGroundUnder.TabIndex = 28;
+            this.pbMushRoomGroundUnder.TabStop = false;
+            this.pbMushRoomGroundUnder.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbPipe1
+            // 
+            this.pbPipe1.Image = global::MapEditor.Properties.Resources.pipe1;
+            this.pbPipe1.Location = new System.Drawing.Point(146, 75);
+            this.pbPipe1.Name = "pbPipe1";
+            this.pbPipe1.Size = new System.Drawing.Size(75, 50);
+            this.pbPipe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe1.TabIndex = 29;
+            this.pbPipe1.TabStop = false;
+            this.pbPipe1.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbPipe2
+            // 
+            this.pbPipe2.Image = global::MapEditor.Properties.Resources.pipe2;
+            this.pbPipe2.Location = new System.Drawing.Point(146, 175);
+            this.pbPipe2.Name = "pbPipe2";
+            this.pbPipe2.Size = new System.Drawing.Size(75, 100);
+            this.pbPipe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe2.TabIndex = 30;
+            this.pbPipe2.TabStop = false;
+            this.pbPipe2.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbPipe3
+            // 
+            this.pbPipe3.Image = global::MapEditor.Properties.Resources.pipe3;
+            this.pbPipe3.Location = new System.Drawing.Point(227, 75);
+            this.pbPipe3.Name = "pbPipe3";
+            this.pbPipe3.Size = new System.Drawing.Size(75, 200);
+            this.pbPipe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe3.TabIndex = 31;
+            this.pbPipe3.TabStop = false;
+            this.pbPipe3.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.pbMarioAdultGun);
+            this.tabPage1.Controls.Add(this.pbMarioAdult);
+            this.tabPage1.Controls.Add(this.pbMarioKid);
+            this.tabPage1.Controls.Add(this.pbBonusStar);
+            this.tabPage1.Controls.Add(this.pbDelete);
+            this.tabPage1.Controls.Add(this.pbHiddenLife);
+            this.tabPage1.Controls.Add(this.pbBlock);
+            this.tabPage1.Controls.Add(this.pbRock);
+            this.tabPage1.Controls.Add(this.pbCoin);
+            this.tabPage1.Controls.Add(this.pbItem_RedMusrom);
+            this.tabPage1.Controls.Add(this.pbDarkSoil);
+            this.tabPage1.Controls.Add(this.pbItem_GreenMusrom);
+            this.tabPage1.Controls.Add(this.pbItem_Flower);
+            this.tabPage1.Controls.Add(this.pbItem_Coin);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(317, 359);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Brick";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pbItem_Coin
+            // 
+            this.pbItem_Coin.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_Coin.Image")));
+            this.pbItem_Coin.Location = new System.Drawing.Point(12, 81);
+            this.pbItem_Coin.Name = "pbItem_Coin";
+            this.pbItem_Coin.Size = new System.Drawing.Size(32, 64);
+            this.pbItem_Coin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbItem_Coin.TabIndex = 7;
+            this.pbItem_Coin.TabStop = false;
+            this.pbItem_Coin.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbItem_Flower
+            // 
+            this.pbItem_Flower.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_Flower.Image")));
+            this.pbItem_Flower.Location = new System.Drawing.Point(76, 81);
+            this.pbItem_Flower.Name = "pbItem_Flower";
+            this.pbItem_Flower.Size = new System.Drawing.Size(32, 64);
+            this.pbItem_Flower.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbItem_Flower.TabIndex = 8;
+            this.pbItem_Flower.TabStop = false;
+            this.pbItem_Flower.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbItem_GreenMusrom
+            // 
+            this.pbItem_GreenMusrom.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_GreenMusrom.Image")));
+            this.pbItem_GreenMusrom.Location = new System.Drawing.Point(137, 81);
+            this.pbItem_GreenMusrom.Name = "pbItem_GreenMusrom";
+            this.pbItem_GreenMusrom.Size = new System.Drawing.Size(32, 64);
+            this.pbItem_GreenMusrom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbItem_GreenMusrom.TabIndex = 9;
+            this.pbItem_GreenMusrom.TabStop = false;
+            this.pbItem_GreenMusrom.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbDarkSoil
+            // 
+            this.pbDarkSoil.Image = ((System.Drawing.Image)(resources.GetObject("pbDarkSoil.Image")));
+            this.pbDarkSoil.Location = new System.Drawing.Point(263, 25);
+            this.pbDarkSoil.Name = "pbDarkSoil";
+            this.pbDarkSoil.Size = new System.Drawing.Size(32, 32);
+            this.pbDarkSoil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbDarkSoil.TabIndex = 14;
+            this.pbDarkSoil.TabStop = false;
+            this.pbDarkSoil.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbItem_RedMusrom
+            // 
+            this.pbItem_RedMusrom.Image = ((System.Drawing.Image)(resources.GetObject("pbItem_RedMusrom.Image")));
+            this.pbItem_RedMusrom.Location = new System.Drawing.Point(201, 81);
+            this.pbItem_RedMusrom.Name = "pbItem_RedMusrom";
+            this.pbItem_RedMusrom.Size = new System.Drawing.Size(32, 64);
+            this.pbItem_RedMusrom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbItem_RedMusrom.TabIndex = 6;
+            this.pbItem_RedMusrom.TabStop = false;
+            this.pbItem_RedMusrom.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbCoin
+            // 
+            this.pbCoin.Image = ((System.Drawing.Image)(resources.GetObject("pbCoin.Image")));
+            this.pbCoin.Location = new System.Drawing.Point(137, 25);
+            this.pbCoin.Name = "pbCoin";
+            this.pbCoin.Size = new System.Drawing.Size(32, 32);
+            this.pbCoin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbCoin.TabIndex = 11;
+            this.pbCoin.TabStop = false;
+            this.pbCoin.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbRock
+            // 
+            this.pbRock.Image = ((System.Drawing.Image)(resources.GetObject("pbRock.Image")));
+            this.pbRock.Location = new System.Drawing.Point(76, 25);
+            this.pbRock.Name = "pbRock";
+            this.pbRock.Size = new System.Drawing.Size(32, 32);
+            this.pbRock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbRock.TabIndex = 10;
+            this.pbRock.TabStop = false;
+            this.pbRock.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbBlock
+            // 
+            this.pbBlock.Image = ((System.Drawing.Image)(resources.GetObject("pbBlock.Image")));
+            this.pbBlock.Location = new System.Drawing.Point(12, 25);
+            this.pbBlock.Name = "pbBlock";
+            this.pbBlock.Size = new System.Drawing.Size(32, 32);
+            this.pbBlock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbBlock.TabIndex = 12;
+            this.pbBlock.TabStop = false;
+            this.pbBlock.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbHiddenLife
+            // 
+            this.pbHiddenLife.Image = ((System.Drawing.Image)(resources.GetObject("pbHiddenLife.Image")));
+            this.pbHiddenLife.Location = new System.Drawing.Point(201, 25);
+            this.pbHiddenLife.Name = "pbHiddenLife";
+            this.pbHiddenLife.Size = new System.Drawing.Size(32, 32);
+            this.pbHiddenLife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbHiddenLife.TabIndex = 13;
+            this.pbHiddenLife.TabStop = false;
+            this.pbHiddenLife.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbDelete
+            // 
+            this.pbDelete.Image = ((System.Drawing.Image)(resources.GetObject("pbDelete.Image")));
+            this.pbDelete.Location = new System.Drawing.Point(263, 175);
+            this.pbDelete.Name = "pbDelete";
+            this.pbDelete.Size = new System.Drawing.Size(32, 32);
+            this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbDelete.TabIndex = 15;
+            this.pbDelete.TabStop = false;
+            this.pbDelete.Click += new System.EventHandler(this.pbDelete_Click);
+            // 
+            // pbBonusStar
+            // 
+            this.pbBonusStar.Image = ((System.Drawing.Image)(resources.GetObject("pbBonusStar.Image")));
+            this.pbBonusStar.Location = new System.Drawing.Point(263, 81);
+            this.pbBonusStar.Name = "pbBonusStar";
+            this.pbBonusStar.Size = new System.Drawing.Size(32, 64);
+            this.pbBonusStar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbBonusStar.TabIndex = 16;
+            this.pbBonusStar.TabStop = false;
+            this.pbBonusStar.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(12, 37);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(325, 385);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // pbMarioKid
+            // 
+            this.pbMarioKid.Image = global::MapEditor.Properties.Resources.mario_kid;
+            this.pbMarioKid.Location = new System.Drawing.Point(12, 197);
+            this.pbMarioKid.Name = "pbMarioKid";
+            this.pbMarioKid.Size = new System.Drawing.Size(26, 26);
+            this.pbMarioKid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMarioKid.TabIndex = 17;
+            this.pbMarioKid.TabStop = false;
+            this.pbMarioKid.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbMarioAdult
+            // 
+            this.pbMarioAdult.Image = global::MapEditor.Properties.Resources.mario_adult;
+            this.pbMarioAdult.Location = new System.Drawing.Point(76, 175);
+            this.pbMarioAdult.Name = "pbMarioAdult";
+            this.pbMarioAdult.Size = new System.Drawing.Size(25, 48);
+            this.pbMarioAdult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMarioAdult.TabIndex = 18;
+            this.pbMarioAdult.TabStop = false;
+            this.pbMarioAdult.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbMarioAdultGun
+            // 
+            this.pbMarioAdultGun.Image = global::MapEditor.Properties.Resources.mario_gun;
+            this.pbMarioAdultGun.Location = new System.Drawing.Point(137, 175);
+            this.pbMarioAdultGun.Name = "pbMarioAdultGun";
+            this.pbMarioAdultGun.Size = new System.Drawing.Size(25, 48);
+            this.pbMarioAdultGun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbMarioAdultGun.TabIndex = 19;
+            this.pbMarioAdultGun.TabStop = false;
+            this.pbMarioAdultGun.Click += new System.EventHandler(this.pbBlock_Click);
             // 
             // frmMain
             // 
@@ -892,6 +954,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1029, 686);
+            this.Controls.Add(this.txtNextMap);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.tbMapLevel2);
             this.Controls.Add(this.tbMapLevel1);
             this.Controls.Add(this.label5);
@@ -916,58 +980,61 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Map Editor";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHiddenLife)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBlock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_RedMusrom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDarkSoil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_GreenMusrom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEndmap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCheckPoint)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCross)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSoilRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSoilLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrassLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDesert)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFence)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMountain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGrass)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Hight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRedTurle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPirhanaPlant)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTurleEnemy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomEnemy)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pnMap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomEnemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTurleEnemy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPirhanaPlant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRedTurle)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTree_Hight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMountain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFence)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDesert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrassRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrassMid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGrassLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoilLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSoilRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCross)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCheckPoint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEndmap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundMiddle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMushRoomGroundUnder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_GreenMusrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDarkSoil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItem_RedMusrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCoin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBlock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHiddenLife)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBonusStar)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarioKid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarioAdult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMarioAdultGun)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -975,9 +1042,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -986,23 +1050,40 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel pnMap;
         private System.Windows.Forms.PictureBox pbMap;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label posX;
         private System.Windows.Forms.Label posY;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pbBonusStar;
-        private System.Windows.Forms.PictureBox pbDelete;
-        private System.Windows.Forms.PictureBox pbHiddenLife;
-        private System.Windows.Forms.PictureBox pbBlock;
-        private System.Windows.Forms.PictureBox pbRock;
-        private System.Windows.Forms.PictureBox pbCoin;
-        private System.Windows.Forms.PictureBox pbItem_RedMusrom;
-        private System.Windows.Forms.PictureBox pbDarkSoil;
-        private System.Windows.Forms.PictureBox pbItem_GreenMusrom;
-        private System.Windows.Forms.PictureBox pbItem_Flower;
-        private System.Windows.Forms.PictureBox pbItem_Coin;
+        private System.Windows.Forms.TextBox tbMapLevel2;
+        private System.Windows.Forms.TextBox tbMapLevel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox cbSnap;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbMapWidth;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdBlue;
+        private System.Windows.Forms.RadioButton rdBlack;
+        private System.Windows.Forms.Button btDone;
+        private System.Windows.Forms.Button btGenerate;
+        private System.Windows.Forms.TextBox txtNextMap;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.PictureBox pbRedTurle;
+        private System.Windows.Forms.PictureBox pbPirhanaPlant;
+        private System.Windows.Forms.PictureBox pbTurleEnemy;
+        private System.Windows.Forms.PictureBox pbMushRoomEnemy;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.PictureBox pbFence;
+        private System.Windows.Forms.PictureBox pbMountain;
+        private System.Windows.Forms.PictureBox pbGrass;
+        private System.Windows.Forms.PictureBox pbTree_Hight;
+        private System.Windows.Forms.PictureBox pbTree_Low;
+        private System.Windows.Forms.PictureBox pbCloud;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.PictureBox pbPipe3;
+        private System.Windows.Forms.PictureBox pbPipe2;
+        private System.Windows.Forms.PictureBox pbPipe1;
         private System.Windows.Forms.PictureBox pbMushRoomGroundUnder;
         private System.Windows.Forms.PictureBox pbMushRoomGroundRight;
         private System.Windows.Forms.PictureBox pbMushRoomGroundMiddle;
@@ -1016,31 +1097,22 @@
         private System.Windows.Forms.PictureBox pbGrassMid;
         private System.Windows.Forms.PictureBox pbGrassRight;
         private System.Windows.Forms.PictureBox pbDesert;
-        private System.Windows.Forms.PictureBox pbFence;
-        private System.Windows.Forms.PictureBox pbMountain;
-        private System.Windows.Forms.PictureBox pbGrass;
-        private System.Windows.Forms.PictureBox pbTree_Hight;
-        private System.Windows.Forms.PictureBox pbTree_Low;
-        private System.Windows.Forms.PictureBox pbCloud;
-        private System.Windows.Forms.PictureBox pbRedTurle;
-        private System.Windows.Forms.PictureBox pbPirhanaPlant;
-        private System.Windows.Forms.PictureBox pbTurleEnemy;
-        private System.Windows.Forms.PictureBox pbMushRoomEnemy;
-        private System.Windows.Forms.TextBox tbMapLevel2;
-        private System.Windows.Forms.TextBox tbMapLevel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox cbSnap;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbMapWidth;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdBlue;
-        private System.Windows.Forms.RadioButton rdBlack;
-        private System.Windows.Forms.Button btDone;
-        private System.Windows.Forms.Button btGenerate;
-        private System.Windows.Forms.PictureBox pbPipe1;
-        private System.Windows.Forms.PictureBox pbPipe2;
-        private System.Windows.Forms.PictureBox pbPipe3;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.PictureBox pbMarioAdultGun;
+        private System.Windows.Forms.PictureBox pbMarioAdult;
+        private System.Windows.Forms.PictureBox pbMarioKid;
+        private System.Windows.Forms.PictureBox pbBonusStar;
+        private System.Windows.Forms.PictureBox pbDelete;
+        private System.Windows.Forms.PictureBox pbHiddenLife;
+        private System.Windows.Forms.PictureBox pbBlock;
+        private System.Windows.Forms.PictureBox pbRock;
+        private System.Windows.Forms.PictureBox pbCoin;
+        private System.Windows.Forms.PictureBox pbItem_RedMusrom;
+        private System.Windows.Forms.PictureBox pbDarkSoil;
+        private System.Windows.Forms.PictureBox pbItem_GreenMusrom;
+        private System.Windows.Forms.PictureBox pbItem_Flower;
+        private System.Windows.Forms.PictureBox pbItem_Coin;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 

@@ -85,12 +85,9 @@ void QuadNode::Render(int map_level){
 void QuadNode::Update(){	
 	list<StaticObject*>::iterator it;
 	for(it = listObject.begin(); it != listObject.end(); ++it ){
-		(*it)->Update();
-		if ((*it)->isSolid == true)
-		{
-			if (CheckExitsStaticObj((*it)))
-				GlobalHandler::listStaticObjRender.push_back((*it));
-		}			
+		(*it)->Update();		
+		if (CheckExitsStaticObj((*it)))
+			GlobalHandler::listStaticObjRender.push_back((*it));					
 	}
 
 }

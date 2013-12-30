@@ -52,18 +52,17 @@ void Menu::OnKeyDown(int keyCode)
 				choice = MENU_START;
 			break;
 		case DIK_RETURN:
-			if(choice==MENU_START)
-			{
-				//GlobalHandler::gameState= GS_GAMEPLAY;
+			if(choice == MENU_START)
+			{				
 				GlobalHandler::gameState = GS_GAMEOPTION;
 				break;
 			}
-			if(choice==MENU_OPTION)
+			if(choice == MENU_OPTION)
 			{
 				GlobalHandler::gameState = GS_OPTION;
 				break;
 			}
-			if(choice==MENU_EXIT)
+			if(choice == MENU_EXIT)
 			{
 				GlobalHandler::quitGame = true;
 			}

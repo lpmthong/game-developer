@@ -6,15 +6,16 @@
 #include "TurtleEnemy.h"
 #include "PirhanaPlant.h"
 #include "Bullet.h"
+#include "EndMap.h"
 
 Player::Player(void){}
 
 Player::~Player(void){}
 
-void Player::Init(int mode,int LastCheckPoint, int Life){
+void Player::Init(int left, int top, int mode, int LastCheckPoint, int Life){
 
 	sprite = new Sprite();
-	InitFromFile(mode, LastCheckPoint, Life);
+	InitFromFile(left, top, mode, LastCheckPoint, Life);
 	Vx = Vx_old = 0;
 	Vy = Vy_old = 0;
 	acceleration = 0;
@@ -49,11 +50,14 @@ void Player::Init(int mode,int LastCheckPoint, int Life){
 	delayShot = 200;
 	numOfBullet = 0;
 
+	getEndMap = false;
+
 	ConUpdate = false;
+	start = true;
 	trace(L"Player::Init(int mode,int LastCheckPoint, int Life)");
 }
 
-void Player::InitFromFile(int mode,int LastCheckPoint, int Life){
+void Player::InitFromFile(int left, int top, int mode,int LastCheckPoint, int Life){
 	
 	hasGun = false;
 	switch(mode)
@@ -70,7 +74,7 @@ void Player::InitFromFile(int mode,int LastCheckPoint, int Life){
 	}
 	lastCheckPoint = LastCheckPoint;
 	//checkpoint
-	UpdateRect(GlobalHandler::checkpoint[0][lastCheckPoint], GlobalHandler::checkpoint[1][lastCheckPoint]);
+	UpdateRect(left, top);
 	life = Life;	
 	//trace(L"Player::InitFromFile(int mode,int LastCheckPoint, int Life)");
 }
@@ -184,17 +188,23 @@ void Player::Update(){
 	if (life < 0)
 		return;
 
+	ProcessDying();
+
+	//Neu ma mario no di het map roi thi dung co update nua
+	if (getEndMap && rectDraw.left > GlobalHandler::screen.right)
+		return;
+
 	DWORD now = GetTickCount();
 	DWORD t = now - lastUpdate;	
 	lastUpdate = now;	
-
-	ProcessDying();
 
 	Vx = Vx_old + acceleration * t;
 	Vy = Vy_old - 0.05f;
 
 	Vx = (Vx < maxSpeed)?Vx:maxSpeed;
-	Vx = (Vx > -maxSpeed)?Vx:(-maxSpeed);		
+	Vx = (Vx > -maxSpeed)?Vx:(-maxSpeed);
+
+	Vx = (getEndMap)?maxSpeed:Vx;
 	
 	VxF = Vx * t;
 	VyF = Vy * t;
@@ -268,11 +278,9 @@ void Player::OnKeyDown(int keyCode){
 		return;
 
 	switch(keyCode){
-		case DIK_ESCAPE:
-			
-				GlobalHandler::gameState = GS_GAMEOPTION;
-				break;
-			
+		case DIK_ESCAPE:			
+			GlobalHandler::gameState = GS_GAMEOPTION;
+			break;			
 		case DIK_UP:
 			if (jumping == false)
 			{
@@ -356,36 +364,41 @@ void Player::CollideWithStaticObj(){
 	list<StaticObject*>::iterator it;
 	for (it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it)
 	{
-		Box broadphasebox = GlobalHandler::Physic->GetSweptBroadphaseBox(marioBox);
-		Box staticBox((float)(*it)->rectDraw.left, (float)(*it)->rectDraw.top, (float)(*it)->width, (float)(*it)->height, 0.0f, 0.0f);
-		
-		if (GlobalHandler::Physic->AABBCheck(broadphasebox, staticBox))
+		if ((*it)->isSolid == true)
 		{
-			ConUpdate = true;
-			float normalx, normaly, collisiontime;
-			collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
-			//trace(L"Broadphasebox: X: %f, Y: %f, W: %f, H: %f", broadphasebox.x, broadphasebox.y, broadphasebox.w, broadphasebox.h);
-			//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, marioBox.vx, marioBox.vy, collisiontime, normalx, normaly,(*it)->id);
-			if (collisiontime < 1.0f && collisiontime >= 0.0f)
-			{				
-				if ((*it)->isKind == GROUND)				
-					CollideWithGround(normalx, normaly, collisiontime, (*it));		
-				if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3)
-					CollideWithPiPe(normalx, normaly, collisiontime, (*it));
-				if ((*it)->isKind == HARDBRICK)				
-					CollideWithHardBrick(normalx, normaly, collisiontime, (*it));
-				if ((*it)->isKind == OUTCOIN)				
-					CollideWithCoin((*it));
-				if ((*it)->isKind == BRICK || (*it)->isKind == BRICK_BONUS_COIN || (*it)->isKind == BRICK_BONUS_GUN || 
-						(*it)->isKind == BRICK_BONUS_LIFE || (*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
-							(*it)->isKind == BRICK_BONUS_STAR)				
-					CollideWithBrick(normalx, normaly, collisiontime, (*it));
-				//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)marioBox.x, (int)marioBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
-			}
-			if (collisiontime == 1.0f)
+			Box broadphasebox = GlobalHandler::Physic->GetSweptBroadphaseBox(marioBox);
+			Box staticBox((float)(*it)->rectDraw.left, (float)(*it)->rectDraw.top, (float)(*it)->width, (float)(*it)->height, 0.0f, 0.0f);
+		
+			if (GlobalHandler::Physic->AABBCheck(broadphasebox, staticBox))
 			{
-				ConUpdate = false;
-				//trace(L"Flag = false, CollisionTime: %f", collisiontime);
+				ConUpdate = true;
+				float normalx, normaly, collisiontime;
+				collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
+				//trace(L"Broadphasebox: X: %f, Y: %f, W: %f, H: %f", broadphasebox.x, broadphasebox.y, broadphasebox.w, broadphasebox.h);
+				//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, marioBox.vx, marioBox.vy, collisiontime, normalx, normaly,(*it)->id);
+				if (collisiontime < 1.0f && collisiontime >= 0.0f)
+				{				
+					if ((*it)->isKind == GROUND)				
+						CollideWithGround(normalx, normaly, collisiontime, (*it));		
+					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3)
+						CollideWithPiPe(normalx, normaly, collisiontime, (*it));
+					if ((*it)->isKind == HARDBRICK)				
+						CollideWithHardBrick(normalx, normaly, collisiontime, (*it));
+					if ((*it)->isKind == OUTCOIN)				
+						CollideWithCoin((*it));
+					if ((*it)->isKind == BRICK || (*it)->isKind == BRICK_BONUS_COIN || (*it)->isKind == BRICK_BONUS_GUN || 
+							(*it)->isKind == BRICK_BONUS_LIFE || (*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
+								(*it)->isKind == BRICK_BONUS_STAR)				
+						CollideWithBrick(normalx, normaly, collisiontime, (*it));
+					if ((*it)->isKind == ENDMAP)				
+						CollideWithEndMap(normalx, normaly, collisiontime, (*it));
+					//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)marioBox.x, (int)marioBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
+				}
+				if (collisiontime == 1.0f)
+				{
+					ConUpdate = false;
+					//trace(L"Flag = false, CollisionTime: %f", collisiontime);
+				}
 			}
 		}
 		
@@ -413,8 +426,8 @@ void Player::CollideWithDynamicObj(int t){
 					ConUpdate = true;
 					float normalx, normaly, collisiontime;
 					collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
-					trace(L"VxF: %f, VyF: %f, OBJ_VxF: %f, OBJ_VyF: %f, VxFN: %f, VyFN: %f", VxF, VyF, Obj_VxF, Obj_VyF, VxFN, VyFN);
-					trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Time: %f, Normalx: %f, Normaly: %f", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, collisiontime, normalx, normaly);
+					//trace(L"VxF: %f, VyF: %f, OBJ_VxF: %f, OBJ_VyF: %f, VxFN: %f, VyFN: %f", VxF, VyF, Obj_VxF, Obj_VyF, VxFN, VyFN);
+					//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Time: %f, Normalx: %f, Normaly: %f", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, collisiontime, normalx, normaly);
 					if (collisiontime < 1.0f && collisiontime >= 0.0f)
 					{
 						if ((*it)->isKind == BONUS_MUSHROOM)
@@ -687,7 +700,7 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 		jumping =false;
 
 		marioBox.y += VyF * collisiontime;
-		UpdateRect((int)marioBox.x, (int)marioBox.y + 1);
+		UpdateRect((int)marioBox.x, (int)marioBox.y);
 		
 		UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, 0);
 
@@ -749,6 +762,14 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 			//trace(L"::CollideWithBrickLeft or Right");		
 		}
 	}
+}
+
+void Player::CollideWithEndMap(float normalx, float normaly, float collisiontime, StaticObject *obj){
+	EndMap* endMap = ((EndMap*)obj);
+	endMap->isSolid = false;
+
+	getEndMap = true;
+	Vx = Vx_old = maxSpeed;
 }
 
 void Player::CollideWithBonusMushRoom(DynamicObject *obj){
@@ -877,7 +898,7 @@ void Player::CollideWithMushRoomEnemy(float normaly,DynamicObject *obj)
 
 void Player::CollideWithPirhanaPlant(DynamicObject *obj){
 	PirhanaPlant *pirhanaPlant = ((PirhanaPlant*)obj);
-	trace(L"Rect L: %d, T: %d, R: %d, B: %d", pirhanaPlant->rectDraw.left, pirhanaPlant->rectDraw.top, pirhanaPlant->rectDraw.right, pirhanaPlant->rectDraw.bottom);
+	//trace(L"Rect L: %d, T: %d, R: %d, B: %d", pirhanaPlant->rectDraw.left, pirhanaPlant->rectDraw.top, pirhanaPlant->rectDraw.right, pirhanaPlant->rectDraw.bottom);
 	if (pirhanaPlant->appear != 0)
 	{
 		Die();
@@ -904,7 +925,7 @@ void Player::CollideWithCross(float normalx, float normaly, float collisiontime,
 		VyF = 0;
 		ConUpdate = false;
 
-		trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.w, marioBox.h, marioBox.vx, marioBox.vy);
+		//trace(L"Cl x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", marioBox.x, marioBox.y, marioBox.w, marioBox.h, marioBox.vx, marioBox.vy);
 		//trace(L"::CollideWithGround Up");
 	}
 	else
@@ -1031,6 +1052,18 @@ void Player::ProcessDying(){
 		setKid();
 
 		GlobalHandler::sound->Play(ListSound::SOUND_BACKGROUND, true);
+	}
+
+	if (rectDraw.left >= GlobalHandler::screen.right)
+	{
+		GlobalHandler::time --;
+		GlobalHandler::playerScore += 100;
+
+		if (GlobalHandler::time < 0)
+		{
+			GlobalHandler::mapLevel = GlobalHandler::nextMap;
+			GlobalHandler::gameState = GS_CHANGEMAP;
+		}
 	}
 }
 

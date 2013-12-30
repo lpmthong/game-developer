@@ -267,14 +267,17 @@ int				   ListTexture::TT_TEXT_NUMBER_HEIGHT;
 int				   ListTexture::TT_TEXT_NUMBER_COUNT;
 int				   ListTexture::TT_TEXT_NUMBER_PRITEPERROW;
 
-//Menu
 LPDIRECT3DTEXTURE9  ListTexture::TT_MENU_BACKGROUND;
-
 LPDIRECT3DTEXTURE9	ListTexture::TT_MENU_OPTION;
 
-//Option
 LPDIRECT3DTEXTURE9  ListTexture::TT_OPTION;
 LPDIRECT3DTEXTURE9  ListTexture::TT_GAMEOPTION;
+
+LPDIRECT3DTEXTURE9	ListTexture::TT_END_MAP;
+int					ListTexture::TT_END_MAP_WIDTH;
+int					ListTexture::TT_END_MAP_HEIGHT;
+int					ListTexture::TT_END_MAP_COUNT;
+int					ListTexture::TT_END_MAP_SPRITEPERROW;
 
 
 ListTexture::ListTexture(void){}
@@ -548,11 +551,16 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_TEXT_NUMBER_HEIGHT					= 16;
 	ListTexture::TT_TEXT_NUMBER_COUNT					= 11;
 	ListTexture::TT_TEXT_NUMBER_PRITEPERROW				= 11;
-
-	//Menu
+	
 	ListTexture::TT_MENU_BACKGROUND						= GlobalHandler::_directX->LoadTextureFromFile("Media\\menu_background.jpg",0);
 	ListTexture::TT_MENU_OPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\options.png",0);
-	//Option
+	
 	ListTexture::TT_OPTION								= GlobalHandler::_directX->LoadTextureFromFile("Media\\Option.jpg",0);
 	ListTexture::TT_GAMEOPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\startGameOptions.jpg",0);
+
+	ListTexture::TT_END_MAP								= GlobalHandler::_directX->LoadTextureFromFile("Media\\end_map.png",0);
+	ListTexture::TT_END_MAP_WIDTH						= 31;
+	ListTexture::TT_END_MAP_HEIGHT						= 288;
+	ListTexture::TT_END_MAP_COUNT						= 3;
+	ListTexture::TT_END_MAP_SPRITEPERROW				= 3;
 }

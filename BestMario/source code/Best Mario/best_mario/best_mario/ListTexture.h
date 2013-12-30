@@ -298,6 +298,13 @@ public:
 	static LPDIRECT3DTEXTURE9	TT_OPTION;
 	static LPDIRECT3DTEXTURE9   TT_GAMEOPTION;
 
+	//End Map
+	static LPDIRECT3DTEXTURE9	TT_END_MAP;
+	static int					TT_END_MAP_WIDTH;
+	static int					TT_END_MAP_HEIGHT;
+	static int					TT_END_MAP_COUNT;
+	static int					TT_END_MAP_SPRITEPERROW;
+
 public:
 	static void CreateAllTexture();
 	ListTexture(void);

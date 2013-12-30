@@ -58,11 +58,12 @@ void GameOption::OnKeyDown(int keyCode)
 					GlobalHandler::gameState = GS_GAMEPLAY;
 			break;
 		case DIK_RETURN:
-			if(choice==OPTION_NEWGAME)
+			if(choice == OPTION_NEWGAME)
 			{
 				GlobalHandler::mapLevel = 1;
 				GlobalHandler::RestartMap();
 				GlobalHandler::gameState = GS_CHANGEMAP;
+				trace(L"New Game");
 			}
 			if(choice == OPTION_SAVEGAME)
 			{

@@ -19,6 +19,7 @@
 #include "Cross.h"
 #include "GroundMushRoom.h"
 #include "GroundUnderMushRoom.h"
+#include "EndMap.h"
 
 int ListTerrain::arr_terrain[10000];
 int ListTerrain::arr_terrain_index = 0;
@@ -61,15 +62,15 @@ void ListTerrain::InitTerrain(int level){
 
 	ListTerrain::arr_terrain_index = 0;
 	
-	ListTerrain::LoadFile(level);
-
-	
+	ListTerrain::LoadFile(level);	
 
 	GlobalHandler::quadTree = new QuadTree(arr_terrain[0], arr_terrain[0]);		
 	GlobalHandler::mapLevel1 = arr_terrain[1];
 	GlobalHandler::mapLevel2 = arr_terrain[2];
 	GlobalHandler::backGroundColor = arr_terrain[3];
-	for (int i = 4; i < arr_terrain_index ; i += 4)
+	GlobalHandler::nextMap = arr_terrain[4];
+
+	for (int i = 5; i < arr_terrain_index ; i += 4)
 	{		
 		if (arr_terrain[i+1] == CLOUD)
 		{
@@ -175,7 +176,22 @@ void ListTerrain::InitTerrain(int level){
 			GroundUnderMushroom *groundUnderMushRoom = new GroundUnderMushroom(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);			
 			GlobalHandler::listStaticObj.push_back(groundUnderMushRoom);
 		}
-		
+		else if(arr_terrain[i+1] == PLAYER_KID || arr_terrain[i+1] == PLAYER_ADULT || arr_terrain[i+1] == PLAYER_ADULT_GUN)
+		{
+			GlobalHandler::player->Init(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i+4], arr_terrain[i+5]);
+
+			GlobalHandler::playerScore = arr_terrain[i + 6];
+			GlobalHandler::playerCoin = arr_terrain[i + 7];	
+			GlobalHandler::time = arr_terrain[i+8];
+
+			i += 5;
+			GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);			
+		}
+		else if (arr_terrain[i+1] == ENDMAP)
+		{
+			EndMap *endMap = new EndMap(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(endMap);
+		}
 	}
 
 }
