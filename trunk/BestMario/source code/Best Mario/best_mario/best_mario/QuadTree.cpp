@@ -2,12 +2,13 @@
 #include "GlobalHandler.h"
 
 QuadTree::QuadTree(void){
+	root = new QuadNode();
 	count = 0;
 }
 
 QuadTree::QuadTree(int _mapwidth, int _mapheight){
 	mapwidth = _mapwidth;
-	mapheight = _mapheight;
+	mapheight = _mapheight;	
 	root = new QuadNode(0, 0, mapwidth, mapheight, "");
 	count = 0;
 }
@@ -36,7 +37,7 @@ void QuadTree::Release(QuadNode *root){
 void QuadTree::Reset(){
 
 	Release(root);
-	root = new QuadNode(0, 0, MAP_WIDTH, MAP_WIDTH, "");
+	root = new QuadNode();
 	count = 0;
 }
 
@@ -195,6 +196,22 @@ void QuadTree::RenderScreen(QuadNode *root, int map_level){
 		RenderScreen(root->LBNode, map_level);
 	if ((root->RBNode != NULL) && (GlobalHandler::CheckRectInRect(GlobalHandler::screen, root->RBNode->rect)))
 		RenderScreen(root->RBNode, map_level);
+}
+
+void QuadTree::RenderObj(){
+	RenderObj(0);
+	RenderObj(1);
+	RenderObj(2);
+}
+
+void QuadTree::RenderObj(int map_level){
+
+	list<StaticObject*>::iterator it;
+	for(it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it ){
+		if ((*it)->map_level == map_level )
+			(*it)->Render();
+	}
+
 }
 
 void QuadTree::UpdateScreen()

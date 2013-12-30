@@ -28,8 +28,11 @@ namespace MapEditor
             MUSHROOM_ENEMY = 5,
             GROUND_LEFT = 7,
             GROUND_MIDDLE = 8,
-            GROUND_RIGHT = 9,           
+            GROUND_RIGHT = 9,
+            PLAYER_KID  = 10,
+            PLAYER_ADULT  = 11,
             BRICK_BONUS_MUSHROOM = 16,
+            PLAYER_ADULT_GUN = 18,
             TURLE = 20,
             BRICK_BONUS_GUN = 22,
             BRICK_BONUS_LIFE = 23,
@@ -362,7 +365,7 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.ENDMAP;
                 TempObj.width = 32;
                 TempObj.height = 32;
-                TempObj.st = false;
+                TempObj.st = true;
             }
             else if (pb.Name == pbMushRoomGroundRight.Name)
             {
@@ -410,6 +413,30 @@ namespace MapEditor
                 TempObj.kind = (int)BlockKind.RED_TURLE;
                 TempObj.width = 32;
                 TempObj.height = 32;
+                TempObj.st = false;
+            }
+            else if (pb.Name == pbMarioKid.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.mario_kid;
+                TempObj.kind = (int)BlockKind.PLAYER_KID;
+                TempObj.width = 26;
+                TempObj.height = 26;
+                TempObj.st = false;
+            }
+            else if (pb.Name == pbMarioAdult.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.mario_adult;
+                TempObj.kind = (int)BlockKind.PLAYER_ADULT;
+                TempObj.width = 25;
+                TempObj.height = 48;
+                TempObj.st = false;
+            }
+            else if (pb.Name == pbMarioAdultGun.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.mario_gun;
+                TempObj.kind = (int)BlockKind.PLAYER_ADULT_GUN;
+                TempObj.width = 25;
+                TempObj.height = 28;
                 TempObj.st = false;
             }
         }
@@ -569,8 +596,10 @@ namespace MapEditor
                     sw.Write("0");
                 else
                     sw.Write("1");
+                
+                sw.Write(" " + txtNextMap.Text);
 
-                sw.WriteLine();
+                //sw.WriteLine();
 
                 listctreeobj = new List<CTreeObject>();
                 foreach (pbObject obj in listPbObject)
@@ -601,10 +630,13 @@ namespace MapEditor
                         sw.Write(" ");
                         sw.Write(1);                        
                     }
+                    if (obj.kind == (int)BlockKind.PLAYER_KID || obj.kind == (int)BlockKind.PLAYER_ADULT || obj.kind == (int)BlockKind.PLAYER_ADULT_GUN)
+                    {
+                        sw.Write(" 0 4 0 0 300");
+                    }
+                    
                     sw.WriteLine();
-                }
-
-                sw.Write(" 10 0 4 0 0 300 1");// Cac thong so cua mario
+                }                
                 
                 sw.Flush();
                 sw.Close();
@@ -643,18 +675,22 @@ namespace MapEditor
                     pbMap.BackColor = Color.Black;
                 }
 
-                for (int i = 4; i < listObj.Length - 7; i += 4)
+                txtNextMap.Text = listObj[4];
+
+                for (int i = 5; i < listObj.Length - 1; i += 4)
                 {
                     int id = int.Parse(listObj[i]);
                     GetObjId(id);
-                    int kind = int.Parse(listObj[i+1]);
-                    int x = int.Parse(listObj[i+2]);
-                    int y = int.Parse(listObj[i+3]);
+                    int kind = int.Parse(listObj[i + 1]);
+                    int x = int.Parse(listObj[i + 2]);
+                    int y = int.Parse(listObj[i + 3]);
                     DrawObj(id, kind, x, y);
                     if (kind == (int)BlockKind.BRICK_BONUS_MUSHROOM || kind == (int)BlockKind.BRICK_BONUS_GUN
                         || kind == (int)BlockKind.BRICK_BONUS_LIFE || kind == (int)BlockKind.BRICK_BONUS_COIN
                         || kind == (int)BlockKind.BRICK_BONUS_STAR || kind == (int)BlockKind.BRICK_BONUS_LIFE_HIDDEN)
                         i += 1;
+                    if (kind == (int)BlockKind.PLAYER_KID || kind == (int)BlockKind.PLAYER_ADULT || kind == (int)BlockKind.PLAYER_ADULT_GUN)
+                        i += 4;
                 }
             }
         }
@@ -792,7 +828,7 @@ namespace MapEditor
                     pb.Image = Properties.Resources.end_map; 
                     temp.width = 32;
                     temp.height = 32;
-                    temp.st = false;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.MOUNTAIN: 
                     pb.Image = Properties.Resources.mountain;
@@ -888,6 +924,24 @@ namespace MapEditor
                     pb.Image = Properties.Resources.red_enemy_turle;
                     temp.width = 32;
                     temp.height = 32;
+                    temp.st = false;
+                    break;
+                case (int)BlockKind.PLAYER_KID:
+                    pb.Image = Properties.Resources.mario_kid;
+                    temp.width = 26;
+                    temp.height = 26;
+                    temp.st = false;
+                    break;
+                case (int)BlockKind.PLAYER_ADULT:
+                    pb.Image = Properties.Resources.mario_adult;
+                    temp.width = 25;
+                    temp.height = 48;
+                    temp.st = false;
+                    break;
+                case (int)BlockKind.PLAYER_ADULT_GUN:
+                    pb.Image = Properties.Resources.mario_gun;
+                    temp.width = 25;
+                    temp.height = 48;
                     temp.st = false;
                     break;
             }

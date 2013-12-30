@@ -92,38 +92,39 @@ void Enemy::CollideWithStaticObj(){
 	list<StaticObject*>::iterator it;
 	for (it = listStatic.begin(); it != listStatic.end(); ++it)
 	{		
-		Box broadphasebox = GlobalHandler::Physic->GetSweptBroadphaseBox(ObjBox);
-		Box staticBox((float)(*it)->rectDraw.left, (float)(*it)->rectDraw.top, (float)(*it)->width, (float)(*it)->height, 0.0f, 0.0f);
-
-		if (GlobalHandler::Physic->AABBCheck(broadphasebox, staticBox))
+		if ((*it)->isSolid == true)
 		{
-			ConUpdate = false;
-			float normalx, normaly, collisiontime;
-			collisiontime = GlobalHandler::Physic->SweptAABB(ObjBox, staticBox,  normalx, normaly);			
-			//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, ObjBox.vx, ObjBox.vy, collisiontime, normalx, normaly,(*it)->id);
-			if (collisiontime < 1.0f && collisiontime >= 0.0f)
-			{				
-				if ((*it)->isKind == GROUND || (*it)->isKind == HARDBRICK || (*it)->isKind == BRICK_BONUS_COIN || 
-						(*it)->isKind == BRICK_BONUS_GUN || (*it)->isKind == BRICK_BONUS_LIFE || 
-							(*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
-								(*it)->isKind == BRICK_BONUS_STAR)				
-					CollideWithGround(normalx, normaly, collisiontime, (*it));				
-				if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3)
-					CollideWithPiPe(normalx, normaly, collisiontime, (*it));
-				if ((*it)->isKind == OUTCOIN)				
-					ConUpdate = true;
-				if ((*it)->isKind == BRICK)				
-					CollideWithBrick(normalx, normaly, collisiontime, (*it));
-				//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)ObjBox.x, (int)ObjBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
-			}
-			if (collisiontime == 1.0f)
+			Box broadphasebox = GlobalHandler::Physic->GetSweptBroadphaseBox(ObjBox);
+			Box staticBox((float)(*it)->rectDraw.left, (float)(*it)->rectDraw.top, (float)(*it)->width, (float)(*it)->height, 0.0f, 0.0f);
+
+			if (GlobalHandler::Physic->AABBCheck(broadphasebox, staticBox))
 			{
-				ConUpdate = true;				
+				ConUpdate = false;
+				float normalx, normaly, collisiontime;
+				collisiontime = GlobalHandler::Physic->SweptAABB(ObjBox, staticBox,  normalx, normaly);			
+				//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, ObjBox.vx, ObjBox.vy, collisiontime, normalx, normaly,(*it)->id);
+				if (collisiontime < 1.0f && collisiontime >= 0.0f)
+				{				
+					if ((*it)->isKind == GROUND || (*it)->isKind == HARDBRICK || (*it)->isKind == BRICK_BONUS_COIN || 
+						(*it)->isKind == BRICK_BONUS_GUN || (*it)->isKind == BRICK_BONUS_LIFE || 
+						(*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
+						(*it)->isKind == BRICK_BONUS_STAR)				
+						CollideWithGround(normalx, normaly, collisiontime, (*it));				
+					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3)
+						CollideWithPiPe(normalx, normaly, collisiontime, (*it));
+					if ((*it)->isKind == OUTCOIN)				
+						ConUpdate = true;
+					if ((*it)->isKind == BRICK)				
+						CollideWithBrick(normalx, normaly, collisiontime, (*it));
+					//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)ObjBox.x, (int)ObjBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
+				}
+				if (collisiontime == 1.0f)
+				{
+					ConUpdate = true;				
+				}
 			}
-		}
+		}		
 	}
-
-
 }
 
 void Enemy::CollideWithDynamicObj(int t){

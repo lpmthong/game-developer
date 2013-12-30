@@ -49,6 +49,8 @@ public:
 	DWORD delayShot;	//khoang cach giua 2 lan ban
 	DWORD lastShot;		
 	int numOfBullet;	//so luon dan co the ban ra;
+
+	bool getEndMap;
 private:
 	int frame_moving_left_start;
 	int frame_moving_left_end;
@@ -63,8 +65,8 @@ public:
 	Player(void);
 	~Player(void);
 
-	void Init(int mode,int LastCheckPoint, int Life);
-	void InitFromFile(int mode,int LastCheckPoint, int Life);
+	void Init(int left, int top, int mode,int LastCheckPoint, int Life);
+	void InitFromFile(int left, int top, int mode,int LastCheckPoint, int Life);
 
 	void setKid();
 	void setAdult();
@@ -88,6 +90,7 @@ public:
 	void CollideWithHardBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithCoin(StaticObject *obj);
 	void CollideWithBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
+	void CollideWithEndMap(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 
 	void CollideWithBonusMushRoom(DynamicObject *obj);	
 	void CollideWithTurtleEnemy(float normaly, DynamicObject *obj);
@@ -95,7 +98,7 @@ public:
 	void CollideWithMushRoomEnemy(float normaly, DynamicObject *obj);
 	void CollideWithPirhanaPlant(DynamicObject *obj);
 	void CollideWithCross(float normalx, float normaly, float collisiontime, DynamicObject *obj);
-
+	
 	//Cac ham thay doi luc an nam
 	void ChangeModeLoop();
 	void ChangeMode(int mode);

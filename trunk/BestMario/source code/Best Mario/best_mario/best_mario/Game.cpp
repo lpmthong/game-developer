@@ -14,6 +14,7 @@ Game::Game(HINSTANCE hInstance, UINT _nCmdShow){
 Game::~Game(void){}
 
 void Game::Init(){
+
 	cleartrace();
 	GlobalHandler::_directX->Init(_hInstance);
 	GlobalHandler::sound->Init(GlobalHandler::_directX->_hWnd);
@@ -31,10 +32,7 @@ void Game::Init(){
 	menu		= new Menu();
 	option		= new Option();
 	gameOption  = new GameOption();
-	changeMap	= new ChangeMap();
-	//GlobalHandler::RestartMap();
-
-	
+	changeMap	= new ChangeMap();	
 }
 
 bool Game::Run(){
@@ -59,8 +57,12 @@ void Game::Update(){
 	for(it = GlobalHandler::listStaticObj.begin(); it != GlobalHandler::listStaticObj.end(); ++it )	
 	(*it)->Update();*/
 	switch (GlobalHandler::gameState)
-	{
+	{		
 		case GS_MENU:
+			break;
+		case GS_GAMEOPTION:
+			break;
+		case GS_CHANGEMAP:			
 			break;
 		case GS_OPTION:
 			break;
@@ -68,11 +70,16 @@ void Game::Update(){
 			GlobalHandler::quadTree->UpdateScreen();
 			GlobalHandler::dynamicObjManager->Update();
 			if(!GlobalHandler::UpdateTime())
-			{
+				if (GlobalHandler::endMap == false)
+				{
+					GlobalHandler::player->life --;
 
-				return;
+					//This game is over.
+					if (GlobalHandler::player->life < 0)
+						//GlobalHandler::text->gameOver = true;					
 
-			}
+					GlobalHandler::RestartMap();					
+				}
 		break;
 	}
 	
@@ -87,24 +94,23 @@ void Game::Render(){
 	
 	switch(GlobalHandler::gameState)
 	{
-	case GS_MENU:
-		menu->Render();
-		break;
-	case GS_OPTION:
-		option->Render();
-		break;
-	case GS_GAMEOPTION:
-		gameOption->Render();
-		break;
-	case GS_CHANGEMAP:
-		changeMap->Render();
-		break;
-	case GS_GAMEPLAY:
-		GlobalHandler::quadTree->RenderScreen();
-		GlobalHandler::dynamicObjManager->Render();
-		GlobalHandler::text->Render();
-		break;
-	
+		case GS_MENU:
+			menu->Render();
+			break;
+		case GS_OPTION:
+			option->Render();
+			break;
+		case GS_GAMEOPTION:
+			gameOption->Render();
+			break;
+		case GS_CHANGEMAP:
+			changeMap->Render();
+			break;
+		case GS_GAMEPLAY:
+			GlobalHandler::quadTree->RenderObj();
+			GlobalHandler::dynamicObjManager->Render();
+			GlobalHandler::text->Render();
+			break;	
 	}
 	
 

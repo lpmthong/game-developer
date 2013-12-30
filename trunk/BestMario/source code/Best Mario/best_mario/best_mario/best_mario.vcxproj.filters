@@ -213,6 +213,9 @@
     <ClCompile Include="GameOption.cpp">
       <Filter>GameState</Filter>
     </ClCompile>
+    <ClCompile Include="EndMap.cpp">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -361,6 +364,9 @@
     </ClInclude>
     <ClInclude Include="GameOption.h">
       <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="EndMap.h">
+      <Filter>StaticObject\CanCollide</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

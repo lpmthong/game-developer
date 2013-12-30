@@ -3,7 +3,7 @@
 #include "ListSound.h"
 
 DirectX				*GlobalHandler::_directX			= new DirectX();
-QuadTree			*GlobalHandler::quadTree			;
+QuadTree			*GlobalHandler::quadTree			= new QuadTree();
 DXSound				*GlobalHandler::sound				= new DXSound();
 
 DynamicObjManager	*GlobalHandler::dynamicObjManager	= new DynamicObjManager();
@@ -24,6 +24,8 @@ RECT	             GlobalHandler::screen;
 int					 GlobalHandler::mapLevel1			= 0;
 int					 GlobalHandler::mapLevel2			= 0;
 int					 GlobalHandler::mapLevel			= 1;
+int					 GlobalHandler::nextMap				= 2;
+bool				 GlobalHandler::endMap				= false;
 int					 GlobalHandler::gameState			= GS_MENU;
 Text				*GlobalHandler::text				;
 int					 GlobalHandler::time				= 300;
@@ -89,17 +91,20 @@ void GlobalHandler::InitText()
 bool GlobalHandler::UpdateTime()
 {
 	DWORD now = GetTickCount();
-	if(now-lastTime>1000)
+	if(now - lastTime > 1000)
 	{
 		lastTime = now;
 		time--;
-		if(lastTime<=0)
+		if(time <= 0)
 			return false;
 	}
 	return true;
 }
 
 void GlobalHandler::UpdateScreen(){
+
+	if (endMap)
+		return;
 
 	if (GlobalHandler::player->rectDraw.left > SCREEN_WIDTH / 2)
 	{
@@ -114,21 +119,29 @@ void GlobalHandler::UpdateScreen(){
 }
 
 void GlobalHandler::RestartMap()
-{
+{	
 	GlobalHandler::screen.left		= 0;
 	GlobalHandler::screen.top		= 0;
 	GlobalHandler::screen.right		= SCREEN_WIDTH;
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
+	GlobalHandler::time = 300;
+	GlobalHandler::endMap = false;
 
+	GlobalHandler::listStaticObj.clear();
+	GlobalHandler::listStaticObjCanCollide.clear();
+	GlobalHandler::listStaticObjRender.clear();
+	GlobalHandler::player = new Player();
+	
 	//GlobalHandler::quadTree->Reset();
 	GlobalHandler::dynamicObjManager->Release();
+	
 	ListTerrain::InitTerrain(GlobalHandler::mapLevel);
 
+	GlobalHandler::dynamicObjManager->GetTick();
+	
 	GlobalHandler::quadTree->ReadQuadTreeFormFile(GlobalHandler::mapLevel);
 	GlobalHandler::quadTree->Deserialize();
-
-	GlobalHandler::player->Init(18, 0, 4);
-	GlobalHandler::dynamicObjManager->Add(GlobalHandler::player);	
+	
 	GlobalHandler::isStarted = true;
 	GlobalHandler::sound->Play(ListSound::SOUND_BACKGROUND, true);
 	GlobalHandler::InitText();
