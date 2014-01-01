@@ -2,12 +2,12 @@
 #include "brick.h"
 
 class BonusBrick :	public Brick
-{
-	bool isEmpty;
+{	
 	int bonusType;
-
 	bool willRender;
 public:
+	bool isEmpty;
+
 	BonusBrick(void);
 	BonusBrick(int left, int top, bool iEmpty, int iid);
 	~BonusBrick(void);

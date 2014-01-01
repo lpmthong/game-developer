@@ -34,8 +34,8 @@ public:
 	void SaveNode(QuadNode *iroot);
 	void GetNodeInfo(string info);
 
-	bool RemoveObj(StaticObject* obj);
-	bool RemoveObj(QuadNode* root, StaticObject* obj);	
+	void RemoveObj(StaticObject* obj);
+	void RemoveObj(QuadNode* root, StaticObject* obj);	
 
 	void RenderScreen();
 	void RenderScreen(QuadNode *root, int map_level);
@@ -49,4 +49,6 @@ public:
 	void GetListObjCanCollide(RECT rectObj);
 	void GetListObjCanCollide(RECT rectObj, QuadNode *root);
 
+	void Save();
+	void Save(QuadNode *root);
 };

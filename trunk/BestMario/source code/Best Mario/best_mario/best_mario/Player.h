@@ -65,7 +65,7 @@ public:
 	Player(void);
 	~Player(void);
 
-	void Init(int left, int top, int mode,int LastCheckPoint, int Life);
+	void Init(int left, int top, int mode,int LastCheckPoint, int Life, int iid);
 	void InitFromFile(int left, int top, int mode,int LastCheckPoint, int Life);
 
 	void setKid();

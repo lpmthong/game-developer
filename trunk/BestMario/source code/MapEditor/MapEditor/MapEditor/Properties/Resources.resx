@@ -232,12 +232,6 @@
   <data name="MushRoomGroundRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MushRoomGroundRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pipe_body" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pipe_body.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pipe_cap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pipe_cap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pirhana_plant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pirhana_plant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -268,15 +262,6 @@
   <data name="tree_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tree_low.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pipe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pipe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pipe2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pipe3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pipe3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="mario_adult" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mario-adult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -285,5 +270,20 @@
   </data>
   <data name="mario_kid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mario_kid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pipe1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pipe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pipe2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pipe3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pipe3.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pipe4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pipe4.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pipe5.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

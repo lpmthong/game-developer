@@ -61,12 +61,14 @@ void Game::Update(){
 		case GS_MENU:
 			break;
 		case GS_GAMEOPTION:
+			//trace(L"Co vao game option");
 			break;
 		case GS_CHANGEMAP:			
 			break;
 		case GS_OPTION:
 			break;
 		case GS_GAMEPLAY:
+			//trace(L"Co vao day");
 			GlobalHandler::quadTree->UpdateScreen();
 			GlobalHandler::dynamicObjManager->Update();
 			if(!GlobalHandler::UpdateTime())

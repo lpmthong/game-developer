@@ -64,11 +64,13 @@ void ListTerrain::InitTerrain(int level){
 	
 	ListTerrain::LoadFile(level);	
 
-	GlobalHandler::quadTree = new QuadTree(arr_terrain[0], arr_terrain[0]);		
+	GlobalHandler::mapWidth = arr_terrain[0];
 	GlobalHandler::mapLevel1 = arr_terrain[1];
 	GlobalHandler::mapLevel2 = arr_terrain[2];
 	GlobalHandler::backGroundColor = arr_terrain[3];
 	GlobalHandler::nextMap = arr_terrain[4];
+
+	GlobalHandler::quadTree = new QuadTree(GlobalHandler::mapWidth, GlobalHandler::mapWidth);	
 
 	for (int i = 5; i < arr_terrain_index ; i += 4)
 	{		
@@ -95,7 +97,7 @@ void ListTerrain::InitTerrain(int level){
 			ground->setType(arr_terrain[i+1]);
 			GlobalHandler::listStaticObj.push_back(ground);
 		}
-		else if (arr_terrain[i+1] == PIPE_1 || arr_terrain[i+1] == PIPE_2 || arr_terrain[i+1] == PIPE_3)
+		else if (arr_terrain[i+1] == PIPE_1 || arr_terrain[i+1] == PIPE_2 || arr_terrain[i+1] == PIPE_3 || arr_terrain[i+1] == PIPE_4 || arr_terrain[i+1] == PIPE_5)
 		{
 			Pipe* pipe = new Pipe(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i]);
 			GlobalHandler::listStaticObj.push_back(pipe);
@@ -124,6 +126,7 @@ void ListTerrain::InitTerrain(int level){
 		{
 			GlobalHandler::checkpoint[0][GlobalHandler::checkpoint_index] = arr_terrain[i+2];
 			GlobalHandler::checkpoint[1][GlobalHandler::checkpoint_index] = arr_terrain[i+3];
+			GlobalHandler::checkpoint[2][GlobalHandler::checkpoint_index] = arr_terrain[i];
 			GlobalHandler::checkpoint_index++;
 		}
 		else if (arr_terrain[i+1] == HARDBRICK)
@@ -178,7 +181,7 @@ void ListTerrain::InitTerrain(int level){
 		}
 		else if(arr_terrain[i+1] == PLAYER_KID || arr_terrain[i+1] == PLAYER_ADULT || arr_terrain[i+1] == PLAYER_ADULT_GUN)
 		{
-			GlobalHandler::player->Init(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i+4], arr_terrain[i+5]);
+			GlobalHandler::player->Init(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i+4], arr_terrain[i+5], arr_terrain[i]);
 
 			GlobalHandler::playerScore = arr_terrain[i + 6];
 			GlobalHandler::playerCoin = arr_terrain[i + 7];	

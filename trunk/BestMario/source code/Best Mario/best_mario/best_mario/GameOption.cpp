@@ -67,11 +67,13 @@ void GameOption::OnKeyDown(int keyCode)
 			}
 			if(choice == OPTION_SAVEGAME)
 			{
-
+				GlobalHandler::save->Save();
 			}
 			if(choice == OPTION_LOADGAME)
 			{
-
+				GlobalHandler::mapLevel = 0;
+				GlobalHandler::RestartMap();
+				GlobalHandler::gameState = GS_CHANGEMAP;
 			}
 			if(choice == OPTION_BACKMENU)
 			{

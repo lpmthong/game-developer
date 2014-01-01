@@ -19,7 +19,9 @@ Ground::Ground(int left, int top, int iid){
 
 Ground::~Ground(void){}
 
-void Ground::setType(int type){
+void Ground::setType(int t){
+	type = t;
+
 	switch(type){
 		case GROUND_LEFT:
 			sprite->setIndex(0);

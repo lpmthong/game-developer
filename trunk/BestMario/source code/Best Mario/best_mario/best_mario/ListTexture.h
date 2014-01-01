@@ -87,6 +87,18 @@ public:
 	static int					TT_PIPE_3_COUNT;
 	static int					TT_PIPE_3_SPRITEPERROW;
 
+	static LPDIRECT3DTEXTURE9	TT_PIPE_4;
+	static int					TT_PIPE_4_WIDTH;
+	static int					TT_PIPE_4_HEIGHT;
+	static int					TT_PIPE_4_COUNT;
+	static int					TT_PIPE_4_SPRITEPERROW;
+
+	static LPDIRECT3DTEXTURE9	TT_PIPE_5;
+	static int					TT_PIPE_5_WIDTH;
+	static int					TT_PIPE_5_HEIGHT;
+	static int					TT_PIPE_5_COUNT;
+	static int					TT_PIPE_5_SPRITEPERROW;
+
 
 	//Tien khong nam trong gach
 	static LPDIRECT3DTEXTURE9	TT_OUT_COIN;

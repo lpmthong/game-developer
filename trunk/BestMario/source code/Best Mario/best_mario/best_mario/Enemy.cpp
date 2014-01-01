@@ -110,7 +110,8 @@ void Enemy::CollideWithStaticObj(){
 						(*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
 						(*it)->isKind == BRICK_BONUS_STAR)				
 						CollideWithGround(normalx, normaly, collisiontime, (*it));				
-					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3)
+					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3 ||
+						(*it)->isKind == PIPE_4 || (*it)->isKind == PIPE_5)
 						CollideWithPiPe(normalx, normaly, collisiontime, (*it));
 					if ((*it)->isKind == OUTCOIN)				
 						ConUpdate = true;

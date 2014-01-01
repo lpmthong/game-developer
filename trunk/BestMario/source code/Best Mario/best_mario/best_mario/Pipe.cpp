@@ -42,6 +42,26 @@ Pipe::Pipe( int left, int top, int type, int iid)
 			height = ListTexture::TT_PIPE_3_HEIGHT;
 			UpdateRect(left, top, ListTexture::TT_PIPE_3_WIDTH, ListTexture::TT_PIPE_3_HEIGHT);
 			break;
+		case PIPE_4:
+			sprite = new Sprite(ListTexture::TT_PIPE_4,		
+				ListTexture::TT_PIPE_4_WIDTH,		
+				ListTexture::TT_PIPE_4_HEIGHT,		
+				ListTexture::TT_PIPE_4_COUNT,	
+				ListTexture::TT_PIPE_4_SPRITEPERROW);
+			width = ListTexture::TT_PIPE_4_WIDTH;
+			height = ListTexture::TT_PIPE_4_HEIGHT;
+			UpdateRect(left, top, ListTexture::TT_PIPE_4_WIDTH, ListTexture::TT_PIPE_4_HEIGHT);
+			break;
+		case PIPE_5:
+			sprite = new Sprite(ListTexture::TT_PIPE_5,		
+				ListTexture::TT_PIPE_5_WIDTH,		
+				ListTexture::TT_PIPE_5_HEIGHT,		
+				ListTexture::TT_PIPE_5_COUNT,	
+				ListTexture::TT_PIPE_5_SPRITEPERROW);
+			width = ListTexture::TT_PIPE_5_WIDTH;
+			height = ListTexture::TT_PIPE_5_HEIGHT;
+			UpdateRect(left, top, ListTexture::TT_PIPE_5_WIDTH, ListTexture::TT_PIPE_5_HEIGHT);
+			break;		
 	}
 	
 	id = iid;

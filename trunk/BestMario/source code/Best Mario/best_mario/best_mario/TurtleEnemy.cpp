@@ -14,7 +14,7 @@ TurtleEnemy::TurtleEnemy(int left, int top, int iid){
 	
 	old_Vx = -0.15f;	
 	setAlive();
-
+	id = iid;
 	UpdateRect(left, top);
 	lastAnimate = GetTickCount();
 	lastUpdate = GetTickCount();
@@ -62,7 +62,7 @@ void TurtleEnemy::setDeath(){
 	isKind = TURTLEDEATH;
 
 	sprite->setIndex(1);
-
+	alive = ALIVE;
 	UpdateRect(rectDraw.left, rectDraw.top + 30);
 
 	beginDeath = GetTickCount();

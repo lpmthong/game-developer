@@ -59,7 +59,9 @@ namespace MapEditor
             BRICK_BONUS_STAR = 46,
             PIPE_1 = 47,
             PIPE_2 = 48,
-            PIPE_3 = 49
+            PIPE_3 = 49,
+            PIPE_4 = 50,
+            PIPE_5 = 51
         }
 
         private pbObject TempObj = new pbObject();
@@ -187,24 +189,40 @@ namespace MapEditor
             {
                 TempObj.pictureBox.Image = Properties.Resources.pipe1;
                 TempObj.kind = (int)BlockKind.PIPE_1;
-                TempObj.width = 75;
-                TempObj.height = 50;
+                TempObj.width = 64;
+                TempObj.height = 32;
                 TempObj.st = true;
             }
             else if (pb.Name == pbPipe2.Name)
             {
                 TempObj.pictureBox.Image = Properties.Resources.pipe2;
                 TempObj.kind = (int)BlockKind.PIPE_2;
-                TempObj.width = 75;
-                TempObj.height = 100;
+                TempObj.width = 64;
+                TempObj.height = 64;
                 TempObj.st = true;
             }
             else if (pb.Name == pbPipe3.Name)
             {
                 TempObj.pictureBox.Image = Properties.Resources.pipe3;
                 TempObj.kind = (int)BlockKind.PIPE_3;
-                TempObj.width = 75;
-                TempObj.height = 200;
+                TempObj.width = 64;
+                TempObj.height = 96;
+                TempObj.st = true;
+            }
+            else if (pb.Name == pbPipe4.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.pipe4;
+                TempObj.kind = (int)BlockKind.PIPE_4;
+                TempObj.width = 64;
+                TempObj.height = 128;
+                TempObj.st = true;
+            }
+            else if (pb.Name == pbPipe5.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.pipe5;
+                TempObj.kind = (int)BlockKind.PIPE_5;
+                TempObj.width = 64;
+                TempObj.height = 160;
                 TempObj.st = true;
             }
             else if (pb.Name == pbCloud.Name)
@@ -628,7 +646,7 @@ namespace MapEditor
                         || obj.kind == (int)BlockKind.BRICK_BONUS_STAR || obj.kind == (int)BlockKind.BRICK_BONUS_LIFE_HIDDEN)
                     {
                         sw.Write(" ");
-                        sw.Write(1);                        
+                        sw.Write(0);                        
                     }
                     if (obj.kind == (int)BlockKind.PLAYER_KID || obj.kind == (int)BlockKind.PLAYER_ADULT || obj.kind == (int)BlockKind.PLAYER_ADULT_GUN)
                     {
@@ -761,20 +779,32 @@ namespace MapEditor
                     break;
                 case (int)BlockKind.PIPE_1:
                     pb.Image = Properties.Resources.pipe1; 
-                    temp.width = 75;
-                    temp.height = 50;
+                    temp.width = 64;
+                    temp.height = 32;
                     temp.st = true;
                     break;
                 case (int)BlockKind.PIPE_2: 
                     pb.Image = Properties.Resources.pipe2;
-                    temp.width = 75;
-                    temp.height = 100;
+                    temp.width = 64;
+                    temp.height = 64;
                     temp.st = true;
                     break;
                 case (int)BlockKind.PIPE_3:
                     pb.Image = Properties.Resources.pipe3;
-                    temp.width = 75;
-                    temp.height = 200;
+                    temp.width = 64;
+                    temp.height = 96;
+                    temp.st = true;
+                    break;
+                case (int)BlockKind.PIPE_4:
+                    pb.Image = Properties.Resources.pipe4;
+                    temp.width = 64;
+                    temp.height = 128;
+                    temp.st = true;
+                    break;
+                case (int)BlockKind.PIPE_5:
+                    pb.Image = Properties.Resources.pipe5;
+                    temp.width = 64;
+                    temp.height = 160;
                     temp.st = true;
                     break;
                 case (int)BlockKind.BRICK_BONUS_MUSHROOM: 
