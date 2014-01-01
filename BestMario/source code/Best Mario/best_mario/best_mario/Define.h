@@ -29,8 +29,8 @@
 #define PLAYER_ADULT 11
 #define BRICK_BREAK 12
 #define BRICK_BREAK_DISAPPEAR 13
-#define PIPE_CAP 14
-#define PIPE_BODY 15
+//#define PIPE_CAP 14
+//#define PIPE_BODY 15
 #define BRICK_BONUS_MUSHROOM 16
 #define BONUS_MUSHROOM 17
 #define PLAYER_ADULT_GUN 18
@@ -65,6 +65,8 @@
 #define PIPE_1 47
 #define PIPE_2 48
 #define PIPE_3 49
+#define PIPE_4 50
+#define PIPE_5 51
 
 
 //Game State.

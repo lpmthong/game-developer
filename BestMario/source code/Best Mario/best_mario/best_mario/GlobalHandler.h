@@ -10,6 +10,7 @@
 #include "Collision.h"
 #include "DXSound.h"
 #include "Text.h"
+#include "SaveGame.h"
 using namespace std;
 
 class GlobalHandler{
@@ -18,6 +19,7 @@ public:
 	static QuadTree				*quadTree;
 	static DirectX				*_directX;
 	static DXSound				*sound;
+	static SaveGame				*save;
 
 	static int					backGroundColor;
 	static bool					quitGame;		
@@ -28,6 +30,7 @@ public:
 	static DWORD				lastTime;
 	static int					mapLevel1;
 	static int					mapLevel2;
+	static int					mapWidth;
 	static bool					isStarted;
 
 	static DynamicObjManager	*dynamicObjManager;
@@ -46,7 +49,7 @@ public:
 	
 
 	//Check point
-	static int					checkpoint[2][10];
+	static int					checkpoint[3][10];
 	static int					checkpoint_index;
 
 	static int					playerScore;
@@ -64,8 +67,8 @@ public:
 	static void InitText();
 	static bool UpdateTime();
 	static void UpdateScreen();
-	static void RestartMap();	
-	
-	static LPWSTR ConvertChar(char c[]);
+	static void RestartMap();
+
+	static void SaveStaticObj();
 	
 };

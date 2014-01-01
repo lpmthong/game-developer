@@ -20,6 +20,8 @@ public:
 
 	void ProcessBrickBreak(StaticObject* brick);
 
+	void Save();
+
 	~DynamicObjManager(void);
 		
 	//bool InList(list<DynamicObject*> holder, DynamicObject* obj);

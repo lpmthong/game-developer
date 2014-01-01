@@ -74,6 +74,8 @@ void DynamicObjManager::Update(){
 	for (it_rm = GlobalHandler::listRemove.begin(); it_rm != GlobalHandler::listRemove.end(); it_rm++){
 		Remove((*it_rm));
 	}
+
+	//trace(L"Update Dynamic ----");
 }
 
 void DynamicObjManager::Release()
@@ -119,4 +121,17 @@ void DynamicObjManager::ProcessBrickBreak(StaticObject* brick)
 
 	GlobalHandler::quadTree->RemoveObj(brick);
 	GlobalHandler::sound->Play(ListSound::SOUND_BRICKBREAKED, false);
+}
+
+void DynamicObjManager::Save(){
+
+	list<DynamicObject*>::iterator it;
+	for (it = listDynamicObj.begin(); it != listDynamicObj.end(); it++){
+	
+		if ((*it)->isKind != BULLET && (*it)->isKind != BONUS_MUSHROOM && (*it)->isKind != PLAYER_KID && 
+			(*it)->isKind != PLAYER_ADULT && (*it)->isKind != PLAYER_ADULT_GUN)
+			if ((*it)->alive == ALIVE)			
+				GlobalHandler::save->SaveText(L" %d %d %d %d\n", (*it)->id, (*it)->isKind, (*it)->rectDraw.left, (*it)->rectDraw.top);
+
+	}
 }

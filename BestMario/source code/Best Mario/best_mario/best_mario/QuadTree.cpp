@@ -74,7 +74,8 @@ void QuadTree::ReadQuadTreeFormFile(int level)
 
 		qTreeMap[id] = qNode;
 
-	}		
+	}
+	
 }
 
 void QuadTree::Deserialize()
@@ -148,35 +149,33 @@ void QuadTree::GetNodeInfo(string info){
 	//trace(L"%d %d %d %d",rNode.left,rNode.top,rNode.right,rNode.bottom);
 }
 
-bool QuadTree::RemoveObj(StaticObject* obj){
-	return RemoveObj(root, obj);
+void QuadTree::RemoveObj(StaticObject* obj){
+	RemoveObj(root, obj);
 }
 
-bool QuadTree::RemoveObj(QuadNode* root, StaticObject* obj){
-	list<StaticObject*>::iterator it;
+void QuadTree::RemoveObj(QuadNode* root, StaticObject* obj){
+	
+	/*list<StaticObject*>::iterator it;
 	for (it = root->listObject.begin(); it != root->listObject.end(); it ++)
 	{
 		if (obj == (*it))
 		{
 			root->listObject.remove(obj);
-			return true;
+			return;
 		}
-	}
+	}*/
+	root->listObject.remove(obj);
 
 	if (root->LTNode != NULL)
-		if (RemoveObj(root->LTNode, obj) == true)
-			return true;
+		RemoveObj(root->LTNode, obj);
 	if (root->RTNode != NULL)
-		if (RemoveObj(root->RTNode, obj) == true)
-			return true;
+		RemoveObj(root->RTNode, obj);			
 	if (root->LBNode != NULL)
-		if (RemoveObj(root->LBNode, obj) == true)
-			return true;
+		RemoveObj(root->LBNode, obj);		
 	if (root->RBNode != NULL)
-		if (RemoveObj(root->RBNode, obj) == true)
-			return true;
+		RemoveObj(root->RBNode, obj);
 
-	return false;
+	GlobalHandler::listStaticObj.remove(obj);
 }
 
 void QuadTree::RenderScreen(){
@@ -251,4 +250,39 @@ void QuadTree::GetListObjCanCollide(RECT rectObj, QuadNode *root){
 		GetListObjCanCollide(rectObj, root->LBNode);
 	if ((root->RBNode != NULL) && (GlobalHandler::CheckRectInRect(root->RBNode->rect, rectObj)))
 		GetListObjCanCollide(rectObj, root->RBNode);
+}
+
+void QuadTree::Save(){
+	GlobalHandler::save->SetFile("Map\\Map0QuadTree.txt");
+	GlobalHandler::save->ClearSaveFile();
+	Save(root);
+}
+
+void QuadTree::Save(QuadNode *root){
+
+	if (!root->id.empty())
+	{				
+		GlobalHandler::save->SaveString(root->id);		
+		GlobalHandler::save->SaveText(L" %d %d %d %d", root->rect.left, root->rect.top, root->rect.right, root->rect.bottom);
+		if (root->listObject.empty())
+			GlobalHandler::save->SaveText(L" %d", 0);
+		else
+		{
+			list<StaticObject*>::iterator it;
+			for(it = root->listObject.begin(); it != root->listObject.end(); ++it ){
+				GlobalHandler::save->SaveText(L" %d", (*it)->id);
+			}
+		}
+		GlobalHandler::save->SaveText(L"\n");
+	}
+	
+	if (root->LTNode != NULL)
+		Save(root->LTNode);
+	if (root->LBNode != NULL)
+		Save(root->LBNode);
+	if (root->RTNode != NULL)
+		Save(root->RTNode);
+	if (root->RBNode != NULL)
+		Save(root->RBNode);
+
 }

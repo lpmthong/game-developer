@@ -20,7 +20,8 @@ BonusBrick::BonusBrick(int left, int top, bool iEmpty, int iid){
 
 	isKind = BRICK_BONUS_COIN;
 	lastCollide = GetTickCount();
-	isEmpty = iEmpty;
+	isEmpty = iEmpty;	
+
 	isSolid = true;
 
 	hasCollide = false;
@@ -30,6 +31,9 @@ BonusBrick::BonusBrick(int left, int top, bool iEmpty, int iid){
 
 	willRender = true;
 	map_level = 2;
+
+	if (isEmpty)
+		SetEmpty();
 }
 
 void BonusBrick::ProcessCollision(int iKind){
@@ -41,7 +45,7 @@ void BonusBrick::ProcessCollision(int iKind){
 	UpdateRect(rectDraw.left, rectDraw.top + distancemoveup);
 	willRender = true;
 	hasCollide = true;
-
+	isEmpty = true;
 }
 
 void BonusBrick::Render(){

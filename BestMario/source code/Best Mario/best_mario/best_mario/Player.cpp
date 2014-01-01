@@ -12,7 +12,7 @@ Player::Player(void){}
 
 Player::~Player(void){}
 
-void Player::Init(int left, int top, int mode, int LastCheckPoint, int Life){
+void Player::Init(int left, int top, int mode, int LastCheckPoint, int Life, int iid){
 
 	sprite = new Sprite();
 	InitFromFile(left, top, mode, LastCheckPoint, Life);
@@ -20,6 +20,7 @@ void Player::Init(int left, int top, int mode, int LastCheckPoint, int Life){
 	Vy = Vy_old = 0;
 	acceleration = 0;
 
+	id = iid;
 	animatedRate = ListTexture::TT_MARIO_KID_ANIMATED_RATE;
 	lastAnimate = GetTickCount();
 	lastUpdate = GetTickCount();
@@ -74,7 +75,7 @@ void Player::InitFromFile(int left, int top, int mode,int LastCheckPoint, int Li
 	}
 	lastCheckPoint = LastCheckPoint;
 	//checkpoint
-	UpdateRect(left, top);
+	UpdateRect(left, top + 50);
 	life = Life;	
 	//trace(L"Player::InitFromFile(int mode,int LastCheckPoint, int Life)");
 }
@@ -380,7 +381,8 @@ void Player::CollideWithStaticObj(){
 				{				
 					if ((*it)->isKind == GROUND)				
 						CollideWithGround(normalx, normaly, collisiontime, (*it));		
-					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3)
+					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3 ||
+						(*it)->isKind == PIPE_4 || (*it)->isKind == PIPE_5)
 						CollideWithPiPe(normalx, normaly, collisiontime, (*it));
 					if ((*it)->isKind == HARDBRICK)				
 						CollideWithHardBrick(normalx, normaly, collisiontime, (*it));
@@ -770,6 +772,7 @@ void Player::CollideWithEndMap(float normalx, float normaly, float collisiontime
 
 	getEndMap = true;
 	Vx = Vx_old = maxSpeed;
+	ConUpdate = false;
 }
 
 void Player::CollideWithBonusMushRoom(DynamicObject *obj){
