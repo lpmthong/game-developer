@@ -17,6 +17,7 @@ public:
 	float maxSpeed;
 
 	bool oldDirect; //Truoc khi dung thi no dang o huong nao true thi phai, false thi trai
+	int oldTop; //kiem tra xem no co dang rot xuong khong
 
 	int lastCheckPoint; //Noi bat dau ve mario
 
@@ -39,6 +40,9 @@ public:
 
 	//Co star khong
 	bool hasStar;
+	DWORD startHasStar;
+	DWORD timeHasStar;
+	bool hasStarRender;
 
 	//Bat tu nhung luc ma bi teo nho
 	bool immortal;
@@ -96,7 +100,7 @@ public:
 	void CollideWithTurtleEnemy(float normaly, DynamicObject *obj);
 	void CollideWithTurtleDeath(float normaly, DynamicObject *obj);
 	void CollideWithMushRoomEnemy(float normaly, DynamicObject *obj);
-	void CollideWithPirhanaPlant(DynamicObject *obj);
+	void CollideWithPirhanaPlant(StaticObject *obj);
 	void CollideWithCross(float normalx, float normaly, float collisiontime, DynamicObject *obj);
 	
 	//Cac ham thay doi luc an nam

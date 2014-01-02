@@ -232,9 +232,6 @@
   <data name="MushRoomGroundRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MushRoomGroundRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pirhana_plant" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pirhana_plant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="previewbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\previewbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -285,5 +282,8 @@
   </data>
   <data name="pipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pipe5.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pirhana_plant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pirhana_plant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

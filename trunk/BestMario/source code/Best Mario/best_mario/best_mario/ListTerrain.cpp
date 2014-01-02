@@ -158,10 +158,16 @@ void ListTerrain::InitTerrain(int level){
 			TurtleEnemy *turtleEnemy = new TurtleEnemy(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
 			GlobalHandler::dynamicObjManager->Add(turtleEnemy);
 		}
+		else if(arr_terrain[i+1] == TURTLEDEATH)
+		{
+			TurtleEnemy *turtleDeath = new TurtleEnemy(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			turtleDeath->setDeath();
+			GlobalHandler::dynamicObjManager->Add(turtleDeath);
+		}
 		else if(arr_terrain[i+1] == PIRHANAPLANT)
 		{
 			PirhanaPlant *pirhanaPlant = new PirhanaPlant(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
-			GlobalHandler::dynamicObjManager->Add(pirhanaPlant);
+			GlobalHandler::listStaticObj.push_back(pirhanaPlant);
 		}
 		else if(arr_terrain[i+1] == CROSS)
 		{

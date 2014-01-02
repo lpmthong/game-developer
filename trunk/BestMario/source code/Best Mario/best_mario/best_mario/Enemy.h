@@ -40,7 +40,7 @@ public:
 	virtual void CollideWithMushRoomEnemy(DynamicObject* obj);
 	virtual void CollideWithTurtleEnemy(DynamicObject* obj);
 	virtual void CollideWithTurtleDeath(DynamicObject* obj);
-	virtual void CollideWithPirhanaPlant(DynamicObject* obj);
+	virtual void CollideWithPirhanaPlant(StaticObject* obj);
 
 	//Cac ham khac
 	virtual void ProcessDying();

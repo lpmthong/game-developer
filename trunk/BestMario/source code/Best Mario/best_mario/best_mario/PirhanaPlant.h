@@ -1,7 +1,7 @@
 #pragma once
-#include "DynamicObject.h"
+#include "StaticObject.h"
 
-class PirhanaPlant : public DynamicObject{
+class PirhanaPlant : public StaticObject{
 
 public:
 	int appear; // cai bien nay dung de ve no len giong nhu cai bonus
