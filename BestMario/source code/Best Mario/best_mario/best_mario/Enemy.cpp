@@ -101,8 +101,7 @@ void Enemy::CollideWithStaticObj(){
 			{
 				ConUpdate = false;
 				float normalx, normaly, collisiontime;
-				collisiontime = GlobalHandler::Physic->SweptAABB(ObjBox, staticBox,  normalx, normaly);			
-				//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, ObjBox.vx, ObjBox.vy, collisiontime, normalx, normaly,(*it)->id);
+				collisiontime = GlobalHandler::Physic->SweptAABB(ObjBox, staticBox,  normalx, normaly);				
 				if (collisiontime < 1.0f && collisiontime >= 0.0f)
 				{				
 					if ((*it)->isKind == GROUND || (*it)->isKind == HARDBRICK || (*it)->isKind == BRICK_BONUS_COIN || 
@@ -117,7 +116,8 @@ void Enemy::CollideWithStaticObj(){
 						ConUpdate = true;
 					if ((*it)->isKind == BRICK)				
 						CollideWithBrick(normalx, normaly, collisiontime, (*it));
-					//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)ObjBox.x, (int)ObjBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
+					if ((*it)->isKind == PIRHANAPLANT)
+						CollideWithPirhanaPlant((*it));
 				}
 				if (collisiontime == 1.0f)
 				{
@@ -157,15 +157,12 @@ void Enemy::CollideWithDynamicObj(int t){
 						if ((*it)->isKind == TURTLE)
 							CollideWithTurtleEnemy((*it));
 						if ((*it)->isKind == TURTLEDEATH)
-							CollideWithTurtleDeath((*it));
-						if ((*it)->isKind == PIRHANAPLANT)
-							CollideWithPirhanaPlant((*it));
+							CollideWithTurtleDeath((*it));						
 					}
 					if (collisiontime == 1.0f)
 						ConUpdate = true;
 
-				}
-				//trace(L"VxF: %f, VyF: %f, OBJ_VxF: %f, OBJ_VyF: %f, VxFN: %f, VyFN: %f", VxF, VyF, Obj_VxF, Obj_VyF, VxFN, VyFN);
+				}				
 			}		
 	}
 }
@@ -350,7 +347,7 @@ void Enemy::CollideWithTurtleDeath(DynamicObject* obj){
 
 }
 
-void Enemy::CollideWithPirhanaPlant(DynamicObject* obj){
+void Enemy::CollideWithPirhanaPlant(StaticObject* obj){
 	ConUpdate = true;
 }
 

@@ -373,9 +373,9 @@ namespace MapEditor
             {
                 TempObj.pictureBox.Image = Properties.Resources.pirhana_plant;
                 TempObj.kind = (int)BlockKind.PIRHANAPLANT;
-                TempObj.width = 28;
-                TempObj.height = 35;
-                TempObj.st = false;
+                TempObj.width = 25;
+                TempObj.height = 37;
+                TempObj.st = true;
             }
             else if (pb.Name == pbEndmap.Name)
             {
@@ -850,9 +850,9 @@ namespace MapEditor
                     break;
                 case (int)BlockKind.PIRHANAPLANT: 
                     pb.Image = Properties.Resources.pirhana_plant;
-                    temp.width = 28;
-                    temp.height = 35;
-                    temp.st = false;
+                    temp.width = 25;
+                    temp.height = 37;
+                    temp.st = true;
                     break;
                 case (int)BlockKind.ENDMAP: 
                     pb.Image = Properties.Resources.end_map; 

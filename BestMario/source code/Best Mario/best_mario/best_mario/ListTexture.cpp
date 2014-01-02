@@ -523,8 +523,8 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_RED_TURTLE_DEATH_ANIMATED_RATE		= 150;
 
 	ListTexture::TT_PIRHANA_PLANT						= GlobalHandler::_directX->LoadTextureFromFile("Media\\pirhana_plant.png",0);
-	ListTexture::TT_PIRHANA_PLANT_WIDTH					= 28;
-	ListTexture::TT_PIRHANA_PLANT_HEIGHT				= 35;
+	ListTexture::TT_PIRHANA_PLANT_WIDTH					= 25;
+	ListTexture::TT_PIRHANA_PLANT_HEIGHT				= 37;
 	ListTexture::TT_PIRHANA_PLANT_COUNT					= 2;
 	ListTexture::TT_PIRHANA_PLANT_SPRITEPERROW			= 2;
 	ListTexture::TT_PIRHANA_PLANT_ANIMATED_RATE			= 200;

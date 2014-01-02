@@ -130,7 +130,7 @@ void DynamicObjManager::Save(){
 	
 		if ((*it)->isKind != BULLET && (*it)->isKind != BONUS_MUSHROOM && (*it)->isKind != PLAYER_KID && 
 			(*it)->isKind != PLAYER_ADULT && (*it)->isKind != PLAYER_ADULT_GUN)
-			if ((*it)->alive == ALIVE)			
+			if ((*it)->alive == ALIVE && (*it)->id > 0)			
 				GlobalHandler::save->SaveText(L" %d %d %d %d\n", (*it)->id, (*it)->isKind, (*it)->rectDraw.left, (*it)->rectDraw.top);
 
 	}

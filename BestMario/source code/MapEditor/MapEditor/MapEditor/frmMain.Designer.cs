@@ -68,6 +68,8 @@
             this.pbTree_Low = new System.Windows.Forms.PictureBox();
             this.pbCloud = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pbPipe5 = new System.Windows.Forms.PictureBox();
+            this.pbPipe4 = new System.Windows.Forms.PictureBox();
             this.pbPipe3 = new System.Windows.Forms.PictureBox();
             this.pbPipe2 = new System.Windows.Forms.PictureBox();
             this.pbPipe1 = new System.Windows.Forms.PictureBox();
@@ -100,8 +102,6 @@
             this.pbItem_Flower = new System.Windows.Forms.PictureBox();
             this.pbItem_Coin = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.pbPipe4 = new System.Windows.Forms.PictureBox();
-            this.pbPipe5 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.pnMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMap)).BeginInit();
@@ -119,6 +119,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).BeginInit();
@@ -151,8 +153,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe5)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -436,7 +436,7 @@
             // pbRedTurle
             // 
             this.pbRedTurle.Image = ((System.Drawing.Image)(resources.GetObject("pbRedTurle.Image")));
-            this.pbRedTurle.Location = new System.Drawing.Point(192, 20);
+            this.pbRedTurle.Location = new System.Drawing.Point(191, 17);
             this.pbRedTurle.Name = "pbRedTurle";
             this.pbRedTurle.Size = new System.Drawing.Size(32, 47);
             this.pbRedTurle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -446,10 +446,10 @@
             // 
             // pbPirhanaPlant
             // 
-            this.pbPirhanaPlant.Image = ((System.Drawing.Image)(resources.GetObject("pbPirhanaPlant.Image")));
-            this.pbPirhanaPlant.Location = new System.Drawing.Point(139, 32);
+            this.pbPirhanaPlant.Image = global::MapEditor.Properties.Resources.pirhana_plant;
+            this.pbPirhanaPlant.Location = new System.Drawing.Point(139, 27);
             this.pbPirhanaPlant.Name = "pbPirhanaPlant";
-            this.pbPirhanaPlant.Size = new System.Drawing.Size(25, 35);
+            this.pbPirhanaPlant.Size = new System.Drawing.Size(25, 37);
             this.pbPirhanaPlant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbPirhanaPlant.TabIndex = 10;
             this.pbPirhanaPlant.TabStop = false;
@@ -586,6 +586,28 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Terrain";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pbPipe5
+            // 
+            this.pbPipe5.Image = global::MapEditor.Properties.Resources.pipe5;
+            this.pbPipe5.Location = new System.Drawing.Point(227, 180);
+            this.pbPipe5.Name = "pbPipe5";
+            this.pbPipe5.Size = new System.Drawing.Size(64, 160);
+            this.pbPipe5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe5.TabIndex = 33;
+            this.pbPipe5.TabStop = false;
+            this.pbPipe5.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbPipe4
+            // 
+            this.pbPipe4.Image = global::MapEditor.Properties.Resources.pipe4;
+            this.pbPipe4.Location = new System.Drawing.Point(147, 212);
+            this.pbPipe4.Name = "pbPipe4";
+            this.pbPipe4.Size = new System.Drawing.Size(64, 128);
+            this.pbPipe4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbPipe4.TabIndex = 32;
+            this.pbPipe4.TabStop = false;
+            this.pbPipe4.Click += new System.EventHandler(this.pbBlock_Click);
             // 
             // pbPipe3
             // 
@@ -953,28 +975,6 @@
             this.tabControl1.Size = new System.Drawing.Size(325, 385);
             this.tabControl1.TabIndex = 0;
             // 
-            // pbPipe4
-            // 
-            this.pbPipe4.Image = global::MapEditor.Properties.Resources.pipe4;
-            this.pbPipe4.Location = new System.Drawing.Point(147, 212);
-            this.pbPipe4.Name = "pbPipe4";
-            this.pbPipe4.Size = new System.Drawing.Size(64, 128);
-            this.pbPipe4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipe4.TabIndex = 32;
-            this.pbPipe4.TabStop = false;
-            this.pbPipe4.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
-            // pbPipe5
-            // 
-            this.pbPipe5.Image = global::MapEditor.Properties.Resources.pipe5;
-            this.pbPipe5.Location = new System.Drawing.Point(227, 180);
-            this.pbPipe5.Name = "pbPipe5";
-            this.pbPipe5.Size = new System.Drawing.Size(64, 160);
-            this.pbPipe5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbPipe5.TabIndex = 33;
-            this.pbPipe5.TabStop = false;
-            this.pbPipe5.Click += new System.EventHandler(this.pbBlock_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1030,6 +1030,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPipe4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe1)).EndInit();
@@ -1063,8 +1065,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Flower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbItem_Coin)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPipe5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

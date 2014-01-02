@@ -1,25 +1,5 @@
 Player::Init(int mode,int LastCheckPoint, int Life)
 void GlobalHandler::RestartMap()
-New Game
 Player::Init(int mode,int LastCheckPoint, int Life)
 void GlobalHandler::RestartMap()
 Brick id: 722, Cl: 1
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-New Game
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Brick id: 835, Cl: 1
-Brick id: 834, Cl: 1
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()

@@ -15,7 +15,7 @@ public:
 	void CollideWithTurtleDeath(DynamicObject* obj);
 	void CollideWithMushRoomEnemy(DynamicObject* obj);
 	void CollideWithTurtleEnemy(DynamicObject* obj);
-	void CollideWithPirhanaPlant(DynamicObject* obj);
+	void CollideWithPirhanaPlant(StaticObject* obj);
 
 	void ProcessDying();
 	void UpdateSpriteDying();

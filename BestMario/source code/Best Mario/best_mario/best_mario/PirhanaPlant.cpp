@@ -12,7 +12,7 @@ PirhanaPlant::PirhanaPlant(int left, int top, int iid){
 						ListTexture::TT_PIRHANA_PLANT_COUNT, ListTexture::TT_PIRHANA_PLANT_SPRITEPERROW);
 
 	animatedRate = ListTexture::TT_PIRHANA_PLANT_ANIMATED_RATE;
-
+	id = iid;
 	width = ListTexture::TT_PIRHANA_PLANT_WIDTH;
 	height = ListTexture::TT_PIRHANA_PLANT_HEIGHT;
 
@@ -25,20 +25,17 @@ PirhanaPlant::PirhanaPlant(int left, int top, int iid){
 	isSolid = true;
 
 	direct = true;
-
-	Vy = Vx = 0.0f;
-	Vy_old = 0.05f;
-	
-
 	appear = 0;
 
 	updateRate = 50;
 	timeDisappear = 2000;
 	startDisappear = GetTickCount();
-	alive = ALIVE;
+
+	map_level = 2;
 }
 
 void PirhanaPlant::Update(){
+
 	DWORD now = GetTickCount();
 	if (now - lastUpdate > updateRate)
 	{

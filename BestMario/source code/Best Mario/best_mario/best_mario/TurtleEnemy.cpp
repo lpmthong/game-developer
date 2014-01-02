@@ -62,7 +62,7 @@ void TurtleEnemy::setDeath(){
 	isKind = TURTLEDEATH;
 
 	sprite->setIndex(1);
-	alive = ALIVE;
+	//alive = ALIVE;
 	UpdateRect(rectDraw.left, rectDraw.top + 30);
 
 	beginDeath = GetTickCount();
@@ -117,7 +117,7 @@ void TurtleEnemy::MoveToHell(){
 
 	__super::MoveToHell();
 	Vx = 0;
-	Vy_old = 0.4f;
+	Vy_old = 0.3f;
 }
 
 void TurtleEnemy::setDeathMoving(){

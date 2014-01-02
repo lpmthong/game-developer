@@ -175,7 +175,7 @@ void GlobalHandler::SaveStaticObj(){
 		{
 			GlobalHandler::save->SaveText(L" %d %d %d %d\n", (*it)->id, (*it)->isKind, (*it)->rectDraw.left, (*it)->rectDraw.top - ListTexture::TT_END_MAP_HEIGHT + 32);
 		}
-		else if ((*it)->id != 0)		
+		else if ((*it)->id > 0)
 		{
 			GlobalHandler::save->SaveText(L" %d %d %d %d\n", (*it)->id, (*it)->isKind, (*it)->rectDraw.left, (*it)->rectDraw.top);
 		}

@@ -41,6 +41,9 @@ void Player::Init(int left, int top, int mode, int LastCheckPoint, int Life, int
 	timeInLoop = 1000;
 
 	hasStar = false;
+	hasStarRender = false;
+	timeHasStar = 10000;
+	startHasStar = GetTickCount();
 
 	immortal = false;
 	immortalRender = 0;
@@ -179,6 +182,17 @@ void Player::Render(){
 		immortalRender++;
 	}
 
+	if (hasStar)
+		if (!hasStarRender)
+		{
+			hasStarRender = true;
+			return;
+		}
+		else
+		{
+			hasStarRender = false;
+		}
+
 	RECT screen = GlobalHandler::screen;
 	sprite->Render(GlobalHandler::_directX->_backBuffer, rectDraw.left, rectDraw.top, screen.left, screen.bottom);
 
@@ -197,7 +211,9 @@ void Player::Update(){
 
 	DWORD now = GetTickCount();
 	DWORD t = now - lastUpdate;	
-	lastUpdate = now;	
+	lastUpdate = now;
+
+	oldTop = rectDraw.top;
 
 	Vx = Vx_old + acceleration * t;
 	Vy = Vy_old - 0.05f;
@@ -227,6 +243,11 @@ void Player::Update(){
 		//trace(L"Update X: %d, Y: %d", rectDraw.left, (int)rectDraw.top);
 	}
 
+	if (oldTop != rectDraw.top)
+	{
+		onGround = false;
+	}
+
 	ChangeModeLoop();
 	CheckImmortal();
 	UpdateSprite();
@@ -237,7 +258,7 @@ void Player::Update(){
 
 void Player::ProcessInput(){
 
-	if (alive == DYING)
+	if (alive == DYING || getEndMap)
 		return;
 
 	if (GlobalHandler::_directX->IsKeyDown(DIK_LEFT))
@@ -275,7 +296,7 @@ void Player::ProcessInput(){
 
 void Player::OnKeyDown(int keyCode){
 
-	if (alive == DYING)
+	if (alive == DYING || getEndMap)
 		return;
 
 	switch(keyCode){
@@ -283,7 +304,7 @@ void Player::OnKeyDown(int keyCode){
 			GlobalHandler::gameState = GS_GAMEOPTION;
 			break;			
 		case DIK_UP:
-			if (jumping == false)
+			if (jumping == false && onGround == true)
 			{
 				onGround = false;
 				jumping = true;
@@ -392,6 +413,8 @@ void Player::CollideWithStaticObj(){
 							(*it)->isKind == BRICK_BONUS_LIFE || (*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
 								(*it)->isKind == BRICK_BONUS_STAR)				
 						CollideWithBrick(normalx, normaly, collisiontime, (*it));
+					if ((*it)->isKind == PIRHANAPLANT)
+						CollideWithPirhanaPlant((*it));
 					if ((*it)->isKind == ENDMAP)				
 						CollideWithEndMap(normalx, normaly, collisiontime, (*it));
 					//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)marioBox.x, (int)marioBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
@@ -440,8 +463,8 @@ void Player::CollideWithDynamicObj(int t){
 							CollideWithTurtleEnemy(normaly, (*it));
 						if ((*it)->isKind == TURTLEDEATH)
 							CollideWithTurtleDeath(normaly, (*it));
-						if ((*it)->isKind == PIRHANAPLANT)
-							CollideWithPirhanaPlant((*it));
+						/*if ((*it)->isKind == PIRHANAPLANT)
+						CollideWithPirhanaPlant((*it));*/
 						if ((*it)->isKind == BULLET)
 							ConUpdate = false;
 						if ((*it)->isKind == CROSS)
@@ -785,6 +808,8 @@ void Player::CollideWithBonusMushRoom(DynamicObject *obj){
 	if (bonus->getBonusType() == STAR)
 	{
 		loop = false;
+		hasStar = true;
+		startHasStar = GetTickCount();
 	}
 
 	if (bonus->getBonusType() == GROWUP)
@@ -899,8 +924,14 @@ void Player::CollideWithMushRoomEnemy(float normaly,DynamicObject *obj)
 	ConUpdate = false;
 }
 
-void Player::CollideWithPirhanaPlant(DynamicObject *obj){
+void Player::CollideWithPirhanaPlant(StaticObject *obj){
 	PirhanaPlant *pirhanaPlant = ((PirhanaPlant*)obj);
+	if (hasStar)
+	{
+		GlobalHandler::quadTree->RemoveObj(pirhanaPlant);
+		return;
+	}
+	
 	//trace(L"Rect L: %d, T: %d, R: %d, B: %d", pirhanaPlant->rectDraw.left, pirhanaPlant->rectDraw.top, pirhanaPlant->rectDraw.right, pirhanaPlant->rectDraw.bottom);
 	if (pirhanaPlant->appear != 0)
 	{
@@ -1079,6 +1110,12 @@ void Player::CheckImmortal(){
 			immortal = false;
 	}
 
+	if (hasStar)
+	{
+		DWORD now = GetTickCount();
+		if (now - startHasStar > timeHasStar)
+			hasStar = false;
+	}
 }
 
 void Player::UpdateCheckPoint(){

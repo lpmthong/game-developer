@@ -175,11 +175,11 @@ void Bullet::CollideWithTurtleDeath(DynamicObject* obj){
 	((Enemy*)obj)->MoveToHell();
 }
 
-void Bullet::CollideWithPirhanaPlant(DynamicObject* obj){
+void Bullet::CollideWithPirhanaPlant(StaticObject* obj){
 	if (((PirhanaPlant*)obj)->appear != 0)
 	{
-		ProcessDying();
-		obj->alive = INHELL;
+		GlobalHandler::quadTree->RemoveObj(obj);
+		ProcessDying();		
 	}	
 }
 
