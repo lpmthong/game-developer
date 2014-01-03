@@ -74,12 +74,12 @@ void Game::Update(){
 			if(!GlobalHandler::UpdateTime())
 				if (GlobalHandler::endMap == false)
 				{
-					GlobalHandler::player->life --;
+					GlobalHandler::player->life--;
 
 					//This game is over.
 					if (GlobalHandler::player->life < 0)
-						//GlobalHandler::text->gameOver = true;					
-
+							GlobalHandler::text->gameOver = true;	
+					
 					GlobalHandler::RestartMap();					
 				}
 		break;

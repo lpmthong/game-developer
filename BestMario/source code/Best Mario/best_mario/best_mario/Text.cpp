@@ -22,6 +22,8 @@ Text::Text()
 
 	score = new Score(0, 0);
 	score->moving = false;
+
+	gameOver = false;
 }
 Text::~Text()
 {
@@ -36,6 +38,8 @@ void Text::Render()
 	TextWorld();
 	TextTime();
 	TextScore();
+	if(gameOver)
+		TextGameOver();
 }
 
 void Text::Update()
@@ -91,4 +95,10 @@ void Text::TextTime()
 	time->setScore(GlobalHandler::time);
 	time->UpdateRect(GlobalHandler::screen.left + 705, 565);
 	time->Render();
+}
+
+void Text::TextGameOver()
+{
+	sprite->Reset(ListTexture::TT_TEXT_GAMEOVER, ListTexture::TT_TEXT_GAMEOVER_WIDTH, ListTexture::TT_TEXT_GAMEOVER_HEIGHT, 1, 1);
+	sprite->Render(GlobalHandler::_directX->_backBuffer,SCREEN_WIDTH/2-70,SCREEN_HEIGHT/2-70);
 }

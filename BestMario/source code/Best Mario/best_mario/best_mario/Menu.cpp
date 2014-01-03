@@ -6,7 +6,8 @@
 Menu::Menu(void)
 {
 	menuBackground	= new Sprite(ListTexture::TT_MENU_BACKGROUND , SCREEN_WIDTH , SCREEN_HEIGHT, 1 , 1);
-	menuOption		= new Sprite(ListTexture::TT_MENU_OPTION,0,0,0,0);
+	menuOption		= new Sprite(ListTexture::TT_MENU_OPTION , 0 , 0 , 1, 1);
+	menuText		= new Sprite(ListTexture::TT_MENU_TEXT , 0 , 0 , 1 , 1);
 	choice			= MENU_START;
 }
 
@@ -14,25 +15,29 @@ Menu::~Menu(void)
 {
 	delete menuBackground;
 	delete menuOption;
+	delete menuText;
 }
 
 void Menu::Render()
 {
-	menuBackground->Render(GlobalHandler::_directX->_backBuffer,0,0);
+	menuBackground->Render(GlobalHandler::_directX->_backBuffer, 0, 0);
+	
 
 	switch(choice)
 	{
 		case MENU_START:
-			menuOption->Render(GlobalHandler::_directX->_backBuffer,580,300,0,0,143,40);
-			menuOption->Render(GlobalHandler::_directX->_backBuffer,615,309,0,40,143,73);
+			menuOption->Render(GlobalHandler::_directX->_backBuffer , 0, 208, 0, 0, 205, 50);
+			menuText->Render(GlobalHandler::_directX->_backBuffer, 0, 208, 0, 0, 206, 198);
+			
+			
 			break;
 		case MENU_OPTION:
-			menuOption->Render(GlobalHandler::_directX->_backBuffer,560,335,0,0,143,40);
-			menuOption->Render(GlobalHandler::_directX->_backBuffer,605,335,0,73,143,110);
+			menuOption->Render(GlobalHandler::_directX->_backBuffer, 0, 280, 0, 0, 205, 50);
+			menuText->Render(GlobalHandler::_directX->_backBuffer, 0, 208, 0, 0, 206, 198);
 			break;
 		case MENU_EXIT:
-			menuOption->Render(GlobalHandler::_directX->_backBuffer,580,361,0,0,143,40);
-			menuOption->Render(GlobalHandler::_directX->_backBuffer,615,370,0,110,143,146);
+			menuOption->Render(GlobalHandler::_directX->_backBuffer, 0, 354, 0, 0, 205, 50);
+			menuText->Render(GlobalHandler::_directX->_backBuffer, 0, 208, 0, 0, 206, 198);
 			break;
 	}
 

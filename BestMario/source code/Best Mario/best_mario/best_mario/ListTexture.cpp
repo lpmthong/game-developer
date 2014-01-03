@@ -279,11 +279,20 @@ int				   ListTexture::TT_TEXT_NUMBER_HEIGHT;
 int				   ListTexture::TT_TEXT_NUMBER_COUNT;
 int				   ListTexture::TT_TEXT_NUMBER_PRITEPERROW;
 
+LPDIRECT3DTEXTURE9	ListTexture::TT_TEXT_GAMEOVER;
+int					ListTexture::TT_TEXT_GAMEOVER_WIDTH;
+int					ListTexture::TT_TEXT_GAMEOVER_HEIGHT;
+//Menu
 LPDIRECT3DTEXTURE9  ListTexture::TT_MENU_BACKGROUND;
 LPDIRECT3DTEXTURE9	ListTexture::TT_MENU_OPTION;
-
+LPDIRECT3DTEXTURE9  ListTexture::TT_MENU_TEXT;
+//Option
 LPDIRECT3DTEXTURE9  ListTexture::TT_OPTION;
 LPDIRECT3DTEXTURE9  ListTexture::TT_GAMEOPTION;
+LPDIRECT3DTEXTURE9	ListTexture::TT_GAMEOPTIONBUTTON;
+
+//Change Map
+LPDIRECT3DTEXTURE9	ListTexture::TT_GAME_CHANGEMAP;
 
 LPDIRECT3DTEXTURE9	ListTexture::TT_END_MAP;
 int					ListTexture::TT_END_MAP_WIDTH;
@@ -566,6 +575,10 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_TEXT_WORLD_WIDTH					= 79;
 	ListTexture::TT_TEXT_WORLD_HEIGHT					= 16;
 
+	ListTexture::TT_TEXT_GAMEOVER						= GlobalHandler::_directX->LoadTextureFromFile("Media\\text_gameover.bmp",0);
+	ListTexture::TT_TEXT_GAMEOVER_WIDTH					= 141;
+	ListTexture::TT_TEXT_GAMEOVER_HEIGHT				= 25;
+
 	ListTexture::TT_TEXT_COIN							= GlobalHandler::_directX->LoadTextureFromFile("Media\\coin_count.png",0);
 	ListTexture::TT_TEXT_COIN_WIDTH						= 27;
 	ListTexture::TT_TEXT_COIN_HEIGHT					= 16;
@@ -576,11 +589,16 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_TEXT_NUMBER_COUNT					= 11;
 	ListTexture::TT_TEXT_NUMBER_PRITEPERROW				= 11;
 	
-	ListTexture::TT_MENU_BACKGROUND						= GlobalHandler::_directX->LoadTextureFromFile("Media\\menu_background.jpg",0);
-	ListTexture::TT_MENU_OPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\options.png",0);
+	ListTexture::TT_MENU_BACKGROUND						= GlobalHandler::_directX->LoadTextureFromFile("Media\\menuBackground.jpg",0);
+	ListTexture::TT_MENU_OPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\chose.png",0);
+	ListTexture::TT_MENU_TEXT							= GlobalHandler::_directX->LoadTextureFromFile("Media\\startscreentext.png",0);
 	
+	ListTexture::TT_GAME_CHANGEMAP						= GlobalHandler::_directX->LoadTextureFromFile("Media\\changemap.png",0);
+
 	ListTexture::TT_OPTION								= GlobalHandler::_directX->LoadTextureFromFile("Media\\Option.jpg",0);
-	ListTexture::TT_GAMEOPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\startGameOptions.jpg",0);
+	ListTexture::TT_GAMEOPTION							= GlobalHandler::_directX->LoadTextureFromFile("Media\\gameOptionBackground.png",0);
+	ListTexture::TT_GAMEOPTIONBUTTON					= GlobalHandler::_directX->LoadTextureFromFile("Media\\gameoption.png",0);
+
 
 	ListTexture::TT_END_MAP								= GlobalHandler::_directX->LoadTextureFromFile("Media\\end_map.png",0);
 	ListTexture::TT_END_MAP_WIDTH						= 31;
