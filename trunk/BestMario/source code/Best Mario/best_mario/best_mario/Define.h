@@ -84,10 +84,11 @@
 #define MENU_EXIT		2
 
 //GameOption
-#define OPTION_NEWGAME	0
-#define OPTION_SAVEGAME 1
-#define OPTION_LOADGAME 2
-#define OPTION_BACKMENU 3
+#define OPTION_CONTINUE	0
+#define OPTION_NEWGAME	1
+#define OPTION_SAVEGAME 2
+#define OPTION_LOADGAME 3
+#define OPTION_BACKMENU 4
 
 //Death status
 #define ALIVE 0

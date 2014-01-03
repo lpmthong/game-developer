@@ -11,6 +11,7 @@ class Menu
 
 		Sprite* menuBackground;
 		Sprite* menuOption;
+		Sprite* menuText;
 
 		int choice;
 		void Render();

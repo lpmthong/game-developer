@@ -14,6 +14,8 @@ class Text : public DynamicObject
 	Score *score;
 	Score *world;
 
+	bool gameOver;
+
 
 	void Render();
 	void Update();
