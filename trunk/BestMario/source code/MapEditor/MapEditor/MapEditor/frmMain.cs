@@ -61,7 +61,9 @@ namespace MapEditor
             PIPE_2 = 48,
             PIPE_3 = 49,
             PIPE_4 = 50,
-            PIPE_5 = 51
+            PIPE_5 = 51,
+            STATIC_CROSS = 52,
+            CROSS_DOWN = 53
         }
 
         private pbObject TempObj = new pbObject();
@@ -457,6 +459,22 @@ namespace MapEditor
                 TempObj.height = 28;
                 TempObj.st = false;
             }
+            else if (pb.Name == pbStaticCross.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.cross;
+                TempObj.kind = (int)BlockKind.STATIC_CROSS;
+                TempObj.width = 96;
+                TempObj.height = 18;
+                TempObj.st = false;
+            }
+            else if (pb.Name == pbStaticCross.Name)
+            {
+                TempObj.pictureBox.Image = Properties.Resources.cross;
+                TempObj.kind = (int)BlockKind.CROSS_DOWN;
+                TempObj.width = 96;
+                TempObj.height = 18;
+                TempObj.st = false;
+            }
         }
 
         private void pbMap_MouseMove(object sender, MouseEventArgs e)
@@ -474,7 +492,7 @@ namespace MapEditor
                 if (pb.Name != "pbMap")
                 {
                     x = pb.Location.X;
-                    y =pb.Location.Y;
+                    y = pb.Location.Y;
                 }
 
                 if (bSnap)
@@ -650,6 +668,7 @@ namespace MapEditor
                     }
                     if (obj.kind == (int)BlockKind.PLAYER_KID || obj.kind == (int)BlockKind.PLAYER_ADULT || obj.kind == (int)BlockKind.PLAYER_ADULT_GUN)
                     {
+                        // 0 last check point, 4 
                         sw.Write(" 0 4 0 0 300");
                     }
                     
@@ -909,6 +928,18 @@ namespace MapEditor
                     temp.st = true;
                     break;
                 case (int)BlockKind.CROSS: 
+                    pb.Image = Properties.Resources.cross;
+                    temp.width = 96;
+                    temp.height = 18;
+                    temp.st = false;
+                    break;
+                case (int)BlockKind.STATIC_CROSS:
+                    pb.Image = Properties.Resources.cross;
+                    temp.width = 96;
+                    temp.height = 18;
+                    temp.st = false;
+                    break;
+                case (int)BlockKind.CROSS_DOWN:
                     pb.Image = Properties.Resources.cross;
                     temp.width = 96;
                     temp.height = 18;

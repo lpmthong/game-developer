@@ -68,6 +68,8 @@
             this.pbTree_Low = new System.Windows.Forms.PictureBox();
             this.pbCloud = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pbCrossDown = new System.Windows.Forms.PictureBox();
+            this.pbStaticCross = new System.Windows.Forms.PictureBox();
             this.pbPipe5 = new System.Windows.Forms.PictureBox();
             this.pbPipe4 = new System.Windows.Forms.PictureBox();
             this.pbPipe3 = new System.Windows.Forms.PictureBox();
@@ -119,6 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbTree_Low)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCrossDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaticCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).BeginInit();
@@ -561,6 +565,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pbCrossDown);
+            this.tabPage2.Controls.Add(this.pbStaticCross);
             this.tabPage2.Controls.Add(this.pbPipe5);
             this.tabPage2.Controls.Add(this.pbPipe4);
             this.tabPage2.Controls.Add(this.pbPipe3);
@@ -586,6 +592,28 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Terrain";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pbCrossDown
+            // 
+            this.pbCrossDown.Image = global::MapEditor.Properties.Resources.cross_down;
+            this.pbCrossDown.Location = new System.Drawing.Point(21, 273);
+            this.pbCrossDown.Name = "pbCrossDown";
+            this.pbCrossDown.Size = new System.Drawing.Size(96, 18);
+            this.pbCrossDown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbCrossDown.TabIndex = 35;
+            this.pbCrossDown.TabStop = false;
+            this.pbCrossDown.Click += new System.EventHandler(this.pbBlock_Click);
+            // 
+            // pbStaticCross
+            // 
+            this.pbStaticCross.Image = ((System.Drawing.Image)(resources.GetObject("pbStaticCross.Image")));
+            this.pbStaticCross.Location = new System.Drawing.Point(21, 222);
+            this.pbStaticCross.Name = "pbStaticCross";
+            this.pbStaticCross.Size = new System.Drawing.Size(96, 18);
+            this.pbStaticCross.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbStaticCross.TabIndex = 34;
+            this.pbStaticCross.TabStop = false;
+            this.pbStaticCross.Click += new System.EventHandler(this.pbBlock_Click);
             // 
             // pbPipe5
             // 
@@ -1030,6 +1058,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCloud)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCrossDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaticCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPipe3)).EndInit();
@@ -1145,6 +1175,8 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.PictureBox pbPipe5;
         private System.Windows.Forms.PictureBox pbPipe4;
+        private System.Windows.Forms.PictureBox pbStaticCross;
+        private System.Windows.Forms.PictureBox pbCrossDown;
     }
 }
 
