@@ -207,6 +207,9 @@
     <ClCompile Include="SaveGame.cpp">
       <Filter>Global</Filter>
     </ClCompile>
+    <ClCompile Include="TurtleRedEnemy.cpp">
+      <Filter>DynamicObject\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -361,6 +364,9 @@
     </ClInclude>
     <ClInclude Include="SaveGame.h">
       <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="TurtleRedEnemy.h">
+      <Filter>DynamicObject\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

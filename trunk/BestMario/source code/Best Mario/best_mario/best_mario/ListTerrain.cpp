@@ -20,6 +20,7 @@
 #include "GroundMushRoom.h"
 #include "GroundUnderMushRoom.h"
 #include "EndMap.h"
+#include "TurtleRedEnemy.h"
 
 int ListTerrain::arr_terrain[10000];
 int ListTerrain::arr_terrain_index = 0;
@@ -163,6 +164,17 @@ void ListTerrain::InitTerrain(int level){
 			TurtleEnemy *turtleDeath = new TurtleEnemy(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
 			turtleDeath->setDeath();
 			GlobalHandler::dynamicObjManager->Add(turtleDeath);
+		}
+		else if(arr_terrain[i+1] == RED_TURTLE)
+		{
+			TurtleRedEnemy *turtleRedEnemy = new TurtleRedEnemy(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::dynamicObjManager->Add(turtleRedEnemy);
+		}
+		else if(arr_terrain[i+1] == RED_TURTLE_DEATH)
+		{
+			TurtleRedEnemy *turtleRedEnemy = new TurtleRedEnemy(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			turtleRedEnemy->setDeath();
+			GlobalHandler::dynamicObjManager->Add(turtleRedEnemy);
 		}
 		else if(arr_terrain[i+1] == PIRHANAPLANT)
 		{

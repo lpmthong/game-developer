@@ -154,9 +154,9 @@ void Enemy::CollideWithDynamicObj(int t){
 							ConUpdate = true;
 						if ((*it)->isKind == MUSHROOM_ENEMY)
 							CollideWithMushRoomEnemy((*it));
-						if ((*it)->isKind == TURTLE)
+						if ((*it)->isKind == TURTLE || (*it)->isKind == RED_TURTLE)
 							CollideWithTurtleEnemy((*it));
-						if ((*it)->isKind == TURTLEDEATH)
+						if ((*it)->isKind == TURTLEDEATH || (*it)->isKind == RED_TURTLE_DEATH)
 							CollideWithTurtleDeath((*it));						
 					}
 					if (collisiontime == 1.0f)

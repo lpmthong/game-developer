@@ -31,6 +31,7 @@ void Player::Init(int left, int top, int mode, int LastCheckPoint, int Life, int
 
 	onGround = false;
 	jumping = false;
+	touchCross = false;
 	oldDirect = true;
 
 	loop = false;
@@ -229,6 +230,8 @@ void Player::Update(){
 	Vy_old = Vy;
 	Vx_old = Vx;
 
+	
+
 	if (alive != DYING) // co cai nay khi chet thi no se vao ham ProcessDying
 	{
 		CollideWithStaticObj();
@@ -239,14 +242,13 @@ void Player::Update(){
 	{						
 		marioBox.x += VxF;
 		marioBox.y += VyF;
-		UpdateRect((int)marioBox.x, (int)marioBox.y);
-		//trace(L"Update X: %d, Y: %d", rectDraw.left, (int)rectDraw.top);
-	}
+		UpdateRect((int)marioBox.x, (int)marioBox.y);		
+	}	
 
-	if (oldTop != rectDraw.top)
+	if (oldTop != rectDraw.top && touchCross == false)
 	{
 		onGround = false;
-	}
+	}	
 
 	ChangeModeLoop();
 	CheckImmortal();
@@ -451,20 +453,16 @@ void Player::CollideWithDynamicObj(int t){
 					ConUpdate = true;
 					float normalx, normaly, collisiontime;
 					collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
-					//trace(L"VxF: %f, VyF: %f, OBJ_VxF: %f, OBJ_VyF: %f, VxFN: %f, VyFN: %f", VxF, VyF, Obj_VxF, Obj_VyF, VxFN, VyFN);
-					//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Time: %f, Normalx: %f, Normaly: %f", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, collisiontime, normalx, normaly);
 					if (collisiontime < 1.0f && collisiontime >= 0.0f)
 					{
 						if ((*it)->isKind == BONUS_MUSHROOM)
 							CollideWithBonusMushRoom((*it));
 						if ((*it)->isKind == MUSHROOM_ENEMY)
 							CollideWithMushRoomEnemy(normaly, (*it));
-						if ((*it)->isKind == TURTLE)
+						if ((*it)->isKind == TURTLE || (*it)->isKind == RED_TURTLE)
 							CollideWithTurtleEnemy(normaly, (*it));
-						if ((*it)->isKind == TURTLEDEATH)
-							CollideWithTurtleDeath(normaly, (*it));
-						/*if ((*it)->isKind == PIRHANAPLANT)
-						CollideWithPirhanaPlant((*it));*/
+						if ((*it)->isKind == TURTLEDEATH || (*it)->isKind == RED_TURTLE_DEATH)
+							CollideWithTurtleDeath(normaly, (*it));						
 						if ((*it)->isKind == BULLET)
 							ConUpdate = false;
 						if ((*it)->isKind == CROSS)
@@ -474,7 +472,6 @@ void Player::CollideWithDynamicObj(int t){
 						ConUpdate = false;
 											
 				}
-				//trace(L"VxF: %f, VyF: %f, OBJ_VxF: %f, OBJ_VyF: %f, VxFN: %f, VyFN: %f", VxF, VyF, Obj_VxF, Obj_VyF, VxFN, VyFN);
 			}		
 	}
 
@@ -494,7 +491,8 @@ void Player::CollideWithGround(float normalx, float normaly, float collisiontime
 		Vy_old = 0.05f;		
 
 		onGround = true;
-		jumping =false;
+		jumping = false;
+		touchCross = false;
 		
 		marioBox.y += VyF * collisiontime;
 		UpdateRect((int)marioBox.x, (int)marioBox.y);
@@ -567,6 +565,7 @@ void Player::CollideWithPiPe(float normalx, float normaly, float collisiontime, 
 
 		onGround = true;
 		jumping =false;
+		touchCross = false;
 		
 		marioBox.y += VyF * collisiontime;
 		UpdateRect((int)marioBox.x, (int)marioBox.y);
@@ -624,6 +623,7 @@ void Player::CollideWithHardBrick(float normalx, float normaly, float collisiont
 
 		onGround = true;
 		jumping =false;
+		touchCross = false;
 
 		marioBox.y += VyF * collisiontime;
 		UpdateRect((int)marioBox.x, (int)marioBox.y);
@@ -723,6 +723,7 @@ void Player::CollideWithBrick(float normalx, float normaly, float collisiontime,
 
 		onGround = true;
 		jumping =false;
+		touchCross = false;
 
 		marioBox.y += VyF * collisiontime;
 		UpdateRect((int)marioBox.x, (int)marioBox.y);
@@ -950,6 +951,7 @@ void Player::CollideWithCross(float normalx, float normaly, float collisiontime,
 
 		onGround = true;
 		jumping = false;
+		touchCross = true;
 
 		marioBox.y += VyF * collisiontime;
 		UpdateRect((int)marioBox.x, (int)marioBox.y);

@@ -70,7 +70,7 @@ void GameOption::OnKeyDown(int keyCode)
 		case DIK_RETURN:
 			if(choice == OPTION_NEWGAME)
 			{
-				GlobalHandler::mapLevel = 3;
+				GlobalHandler::mapLevel = 2;
 				GlobalHandler::RestartMap();
 				GlobalHandler::gameState = GS_CHANGEMAP;
 			//	trace(L"New Game");
