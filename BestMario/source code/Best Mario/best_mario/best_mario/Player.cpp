@@ -383,8 +383,6 @@ void Player::CollideWithStaticObj(){
 
 	UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);
 	
-	//trace(L"BFF x: %f, y: %f, w: %f, h: %f, vx: %f, vy: %f", (float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, VyF);		
-	
 	list<StaticObject*>::iterator it;
 	for (it = GlobalHandler::listStaticObjRender.begin(); it != GlobalHandler::listStaticObjRender.end(); ++it)
 	{
@@ -398,8 +396,6 @@ void Player::CollideWithStaticObj(){
 				ConUpdate = true;
 				float normalx, normaly, collisiontime;
 				collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
-				//trace(L"Broadphasebox: X: %f, Y: %f, W: %f, H: %f", broadphasebox.x, broadphasebox.y, broadphasebox.w, broadphasebox.h);
-				//trace(L"AABBCheck X: %d, Y: %d, OBJX: %d, OBJY: %d, Vx: %f, Vy: %f, Time: %f, Normalx: %f, Normaly: %f, ID: %d", rectDraw.left, rectDraw.top, (*it)->rectDraw.left, (*it)->rectDraw.top, marioBox.vx, marioBox.vy, collisiontime, normalx, normaly,(*it)->id);
 				if (collisiontime < 1.0f && collisiontime >= 0.0f)
 				{				
 					if ((*it)->isKind == GROUND)				
@@ -407,7 +403,7 @@ void Player::CollideWithStaticObj(){
 					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3 ||
 						(*it)->isKind == PIPE_4 || (*it)->isKind == PIPE_5)
 						CollideWithPiPe(normalx, normaly, collisiontime, (*it));
-					if ((*it)->isKind == HARDBRICK)				
+					if ((*it)->isKind == HARDBRICK || (*it)->isKind == STATIC_CROSS)				
 						CollideWithHardBrick(normalx, normaly, collisiontime, (*it));
 					if ((*it)->isKind == OUTCOIN)				
 						CollideWithCoin((*it));
@@ -419,12 +415,12 @@ void Player::CollideWithStaticObj(){
 						CollideWithPirhanaPlant((*it));
 					if ((*it)->isKind == ENDMAP)				
 						CollideWithEndMap(normalx, normaly, collisiontime, (*it));
-					//trace(L"X: %d, Y:%d, Time: %f, Normalx: %f, Normaly: %f, ID: %d, Type: %d", (int)marioBox.x, (int)marioBox.y, collisiontime, normalx, normaly,(*it)->id, (*it)->isKind);
+					if ((*it)->isKind == FALLING_CROSS)				
+						CollideWithFallingCross(normalx, normaly, collisiontime, (*it));
 				}
 				if (collisiontime == 1.0f)
 				{
 					ConUpdate = false;
-					//trace(L"Flag = false, CollisionTime: %f", collisiontime);
 				}
 			}
 		}
@@ -799,6 +795,80 @@ void Player::CollideWithEndMap(float normalx, float normaly, float collisiontime
 	ConUpdate = false;
 }
 
+void Player::CollideWithFallingCross(float normalx, float normaly, float collisiontime, StaticObject *obj){
+
+	if (normaly == 1.0f)
+	{	
+		if (rectDraw.right < obj->rectDraw.left + 2 || rectDraw.left > obj->rectDraw.right - 2)
+		{
+			ConUpdate = false;			
+			return;
+		}
+		Vy = 0;
+		Vy_old = 0.05f;		
+
+		onGround = true;
+		jumping =false;
+		touchCross = true;
+
+		marioBox.y += VyF * collisiontime;
+		UpdateRect((int)marioBox.x, (int)marioBox.y);
+
+		UpdateSprite();
+		UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, 0);
+		
+		VyF = 0;
+		ConUpdate = false;
+
+	}
+	else
+	{
+		if (normaly == -1.0f)
+		{		
+			if (rectDraw.right < obj->rectDraw.left + 2 || rectDraw.left > obj->rectDraw.right - 2)
+			{
+				ConUpdate = false;				
+				return;
+			}
+			Vy = 0;
+			Vy_old = 0.05f;			
+
+			marioBox.y += VyF * collisiontime;
+			UpdateRect((int)marioBox.x, (int)marioBox.y);
+
+			UpdateSprite();
+			UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, VxF, 0);
+
+			//Set gia tri ve de ma tiep tuc xet va cham			
+			VyF = 0;
+			ConUpdate = false;
+			
+		}
+		else
+		{			
+			if (normalx == -1.0f)
+			{
+				marioBox.x = obj->rectDraw.left - rectDraw.right + rectDraw.left;
+				UpdateRect((int)marioBox.x, (int)marioBox.y);
+			}
+			else
+			{
+				marioBox.x = obj->rectDraw.right + 1;
+				UpdateRect((int)marioBox.x, (int)marioBox.y);
+			}
+
+			Vx = Vx_old = acceleration = 0;			
+			VxF = 0;
+
+			UpdateMarioBox((float)rectDraw.left, (float)rectDraw.top, (float)width, (float)height, 0, VyF);
+
+			ConUpdate = false;
+					
+		}
+	}
+	obj->ProcessCollision(isKind);
+}
+
 void Player::CollideWithBonusMushRoom(DynamicObject *obj){
 
 	BonusMushroom* bonus = (BonusMushroom*)obj;
@@ -1098,6 +1168,8 @@ void Player::ProcessDying(){
 		if (GlobalHandler::time < 0)
 		{
 			GlobalHandler::mapLevel = GlobalHandler::nextMap;
+			GlobalHandler::newGame = false;
+			GlobalHandler::lifeEndMap = life;
 			GlobalHandler::gameState = GS_CHANGEMAP;
 		}
 	}

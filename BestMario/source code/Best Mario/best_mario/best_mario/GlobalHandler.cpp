@@ -17,6 +17,8 @@ Player				*GlobalHandler::player				= new Player();
 int		             GlobalHandler::backGroundColor		= BLUE;
 bool	             GlobalHandler::quitGame			= false;
 bool				 GlobalHandler::isStarted			= false;
+bool				 GlobalHandler::newGame 			= false;
+int		             GlobalHandler::lifeEndMap  		= 0;
 
 
 list<StaticObject*>	 GlobalHandler::listStaticObj		;
@@ -130,6 +132,7 @@ void GlobalHandler::RestartMap()
 	GlobalHandler::screen.top		= 0;
 	GlobalHandler::screen.right		= SCREEN_WIDTH;
 	GlobalHandler::screen.bottom	= SCREEN_HEIGHT;
+	
 	GlobalHandler::time = 300;
 	GlobalHandler::endMap = false;
 

@@ -150,7 +150,7 @@ void QuadTree::GetNodeInfo(string info){
 }
 
 void QuadTree::RemoveObj(StaticObject* obj){
-	RemoveObj(root, obj);
+	RemoveObj(root, obj);	
 }
 
 void QuadTree::RemoveObj(QuadNode* root, StaticObject* obj){

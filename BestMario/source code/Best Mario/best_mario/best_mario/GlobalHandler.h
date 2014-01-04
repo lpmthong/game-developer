@@ -32,6 +32,8 @@ public:
 	static int					mapLevel2;
 	static int					mapWidth;
 	static bool					isStarted;
+	static bool					newGame;
+	static int					lifeEndMap;
 
 	static DynamicObjManager	*dynamicObjManager;
 	static list<DynamicObject*>	listRemove;
