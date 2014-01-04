@@ -467,7 +467,7 @@ namespace MapEditor
                 TempObj.height = 18;
                 TempObj.st = true;
             }
-            else if (pb.Name == pbStaticCross.Name)
+            else if (pb.Name == pbCrossDown.Name)
             {
                 TempObj.pictureBox.Image = Properties.Resources.cross_down;
                 TempObj.kind = (int)BlockKind.CROSS_DOWN;
