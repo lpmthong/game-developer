@@ -595,7 +595,7 @@
             // 
             // pbCrossDown
             // 
-            this.pbCrossDown.Image = global::MapEditor.Properties.Resources.cross_down;
+            this.pbCrossDown.Image = ((System.Drawing.Image)(resources.GetObject("pbCrossDown.Image")));
             this.pbCrossDown.Location = new System.Drawing.Point(21, 273);
             this.pbCrossDown.Name = "pbCrossDown";
             this.pbCrossDown.Size = new System.Drawing.Size(96, 18);

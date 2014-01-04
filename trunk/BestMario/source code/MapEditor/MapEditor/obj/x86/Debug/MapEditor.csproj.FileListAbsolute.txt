@@ -30,11 +30,10 @@ C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\MapEditor\MapEditor\obj\x86\Debug\MapEditor.frmMain.resources
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\MapEditor\MapEditor\obj\x86\Debug\MapEditor.Properties.Resources.resources
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\MapEditor\MapEditor\obj\x86\Debug\MapEditor.csproj.GenerateResource.Cache
-C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.exe
-C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.pdb
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\bin\Debug\MapEditor.exe
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\bin\Debug\MapEditor.pdb
-C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.csprojResolveAssemblyReference.cache
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.frmMain.resources
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.Properties.Resources.resources
 C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.csproj.GenerateResource.Cache
+C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.exe
+C:\Users\Thanh\Desktop\game-developer\BestMario\source code\MapEditor\MapEditor\obj\x86\Debug\MapEditor.pdb
