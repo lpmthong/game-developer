@@ -59,7 +59,7 @@
 #define GROUND_MUSHROOM_RIGHT 41
 #define GROUND_MUSHROOM_MIDDLE 42
 #define GROUND_MUSHROOM_LEFT 43
-#define FALLING_CROSS 44
+
 #define GROUNDUNDERMUSHROOM 45
 #define BRICK_BONUS_STAR 46
 #define PIPE_1 47
@@ -67,6 +67,8 @@
 #define PIPE_3 49
 #define PIPE_4 50
 #define PIPE_5 51
+#define STATIC_CROSS 52
+#define FALLING_CROSS 53
 
 
 //Game State.

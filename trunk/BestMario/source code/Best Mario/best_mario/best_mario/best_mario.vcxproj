@@ -96,6 +96,7 @@
     <ClCompile Include="EndMap.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Cross.cpp" />
+    <ClCompile Include="FallingCross.cpp" />
     <ClCompile Include="Fence.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOption.cpp" />
@@ -124,6 +125,7 @@
     <ClCompile Include="SaveGame.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="StaticCross.cpp" />
     <ClCompile Include="StaticObject.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="trace.cpp" />
@@ -151,6 +153,7 @@
     <ClInclude Include="EndMap.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Cross.h" />
+    <ClInclude Include="FallingCross.h" />
     <ClInclude Include="Fence.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOption.h" />
@@ -178,6 +181,7 @@
     <ClInclude Include="SaveGame.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="StaticCross.h" />
     <ClInclude Include="StaticObject.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="trace.h" />

@@ -107,7 +107,7 @@ void Enemy::CollideWithStaticObj(){
 					if ((*it)->isKind == GROUND || (*it)->isKind == HARDBRICK || (*it)->isKind == BRICK_BONUS_COIN || 
 						(*it)->isKind == BRICK_BONUS_GUN || (*it)->isKind == BRICK_BONUS_LIFE || 
 						(*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
-						(*it)->isKind == BRICK_BONUS_STAR)				
+						(*it)->isKind == BRICK_BONUS_STAR || (*it)->isKind == STATIC_CROSS)				
 						CollideWithGround(normalx, normaly, collisiontime, (*it));				
 					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3 ||
 						(*it)->isKind == PIPE_4 || (*it)->isKind == PIPE_5)

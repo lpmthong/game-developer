@@ -242,6 +242,7 @@ LPDIRECT3DTEXTURE9	ListTexture::TT_CROSS;
 int					ListTexture::TT_CROSS_WIDTH;
 int					ListTexture::TT_CROSS_HEIGHT;
 LPDIRECT3DTEXTURE9	ListTexture::TT_FALLING_CROSS;
+LPDIRECT3DTEXTURE9	ListTexture::TT_STATIC_CROSS;
 
 LPDIRECT3DTEXTURE9	ListTexture::TT_GROUND_MUSHROOM;
 int					ListTexture::TT_GROUND_MUSHROOM_WIDTH;
@@ -549,6 +550,7 @@ void ListTexture::CreateAllTexture(){
 	ListTexture::TT_CROSS_WIDTH							= 96;
 	ListTexture::TT_CROSS_HEIGHT						= 18;
 	ListTexture::TT_FALLING_CROSS						= GlobalHandler::_directX->LoadTextureFromFile("Media\\FallingCross.png",0);
+	ListTexture::TT_STATIC_CROSS						= GlobalHandler::_directX->LoadTextureFromFile("Media\\StaticCross.png",0);
 
 	ListTexture::TT_GROUND_MUSHROOM						= GlobalHandler::_directX->LoadTextureFromFile("Media\\MushRoomGround.png", 0);
 	ListTexture::TT_GROUND_MUSHROOM_WIDTH				= 32;

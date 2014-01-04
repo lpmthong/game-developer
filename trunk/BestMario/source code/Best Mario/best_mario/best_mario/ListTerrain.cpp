@@ -21,6 +21,8 @@
 #include "GroundUnderMushRoom.h"
 #include "EndMap.h"
 #include "TurtleRedEnemy.h"
+#include "StaticCross.h"
+#include "FallingCross.h"
 
 int ListTerrain::arr_terrain[10000];
 int ListTerrain::arr_terrain_index = 0;
@@ -199,10 +201,18 @@ void ListTerrain::InitTerrain(int level){
 		}
 		else if(arr_terrain[i+1] == PLAYER_KID || arr_terrain[i+1] == PLAYER_ADULT || arr_terrain[i+1] == PLAYER_ADULT_GUN)
 		{
-			GlobalHandler::player->Init(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i+4], arr_terrain[i+5], arr_terrain[i]);
+			int pLife = 0;
+			if (GlobalHandler::newGame)
+			{
+				GlobalHandler::playerScore = arr_terrain[i + 6];
+				GlobalHandler::playerCoin = arr_terrain[i + 7];
+				pLife = arr_terrain[i+5];
+			}
+			else
+				pLife = GlobalHandler::lifeEndMap;
 
-			GlobalHandler::playerScore = arr_terrain[i + 6];
-			GlobalHandler::playerCoin = arr_terrain[i + 7];	
+			GlobalHandler::player->Init(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i+1], arr_terrain[i+4], pLife, arr_terrain[i]);
+			
 			GlobalHandler::time = arr_terrain[i+8];
 
 			i += 5;
@@ -212,6 +222,16 @@ void ListTerrain::InitTerrain(int level){
 		{
 			EndMap *endMap = new EndMap(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
 			GlobalHandler::listStaticObj.push_back(endMap);
+		}
+		else if (arr_terrain[i+1] == STATIC_CROSS)
+		{
+			StaticCross *stCross = new StaticCross(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(stCross);
+		}
+		else if (arr_terrain[i+1] == FALLING_CROSS)
+		{
+			FallingCross *fallingCross = new FallingCross(arr_terrain[i+2], arr_terrain[i+3], arr_terrain[i]);
+			GlobalHandler::listStaticObj.push_back(fallingCross);
 		}
 	}
 

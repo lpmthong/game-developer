@@ -96,6 +96,7 @@ public:
 	void CollideWithCoin(StaticObject *obj);
 	void CollideWithBrick(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 	void CollideWithEndMap(float normalx, float normaly, float collisiontime,  StaticObject *obj);
+	void CollideWithFallingCross(float normalx, float normaly, float collisiontime,  StaticObject *obj);
 
 	void CollideWithBonusMushRoom(DynamicObject *obj);	
 	void CollideWithTurtleEnemy(float normaly, DynamicObject *obj);
