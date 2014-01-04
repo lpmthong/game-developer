@@ -461,19 +461,19 @@ namespace MapEditor
             }
             else if (pb.Name == pbStaticCross.Name)
             {
-                TempObj.pictureBox.Image = Properties.Resources.cross;
+                TempObj.pictureBox.Image = Properties.Resources.cross_static;
                 TempObj.kind = (int)BlockKind.STATIC_CROSS;
                 TempObj.width = 96;
                 TempObj.height = 18;
-                TempObj.st = false;
+                TempObj.st = true;
             }
-            else if (pb.Name == pbStaticCross.Name)
+            else if (pb.Name == pbCrossDown.Name)
             {
-                TempObj.pictureBox.Image = Properties.Resources.cross;
+                TempObj.pictureBox.Image = Properties.Resources.cross_down;
                 TempObj.kind = (int)BlockKind.CROSS_DOWN;
                 TempObj.width = 96;
                 TempObj.height = 18;
-                TempObj.st = false;
+                TempObj.st = true;
             }
         }
 
@@ -934,13 +934,13 @@ namespace MapEditor
                     temp.st = false;
                     break;
                 case (int)BlockKind.STATIC_CROSS:
-                    pb.Image = Properties.Resources.cross;
+                    pb.Image = Properties.Resources.cross_static;
                     temp.width = 96;
                     temp.height = 18;
                     temp.st = false;
                     break;
                 case (int)BlockKind.CROSS_DOWN:
-                    pb.Image = Properties.Resources.cross;
+                    pb.Image = Properties.Resources.cross_down;
                     temp.width = 96;
                     temp.height = 18;
                     temp.st = false;

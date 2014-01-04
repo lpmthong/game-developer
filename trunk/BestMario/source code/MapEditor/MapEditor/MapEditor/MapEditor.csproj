@@ -93,6 +93,8 @@
     <Content Include="Resources\coin_empty.bmp" />
     <Content Include="Resources\coin_full.bmp" />
     <Content Include="Resources\cross.png" />
+    <None Include="Resources\cross_static.png" />
+    <Content Include="Resources\cross_down.png" />
     <Content Include="Resources\dark_soil.png" />
     <Content Include="Resources\dark_soil1.png" />
     <Content Include="Resources\delete.PNG" />
