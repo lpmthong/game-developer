@@ -121,17 +121,20 @@
   <data name="MushRoomGroundMiddle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MushRoomGroundMiddle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="castle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\castle.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="soil_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\soil_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MushRoomGroundRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MushRoomGroundRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mapbg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mapbg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pipe5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pipe5.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enemy_musroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enemy_musroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coin_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coin_full.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brick.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,17 +145,14 @@
   <data name="block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\block.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="soil_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\soil_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="castle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\castle.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_Flower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_Flower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MushRoomGroundRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MushRoomGroundRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="soil_left1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\soil_left1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mario_gun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mario-gun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rock.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +160,11 @@
   <data name="GroundUnderMushRoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GroundUnderMushRoom.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cross_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ground_under" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ground_under.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pirhana_plant" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pirhana_plant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,9 +178,6 @@
   <data name="soil_right1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\soil_right1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menumain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menumain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fence" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fence.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,9 +186,6 @@
   </data>
   <data name="grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grass.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cloud.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ground_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ground_left.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,20 +199,17 @@
   <data name="Item_GreenMusrom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_GreenMusrom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FallingCross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FallingCross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="soil_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soil_right.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="check_point" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check_point.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MushRoomGroundLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MushRoomGroundLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="soil_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soil_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tree_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tree_low.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pipe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pipe2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ground_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ground_right.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red_enemy_turle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_enemy_turle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,17 +229,20 @@
   <data name="mario_kid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mario_kid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Item_Musrom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_Musrom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="life" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\life.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ground_right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ground_right.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menumain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menumain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="coin_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coin_empty.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cloud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cloud.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="previewbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\previewbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,26 +250,35 @@
   <data name="end_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\end_map.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coin_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coin_full.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check_point" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check_point.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pipe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pipe1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="enemy_musroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enemy_musroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pirhana_plant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pirhana_plant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_Musrom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_Musrom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="soil_left1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soil_left1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coin.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BrickBonusStar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BrickBonusStar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tree_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tree_high.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MushRoomGroundLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MushRoomGroundLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mario_gun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mario-gun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pipe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pipe2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FallingCross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FallingCross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pipe4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pipe4.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,10 +286,10 @@
   <data name="enemy_turle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enemy_turle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coin.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tree_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tree_high.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cross_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cross_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cross_static" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cross_static.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
