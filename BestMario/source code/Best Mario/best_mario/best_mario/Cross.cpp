@@ -25,6 +25,7 @@ Cross::Cross(int left, int top, int iid){
 	Vy_old = 0.0f;
 	Vx = 0;
 
+	alive = ALIVE;
 	start = false;
 }
 

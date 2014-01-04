@@ -13,6 +13,7 @@ public:
 
 	bool onGround; //Dang nam tren mat dat hay cai gi do.
 	bool jumping; //Co dang nhay hay khong?
+	bool touchCross;
 
 	float maxSpeed;
 
