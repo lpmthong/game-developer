@@ -398,7 +398,7 @@ void Player::CollideWithStaticObj(){
 				collisiontime = GlobalHandler::Physic->SweptAABB(marioBox, staticBox,  normalx, normaly);
 				if (collisiontime < 1.0f && collisiontime >= 0.0f)
 				{				
-					if ((*it)->isKind == GROUND)				
+					if ((*it)->isKind == GROUND || (*it)->isKind == GROUNDUNDERMUSHROOM)			
 						CollideWithGround(normalx, normaly, collisiontime, (*it));		
 					if ((*it)->isKind == PIPE_1 || (*it)->isKind == PIPE_2 || (*it)->isKind == PIPE_3 ||
 						(*it)->isKind == PIPE_4 || (*it)->isKind == PIPE_5)

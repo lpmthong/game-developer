@@ -104,7 +104,7 @@ void Enemy::CollideWithStaticObj(){
 				collisiontime = GlobalHandler::Physic->SweptAABB(ObjBox, staticBox,  normalx, normaly);				
 				if (collisiontime < 1.0f && collisiontime >= 0.0f)
 				{				
-					if ((*it)->isKind == GROUND || (*it)->isKind == HARDBRICK || (*it)->isKind == BRICK_BONUS_COIN || 
+					if ((*it)->isKind == GROUND || (*it)->isKind == GROUNDUNDERMUSHROOM || (*it)->isKind == HARDBRICK || (*it)->isKind == BRICK_BONUS_COIN || 
 						(*it)->isKind == BRICK_BONUS_GUN || (*it)->isKind == BRICK_BONUS_LIFE || 
 						(*it)->isKind == BRICK_BONUS_LIFE_HIDDEN || (*it)->isKind == BRICK_BONUS_MUSHROOM || 
 						(*it)->isKind == BRICK_BONUS_STAR || (*it)->isKind == STATIC_CROSS)				
