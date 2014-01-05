@@ -168,9 +168,6 @@
     <ClCompile Include="TurtleEnemy.cpp">
       <Filter>DynamicObject\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="PirhanaPlant.cpp">
-      <Filter>DynamicObject\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="Bullet.cpp">
       <Filter>DynamicObject\Enemy</Filter>
     </ClCompile>
@@ -214,6 +211,9 @@
       <Filter>StaticObject\CanCollide</Filter>
     </ClCompile>
     <ClCompile Include="FallingCross.cpp">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClCompile>
+    <ClCompile Include="PirhanaPlant.cpp">
       <Filter>StaticObject\CanCollide</Filter>
     </ClCompile>
   </ItemGroup>
@@ -332,9 +332,6 @@
     <ClInclude Include="TurtleEnemy.h">
       <Filter>DynamicObject\Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="PirhanaPlant.h">
-      <Filter>DynamicObject\Enemy</Filter>
-    </ClInclude>
     <ClInclude Include="Bullet.h">
       <Filter>DynamicObject\Enemy</Filter>
     </ClInclude>
@@ -378,6 +375,9 @@
       <Filter>StaticObject\CanCollide</Filter>
     </ClInclude>
     <ClInclude Include="FallingCross.h">
+      <Filter>StaticObject\CanCollide</Filter>
+    </ClInclude>
+    <ClInclude Include="PirhanaPlant.h">
       <Filter>StaticObject\CanCollide</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,152 +2,10 @@ Player::Init(int mode,int LastCheckPoint, int Life)
 void GlobalHandler::RestartMap()
 Player::Init(int mode,int LastCheckPoint, int Life)
 void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Brick id: 783, Cl: 1
-Brick id: 783, Cl: 1
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
-CO vo day ne------------------
+G UP
+G UP
+Brick id: 298, Cl: 1
+Brick id: 322, Cl: 1
 CO vo day ne------------------
 CO vo day ne------------------
 CO vo day ne------------------
@@ -387,10 +245,10 @@ Player::Init(int mode,int LastCheckPoint, int Life)
 void GlobalHandler::RestartMap()
 Player::Init(int mode,int LastCheckPoint, int Life)
 void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Player::Init(int mode,int LastCheckPoint, int Life)
-void GlobalHandler::RestartMap()
-Brick id: 722, Cl: 1
+Brick id: 357, Cl: 1
+Brick id: 323, Cl: 1
+Brick id: 321, Cl: 1
+Brick id: 323, Cl: 1
+Brick id: 322, Cl: 1
+Brick id: 322, Cl: 1
+Brick id: 321, Cl: 1
