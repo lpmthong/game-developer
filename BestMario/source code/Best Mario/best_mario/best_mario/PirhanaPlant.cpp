@@ -23,6 +23,7 @@ PirhanaPlant::PirhanaPlant(int left, int top, int iid){
 
 	isKind = PIRHANAPLANT;
 	isSolid = true;
+	topSave = top;
 
 	direct = true;
 	appear = 0;

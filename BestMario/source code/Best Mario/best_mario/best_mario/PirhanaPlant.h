@@ -5,7 +5,7 @@ class PirhanaPlant : public StaticObject{
 
 public:
 	int appear; // cai bien nay dung de ve no len giong nhu cai bonus
-
+	int topSave;
 private:
 	DWORD startDisappear;
 	DWORD timeDisappear;

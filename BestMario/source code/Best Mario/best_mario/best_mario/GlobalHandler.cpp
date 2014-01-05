@@ -4,6 +4,7 @@
 #include "BonusBrick.h"
 #include "Define.h"
 #include "Ground.h"
+#include "PirhanaPlant.h"
 
 DirectX				*GlobalHandler::_directX			= new DirectX();
 QuadTree			*GlobalHandler::quadTree			= new QuadTree();
@@ -177,6 +178,11 @@ void GlobalHandler::SaveStaticObj(){
 		else if ((*it)->isKind == ENDMAP)
 		{
 			GlobalHandler::save->SaveText(L" %d %d %d %d\n", (*it)->id, (*it)->isKind, (*it)->rectDraw.left, (*it)->rectDraw.top - ListTexture::TT_END_MAP_HEIGHT + 32);
+		}
+		else if ((*it)->isKind == PIRHANAPLANT)
+		{
+			PirhanaPlant *ph = ((PirhanaPlant *)(*it));
+			GlobalHandler::save->SaveText(L" %d %d %d %d\n", ph->id, ph->isKind, ph->rectDraw.left, ph->topSave);
 		}
 		else if ((*it)->id > 0)
 		{
