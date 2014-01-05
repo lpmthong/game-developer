@@ -23,7 +23,10 @@ GroundMushRoom::GroundMushRoom(int left, int top, int iid){
 
 GroundMushRoom::~GroundMushRoom(void){}
 
-void GroundMushRoom::setType(int type){
+void GroundMushRoom::setType(int t){
+
+	type = t;
+
 	switch(type){
 	case GROUND_MUSHROOM_LEFT:
 		sprite->setIndex(0);
