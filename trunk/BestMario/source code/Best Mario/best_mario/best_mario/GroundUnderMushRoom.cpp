@@ -22,7 +22,7 @@ GroundUnderMushroom::GroundUnderMushroom( int left, int top, int iid)
 	width = ListTexture::TT_GROUND_UNDER_MUSHROOM_WIDTH;
 	height = ListTexture::TT_GROUND_UNDER_MUSHROOM_HEIGHT;
 
-	isKind = GROUND;
+	isKind = GROUNDUNDERMUSHROOM;
 	isSolid = true;
 }
 
